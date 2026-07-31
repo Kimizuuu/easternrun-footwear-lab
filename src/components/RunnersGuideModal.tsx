@@ -194,7 +194,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
   });
 
   return (
-    <div style={{
+    <div className="tech-guide-modal-overlay" style={{
       position: 'fixed',
       inset: 0,
       background: 'rgba(15, 23, 42, 0.75)',
@@ -222,7 +222,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
         }}
       >
         {/* Modal Header */}
-        <div style={{
+        <div className="tech-guide-header" style={{
           display: 'flex',
           alignItems: 'flex-start',
           justifyContent: 'space-between',
@@ -234,10 +234,10 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', flex: 1, minWidth: 0 }}>
             <BookOpen size={24} color="#2563EB" style={{ flexShrink: 0, marginTop: '2px' }} />
             <div>
-              <h2 style={{ fontSize: '1.15rem', fontWeight: 900, margin: 0, color: '#0F172A', lineHeight: 1.25 }}>
+              <h2 className="tech-guide-header-title" style={{ fontSize: '1.15rem', fontWeight: 900, margin: 0, color: '#0F172A', lineHeight: 1.25 }}>
                 Runner’s Footwear Intelligence & Tech Guide
               </h2>
-              <span style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginTop: '3px', lineHeight: 1.35 }}>
+              <span className="tech-guide-header-subtitle" style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginTop: '3px', lineHeight: 1.35 }}>
                 18 Essential Topics: Foams, Carbon Geometry, Drops, Rotations & Standards
               </span>
             </div>
@@ -261,7 +261,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
         </div>
 
         {/* Search Bar */}
-        <div style={{ padding: '12px 20px', borderBottom: '1px solid #E2E8F0', background: '#FFFFFF' }}>
+        <div className="tech-guide-search-wrapper" style={{ padding: '12px 20px', borderBottom: '1px solid #E2E8F0', background: '#FFFFFF' }}>
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
             <Search size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px' }} />
             <input
@@ -283,7 +283,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
         </div>
 
         {/* Accordion List Body */}
-        <div style={{
+        <div className="tech-guide-list-body" style={{
           padding: '16px 20px',
           overflowY: 'auto',
           display: 'flex',
@@ -298,7 +298,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
                 key={topic.id}
                 style={{
                   background: '#FFFFFF',
-                  border: isExpanded ? '2px solid #2563EB' : '1px solid #E2E8F0',
+                  border: isExpanded ? '2px solid #2563EB' : '1px solid #CBD5E1',
                   borderRadius: '8px',
                   overflow: 'hidden',
                   transition: 'border-color 0.15s ease'
@@ -373,7 +373,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
         </div>
 
         {/* Footer */}
-        <div style={{
+        <div className="tech-guide-footer" style={{
           padding: '14px 20px',
           borderTop: '1px solid #E2E8F0',
           background: '#FFFFFF',
