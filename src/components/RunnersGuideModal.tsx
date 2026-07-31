@@ -15,7 +15,7 @@ export const RunnersGuideModal: React.FC<RunnersGuideModalProps> = ({ isOpen, on
   const topics = [
     {
       id: 'topic-1',
-      title: '1. Shoe Categories: Finding Your Rotation',
+      title: 'Shoe Categories: Finding Your Rotation',
       category: 'Footwear Types',
       content: `Running shoes aren't one-size-fits-all. Building a 2 to 3 shoe rotation extends shoe lifespan and keeps your legs healthy.
 
@@ -27,7 +27,7 @@ export const RunnersGuideModal: React.FC<RunnersGuideModalProps> = ({ isOpen, on
     },
     {
       id: 'topic-2',
-      title: '2. Midsole Foam: The Engine of the Shoe',
+      title: 'Midsole Foam: The Engine of the Shoe',
       category: 'Materials',
       content: `The foam compound dictates softness, bounce, weight, and energy return.
 
@@ -38,7 +38,7 @@ export const RunnersGuideModal: React.FC<RunnersGuideModalProps> = ({ isOpen, on
     },
     {
       id: 'topic-3',
-      title: '3. Carbon Plates: Myth vs. Reality',
+      title: 'Carbon Plates: Myth vs. Reality',
       category: 'Biomechanics',
       content: `A carbon plate does not magically propel you forward on its own. Instead, it works as a system alongside high-stack supercritical foam and toe rocker geometry.
 
@@ -51,7 +51,7 @@ export const RunnersGuideModal: React.FC<RunnersGuideModalProps> = ({ isOpen, on
     },
     {
       id: 'topic-4',
-      title: '4. Stack Height: Cushion vs. Ground Feel',
+      title: 'Stack Height: Cushion vs. Ground Feel',
       category: 'Geometry',
       content: `Stack height is the measured thickness of the shoe between your foot and the ground (including outsole, midsole, and sockliner).
 
@@ -60,7 +60,7 @@ export const RunnersGuideModal: React.FC<RunnersGuideModalProps> = ({ isOpen, on
     },
     {
       id: 'topic-5',
-      title: '5. Heel-to-Toe Drop: What Fits Your Stride',
+      title: 'Heel-to-Toe Drop: What Fits Your Stride',
       category: 'Geometry',
       content: `Drop is the difference in height between the heel and forefoot (e.g., 39 mm heel / 31 mm forefoot = 8 mm drop).
 
@@ -70,7 +70,7 @@ export const RunnersGuideModal: React.FC<RunnersGuideModalProps> = ({ isOpen, on
     },
     {
       id: 'topic-6',
-      title: '6. Rocker Geometry: Smooth Transitions',
+      title: 'Rocker Geometry: Smooth Transitions',
       category: 'Geometry',
       content: `Rocker geometry refers to the upward curvature of the forefoot and heel sole.
 
@@ -79,7 +79,7 @@ export const RunnersGuideModal: React.FC<RunnersGuideModalProps> = ({ isOpen, on
     },
     {
       id: 'topic-7',
-      title: '7. Weight: Balancing Protection & Speed',
+      title: 'Weight: Balancing Protection & Speed',
       category: 'Specs',
       content: `Weight guidelines for Size US 9:
 • Daily Trainers: 250 g – 320 g
@@ -91,7 +91,7 @@ Note: Balance matters. A well-proportioned 250g shoe with high energy return oft
     },
     {
       id: 'topic-8',
-      title: '8. Stability: Modern Non-Intrusive Support',
+      title: 'Stability: Modern Non-Intrusive Support',
       category: 'Biomechanics',
       content: `Modern running shoes have moved away from rigid medial posts. Instead, stability is achieved through:
 • Wider Midsole Basenets: Broader landing platforms underfoot.
@@ -100,7 +100,7 @@ Note: Balance matters. A well-proportioned 250g shoe with high energy return oft
     },
     {
       id: 'topic-9',
-      title: '9. Outsole Rubber: Wet Traction & Durability',
+      title: 'Outsole Rubber: Wet Traction & Durability',
       category: 'Outsole',
       content: `footwear manufacturers excel at outsole rubber tech (e.g., Li-Ning GCU, ANTA Liquid Rubber, 361° RPU).
 
@@ -110,7 +110,7 @@ Note: Balance matters. A well-proportioned 250g shoe with high energy return oft
     },
     {
       id: 'topic-10',
-      title: '10. Upper Materials: Lockdown & Breathability',
+      title: 'Upper Materials: Lockdown & Breathability',
       category: 'Upper',
       content: `The upper holds your foot securely to the midsole platform.
 
@@ -120,7 +120,7 @@ Note: Balance matters. A well-proportioned 250g shoe with high energy return oft
     },
     {
       id: 'topic-11',
-      title: '11. Last Shape & Toe Box Dimensions',
+      title: 'Last Shape & Toe Box Dimensions',
       category: 'Fit',
       content: `A shoe's last dictates its internal shape.
 • Narrow Last: Snug performance hug for narrow feet.
@@ -129,7 +129,7 @@ Note: Balance matters. A well-proportioned 250g shoe with high energy return oft
     },
     {
       id: 'topic-12',
-      title: '12. Durability & Mileage Expectations',
+      title: 'Durability & Mileage Expectations',
       category: 'Durability',
       content: `Realistic lifespan estimates based on foam compression and rubber wear:
 • Daily Workhorse Trainers: ~600 km to 1,000+ km (e.g., Li-Ning Red Hare 9 Ultra with TUFF OS rubber).
@@ -138,21 +138,21 @@ Note: Balance matters. A well-proportioned 250g shoe with high energy return oft
     },
     {
       id: 'topic-13',
-      title: '13. Running Gait & Foot Strike Mechanics',
+      title: 'Running Gait & Foot Strike Mechanics',
       category: 'Biomechanics',
       content: `Foot strikes include Heel Strike, Midfoot Strike, and Forefoot Strike.
 Modern sports science emphasizes that rather than forcing a heavy gait correction, runners perform best in shoes that align naturally with their stride comfort.`
     },
     {
       id: 'topic-14',
-      title: '14. Energy Return Claims: Grounded Reality',
+      title: 'Energy Return Claims: Grounded Reality',
       category: 'Lab Metrics',
       content: `Brands frequently advertise rebound claims like "89% Energy Return".
 While supercritical PEBA foams truly return more energy than old EVA, independent lab tests (measuring mechanical hysteresis) provide the most reliable benchmark. Treat unverified marketing claims with healthy skepticism.`
     },
     {
       id: 'topic-15',
-      title: '15. Fit Checklist: Before You Run',
+      title: 'Fit Checklist: Before You Run',
       category: 'Fit',
       content: `Always verify:
 1. Heel Lockdown: Zero slipping when stepping forward.
@@ -161,7 +161,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
     },
     {
       id: 'topic-16',
-      title: '16. Pace Matching: Pairing Shoe to Speed',
+      title: 'Pace Matching: Pairing Shoe to Speed',
       category: 'Rotation',
       content: `• Easy / Recovery Pace (> 6:00/km): Daily trainers & Max cushion shoes.
 • Tempo / Threshold Pace (4:30 – 5:30/km): Responsive tempo trainers.
@@ -169,7 +169,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
     },
     {
       id: 'topic-17',
-      title: '17. De-Jargoning Marketing Terms',
+      title: 'De-Jargoning Marketing Terms',
       category: 'Glossary',
       content: `• Supercritical Foam: Foam expanded with gas injection (lighter, bouncier).
 • PEBA / Pebax: Polyether block amide—the lightest, highest rebound foam polymer.
@@ -178,7 +178,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
     },
     {
       id: 'topic-18',
-      title: '18. EasternRun 15-Point Lab Review Standard',
+      title: 'EasternRun 15-Point Lab Review Standard',
       category: 'Review Methodology',
       content: `Our database evaluates shoes across 15 core parameters rated on a 10-point scale:
 1. Cushioning  2. Responsiveness  3. Stability  4. Comfort  5. Fit Security
@@ -202,23 +202,26 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
       alignItems: 'center',
       justifyContent: 'center',
       zIndex: 1000,
-      padding: '12px'
+      padding: '10px'
     }}>
-      <div className="animate-scale-in" style={{
-        background: '#FFFFFF',
-        borderRadius: '10px',
-        maxWidth: '850px',
-        width: '100%',
-        maxHeight: '92vh',
-        display: 'flex',
-        flexDirection: 'column',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-        border: '1px solid #E2E8F0',
-        overflow: 'hidden',
-        transform: 'translateZ(0)',
-        willChange: 'transform'
-      }}>
-        {/* Header */}
+      <div 
+        className="animate-scale-in tech-guide-modal-container"
+        style={{
+          background: '#FFFFFF',
+          borderRadius: '12px',
+          maxWidth: '850px',
+          width: '100%',
+          maxHeight: '94vh',
+          display: 'flex',
+          flexDirection: 'column',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.3)',
+          border: '1px solid #CBD5E1',
+          overflow: 'hidden',
+          transform: 'translateZ(0)',
+          willChange: 'transform'
+        }}
+      >
+        {/* Modal Header */}
         <div style={{
           display: 'flex',
           alignItems: 'flex-start',
@@ -228,14 +231,14 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
           background: '#F8FAFC',
           gap: '12px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', flex: 1, minWidth: 0 }}>
-            <BookOpen size={22} color="#2563EB" style={{ flexShrink: 0, marginTop: '2px' }} />
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', flex: 1, minWidth: 0 }}>
+            <BookOpen size={24} color="#2563EB" style={{ flexShrink: 0, marginTop: '2px' }} />
             <div>
-              <h2 style={{ fontSize: '1.1rem', fontWeight: 900, margin: 0, color: '#0F172A', lineHeight: 1.3 }}>
+              <h2 style={{ fontSize: '1.15rem', fontWeight: 900, margin: 0, color: '#0F172A', lineHeight: 1.25 }}>
                 Runner’s Footwear Intelligence & Tech Guide
               </h2>
-              <span style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginTop: '2px', lineHeight: 1.4 }}>
-                18 Essential Topics: Foams, Carbon Geometry, Drops, Category Rotations & Lab Standards
+              <span style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginTop: '3px', lineHeight: 1.35 }}>
+                18 Essential Topics: Foams, Carbon Geometry, Drops, Rotations & Standards
               </span>
             </div>
           </div>
@@ -244,16 +247,16 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
             onClick={onClose}
             aria-label="Close Guide"
             style={{
-              background: 'transparent',
-              border: 'none',
+              background: '#F1F5F9',
+              border: '1px solid #CBD5E1',
               cursor: 'pointer',
-              color: '#64748B',
+              color: '#0F172A',
               padding: '6px',
-              borderRadius: '4px',
+              borderRadius: '6px',
               flexShrink: 0
             }}
           >
-            <X size={22} />
+            <X size={20} />
           </button>
         </div>
 
@@ -272,7 +275,8 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
                 borderRadius: '6px',
                 border: '1px solid #CBD5E1',
                 fontSize: '0.85rem',
-                outline: 'none'
+                outline: 'none',
+                background: '#F8FAFC'
               }}
             />
           </div>
@@ -287,17 +291,17 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
           gap: '12px',
           background: '#F8FAFC'
         }}>
-          {filteredTopics.map((topic) => {
+          {filteredTopics.map((topic, idx) => {
             const isExpanded = expandedTopic === topic.id;
             return (
               <div
                 key={topic.id}
                 style={{
                   background: '#FFFFFF',
-                  border: isExpanded ? '1px solid #2563EB' : '1px solid #E2E8F0',
+                  border: isExpanded ? '2px solid #2563EB' : '1px solid #E2E8F0',
                   borderRadius: '8px',
                   overflow: 'hidden',
-                  transition: 'border 0.2s ease'
+                  transition: 'border-color 0.15s ease'
                 }}
               >
                 <button
@@ -305,43 +309,49 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
                   style={{
                     width: '100%',
                     padding: '14px 16px',
-                    background: isExpanded ? '#EFF6FF' : '#FFFFFF',
+                    background: isExpanded ? '#F0F9FF' : '#FFFFFF',
                     border: 'none',
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
+                    flexDirection: 'column',
+                    alignItems: 'stretch',
                     cursor: 'pointer',
                     textAlign: 'left',
-                    gap: '12px'
+                    gap: '8px'
                   }}
                 >
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px', flex: 1, minWidth: 0 }}>
+                  {/* Top Meta Row (Category Pill + Topic Index + Chevron Arrow) */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                     <span style={{
                       background: isExpanded ? '#2563EB' : '#F1F5F9',
                       color: isExpanded ? '#FFFFFF' : '#475569',
                       fontSize: '0.68rem',
                       fontWeight: 800,
-                      padding: '2px 8px',
+                      padding: '3px 8px',
                       borderRadius: '4px',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.04em'
+                      letterSpacing: '0.05em'
                     }}>
                       {topic.category}
                     </span>
-                    <strong style={{
-                      fontSize: '0.95rem',
-                      color: isExpanded ? '#1E40AF' : '#0F172A',
-                      fontWeight: 800,
-                      lineHeight: 1.35,
-                      wordBreak: 'break-word'
-                    }}>
-                      {topic.title}
-                    </strong>
+
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
+                        TOPIC #{idx + 1}
+                      </span>
+                      {isExpanded ? <ChevronDown size={18} color="#2563EB" /> : <ChevronRight size={18} color="#64748B" />}
+                    </div>
                   </div>
 
-                  <div style={{ flexShrink: 0 }}>
-                    {isExpanded ? <ChevronDown size={20} color="#2563EB" /> : <ChevronRight size={20} color="#64748B" />}
-                  </div>
+                  {/* Main Title Row */}
+                  <h3 style={{
+                    fontSize: '0.98rem',
+                    fontWeight: 800,
+                    color: isExpanded ? '#1E40AF' : '#0F172A',
+                    margin: 0,
+                    lineHeight: 1.35
+                  }}>
+                    {topic.title}
+                  </h3>
                 </button>
 
                 {isExpanded && (
@@ -373,7 +383,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
           flexWrap: 'wrap',
           gap: '12px'
         }}>
-          <span style={{ fontSize: '0.75rem', color: '#64748B' }}>
+          <span style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 500 }}>
             EasternRun Independent Running Lab Knowledge Base
           </span>
           <button
@@ -383,8 +393,8 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '6px',
-              padding: '8px 18px',
-              fontSize: '0.82rem',
+              padding: '10px 20px',
+              fontSize: '0.85rem',
               fontWeight: 700,
               cursor: 'pointer'
             }}
