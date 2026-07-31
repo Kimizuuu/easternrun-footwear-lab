@@ -72,8 +72,8 @@ export function App() {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: '#FFFFFF' }}>
-      {/* Fixed Left Sidebar Nav */}
+    <div className="app-root-container" style={{ display: 'flex', minHeight: '100vh', background: '#FFFFFF' }}>
+      {/* Fixed Left Sidebar Nav on Desktop / Sticky Mobile Bar on Phone */}
       <SidebarNav
         shoes={shoes}
         selectedShoeId={selectedShoeDetail?.id || null}

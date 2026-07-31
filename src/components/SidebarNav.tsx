@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Menu, X, Scale } from 'lucide-react';
 import type { Shoe } from '../types/shoe';
 import { SearchAutoComplete } from './SearchAutoComplete';
 
@@ -32,29 +33,40 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
   selectedBrand = 'All',
   setSelectedBrand,
 }) => {
-  return (
-    <aside style={{
-      width: '260px',
-      minWidth: '260px',
-      height: '100vh',
-      position: 'sticky',
-      top: 0,
-      background: '#FFFFFF',
-      borderRight: '1px solid var(--border-subtle)',
-      display: 'flex',
-      flexDirection: 'column',
-      padding: '22px 18px',
-      gap: '20px',
-      zIndex: 90
-    }}>
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleMobileSelectShoe = (shoe: Shoe) => {
+    onSelectShoe(shoe);
+    setIsMobileMenuOpen(false);
+  };
+
+  const navContent = (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', height: '100%' }}>
       {/* Site Header Logo */}
-      <div style={{ paddingBottom: '12px', borderBottom: '1px solid var(--border-subtle)' }}>
-        <h1 style={{ fontSize: '1.35rem', fontWeight: 900, margin: 0, color: 'var(--text-primary)', letterSpacing: '-0.4px' }}>
-          Eastern<span style={{ color: 'var(--accent-primary)' }}>Run</span>
-        </h1>
-        <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-          Shoe Review & Lab Database
-        </span>
+      <div style={{ paddingBottom: '12px', borderBottom: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div>
+          <h1 style={{ fontSize: '1.35rem', fontWeight: 900, margin: 0, color: 'var(--text-primary)', letterSpacing: '-0.4px' }}>
+            Eastern<span style={{ color: 'var(--accent-primary)' }}>Run</span>
+          </h1>
+          <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+            Shoe Review & Lab Database
+          </span>
+        </div>
+
+        {/* Close Button on Mobile Drawer */}
+        <button
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="mobile-close-btn"
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#0F172A',
+            padding: '6px',
+            cursor: 'pointer'
+          }}
+        >
+          <X size={22} />
+        </button>
       </div>
 
       {/* Auto-Suggest Omni Search Bar */}
@@ -64,7 +76,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         </span>
         <SearchAutoComplete
           shoes={shoes}
-          onSelectShoe={onSelectShoe}
+          onSelectShoe={handleMobileSelectShoe}
           placeholder="Search models..."
         />
       </div>
@@ -79,7 +91,10 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             {['All', 'Li-Ning', 'Anta', '361°'].map((b) => (
               <button
                 key={b}
-                onClick={() => setSelectedBrand(b)}
+                onClick={() => {
+                  setSelectedBrand(b);
+                  setIsMobileMenuOpen(false);
+                }}
                 style={{
                   flex: '1 1 44%',
                   padding: '6px 0',
@@ -107,7 +122,10 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
 
         {onOpenGuide && (
           <button
-            onClick={onOpenGuide}
+            onClick={() => {
+              onOpenGuide();
+              setIsMobileMenuOpen(false);
+            }}
             style={{
               padding: '8px 12px',
               borderRadius: 'var(--radius-sm)',
@@ -126,7 +144,10 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         )}
 
         <button
-          onClick={onOpenWizard}
+          onClick={() => {
+            onOpenWizard();
+            setIsMobileMenuOpen(false);
+          }}
           style={{
             padding: '8px 12px',
             borderRadius: 'var(--radius-sm)',
@@ -138,14 +159,15 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             cursor: 'pointer',
             textAlign: 'left'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.background = '#F9FAFB'}
-          onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
         >
           Sector Advisor
         </button>
 
         <button
-          onClick={onOpenCompare}
+          onClick={() => {
+            onOpenCompare();
+            setIsMobileMenuOpen(false);
+          }}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -160,8 +182,6 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             cursor: 'pointer',
             textAlign: 'left'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.background = '#F9FAFB'}
-          onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
         >
           <span>Compare Tray</span>
           {compareCount > 0 && (
@@ -179,7 +199,10 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         </button>
 
         <button
-          onClick={onOpenTop10}
+          onClick={() => {
+            onOpenTop10();
+            setIsMobileMenuOpen(false);
+          }}
           style={{
             padding: '8px 12px',
             borderRadius: 'var(--radius-sm)',
@@ -191,8 +214,6 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             cursor: 'pointer',
             textAlign: 'left'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.background = '#F9FAFB'}
-          onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
         >
           Benchmark Rankings
         </button>
@@ -207,7 +228,10 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         {['All', 'Marathon Super-Shoe', 'Daily Trainer', 'Tempo & Race', 'Max Cushion'].map((cat) => (
           <button
             key={cat}
-            onClick={() => setSelectedCategory(cat)}
+            onClick={() => {
+              setSelectedCategory(cat);
+              setIsMobileMenuOpen(false);
+            }}
             style={{
               padding: '6px 12px',
               borderRadius: 'var(--radius-sm)',
@@ -234,7 +258,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         {shoes.map((shoe) => (
           <div
             key={shoe.id}
-            onClick={() => onSelectShoe(shoe)}
+            onClick={() => handleMobileSelectShoe(shoe)}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -246,8 +270,6 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
               color: 'var(--text-primary)',
               transition: 'background-color 0.15s ease'
             }}
-            onMouseEnter={(e) => e.currentTarget.style.background = '#F9FAFB'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
           >
             <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontWeight: 500 }}>
               {shoe.name}
@@ -258,6 +280,116 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
           </div>
         ))}
       </div>
-    </aside>
+    </div>
+  );
+
+  return (
+    <>
+      {/* Mobile Top Fixed Header Bar (< 768px) */}
+      <header className="mobile-header-bar" style={{
+        position: 'sticky',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: '60px',
+        background: '#FFFFFF',
+        borderBottom: '1px solid #E2E8F0',
+        padding: '0 16px',
+        display: 'none', // Controlled via CSS media query
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        zIndex: 100
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: '#0F172A',
+              padding: '6px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center'
+            }}
+          >
+            <Menu size={24} />
+          </button>
+
+          <h1 style={{ fontSize: '1.2rem', fontWeight: 900, margin: 0, color: '#0F172A', letterSpacing: '-0.4px' }}>
+            Eastern<span style={{ color: '#2563EB' }}>Run</span>
+          </h1>
+        </div>
+
+        <button
+          onClick={onOpenCompare}
+          style={{
+            background: '#F1F5F9',
+            border: '1px solid #CBD5E1',
+            borderRadius: '6px',
+            padding: '6px 10px',
+            fontSize: '0.78rem',
+            fontWeight: 700,
+            color: '#0F172A',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          <Scale size={14} />
+          <span>Compare ({compareCount})</span>
+        </button>
+      </header>
+
+      {/* Mobile Slide-Over Drawer Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          onClick={() => setIsMobileMenuOpen(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(15, 23, 42, 0.6)',
+            backdropFilter: 'blur(4px)',
+            zIndex: 999
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              bottom: 0,
+              width: '85%',
+              maxWidth: '320px',
+              background: '#FFFFFF',
+              padding: '20px 16px',
+              boxShadow: '10px 0 25px rgba(0,0,0,0.2)',
+              overflowY: 'auto'
+            }}
+          >
+            {navContent}
+          </div>
+        </div>
+      )}
+
+      {/* Desktop Sticky Left Sidebar (>= 768px) */}
+      <aside className="desktop-sidebar" style={{
+        width: '260px',
+        minWidth: '260px',
+        height: '100vh',
+        position: 'sticky',
+        top: 0,
+        background: '#FFFFFF',
+        borderRight: '1px solid var(--border-subtle)',
+        display: 'flex',
+        flexDirection: 'column',
+        padding: '22px 18px',
+        zIndex: 90
+      }}>
+        {navContent}
+      </aside>
+    </>
   );
 };

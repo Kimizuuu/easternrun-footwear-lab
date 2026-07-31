@@ -67,66 +67,28 @@ body {
   border-color: var(--border-strong);
 }
 
-/* Clean Badges */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 8px;
-  border-radius: var(--radius-sm);
-  font-size: 0.72rem;
-  font-weight: 600;
+/* Mobile Responsiveness & Breakpoint Rules */
+.mobile-close-btn {
+  display: none;
 }
 
-.badge-blue {
-  background: #EFF6FF;
-  color: #1D4ED8;
-  border: 1px solid #DBEAFE;
-}
+@media (max-width: 767px) {
+  /* Main Layout Flex direction */
+  .app-root-container {
+    flex-direction: column !important;
+  }
 
-.badge-green {
-  background: #F0FDF4;
-  color: #15803D;
-  border: 1px solid #DCFCE7;
-}
+  .desktop-sidebar {
+    display: none !important;
+  }
 
-.badge-neutral {
-  background: #F3F4F6;
-  color: #374151;
-  border: 1px solid #E5E7EB;
-}
+  .mobile-header-bar {
+    display: flex !important;
+  }
 
-/* Standard Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: background-color 0.15s ease;
-}
-
-.btn-primary {
-  background: #111827;
-  color: #FFFFFF;
-}
-
-.btn-primary:hover {
-  background: #1F2937;
-}
-
-.btn-secondary {
-  background: #FFFFFF;
-  color: #374151;
-  border-color: #D1D5DB;
-}
-
-.btn-secondary:hover {
-  background: #F9FAFB;
+  .mobile-close-btn {
+    display: block !important;
+  }
 }
 
 /* Animations */
