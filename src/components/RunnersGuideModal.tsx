@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, BookOpen, Search, ChevronDown, ChevronRight } from 'lucide-react';
+import { X, BookOpen, Search } from 'lucide-react';
 
 interface RunnersGuideModalProps {
   isOpen: boolean;
@@ -8,7 +8,6 @@ interface RunnersGuideModalProps {
 
 export const RunnersGuideModal: React.FC<RunnersGuideModalProps> = ({ isOpen, onClose }) => {
   const [guideSearch, setGuideSearch] = useState('');
-  const [expandedTopic, setExpandedTopic] = useState<string | null>('topic-1');
 
   if (!isOpen) return null;
 
@@ -194,197 +193,166 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
   });
 
   return (
-    <div className="tech-guide-modal-overlay" style={{
+    <div style={{
       position: 'fixed',
       inset: 0,
-      background: 'rgba(15, 23, 42, 0.75)',
+      background: 'rgba(15, 23, 42, 0.85)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       zIndex: 1000,
-      padding: '10px'
+      padding: '0'
     }}>
-      <div 
-        className="animate-scale-in tech-guide-modal-container"
-        style={{
-          background: '#FFFFFF',
-          borderRadius: '12px',
-          maxWidth: '850px',
-          width: '100%',
-          maxHeight: '94vh',
+      <div style={{
+        background: '#FFFFFF',
+        width: '100%',
+        height: '100%',
+        maxWidth: '900px',
+        maxHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden'
+      }}>
+        {/* Top Header Bar */}
+        <div style={{
           display: 'flex',
-          flexDirection: 'column',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.3)',
-          border: '1px solid #CBD5E1',
-          overflow: 'hidden',
-          transform: 'translateZ(0)',
-          willChange: 'transform'
-        }}
-      >
-        {/* Modal Header */}
-        <div className="tech-guide-header" style={{
-          display: 'flex',
-          alignItems: 'flex-start',
+          alignItems: 'center',
           justifyContent: 'space-between',
           padding: '16px 20px',
           borderBottom: '1px solid #E2E8F0',
-          background: '#F8FAFC',
-          gap: '12px'
+          background: '#0F172A',
+          color: '#FFFFFF'
         }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', flex: 1, minWidth: 0 }}>
-            <BookOpen size={24} color="#2563EB" style={{ flexShrink: 0, marginTop: '2px' }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <BookOpen size={22} color="#60A5FA" />
             <div>
-              <h2 className="tech-guide-header-title" style={{ fontSize: '1.15rem', fontWeight: 900, margin: 0, color: '#0F172A', lineHeight: 1.25 }}>
-                Runner’s Footwear Intelligence & Tech Guide
+              <h2 style={{ fontSize: '1.1rem', fontWeight: 900, margin: 0, color: '#F8FAFC' }}>
+                Runner’s Tech Guide
               </h2>
-              <span className="tech-guide-header-subtitle" style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginTop: '3px', lineHeight: 1.35 }}>
-                18 Essential Topics: Foams, Carbon Geometry, Drops, Rotations & Standards
+              <span style={{ fontSize: '0.72rem', color: '#94A3B8' }}>
+                18 Essential Footwear Science Topics
               </span>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            aria-label="Close Guide"
             style={{
-              background: '#F1F5F9',
-              border: '1px solid #CBD5E1',
-              cursor: 'pointer',
-              color: '#0F172A',
-              padding: '6px',
+              background: '#1E293B',
+              border: '1px solid #334155',
+              color: '#FFFFFF',
               borderRadius: '6px',
-              flexShrink: 0
+              padding: '6px 14px',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px'
             }}
           >
-            <X size={20} />
+            <X size={18} />
+            <span>Close</span>
           </button>
         </div>
 
-        {/* Search Bar */}
-        <div className="tech-guide-search-wrapper" style={{ padding: '12px 20px', borderBottom: '1px solid #E2E8F0', background: '#FFFFFF' }}>
+        {/* Live Search Input Bar */}
+        <div style={{ padding: '12px 20px', borderBottom: '1px solid #E2E8F0', background: '#F8FAFC' }}>
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-            <Search size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px' }} />
+            <Search size={18} color="#64748B" style={{ position: 'absolute', left: '12px' }} />
             <input
               type="text"
-              placeholder="Search guide topics (e.g. PEBA, Carbon Plate, Drop, Stack)..."
+              placeholder="Search guide (e.g. PEBA, Carbon Plate, Drop, Stack)..."
               value={guideSearch}
               onChange={(e) => setGuideSearch(e.target.value)}
               style={{
                 width: '100%',
-                padding: '10px 12px 10px 36px',
+                padding: '10px 12px 10px 38px',
                 borderRadius: '6px',
                 border: '1px solid #CBD5E1',
-                fontSize: '0.85rem',
+                fontSize: '0.9rem',
                 outline: 'none',
-                background: '#F8FAFC'
+                background: '#FFFFFF',
+                color: '#0F172A'
               }}
             />
           </div>
         </div>
 
-        {/* Accordion List Body */}
-        <div className="tech-guide-list-body" style={{
+        {/* Full Open Topic Cards Stream (Rock-Solid, Bulletproof Rendering) */}
+        <div style={{
+          flex: 1,
           padding: '16px 20px',
           overflowY: 'auto',
           display: 'flex',
           flexDirection: 'column',
-          gap: '12px',
-          background: '#F8FAFC'
+          gap: '16px',
+          background: '#F1F5F9'
         }}>
-          {filteredTopics.map((topic, idx) => {
-            const isExpanded = expandedTopic === topic.id;
-            return (
-              <div
-                key={topic.id}
-                style={{
-                  background: '#FFFFFF',
-                  border: isExpanded ? '2px solid #2563EB' : '1px solid #CBD5E1',
-                  borderRadius: '8px',
-                  overflow: 'hidden',
-                  transition: 'border-color 0.15s ease'
-                }}
-              >
-                <button
-                  onClick={() => setExpandedTopic(isExpanded ? null : topic.id)}
-                  style={{
-                    width: '100%',
-                    padding: '14px 16px',
-                    background: isExpanded ? '#F0F9FF' : '#FFFFFF',
-                    border: 'none',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'stretch',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    gap: '8px'
-                  }}
-                >
-                  {/* Top Meta Row (Category Pill + Topic Index + Chevron Arrow) */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                    <span style={{
-                      background: isExpanded ? '#2563EB' : '#F1F5F9',
-                      color: isExpanded ? '#FFFFFF' : '#475569',
-                      fontSize: '0.68rem',
-                      fontWeight: 800,
-                      padding: '3px 8px',
-                      borderRadius: '4px',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em'
-                    }}>
-                      {topic.category}
-                    </span>
+          {filteredTopics.map((topic, idx) => (
+            <article
+              key={topic.id}
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid #CBD5E1',
+                borderRadius: '8px',
+                padding: '18px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '10px',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+              }}
+            >
+              {/* Card Header Meta */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '6px' }}>
+                <span style={{
+                  background: '#2563EB',
+                  color: '#FFFFFF',
+                  fontSize: '0.68rem',
+                  fontWeight: 800,
+                  padding: '3px 8px',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}>
+                  {topic.category}
+                </span>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-                        TOPIC #{idx + 1}
-                      </span>
-                      {isExpanded ? <ChevronDown size={18} color="#2563EB" /> : <ChevronRight size={18} color="#64748B" />}
-                    </div>
-                  </div>
-
-                  {/* Main Title Row */}
-                  <h3 style={{
-                    fontSize: '0.98rem',
-                    fontWeight: 800,
-                    color: isExpanded ? '#1E40AF' : '#0F172A',
-                    margin: 0,
-                    lineHeight: 1.35
-                  }}>
-                    {topic.title}
-                  </h3>
-                </button>
-
-                {isExpanded && (
-                  <div style={{
-                    padding: '16px',
-                    borderTop: '1px solid #E2E8F0',
-                    fontSize: '0.88rem',
-                    color: '#334155',
-                    lineHeight: 1.65,
-                    whiteSpace: 'pre-line',
-                    background: '#FFFFFF'
-                  }}>
-                    {topic.content}
-                  </div>
-                )}
+                <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, fontFamily: 'var(--font-mono)' }}>
+                  TOPIC #{idx + 1}
+                </span>
               </div>
-            );
-          })}
+
+              {/* Title */}
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 900, color: '#0F172A', margin: 0, lineHeight: 1.35 }}>
+                {topic.title}
+              </h3>
+
+              {/* Content Paragraphs */}
+              <p style={{
+                fontSize: '0.9rem',
+                color: '#334155',
+                lineHeight: 1.65,
+                margin: 0,
+                whiteSpace: 'pre-line'
+              }}>
+                {topic.content}
+              </p>
+            </article>
+          ))}
         </div>
 
         {/* Footer */}
-        <div className="tech-guide-footer" style={{
-          padding: '14px 20px',
+        <div style={{
+          padding: '12px 20px',
           borderTop: '1px solid #E2E8F0',
           background: '#FFFFFF',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '12px'
+          justifyContent: 'space-between'
         }}>
-          <span style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 500 }}>
-            EasternRun Independent Running Lab Knowledge Base
+          <span style={{ fontSize: '0.75rem', color: '#64748B' }}>
+            EasternRun Independent Running Lab
           </span>
           <button
             onClick={onClose}
@@ -393,13 +361,13 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '6px',
-              padding: '10px 20px',
+              padding: '8px 18px',
               fontSize: '0.85rem',
               fontWeight: 700,
               cursor: 'pointer'
             }}
           >
-            Close Tech Guide
+            Done Reading
           </button>
         </div>
       </div>
