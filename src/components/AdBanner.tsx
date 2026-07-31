@@ -30,27 +30,23 @@ export const AdBanner: React.FC<AdBannerProps> = ({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      margin: '24px 0',
+      margin: '16px 0',
       fontFamily: 'var(--font-main)',
       ...style
     }}>
-      <span style={{ fontSize: '0.68rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', fontWeight: 600 }}>
+      <span style={{ fontSize: '0.65rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '4px', fontWeight: 600 }}>
         {label}
       </span>
 
-      {/* Google AdSense Unit Container */}
+      {/* Clean Seamless Google AdSense Slot */}
       <div style={{
         width: '100%',
         maxWidth: format === 'horizontal' ? '970px' : format === 'rectangle' ? '336px' : '100%',
-        minHeight: format === 'horizontal' ? '90px' : '180px',
-        background: '#F8FAFC',
-        border: '1px dashed #CBD5E1',
-        borderRadius: '8px',
+        minHeight: '50px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        overflow: 'hidden',
-        position: 'relative'
+        overflow: 'hidden'
       }}>
         <ins
           className="adsbygoogle"
@@ -60,26 +56,6 @@ export const AdBanner: React.FC<AdBannerProps> = ({
           data-ad-format={format}
           data-full-width-responsive="true"
         />
-
-        {/* AdSense Verification Placeholder Overlay */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '4px',
-          color: '#64748B',
-          fontSize: '0.8rem',
-          pointerEvents: 'none',
-          padding: '12px',
-          textAlign: 'center',
-          background: 'rgba(248, 250, 252, 0.95)'
-        }}>
-          <strong style={{ color: '#0F172A', fontSize: '0.85rem' }}>Google AdSense Official Partner Unit</strong>
-          <span>Publisher ID: ca-pub-4797992029063175 • Site Under AdSense Review</span>
-        </div>
       </div>
     </div>
   );
