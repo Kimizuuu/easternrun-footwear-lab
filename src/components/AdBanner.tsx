@@ -38,7 +38,7 @@ export const AdBanner: React.FC<AdBannerProps> = ({
         {label}
       </span>
 
-      {/* Google AdSense Unit Container with Clean Fallback Box */}
+      {/* Google AdSense Unit Container */}
       <div style={{
         width: '100%',
         maxWidth: format === 'horizontal' ? '970px' : format === 'rectangle' ? '336px' : '100%',
@@ -55,13 +55,13 @@ export const AdBanner: React.FC<AdBannerProps> = ({
         <ins
           className="adsbygoogle"
           style={{ display: 'block', width: '100%', height: '100%' }}
-          data-ad-client="ca-pub-0000000000000000" // Replace with real AdSense ID
+          data-ad-client="ca-pub-4797992029063175"
           data-ad-slot={slotId}
           data-ad-format={format}
           data-full-width-responsive="true"
         />
 
-        {/* Development & Pre-Approval Placeholder Indicator */}
+        {/* AdSense Verification Placeholder Overlay */}
         <div style={{
           position: 'absolute',
           inset: 0,
@@ -77,8 +77,8 @@ export const AdBanner: React.FC<AdBannerProps> = ({
           textAlign: 'center',
           background: 'rgba(248, 250, 252, 0.95)'
         }}>
-          <strong style={{ color: '#0F172A', fontSize: '0.85rem' }}>Google AdSense / Mediavine Ready</strong>
-          <span>Ad Unit Placeholder ({format.toUpperCase()}) • Monetization Active</span>
+          <strong style={{ color: '#0F172A', fontSize: '0.85rem' }}>Google AdSense Official Partner Unit</strong>
+          <span>Publisher ID: ca-pub-4797992029063175 • Site Under AdSense Review</span>
         </div>
       </div>
     </div>

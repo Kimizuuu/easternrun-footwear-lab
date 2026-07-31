@@ -1,3 +1,2 @@
-# Google AdSense Publisher Verification File for EasternRun
-# Replace ca-pub-0000000000000000 with your actual Google AdSense Publisher ID
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+# Google AdSense Official Publisher Verification File for EasternRun
+google.com, pub-4797992029063175, DIRECT, f08c47fec0942fa0
