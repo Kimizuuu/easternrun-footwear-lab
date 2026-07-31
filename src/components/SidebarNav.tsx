@@ -285,7 +285,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
 
   return (
     <>
-      {/* Mobile Top Fixed Header Bar (< 768px) */}
+      {/* Super-Optimized Mobile Sticky Top Header Bar (< 768px) */}
       <header className="mobile-header-bar" style={{
         position: 'sticky',
         top: 0,
@@ -295,7 +295,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         background: '#FFFFFF',
         borderBottom: '1px solid #E2E8F0',
         padding: '0 16px',
-        display: 'none', // Controlled via CSS media query
+        display: 'none', // Managed by responsive CSS
         alignItems: 'center',
         justifyContent: 'space-between',
         zIndex: 100
@@ -303,6 +303,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <button
             onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Open Mobile Menu"
             style={{
               background: 'transparent',
               border: 'none',
@@ -342,7 +343,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         </button>
       </header>
 
-      {/* Mobile Slide-Over Drawer Overlay */}
+      {/* Touch-Optimized Mobile Slide-Over Drawer Overlay */}
       {isMobileMenuOpen && (
         <div 
           onClick={() => setIsMobileMenuOpen(false)}

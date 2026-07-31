@@ -34,7 +34,6 @@ body {
   color: var(--text-primary);
   font-family: var(--font-main);
   line-height: 1.6;
-  overflow-x: hidden;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
@@ -67,21 +66,23 @@ body {
   border-color: var(--border-strong);
 }
 
-/* Mobile Responsiveness & Breakpoint Rules */
+/* AUTOMATIC MOBILE PLATFORM DETECTION & LAYOUT ADAPTATION */
 .mobile-close-btn {
   display: none;
 }
 
 @media (max-width: 767px) {
-  /* Main Layout Flex direction */
+  /* Automatic Mobile Container Layout Switch */
   .app-root-container {
     flex-direction: column !important;
   }
 
+  /* Automatically hide desktop sidebar on mobile phones */
   .desktop-sidebar {
     display: none !important;
   }
 
+  /* Automatically display sticky top mobile header on mobile phones */
   .mobile-header-bar {
     display: flex !important;
   }
