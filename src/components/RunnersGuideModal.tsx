@@ -198,41 +198,43 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
       position: 'fixed',
       inset: 0,
       background: 'rgba(15, 23, 42, 0.75)',
-      backdropFilter: 'blur(6px)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       zIndex: 1000,
-      padding: '20px'
+      padding: '12px'
     }}>
       <div className="animate-scale-in" style={{
         background: '#FFFFFF',
-        borderRadius: '8px',
+        borderRadius: '10px',
         maxWidth: '850px',
         width: '100%',
-        maxHeight: '90vh',
+        maxHeight: '92vh',
         display: 'flex',
         flexDirection: 'column',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
         border: '1px solid #E2E8F0',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        transform: 'translateZ(0)',
+        willChange: 'transform'
       }}>
         {/* Header */}
         <div style={{
           display: 'flex',
-          alignItems: 'center',
+          alignItems: 'flex-start',
           justifyContent: 'space-between',
-          padding: '18px 24px',
+          padding: '16px 20px',
           borderBottom: '1px solid #E2E8F0',
-          background: '#F8FAFC'
+          background: '#F8FAFC',
+          gap: '12px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <BookOpen size={22} color="#2563EB" />
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', flex: 1, minWidth: 0 }}>
+            <BookOpen size={22} color="#2563EB" style={{ flexShrink: 0, marginTop: '2px' }} />
             <div>
-              <h2 style={{ fontSize: '1.15rem', fontWeight: 900, margin: 0, color: '#0F172A' }}>
+              <h2 style={{ fontSize: '1.1rem', fontWeight: 900, margin: 0, color: '#0F172A', lineHeight: 1.3 }}>
                 Runner’s Footwear Intelligence & Tech Guide
               </h2>
-              <span style={{ fontSize: '0.75rem', color: '#64748B' }}>
+              <span style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginTop: '2px', lineHeight: 1.4 }}>
                 18 Essential Topics: Foams, Carbon Geometry, Drops, Category Rotations & Lab Standards
               </span>
             </div>
@@ -240,31 +242,33 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
 
           <button
             onClick={onClose}
+            aria-label="Close Guide"
             style={{
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',
               color: '#64748B',
               padding: '6px',
-              borderRadius: '4px'
+              borderRadius: '4px',
+              flexShrink: 0
             }}
           >
-            <X size={20} />
+            <X size={22} />
           </button>
         </div>
 
         {/* Search Bar */}
-        <div style={{ padding: '12px 24px', borderBottom: '1px solid #E2E8F0', background: '#FFFFFF' }}>
+        <div style={{ padding: '12px 20px', borderBottom: '1px solid #E2E8F0', background: '#FFFFFF' }}>
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
             <Search size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px' }} />
             <input
               type="text"
-              placeholder="Search guide topics (e.g. PEBA, Carbon Plate, Drop, Stack, Outsole, Size)..."
+              placeholder="Search guide topics (e.g. PEBA, Carbon Plate, Drop, Stack)..."
               value={guideSearch}
               onChange={(e) => setGuideSearch(e.target.value)}
               style={{
                 width: '100%',
-                padding: '8px 12px 8px 36px',
+                padding: '10px 12px 10px 36px',
                 borderRadius: '6px',
                 border: '1px solid #CBD5E1',
                 fontSize: '0.85rem',
@@ -276,7 +280,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
 
         {/* Accordion List Body */}
         <div style={{
-          padding: '20px 24px',
+          padding: '16px 20px',
           overflowY: 'auto',
           display: 'flex',
           flexDirection: 'column',
@@ -291,7 +295,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
                 style={{
                   background: '#FFFFFF',
                   border: isExpanded ? '1px solid #2563EB' : '1px solid #E2E8F0',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   overflow: 'hidden',
                   transition: 'border 0.2s ease'
                 }}
@@ -307,37 +311,48 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     cursor: 'pointer',
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    gap: '12px'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px', flex: 1, minWidth: 0 }}>
                     <span style={{
                       background: isExpanded ? '#2563EB' : '#F1F5F9',
                       color: isExpanded ? '#FFFFFF' : '#475569',
-                      fontSize: '0.7rem',
+                      fontSize: '0.68rem',
                       fontWeight: 800,
                       padding: '2px 8px',
                       borderRadius: '4px',
-                      textTransform: 'uppercase'
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em'
                     }}>
                       {topic.category}
                     </span>
-                    <strong style={{ fontSize: '0.95rem', color: isExpanded ? '#1E40AF' : '#0F172A', fontWeight: 800 }}>
+                    <strong style={{
+                      fontSize: '0.95rem',
+                      color: isExpanded ? '#1E40AF' : '#0F172A',
+                      fontWeight: 800,
+                      lineHeight: 1.35,
+                      wordBreak: 'break-word'
+                    }}>
                       {topic.title}
                     </strong>
                   </div>
 
-                  {isExpanded ? <ChevronDown size={18} color="#2563EB" /> : <ChevronRight size={18} color="#64748B" />}
+                  <div style={{ flexShrink: 0 }}>
+                    {isExpanded ? <ChevronDown size={20} color="#2563EB" /> : <ChevronRight size={20} color="#64748B" />}
+                  </div>
                 </button>
 
                 {isExpanded && (
                   <div style={{
                     padding: '16px',
                     borderTop: '1px solid #E2E8F0',
-                    fontSize: '0.85rem',
+                    fontSize: '0.88rem',
                     color: '#334155',
-                    lineHeight: 1.6,
-                    whiteSpace: 'pre-line'
+                    lineHeight: 1.65,
+                    whiteSpace: 'pre-line',
+                    background: '#FFFFFF'
                   }}>
                     {topic.content}
                   </div>
@@ -349,12 +364,14 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
 
         {/* Footer */}
         <div style={{
-          padding: '12px 24px',
+          padding: '14px 20px',
           borderTop: '1px solid #E2E8F0',
           background: '#FFFFFF',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '12px'
         }}>
           <span style={{ fontSize: '0.75rem', color: '#64748B' }}>
             EasternRun Independent Running Lab Knowledge Base
@@ -365,9 +382,9 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
               background: '#0F172A',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '4px',
+              borderRadius: '6px',
               padding: '8px 18px',
-              fontSize: '0.8rem',
+              fontSize: '0.82rem',
               fontWeight: 700,
               cursor: 'pointer'
             }}
