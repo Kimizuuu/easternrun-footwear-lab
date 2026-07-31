@@ -298,7 +298,9 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         display: 'none', // Managed by responsive CSS
         alignItems: 'center',
         justifyContent: 'space-between',
-        zIndex: 100
+        zIndex: 100,
+        transform: 'translateZ(0)',
+        willChange: 'transform'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <button
@@ -350,8 +352,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(15, 23, 42, 0.6)',
-            backdropFilter: 'blur(4px)',
+            background: 'rgba(15, 23, 42, 0.75)', // Fast solid backdrop without blur lag
             zIndex: 999
           }}
         >
@@ -366,8 +367,10 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
               maxWidth: '320px',
               background: '#FFFFFF',
               padding: '20px 16px',
-              boxShadow: '10px 0 25px rgba(0,0,0,0.2)',
-              overflowY: 'auto'
+              boxShadow: '10px 0 25px rgba(0,0,0,0.25)',
+              overflowY: 'auto',
+              transform: 'translateZ(0)',
+              willChange: 'transform'
             }}
           >
             {navContent}

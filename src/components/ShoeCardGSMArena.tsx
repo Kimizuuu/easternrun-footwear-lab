@@ -25,14 +25,16 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
         flexDirection: 'column',
         background: '#FFFFFF',
         border: '1px solid #E2E8F0',
-        transition: 'border-color 0.15s ease'
+        transition: 'border-color 0.15s ease',
+        transform: 'translateZ(0)', // GPU hardware acceleration for 60fps mobile scrolling
+        willChange: 'transform'
       }}
     >
       {/* Product Image Stage */}
       <div 
         style={{
           position: 'relative',
-          height: '235px',
+          height: '220px',
           width: '100%',
           overflow: 'hidden',
           cursor: 'pointer',
@@ -44,17 +46,20 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
         <img
           src={shoe.image}
           alt={shoe.name}
+          loading="lazy"
+          decoding="async"
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover'
+            objectFit: 'cover',
+            display: 'block'
           }}
         />
 
         {/* Dominant Sector Badge */}
         <div style={{ position: 'absolute', top: '12px', left: '12px' }}>
           <span style={{
-            background: '#FFFFFF',
+            background: 'rgba(255, 255, 255, 0.95)',
             color: '#1E293B',
             border: '1px solid #CBD5E1',
             borderRadius: '4px',
@@ -115,21 +120,27 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
       </div>
 
       {/* Card Content Body */}
-      <div style={{ padding: '18px', display: 'flex', flexDirection: 'column', flex: 1, gap: '14px' }}>
+      <div style={{ padding: '18px', display: 'flex', flexDirection: 'column', flex: 1, gap: '14px', justifyContent: 'space-between' }}>
         <div>
           <h3 
             onClick={() => onSelect(shoe)}
             style={{
-              fontSize: '1.12rem',
+              fontSize: '1.1rem',
               fontWeight: 800,
               margin: '0 0 4px 0',
               cursor: 'pointer',
-              color: '#0F172A'
+              color: '#0F172A',
+              lineHeight: 1.3,
+              height: '2.6rem',
+              overflow: 'hidden',
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical'
             }}
           >
             {shoe.name}
           </h3>
-          <span style={{ fontSize: '0.82rem', color: '#64748B', fontWeight: 500 }}>
+          <span style={{ fontSize: '0.82rem', color: '#64748B', fontWeight: 500, display: 'block' }}>
             {shoe.brand} • {shoe.category}
           </span>
         </div>
@@ -140,48 +151,62 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
           alignItems: 'center',
           justifyContent: 'space-between',
           background: '#F8FAFC',
-          padding: '10px 14px',
-          borderRadius: '6px',
           border: '1px solid #E2E8F0',
-          fontSize: '0.85rem',
-          fontFamily: 'var(--font-mono)'
+          borderRadius: '6px',
+          padding: '10px 12px',
+          fontSize: '0.78rem'
         }}>
           <div>
-            <span style={{ color: '#94A3B8', fontSize: '0.72rem', display: 'block', textTransform: 'uppercase' }}>Price</span>
-            <strong style={{ color: '#0F172A' }}>${shoe.msrpUsd}</strong>
+            <span style={{ color: '#64748B', display: 'block', fontSize: '0.68rem', textTransform: 'uppercase', fontWeight: 700 }}>Weight</span>
+            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)' }}>{shoe.specs.weightGrams}g</strong>
           </div>
-          <div style={{ textAlign: 'center' }}>
-            <span style={{ color: '#94A3B8', fontSize: '0.72rem', display: 'block', textTransform: 'uppercase' }}>Weight</span>
-            <strong style={{ color: '#2563EB' }}>{shoe.specs.weightGrams}g</strong>
+
+          <div>
+            <span style={{ color: '#64748B', display: 'block', fontSize: '0.68rem', textTransform: 'uppercase', fontWeight: 700 }}>Drop</span>
+            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)' }}>{shoe.specs.dropMm}mm</strong>
           </div>
-          <div style={{ textAlign: 'right' }}>
-            <span style={{ color: '#94A3B8', fontSize: '0.72rem', display: 'block', textTransform: 'uppercase' }}>Drop</span>
-            <strong style={{ color: '#0F172A' }}>{shoe.specs.dropMm}mm</strong>
+
+          <div>
+            <span style={{ color: '#64748B', display: 'block', fontSize: '0.68rem', textTransform: 'uppercase', fontWeight: 700 }}>Foam</span>
+            <strong style={{ color: '#2563EB', fontFamily: 'var(--font-mono)' }}>{shoe.specs.foamResiliencePercent}%</strong>
           </div>
         </div>
 
-        {/* Bottom Action */}
-        <button
-          onClick={() => onSelect(shoe)}
-          style={{
-            marginTop: 'auto',
-            width: '100%',
-            background: '#F1F5F9',
-            color: '#0F172A',
-            border: '1px solid #E2E8F0',
-            borderRadius: '6px',
-            padding: '9px',
-            fontSize: '0.85rem',
-            fontWeight: 700,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '6px'
-          }}
-        >
-          View Lab Review <ArrowRight size={15} />
-        </button>
+        {/* Bottom MSRP & Review Trigger Action */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingTop: '8px',
+          borderTop: '1px solid #F1F5F9'
+        }}>
+          <div>
+            <span style={{ fontSize: '0.72rem', color: '#64748B', display: 'block', fontWeight: 600 }}>MSRP Price</span>
+            <strong style={{ fontSize: '1.15rem', color: '#0F172A', fontFamily: 'var(--font-mono)', fontWeight: 800 }}>
+              ${shoe.msrpUsd}
+            </strong>
+          </div>
+
+          <button
+            onClick={() => onSelect(shoe)}
+            style={{
+              background: '#0F172A',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '4px',
+              padding: '8px 14px',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}
+          >
+            <span>Lab Review</span>
+            <ArrowRight size={14} />
+          </button>
+        </div>
       </div>
     </article>
   );
