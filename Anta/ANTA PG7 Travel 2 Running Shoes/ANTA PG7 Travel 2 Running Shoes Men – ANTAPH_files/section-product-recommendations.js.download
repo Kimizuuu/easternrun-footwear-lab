@@ -1,0 +1,103 @@
+// defineCustomElement(
+//     'product-recommendations',
+//     () =>
+//         class ProductRecommendations extends HTMLElement {
+//             connectedCallback() {
+//                 const handleIntersection = (entries, observer) => {
+//                     if (!entries[0].isIntersecting) return;
+//                     observer.unobserve(this);
+
+//                     fetch(this.dataset.url)
+//                         .then((response) => response.text())
+//                         .then((text) => {
+//                             const html = document.createElement('div');
+//                             html.innerHTML = text;
+//                             const recommendations = html.querySelector('product-recommendations');
+
+//                             if (recommendations && recommendations.innerHTML.trim().length) {
+//                                 this.innerHTML = recommendations.innerHTML;
+//                                 initRecommendationSlider();
+//                             }
+//                         })
+//                         .catch((err) => {
+//                             console.log('[product recommedations - error]', err);
+//                         });
+//                 };
+
+//                 new IntersectionObserver(handleIntersection.bind(this), {
+//                     rootMargin: '0px 0px 400px 0px',
+//                 }).observe(this);
+//             }
+//         },
+// );
+
+defineCustomElement(
+    'product-recommendations',
+    () =>
+        class ProductRecommendations extends HTMLElement {
+            connectedCallback() {
+                const handleIntersection = (entries, observer) => {
+                    if (!entries[0].isIntersecting) return;
+                    observer.unobserve(this);
+
+                    fetch(this.dataset.url)
+                        .then((response) => response.text())
+                        .then((text) => {
+                            const html = document.createElement('div');
+                            html.innerHTML = text;
+                            const recommendations = html.querySelector('product-recommendations');
+
+                            if (recommendations && recommendations.innerHTML.trim().length) {
+                                this.innerHTML = recommendations.innerHTML;
+                                initRecommendationSlider();
+                            }
+                        })
+                        .catch((err) => {
+                            console.log('[product recommedations - error]', err);
+                        });
+                };
+
+                new IntersectionObserver(handleIntersection.bind(this), {
+                    rootMargin: '0px 0px 400px 0px',
+                }).observe(this);
+            }
+        },
+);
+
+
+function initRecommendationSlider() {
+    const slider = document.querySelector(".slider-maijasdabsd.swiper");
+
+    if (slider && !slider.classList.contains("swiper-initialized")) {
+        new Swiper(slider, {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            speed: 1000,
+            navigation: {
+                nextEl: ".swiper-custom-next",
+                prevEl: ".swiper-custom-prev"
+            },
+            pagination: {
+                el: ".swiper-custom-pagination-progress",
+                type: "progressbar"
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.1
+                },
+                425: {
+                    slidesPerView: 2
+                },
+                580: {
+                    slidesPerView: 2.1
+                },
+                768: {
+                    slidesPerView: 3
+                },
+                1024: {
+                    slidesPerView: 4
+                },
+            }
+        });
+    }
+}

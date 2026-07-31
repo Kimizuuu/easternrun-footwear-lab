@@ -1,0 +1,293 @@
+function initProductSwiper(scope = document) {
+    const sliderEl = scope.querySelector(".swiper-main-slide");
+    if (!sliderEl || sliderEl.swiper) return;
+
+    const progressFill = scope.querySelector(".gallery-progress-fill");
+    const thumbs = scope.querySelectorAll(".progress-thumb");
+
+    const swiper = new Swiper(sliderEl, {
+        slidesPerView: 1,
+        speed: 800,
+        direction: "vertical",
+        mousewheel: {
+            forceToAxis: true,
+            releaseOnEdges: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+            dynamicMainBullets: 5,
+            clickable: true,
+            renderBullet: function (index, className) {
+                return (
+                    '<span aria-hidden="true" class="' +
+                    className +
+                    '" aria-label="Gehe zu Bild ' +
+                    (index + 1) +
+                    '"></span>'
+                );
+            }
+        },
+        breakpoints: {
+            0: {
+                direction: "horizontal",
+                mousewheel: false,
+            },
+            959: {
+                direction: "vertical",
+                mousewheel: {
+                    forceToAxis: true,
+                    releaseOnEdges: true,
+                },
+            },
+        },
+        on: {
+            slideChange() {
+                updateThumbs();
+            },
+        },
+    });
+
+    function updateThumbs() {
+        const visibleSlides = Array.from(
+            scope.querySelectorAll('.product__media-item:not([style*="display: none"])')
+        );
+
+        const activeSlide = visibleSlides[swiper.activeIndex];
+        if (!activeSlide) return;
+
+        const activeMediaId = activeSlide.getAttribute("data-media-id");
+
+        thumbs.forEach((t) => {
+            t.classList.toggle(
+                "active",
+                t.getAttribute("data-target") === activeMediaId
+            );
+        });
+    }
+
+    thumbs.forEach((t) =>
+        t.addEventListener("click", () => {
+            const targetId = t.getAttribute("data-target");
+
+            const visibleSlides = Array.from(
+                scope.querySelectorAll('.product__media-item:not([style*="display: none"])')
+            );
+
+            const targetIndex = visibleSlides.findIndex(
+                (slide) => slide.getAttribute("data-media-id") === targetId
+            );
+
+            if (targetIndex !== -1) {
+                swiper.slideTo(targetIndex, 600);
+            }
+        })
+    );
+
+    sliderEl.swiper = swiper;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initProductSwiper(document);
+});
+
+
+function initSizeChart(scope = document) {
+    const openBtn = scope.querySelector(".product-size-chart-items");
+    const popup = scope.querySelector(".main-size-chart-popup");
+
+    if (!openBtn || !popup) return;
+
+    const overlay = popup.querySelector(".overlay-popup");
+    const closeBtn = popup.querySelector(".close-button");
+    const tabs = popup.querySelectorAll(".main-gender-tab-items");
+    const tables = popup.querySelectorAll(".table-size-chart-items");
+
+    const openPopup = () => {
+        popup.classList.add("active");
+        document.body.classList.add("overflow-hidden");
+        if (tabs[0]) activateTab(tabs[0]);
+    };
+
+    const closePopup = () => {
+        popup.classList.remove("active");
+        document.body.classList.remove("overflow-hidden");
+    };
+
+    const activateTab = tab => {
+        const key = tab.dataset.tab;
+        tabs.forEach(t => t.classList.remove("active"));
+        tables.forEach(tb => tb.style.display = "none");
+        tab.classList.add("active");
+        popup.querySelector(`.table-size-chart-items[data-tab="${key}"]`)?.style.setProperty("display", "block");
+    };
+
+    openBtn.onclick = e => {
+        e.stopPropagation();
+        openPopup();
+    };
+
+    if (overlay) overlay.onclick = closePopup;
+    if (closeBtn) closeBtn.onclick = closePopup;
+
+    tabs.forEach(tab => {
+        tab.onclick = e => {
+            e.stopPropagation();
+            activateTab(tab);
+        };
+    });
+
+    document.addEventListener("click", e => {
+        if (popup.classList.contains("active") && !popup.contains(e.target) && !openBtn.contains(e.target)) {
+            closePopup();
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initSizeChart(document);
+});
+defineCustomElement('quick-add-modal', () => {
+    return class QuickAddModal extends DetailsModal {
+        constructor() {
+            super();
+            this.modalContent = this.querySelector('[id^="QuickAddInfo-"]');
+        }
+
+        close() {
+            this.modalContent.innerHTML = '';
+            super.close().then(() => {
+                document.body.dispatchEvent(new CustomEvent('modalClosed'));
+            });
+        }
+
+        connectedCallback() {
+            super.connectedCallback();
+            if (this.moved) return;
+            this.moved = true;
+            document.body.appendChild(this);
+        }
+
+        observeCssParsed(opener) {
+            const target = opener.closest('modal-opener');
+
+            const onCssParsed = (event) => {
+                if (event.animationName === 'cssParsed') {
+                    super.open(opener);
+                    this.loading = false;
+                    target.removeEventListener('animationstart', onCssParsed);
+                }
+            };
+
+            target.addEventListener('animationstart', onCssParsed);
+        }
+
+        open(opener) {
+            if (opener.classList.contains('loading')) return;
+
+            opener.classList.add('loading');
+            opener.querySelector('.loading-overlay__spinner').classList.add('display-flex');
+
+            fetch(opener.getAttribute('data-product-url'))
+                .then((response) => response.text())
+                .then((responseText) => {
+                    const responseHTML = new DOMParser().parseFromString(responseText, 'text/html');
+
+                    this.productElement = responseHTML.querySelector('section[id^="MainProduct-"]');
+
+                    this.productElement.querySelector('.product')
+                        .setAttribute('mount', 'quick-add-modal');
+
+                    this.productElement.querySelector('media-gallery')
+                        .setAttribute('data-parent-container', `#${this.modalContent.id}.${this.modalContent.className}`);
+
+                    this.preventDuplicatedIDs();
+                    this.removeDOMElements();
+
+                    const flag = this.cssParsedFlag();
+                    this.observeCssParsed(opener);
+
+                    this.setInnerHTML(this.modalContent, this.productElement.innerHTML + flag);
+
+                    setTimeout(() => {
+                        initProductSwiper(this.modalContent);
+                        initSizeChart(this.modalContent);
+                        document.body.dispatchEvent(new CustomEvent('quickAddLoaded', {
+                            detail: { container: this.modalContent }
+                        }));
+
+                    }, 150);
+
+                    if (window.Shopline && window.Shopline.PaymentButton) {
+                        window.Shopline.PaymentButton.init();
+                    }
+
+                    this.preventVariantURLSwitching();
+                })
+                .finally(() => {
+                    opener.classList.remove('loading');
+                    opener.querySelector('.loading-overlay__spinner').classList.remove('display-flex');
+                });
+        }
+
+        setInnerHTML(element, html) {
+            element.innerHTML = html;
+
+            element.querySelectorAll('script').forEach((oldScriptTag) => {
+                const newScriptTag = document.createElement('script');
+
+                Array.from(oldScriptTag.attributes).forEach((attribute) => {
+                    newScriptTag.setAttribute(attribute.name, attribute.value);
+                });
+
+                newScriptTag.appendChild(document.createTextNode(oldScriptTag.innerHTML));
+                oldScriptTag.parentNode.replaceChild(newScriptTag, oldScriptTag);
+            });
+        }
+
+        cssParsedFlag() {
+            return `
+        <style>
+          @keyframes cssParsed {
+            0% { opacity: 0.99; }
+            100% { opacity: 1; }
+          }
+
+          [data-modal="#${this.id}"] {
+            animation: 0.1s cssParsed;
+          }
+        </style>
+      `;
+        }
+
+        preventVariantURLSwitching() {
+            const variantPicker = this.modalContent.querySelector('variant-radios,variant-selects');
+            if (!variantPicker) return;
+
+            variantPicker.setAttribute('data-update-url', 'false');
+        }
+
+        removeDOMElements() {
+            const productModal = this.productElement.querySelector('product-modal');
+            if (productModal) productModal.remove();
+
+            const modalDialog = this.productElement.querySelectorAll('modal-dialog');
+            if (modalDialog) modalDialog.forEach((modal) => modal.remove());
+        }
+
+        preventDuplicatedIDs() {
+            const sectionId = this.productElement.dataset.section;
+
+            this.productElement.innerHTML = this.productElement.innerHTML.replace(
+                new RegExp(sectionId, 'g'),
+                `quickadd-${sectionId}`
+            );
+
+            this.productElement.querySelectorAll(
+                'variant-selects, variant-radios, product-info'
+            ).forEach((variantSelect) => {
+                variantSelect.dataset.originalSection = sectionId;
+            });
+        }
+    };
+});

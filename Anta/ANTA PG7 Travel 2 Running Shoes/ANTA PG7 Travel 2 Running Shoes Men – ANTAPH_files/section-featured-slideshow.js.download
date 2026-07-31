@@ -1,0 +1,65 @@
+defineCustomElement(
+    'featured-slideshow-section',
+    () =>
+        class FeaturedSlideshowSection extends HTMLElement {
+            constructor() {
+                super();
+
+                const autoplay = this.getAttribute('data-autoplay') === 'true';
+                const speed = Number(this.getAttribute('data-speed')) || 5;
+                const dots = this.querySelectorAll('.slide-pagination-dot');
+                const slides = this.querySelectorAll('.splide__slide');
+                const isSingleSlide = slides.length <= 1;
+
+                if (!window.Splide) return;
+
+                const splide = new window.Splide(this, {
+                    pagination: false, // We use our custom dots
+                    arrows: false,
+                    autoplay: autoplay && !isSingleSlide,
+                    type: isSingleSlide ? 'slide' : 'loop',
+                    interval: speed * 1000,
+                    speed: 800,
+                    drag: !isSingleSlide,
+                });
+
+                // Update dots when the slide changes
+                splide.on('move', (newIndex) => {
+                    dots.forEach((dot, index) => {
+                        if (index === newIndex) {
+                            dot.classList.add('is-active');
+                        } else {
+                            dot.classList.remove('is-active');
+                        }
+                    });
+                });
+
+                splide.mount();
+                this.splide = splide;
+                this.dots = dots;
+                this.init();
+            }
+
+            init() {
+                this.initPrevNextClick();
+                this.initDotClick();
+            }
+
+            initDotClick() {
+                this.dots.forEach((dot) => {
+                    dot.addEventListener('click', () => {
+                        const index = Number(dot.getAttribute('data-index'));
+                        this.splide.go(index);
+                    });
+                });
+            }
+
+            initPrevNextClick() {
+                const prevBtn = this.querySelector('.featured-control__arrow-button[name=previous]');
+                const nextBtn = this.querySelector('.featured-control__arrow-button[name=next]');
+
+                prevBtn?.addEventListener('click', () => this.splide.go('<'));
+                nextBtn?.addEventListener('click', () => this.splide.go('>'));
+            }
+        }
+);
