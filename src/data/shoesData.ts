@@ -1943,7 +1943,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     galleryImages: [
       '/images/qiaodan/feiying_plaid3/1_04ed10b2-392a-4073-a4a7-cb660b4865dc.webp',
       '/images/qiaodan/feiying_plaid3/2_7d440fce-d489-4cc9-8173-3814caae697c.webp',
-      '/images/qiaodan/feiying_plaid3/3_6f644017-c9ed-440e-bb68-71b5042bcde2.webp',
+      '/images/qiaodan/feiying_plaid3/3_6f644017-c9ed-440e-bb68-71b04c235091.webp',
       '/images/qiaodan/feiying_plaid3/4_108dc697-9421-4c88-b414-4accca0c098a.webp',
       '/images/qiaodan/feiying_plaid3/5_786a1d19-0579-4060-ab23-1d758d14444e.webp'
     ],
@@ -1997,7 +1997,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     image: '/images/qiaodan/feiying_plaid2/2_3fc8d63d-f9e4-4b82-8cd1-628bfbb3f35d.webp',
     galleryImages: [
       '/images/qiaodan/feiying_plaid2/2_3fc8d63d-f9e4-4b82-8cd1-628bfbb3f35d.webp',
-      '/images/qiaodan/feiying_plaid2/3_a17f8b24-5df5-4adf-952c-e3aeb5c7dd4d.webp',
+      '/images/qiaodan/feiying_plaid2/3_a17f8b24-5df5-4adf-952c-e3fcf37a5ba7.webp',
       '/images/qiaodan/feiying_plaid2/4_651bd008-cdaa-44aa-b7ff-c7010e2788ba.webp',
       '/images/qiaodan/feiying_plaid2/5_f31dc62c-b5c9-4191-b7a1-15afb588fd2e.webp'
     ],
@@ -2325,9 +2325,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Daily Trainer',
     dominantSector: 'Daily Mileage & Training',
-    image: '/images/qiaodan/wind4/1_ee81fbad-2dab-4ac9-aac5-26a53a024194.webp',
+    image: '/images/qiaodan/wind4/1_ee81fbad-2dab-4ac9-aac5-26a53a024198.webp',
     galleryImages: [
-      '/images/qiaodan/wind4/1_ee81fbad-2dab-4ac9-aac5-26a53a024194.webp',
+      '/images/qiaodan/wind4/1_ee81fbad-2dab-4ac9-aac5-26a53a024198.webp',
       '/images/qiaodan/wind4/2_8bcb6ccf-dae4-4e8e-84d7-a2e99f349d28.webp',
       '/images/qiaodan/wind4/3_71f59baf-b4b4-497e-b3ca-20a9ed18523e.webp',
       '/images/qiaodan/wind4/4_c143a6bc-4183-4328-9514-24cdd0e0d301.webp',
