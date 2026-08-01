@@ -85,6 +85,8 @@ export const ImageZoomModal: React.FC<ImageZoomModalProps> = ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: '12px',
         color: '#FFFFFF',
         zIndex: 1001
       }}>
@@ -100,21 +102,21 @@ export const ImageZoomModal: React.FC<ImageZoomModalProps> = ({
           <button
             onClick={handleZoomIn}
             title="Zoom In"
-            style={{ background: 'transparent', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '4px', borderRadius: '4px' }}
+            style={{ background: 'transparent', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '8px', borderRadius: '4px' }}
           >
             <ZoomIn size={18} />
           </button>
           <button
             onClick={handleZoomOut}
             title="Zoom Out"
-            style={{ background: 'transparent', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '4px', borderRadius: '4px' }}
+            style={{ background: 'transparent', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '8px', borderRadius: '4px' }}
           >
             <ZoomOut size={18} />
           </button>
           <button
             onClick={handleResetZoom}
             title="Reset Zoom"
-            style={{ background: 'transparent', border: 'none', color: '#94A3B8', cursor: 'pointer', padding: '4px', borderRadius: '4px' }}
+            style={{ background: 'transparent', border: 'none', color: '#94A3B8', cursor: 'pointer', padding: '8px', borderRadius: '4px' }}
           >
             <RotateCcw size={16} />
           </button>
@@ -143,6 +145,8 @@ export const ImageZoomModal: React.FC<ImageZoomModalProps> = ({
         <img
           src={currentPhoto}
           alt={`${shoeName} High Res Zoom View`}
+          loading="lazy"
+          decoding="async"
           onClick={() => {
             if (zoomScale === 1) setZoomScale(1.8);
             else if (zoomScale === 1.8) setZoomScale(2.5);
@@ -235,7 +239,7 @@ export const ImageZoomModal: React.FC<ImageZoomModalProps> = ({
               background: '#0F172A'
             }}
           >
-            <img src={photoUrl} alt={`Thumbnail ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={photoUrl} alt={`Thumbnail ${idx + 1}`} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         ))}
       </div>

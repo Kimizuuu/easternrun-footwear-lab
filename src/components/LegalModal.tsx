@@ -55,7 +55,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
               border: 'none',
               cursor: 'pointer',
               color: '#64748B',
-              padding: '4px',
+              padding: '10px',
               borderRadius: '4px'
             }}
           >

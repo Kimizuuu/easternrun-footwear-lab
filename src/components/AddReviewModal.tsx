@@ -106,8 +106,7 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
               color: 'var(--text-secondary)',
               border: 'none',
               borderRadius: '50%',
-              width: '32px',
-              height: '32px',
+              padding: '10px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -170,7 +169,7 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
                   type="button"
                   key={star}
                   onClick={() => setRating(star)}
-                  style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 0 }}
+                  style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '10px' }}
                 >
                   <Star
                     size={22}

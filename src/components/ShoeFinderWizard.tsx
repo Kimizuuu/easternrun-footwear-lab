@@ -74,7 +74,7 @@ export const ShoeFinderWizard: React.FC<ShoeFinderWizardProps> = ({ shoes, onClo
             </h2>
           </div>
 
-          <button onClick={onClose} style={{ background: '#F1F5F9', border: 'none', borderRadius: '50%', width: '32px', height: '32px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button onClick={onClose} style={{ background: '#F1F5F9', border: 'none', borderRadius: '50%', width: '44px', height: '44px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <X size={18} />
           </button>
         </div>
@@ -156,7 +156,7 @@ export const ShoeFinderWizard: React.FC<ShoeFinderWizardProps> = ({ shoes, onClo
               gap: '16px'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                <img src={topMatch.image} alt={topMatch.name} style={{ width: '80px', height: '55px', objectFit: 'cover', borderRadius: 'var(--radius-sm)' }} />
+                <img src={topMatch.image} alt={topMatch.name} loading="lazy" decoding="async" style={{ width: '80px', height: '55px', objectFit: 'cover', borderRadius: 'var(--radius-sm)' }} />
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <CheckCircle2 size={16} color="#2563EB" />

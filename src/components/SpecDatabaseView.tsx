@@ -90,7 +90,7 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
       />
 
       {/* Catalog Filter & Grid Container */}
-      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 28px' }}>
+      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(14px, 3vw, 28px)' }}>
         {/* Leaderboard Monetization Banner */}
         <AdBanner format="horizontal" label="Featured Sponsored Partner" />
 
@@ -159,10 +159,10 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
           </div>
         </div>
 
-        {/* Grid of Shoe Cards (330px min-width) */}
+        {/* Grid of Shoe Cards (280px min-width) */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(330px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '28px'
         }}>
           {sortedShoes.map((shoe) => (

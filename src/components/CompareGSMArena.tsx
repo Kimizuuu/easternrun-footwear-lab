@@ -93,8 +93,8 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
               color: 'var(--text-secondary)',
               border: 'none',
               borderRadius: '50%',
-              width: '32px',
-              height: '32px',
+              width: '44px',
+              height: '44px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -106,7 +106,7 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
         </div>
 
         {/* Matrix Content */}
-        <div style={{ overflowY: 'auto', flex: 1, padding: '24px' }}>
+        <div style={{ overflowY: 'auto', overflowX: 'auto', flex: 1, padding: '24px' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
             <thead>
               <tr>
@@ -116,7 +116,7 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
                 {shoes.map((shoe) => (
                   <th key={shoe.id} style={{ textAlign: 'center', padding: '12px', background: '#F8FAFC', borderBottom: '2px solid var(--border-subtle)', width: `${78 / shoes.length}%` }}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-                      <img src={shoe.image} alt={shoe.name} style={{ width: '90px', height: '60px', objectFit: 'cover', borderRadius: 'var(--radius-sm)' }} />
+                      <img src={shoe.image} alt={shoe.name} loading="lazy" decoding="async" style={{ width: '90px', height: '60px', objectFit: 'cover', borderRadius: 'var(--radius-sm)' }} />
                       <strong style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>{shoe.name}</strong>
                       <button
                         onClick={() => onRemoveShoe(shoe.id)}

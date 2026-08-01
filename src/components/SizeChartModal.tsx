@@ -106,7 +106,7 @@ export const SizeChartModal: React.FC<SizeChartModalProps> = ({ isOpen, onClose,
               border: 'none',
               cursor: 'pointer',
               color: '#64748B',
-              padding: '4px',
+              padding: '10px',
               borderRadius: '4px'
             }}
           >

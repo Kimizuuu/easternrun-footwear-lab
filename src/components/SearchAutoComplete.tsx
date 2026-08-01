@@ -218,6 +218,8 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
                       <img
                         src={shoe.image}
                         alt={shoe.name}
+                        loading="lazy"
+                        decoding="async"
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       />
                     </div>

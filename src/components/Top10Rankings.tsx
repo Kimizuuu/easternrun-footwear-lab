@@ -73,8 +73,8 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
               color: 'var(--text-secondary)',
               border: 'none',
               borderRadius: '50%',
-              width: '32px',
-              height: '32px',
+              width: '44px',
+              height: '44px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -161,7 +161,7 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
                     #{idx + 1}
                   </div>
 
-                  <img src={shoe.image} alt={shoe.name} style={{ width: '50px', height: '35px', objectFit: 'cover', borderRadius: '4px' }} />
+                  <img src={shoe.image} alt={shoe.name} loading="lazy" decoding="async" style={{ width: '50px', height: '35px', objectFit: 'cover', borderRadius: '4px' }} />
 
                   <div>
                     <strong style={{ color: 'var(--text-primary)', fontSize: '0.95rem', display: 'block' }}>

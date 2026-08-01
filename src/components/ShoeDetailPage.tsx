@@ -53,7 +53,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
       <div style={{
         background: '#F8FAFC',
         borderBottom: '1px solid #E2E8F0',
-        padding: '16px 32px'
+        padding: '16px clamp(16px, 3vw, 32px)'
       }}>
         <div style={{
           maxWidth: '1440px',
@@ -126,7 +126,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
       </div>
 
       {/* Main Expansive Content Layout */}
-      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '36px 32px', display: 'flex', flexDirection: 'column', gap: '48px' }}>
+      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: 'clamp(20px, 4vw, 36px) clamp(16px, 3vw, 32px)', display: 'flex', flexDirection: 'column', gap: '48px' }}>
         
         {/* Header Title Section */}
         <div>
@@ -167,7 +167,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
         {/* SECTION 1: STUDIO GALLERY & HIGH-DEFINITION LIGHTBOX STAGE */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '32px',
           alignItems: 'start'
         }}>
@@ -177,7 +177,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
               style={{
                 position: 'relative',
                 width: '100%',
-                height: '440px',
+                height: 'clamp(260px, 50vw, 440px)',
                 background: '#F8FAFC',
                 borderRadius: '12px',
                 border: '1px solid #E2E8F0',
@@ -189,6 +189,8 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
               <img
                 src={activePhoto}
                 alt={`${shoe.name} Angle ${selectedPhotoIndex + 1}`}
+                loading="lazy"
+                decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
 
@@ -225,8 +227,8 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
                       background: 'rgba(255,255,255,0.9)',
                       border: '1px solid #CBD5E1',
                       borderRadius: '50%',
-                      width: '40px',
-                      height: '40px',
+                      width: '44px',
+                      height: '44px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -246,8 +248,8 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
                       background: 'rgba(255,255,255,0.9)',
                       border: '1px solid #CBD5E1',
                       borderRadius: '50%',
-                      width: '40px',
-                      height: '40px',
+                      width: '44px',
+                      height: '44px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -279,7 +281,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
                       flexShrink: 0
                     }}
                   >
-                    <img src={img} alt={`Thumb ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={img} alt={`Thumb ${idx + 1}`} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </button>
                 ))}
               </div>
@@ -359,7 +361,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
           background: '#0F172A',
           color: '#FFFFFF',
           borderRadius: '12px',
-          padding: '40px',
+          padding: 'clamp(20px, 4vw, 40px)',
           display: 'flex',
           flexDirection: 'column',
           gap: '24px'
@@ -467,7 +469,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
           background: '#FFFFFF',
           border: '1px solid #E2E8F0',
           borderRadius: '12px',
-          padding: '36px',
+          padding: 'clamp(20px, 4vw, 36px)',
           display: 'flex',
           flexDirection: 'column',
           gap: '24px'
@@ -490,7 +492,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '32px'
           }}>
             {/* Verified Pros */}

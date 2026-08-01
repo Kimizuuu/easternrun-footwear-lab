@@ -30,7 +30,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
       <div style={{
         maxWidth: '1440px',
         margin: '0 auto',
-        padding: '0 32px',
+        padding: '0 clamp(16px, 3vw, 32px)',
         display: 'flex',
         flexDirection: 'column',
         gap: '48px'
@@ -38,7 +38,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
         {/* Main 4-Column Footer Links Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
           gap: '40px',
           alignItems: 'flex-start'
         }}>
@@ -70,7 +70,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
               <li>
                 <button
                   onClick={onOpenWizard}
-                  style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: 0, fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
+                  style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: '8px 0', fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
                 >
                   <ChevronRight size={14} color="#3B82F6" />
                   <span>Sector Advisor (Shoe Finder)</span>
@@ -79,7 +79,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
               <li>
                 <button
                   onClick={onOpenCompare}
-                  style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: 0, fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
+                  style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: '8px 0', fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
                 >
                   <ChevronRight size={14} color="#3B82F6" />
                   <span>Head-to-Head Compare Tray</span>
@@ -88,7 +88,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
               <li>
                 <button
                   onClick={onOpenTop10}
-                  style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: 0, fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
+                  style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: '8px 0', fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
                 >
                   <ChevronRight size={14} color="#3B82F6" />
                   <span>Benchmark Rankings (Top 10)</span>
@@ -97,7 +97,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
               <li>
                 <button
                   onClick={onOpenGuide}
-                  style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: 0, fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
+                  style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: '8px 0', fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
                 >
                   <ChevronRight size={14} color="#3B82F6" />
                   <span>Runner's Tech Guide (18 Topics)</span>

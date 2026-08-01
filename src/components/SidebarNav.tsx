@@ -61,7 +61,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             background: 'transparent',
             border: 'none',
             color: '#0F172A',
-            padding: '6px',
+            padding: '10px',
             cursor: 'pointer'
           }}
         >
@@ -310,7 +310,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
               background: 'transparent',
               border: 'none',
               color: '#0F172A',
-              padding: '6px',
+              padding: '10px',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center'
