@@ -114,29 +114,62 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             />
           </div>
 
-          {/* Clean Metric Counters Bar */}
+          {/* Detailed Lab Methodology & Database Overview Bar */}
           <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '24px',
-            marginTop: '16px',
-            paddingTop: '20px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '16px',
+            marginTop: '24px',
+            paddingTop: '24px',
             borderTop: '1px solid rgba(255, 255, 255, 0.15)',
             width: '100%'
           }}>
-            <div>
-              <strong style={{ fontSize: '1.6rem', color: '#F8FAFC', display: 'block', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>33 Models</strong>
-              <span style={{ fontSize: '0.8rem', color: '#94A3B8' }}>Fully Benchmark Tested</span>
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '10px',
+              padding: '16px',
+              backdropFilter: 'blur(8px)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                <span style={{ fontSize: '1.4rem', color: '#F8FAFC', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>43+ Models</span>
+                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(59, 130, 246, 0.2)', color: '#60A5FA', borderRadius: '4px', fontWeight: 700 }}>VERIFIED</span>
+              </div>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
+                Complete database covering Li-Ning, ANTA, Xtep, 361°, and Qiaodan marathon racers & daily workhorses.
+              </p>
             </div>
 
-            <div>
-              <strong style={{ fontSize: '1.6rem', color: '#60A5FA', display: 'block', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>89% Rebound</strong>
-              <span style={{ fontSize: '0.8rem', color: '#94A3B8' }}>Peak Supercritical Rebound</span>
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '10px',
+              padding: '16px',
+              backdropFilter: 'blur(8px)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                <span style={{ fontSize: '1.4rem', color: '#60A5FA', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>89% Rebound</span>
+                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(16, 185, 129, 0.2)', color: '#34D399', borderRadius: '4px', fontWeight: 700 }}>LAB SCORES</span>
+              </div>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
+                Measured PEBA energy return, Shore C durometer hardness, and full 3D spoon carbon plate stiffness.
+              </p>
             </div>
 
-            <div>
-              <strong style={{ fontSize: '1.6rem', color: '#F8FAFC', display: 'block', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>100% Unbiased</strong>
-              <span style={{ fontSize: '0.8rem', color: '#94A3B8' }}>Independent Lab Metrics</span>
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '10px',
+              padding: '16px',
+              backdropFilter: 'blur(8px)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                <span style={{ fontSize: '1.4rem', color: '#F8FAFC', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>100% Unbiased</span>
+                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(245, 158, 11, 0.2)', color: '#FBBF24', borderRadius: '4px', fontWeight: 700 }}>COMMUNITY</span>
+              </div>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
+                Synthesized real runner distance reviews past 600km+, traction test scores, and true-to-size fit guidance.
+              </p>
             </div>
           </div>
         </div>
