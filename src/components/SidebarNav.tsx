@@ -49,7 +49,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             Eastern<span style={{ color: 'var(--accent-primary)' }}>Run</span>
           </h1>
           <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-            Shoe Review & Lab Database
+            Shoe Review & Spec Database
           </span>
         </div>
 
@@ -72,7 +72,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       {/* Auto-Suggest Omni Search Bar */}
       <div>
         <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '4px', display: 'block' }}>
-          Search Lab Database
+          Search Database
         </span>
         <SearchAutoComplete
           shoes={shoes}

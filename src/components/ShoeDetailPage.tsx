@@ -132,7 +132,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
             <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              LAB REPORT
+              TECH SPECS & REVIEW
             </span>
             <span style={{ fontSize: '0.78rem', color: '#94A3B8' }}>•</span>
             <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 600 }}>{shoe.brand} Performance Footwear</span>

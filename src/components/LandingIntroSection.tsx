@@ -91,7 +91,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             color: '#F8FAFC',
             maxWidth: '1100px'
           }}>
-            Independent Lab Reviews for Chinese Running Shoes
+            Official Specs & Runner Reviews for Chinese Running Shoes
           </h1>
 
           <p style={{
@@ -102,7 +102,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             maxWidth: '960px',
             fontWeight: 300
           }}>
-            Unbiased lab testing and real runner reviews for Li-Ning, ANTA, Xtep, and 361° running shoes. Compare specs, energy return, and race performance.
+            Unbiased product specifications and real runner reviews for Li-Ning, ANTA, Xtep, 361°, and Qiaodan. Compare official specs, energy return metrics, and race performance.
           </p>
 
           {/* Hero Auto-Suggest Omni Search Bar */}
@@ -200,11 +200,11 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             </div>
 
             <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, margin: 0, lineHeight: 1.15, color: '#F8FAFC' }}>
-              Lab-Tested Foam & Plate Technology
+              Manufacturer Specs & Performance Data
             </h2>
 
             <p style={{ fontSize: '1rem', color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
-              We test midsole energy return, carbon plate stiffness, and outsole grip in controlled lab conditions. Every shoe gets the same rigorous benchmarks so you can compare fairly.
+              We compile official manufacturer specifications, technical disclosures, and real runner feedback into one database so you can compare every shoe fairly.
             </p>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '6px' }}>
@@ -252,7 +252,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           <div style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', height: '340px', boxShadow: '0 10px 20px rgba(0,0,0,0.3)' }}>
             <img
               src="/images/landing/landing_shoe_stride.jpg"
-              alt="EasternRun Lab Shoe Stride Measurement"
+              alt="EasternRun Shoe Stride Measurement"
               loading="lazy"
               decoding="async"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -265,8 +265,8 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               background: 'linear-gradient(to top, rgba(15,23,42,0.95), transparent)',
               color: '#FFFFFF'
             }}>
-              <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#94A3B8', letterSpacing: '0.05em' }}>LAB TESTING</span>
-              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.95rem', fontWeight: 700 }}>Foam rebound and outsole grip testing</h4>
+              <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#94A3B8', letterSpacing: '0.05em' }}>SPECIFICATION DATABASE</span>
+              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.95rem', fontWeight: 700 }}>Official foam specs, plate stiffness, and rubber grip data</h4>
             </div>
           </div>
         </div>
@@ -321,7 +321,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             </h2>
 
             <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.65, margin: 0 }}>
-              Every shoe is reviewed by real runners logging serious distance. We combine lab data with on-road feedback for the full picture.
+              Every shoe is evaluated using official manufacturer technical data and real-world distance feedback from runners for a complete, transparent picture.
             </p>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '6px' }}>

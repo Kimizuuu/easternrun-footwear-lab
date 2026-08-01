@@ -48,10 +48,10 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
               Eastern<span style={{ color: '#3B82F6' }}>Run</span>
             </h3>
             <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              Footwear Intelligence & Lab Database
+              Footwear Review & Specification Database
             </span>
             <p style={{ fontSize: '0.88rem', color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>
-              EasternRun bridges mechanical laboratory testing with authentic community wear-tester feedback across Li-Ning, ANTA, and 361° footwear models. Providing objective, data-driven benchmarks for runners worldwide.
+              EasternRun aggregates official manufacturer specifications, technical disclosures, and authentic community wear-tester feedback across Li-Ning, ANTA, Xtep, 361°, and Qiaodan footwear models. Providing objective, data-driven benchmarks for runners worldwide.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '4px' }}>
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22C55E' }} />

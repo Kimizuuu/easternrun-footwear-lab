@@ -203,7 +203,7 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
               gap: '6px'
             }}
           >
-            <span>Lab Review</span>
+            <span>View Specs</span>
             <ArrowRight size={14} />
           </button>
         </div>
