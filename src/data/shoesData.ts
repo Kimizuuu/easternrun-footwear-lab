@@ -2440,20 +2440,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Difficult to slip on due to integrated Atomknit bootie upper'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_nk_alpha1',
-        userName: 'Marcus V.',
-        rating: 5,
-        date: '2024-05-12',
-        title: "PR'd by 4 minutes at Chicago",
-        comment: 'The transition from heel to toe is noticeably smoother than the Alphafly 2. The Air Zoom pods feel explosive when locked into marathon pace.',
-        pros: ['Explosive propulsion', 'Lightweight upper', 'Leg preservation'],
-        cons: ['Tight collar entry'],
-        verifiedDistanceKm: 240,
-        helpfulCount: 42
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'nike_vaporfly3',
@@ -2518,20 +2505,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Outsole rubber wears faster on coarse asphalt'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_nk_vap1',
-        userName: 'David K.',
-        rating: 5,
-        date: '2024-03-20',
-        title: 'Featherweight speed machine',
-        comment: 'Still the benchmark for 10k and Half Marathon races. The weight reduction makes leg turnover feel effortless.',
-        pros: ['Featherweight', 'Aggressive rocker', 'Breathable upper'],
-        cons: ['Narrow heel stability'],
-        verifiedDistanceKm: 180,
-        helpfulCount: 31
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'nike_zoomfly6',
@@ -2596,20 +2570,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Higher stack height requires attention on sharp turns'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_nk_zf6_1',
-        userName: 'Brian T.',
-        rating: 5,
-        date: '2024-11-04',
-        title: 'Huge upgrade over Zoom Fly 5',
-        comment: 'Finally Nike fixed the weight! The Zoom Fly 6 feels snappy, cushioned, and perfect for long tempo runs.',
-        pros: ['Significantly lighter', 'ZoomX bounce', 'Durable outsole'],
-        cons: ['Stiff carbon plate'],
-        verifiedDistanceKm: 120,
-        helpfulCount: 22
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'nike_pegasus41',
@@ -2674,20 +2635,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Weight is average at 283g'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_nk_peg41_1',
-        userName: 'Jason R.',
-        rating: 5,
-        date: '2024-06-18',
-        title: 'ReactX makes a huge difference',
-        comment: 'I have owned Pegasus 38, 39, and 40. The Pegasus 41 is by far the softest and most bouncy version yet.',
-        pros: ['Bouncier ReactX foam', 'Classic durability', 'Great fit'],
-        cons: ['Traditional 10mm drop'],
-        verifiedDistanceKm: 310,
-        helpfulCount: 28
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'adidas_adiospro4',
@@ -2752,20 +2700,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Aggressive rocker takes a run or two to get used to'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_adi_ap4_1',
-        userName: 'Stefan M.',
-        rating: 5,
-        date: '2024-10-15',
-        title: 'Best marathon shoe grip in the rain',
-        comment: 'Ran Berlin in wet conditions and the Continental rubber held like glue. The ENERGYRODS keep your feet feeling fresh at kilometer 35.',
-        pros: ['Incredible wet grip', 'Lightstrike Pro bounce', 'Lightweight'],
-        cons: ['Takes lacing adjustment'],
-        verifiedDistanceKm: 190,
-        helpfulCount: 37
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'adidas_evosl',
@@ -2830,20 +2765,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Soft foam may compress slightly faster for heavy runners (>90kg)'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_adi_evo_1',
-        userName: 'Alex P.',
-        rating: 5,
-        date: '2024-11-20',
-        title: 'Shoe of the year value!',
-        comment: 'Full Lightstrike Pro without a plate is a dream. It feels bouncy, smooth, and handles everything from 5k pace to long 20km weekend runs.',
-        pros: ['Unbeatable $150 value', 'Full Lightstrike Pro', 'Natural flex'],
-        cons: ['Lacks carbon plate pop'],
-        verifiedDistanceKm: 150,
-        helpfulCount: 45
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'adidas_boston13',
@@ -2907,20 +2829,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Slightly heavier than pure race-day super-shoes'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_adi_bos13_1',
-        userName: 'Daniel H.',
-        rating: 5,
-        date: '2024-09-08',
-        title: 'The ultimate 20km long run trainer',
-        comment: 'Boston 13 saves your race shoes for race day while giving you 90% of the speed and propulsion in training.',
-        pros: ['Extreme durability', 'Continental rubber grip', 'Great long run shoe'],
-        cons: ['Firm initial break-in'],
-        verifiedDistanceKm: 410,
-        helpfulCount: 26
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'saucony_endorphinelite2',
@@ -2983,20 +2892,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Firm ride for heel strikers; rewards forefoot runners'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_sauc_ee2_1',
-        userName: 'Chris B.',
-        rating: 5,
-        date: '2024-10-02',
-        title: 'Explosive forefoot bounce',
-        comment: 'If you land midfoot or forefoot, the Endorphin Elite 2 is unbeatable. The PWRRUN HG foam has insane pop.',
-        pros: ['Max energy return', 'Lightweight', 'Aggressive rocker'],
-        cons: ['Pricey'],
-        verifiedDistanceKm: 140,
-        helpfulCount: 19
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'saucony_endorphinpro4',
@@ -3059,20 +2955,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Outsole pattern holds tiny pebbles on gravel paths'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_sauc_ep4_1',
-        userName: 'Tom S.',
-        rating: 5,
-        date: '2024-04-14',
-        title: 'Smooth as butter at marathon pace',
-        comment: 'The dual foam layer makes this shoe much more comfortable over 30km+ than harsh single-foam super shoes.',
-        pros: ['Smooth SPEEDROLL ride', 'Dual foam comfort', 'Great price'],
-        cons: ['Collects small stones'],
-        verifiedDistanceKm: 220,
-        helpfulCount: 24
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'saucony_endorphinspeed4',
@@ -3135,20 +3018,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Outsole grip is good, though Continental is grippier on wet tile'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_sauc_es4_1',
-        userName: 'Mark D.',
-        rating: 5,
-        date: '2024-05-30',
-        title: 'If I could only own one shoe, this is it',
-        comment: 'Endorphin Speed 4 does everything right. Warmups, 5k races, tempo runs, and marathon distance training.',
-        pros: ['Ultimate versatility', 'Nylon plate snap', 'Bouncy PWRRUN PB'],
-        cons: ['Snug midfoot fit'],
-        verifiedDistanceKm: 380,
-        helpfulCount: 52
-      }
-    ]
+    userReviews: []
   },
   {
     id: 'asics_gelkayano31',
@@ -3211,20 +3081,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Not designed for fast interval workouts'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: [
-      {
-        id: 'rev_asics_kay31_1',
-        userName: 'Elena G.',
-        rating: 5,
-        date: '2024-07-22',
-        title: 'Saved my knees and feet',
-        comment: 'As a flat-footed runner who overpronates, the Kayano 31 provides soft cushioning while keeping my knees aligned during 15km recovery runs.',
-        pros: ['Adaptive stability', 'Plush PureGEL', 'Durable ASICSGRIP'],
-        cons: ['Slightly heavy'],
-        verifiedDistanceKm: 290,
-        helpfulCount: 33
-      }
-    ]
+    userReviews: []
   }
 
 ];
