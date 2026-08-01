@@ -2383,7 +2383,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Nike',
     category: 'Marathon Super-Shoe',
     dominantSector: 'Marathon Race Day',
-    image: '/images/western/alphafly_3/1.avif',
+    image: '/images/western/alphafly_3/8.avif',
     galleryImages: [
       '/images/western/alphafly_3/1.avif',
       '/images/western/alphafly_3/2.avif',
@@ -2461,7 +2461,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Nike',
     category: 'Marathon Super-Shoe',
     dominantSector: 'Marathon Race Day',
-    image: '/images/western/vaporfly_4/1.avif',
+    image: '/images/western/vaporfly_4/8.avif',
     galleryImages: [
       '/images/western/vaporfly_4/1.avif',
       '/images/western/vaporfly_4/2.avif',
@@ -2539,7 +2539,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Nike',
     category: 'Tempo & Race',
     dominantSector: 'Tempo & Speed Workouts',
-    image: '/images/western/zoomfly_6/1.avif',
+    image: '/images/western/zoomfly_6/8.avif',
     galleryImages: [
       '/images/western/zoomfly_6/1.avif',
       '/images/western/zoomfly_6/2.avif',
@@ -2617,7 +2617,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Nike',
     category: 'Daily Trainer',
     dominantSector: 'Daily Mileage & Training',
-    image: '/images/western/pegasus_42/1.avif',
+    image: '/images/western/pegasus_42/8.avif',
     galleryImages: [
       '/images/western/pegasus_42/1.avif',
       '/images/western/pegasus_42/2.avif',
