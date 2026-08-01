@@ -11,6 +11,7 @@ import { AddReviewModal } from './components/AddReviewModal';
 import { LegalModal } from './components/LegalModal';
 import { RunnersGuideModal } from './components/RunnersGuideModal';
 import { SiteFooter } from './components/SiteFooter';
+import { Analytics } from '@vercel/analytics/react';
 
 export function App() {
   const [shoes, setShoes] = useState<Shoe[]>(INITIAL_SHOES_DATA);
@@ -173,6 +174,8 @@ export function App() {
         isOpen={isGuideOpen}
         onClose={() => setIsGuideOpen(false)}
       />
+
+      <Analytics />
     </div>
   );
 }
