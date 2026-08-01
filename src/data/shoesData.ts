@@ -2400,7 +2400,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Gold Standard Marathon Super-Shoe with Dual Air Zoom Pods',
     description: 'The Nike Alphafly 3 is the pinnacle of marathon racing engineering. Featuring a continuous ZoomX foam midsole, dual forefoot Air Zoom pods, and a full-length Flyplate, it delivers unmatched propulsion and energy return for sub-3 marathoners.',
-    overallRating: 96,
+    overallRating: 93,
     useCaseValues: {
       walkingScore: 55,
       walkingAnalysis: 'High stack and aggressive toe spring make it unstable for slow walking.',
@@ -2478,7 +2478,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Ultra-Lightweight 198g Marathon Speed & 10k/Half Marathon Benchmark',
     description: 'The Nike Vaporfly 3 sets the global standard for lightweight racing performance. Weighing under 200g with 40mm of sculpted ZoomX foam and a full-length Flyplate, it offers snappy, featherweight speed from 5k to 42.2km.',
-    overallRating: 95,
+    overallRating: 92,
     useCaseValues: {
       walkingScore: 50,
       walkingAnalysis: 'Narrow heel base makes slow walking feel wobbly.',
@@ -2556,7 +2556,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Versatile Plated Tempo Trainer with High-Stack ZoomX Cushioning',
     description: 'The Nike Zoom Fly 6 is redesigned from the ground up to be significantly lighter than previous iterations. Featuring ZoomX foam encased in a durable carrier with a full-length Flyplate, it is the perfect training companion to the Vaporfly and Alphafly.',
-    overallRating: 90,
+    overallRating: 86,
     useCaseValues: {
       walkingScore: 70,
       walkingAnalysis: 'Comfortable cushion, though slightly stiff forefoot plate.',
@@ -2634,7 +2634,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Ultimate Durable Daily Workhorse with Upgraded ReactX Foam',
     description: "The Nike Pegasus 41 introduces ReactX foam, offering 13% more energy return and a reduced carbon footprint. Paired with dual forefoot and heel Air Zoom units, it remains the world's most trusted daily running workhorse.",
-    overallRating: 88,
+    overallRating: 84,
     useCaseValues: {
       walkingScore: 92,
       walkingAnalysis: 'Exceptional all-day walking comfort and classic neutral support.',
@@ -2712,7 +2712,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Elite Marathon Benchmark with Resilient Lightstrike Pro & ENERGYRODS',
     description: 'The Adidas Adizero Adios Pro 4 is built for podium performances. Redesigned with a lighter forefoot rocker point, dual-layer Lightstrike Pro foam, carbon ENERGYRODS 2.0, and Continental outsole rubber, it is trusted by major marathon winners worldwide.',
-    overallRating: 96,
+    overallRating: 93,
     useCaseValues: {
       walkingScore: 52,
       walkingAnalysis: 'Aggressive rocker point is engineered purely for running momentum.',
@@ -2790,7 +2790,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Non-Plated Super-Trainer King with Pure Lightstrike Pro Bounce',
     description: 'The Adidas Adizero EVO SL brings the pure, uninhibited bounce of full Lightstrike Pro super-foam to an affordable $150 non-plated trainer. Inspired by the record-breaking EVO Pro 1, it delivers effortless bounce and natural foot movement for daily workouts.',
-    overallRating: 94,
+    overallRating: 88,
     useCaseValues: {
       walkingScore: 85,
       walkingAnalysis: 'Smooth non-plated feel makes it comfortable for casual wear and warmups.',
@@ -2867,7 +2867,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Benchmark Plated Workout Workhorse for Long Distance Training',
     description: 'The Adidas Adizero Boston 13 combines a top layer of Lightstrike Pro super-foam with a protective Lightstrike 2.0 base and glass-fiber ENERGYRODS. Built to handle 800+ km of grueling marathon training blocks.',
-    overallRating: 91,
+    overallRating: 87,
     useCaseValues: {
       walkingScore: 78,
       walkingAnalysis: 'Firm and stable underfoot, suitable for walking.',
@@ -2943,7 +2943,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Aggressive High-Toe-Spring Super-Shoe for Fast Forefoot Runners',
     description: "The Saucony Endorphin Elite 2 features Saucony's most responsive PWRRUN HG super-foam paired with a slotted full-length carbon plate. Designed for aggressive forefoot runners seeking maximum turnover and toe-off spring.",
-    overallRating: 95,
+    overallRating: 91,
     useCaseValues: {
       walkingScore: 48,
       walkingAnalysis: 'Aggressive forefoot cutout and rocker feel unnatural for walking.',
@@ -3019,7 +3019,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Smooth, Accessible Super-Shoe with SPEEDROLL Geometry',
     description: 'The Saucony Endorphin Pro 4 features a dual-foam setup combining bouncy PWRRUN HG top foam with durable PWRRUN PB base foam and a full carbon plate. It provides a smooth, accessible super-shoe experience suitable for all foot strike patterns.',
-    overallRating: 93,
+    overallRating: 90,
     useCaseValues: {
       walkingScore: 65,
       walkingAnalysis: 'Fairly comfortable, though carbon plate remains stiff.',
@@ -3095,7 +3095,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Gold Standard Nylon-Plated Super-Trainer for Daily Speedwork',
     description: 'The Saucony Endorphin Speed 4 is widely regarded as one of the best running shoes ever made. Featuring full PWRRUN PB super-foam and a flexible re-engineered winged nylon plate, it seamlessly handles daily mileage, tempo workouts, and races.',
-    overallRating: 94,
+    overallRating: 89,
     useCaseValues: {
       walkingScore: 86,
       walkingAnalysis: 'Flexible nylon plate makes it surprisingly comfortable for casual wear.',
@@ -3171,7 +3171,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Global Benchmark Max-Cushion Stability Daily Trainer',
     description: 'The ASICS GEL-Kayano 31 is the gold standard for adaptive stability and max cushioning. Featuring FF BLAST™ PLUS ECO foam, rearfoot PureGEL™, and the 4D Guidance System™, it gently guides overpronating runners without harsh medial posts.',
-    overallRating: 92,
+    overallRating: 86,
     useCaseValues: {
       walkingScore: 98,
       walkingAnalysis: 'Best-in-class walking and all-day standing comfort for severe overpronators or neutral runners.',
