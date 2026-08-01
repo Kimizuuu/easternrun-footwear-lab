@@ -101,13 +101,16 @@ export const SizeChartModal: React.FC<SizeChartModalProps> = ({ isOpen, onClose,
           </div>
           <button
             onClick={onClose}
+            aria-label="Close size chart"
             style={{
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',
               color: '#64748B',
               padding: '10px',
-              borderRadius: '4px'
+              borderRadius: '4px',
+              minHeight: '44px',
+              minWidth: '44px'
             }}
           >
             <X size={18} />

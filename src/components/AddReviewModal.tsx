@@ -84,7 +84,7 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
           background: '#FFF',
           borderRadius: 'var(--radius-lg)',
           overflow: 'hidden',
-          padding: '28px',
+          padding: 'clamp(16px, 4vw, 28px)',
           boxShadow: 'var(--shadow-lg)',
           border: '1px solid var(--border-subtle)'
         }}
@@ -101,12 +101,15 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
 
           <button
             onClick={onClose}
+            aria-label="Close review modal"
             style={{
               background: '#F1F5F9',
               color: 'var(--text-secondary)',
               border: 'none',
               borderRadius: '50%',
               padding: '10px',
+              minHeight: '44px',
+              minWidth: '44px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -169,7 +172,8 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
                   type="button"
                   key={star}
                   onClick={() => setRating(star)}
-                  style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '10px' }}
+                  aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}
+                  style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '10px', minHeight: '44px', minWidth: '44px' }}
                 >
                   <Star
                     size={22}
@@ -190,7 +194,7 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
               min="0"
               max="10000"
               value={distanceKm}
-              onChange={(e) => setDistanceKm(parseInt(e.target.value) || 0)}
+              onChange={(e) => setDistanceKm(e.target.value === '' ? 0 : parseInt(e.target.value) || 0)}
               style={{
                 width: '100%',
                 padding: '9px',

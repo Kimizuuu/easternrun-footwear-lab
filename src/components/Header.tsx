@@ -82,8 +82,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div style={{
             position: 'relative',
             flex: '1',
-            maxWidth: '380px',
-            minWidth: '220px'
+            maxWidth: '380px'
           }}>
             <Search 
               size={16} 
@@ -132,6 +131,7 @@ export const Header: React.FC<HeaderProps> = ({
                 border: '1px solid #BFDBFE',
                 borderRadius: 'var(--radius-full)',
                 padding: '7px 14px',
+                minHeight: '44px',
                 fontSize: '0.8rem',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -151,6 +151,7 @@ export const Header: React.FC<HeaderProps> = ({
                 border: '1px solid var(--border-subtle)',
                 borderRadius: 'var(--radius-full)',
                 padding: '7px 14px',
+                minHeight: '44px',
                 fontSize: '0.8rem',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -171,6 +172,7 @@ export const Header: React.FC<HeaderProps> = ({
                 border: compareCount > 0 ? 'none' : '1px solid var(--border-subtle)',
                 borderRadius: 'var(--radius-full)',
                 padding: '7px 14px',
+                minHeight: '44px',
                 fontSize: '0.8rem',
                 fontWeight: 700,
                 cursor: 'pointer',

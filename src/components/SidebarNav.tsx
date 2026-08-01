@@ -62,6 +62,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             border: 'none',
             color: '#0F172A',
             padding: '10px',
+            minHeight: '44px',
             cursor: 'pointer'
           }}
         >
@@ -97,7 +98,8 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
                 }}
                 style={{
                   flex: '1 1 44%',
-                  padding: '6px 0',
+                  padding: '12px 0',
+                  minHeight: '44px',
                   borderRadius: 'var(--radius-sm)',
                   border: selectedBrand === b ? '1px solid #0F172A' : '1px solid var(--border-subtle)',
                   background: selectedBrand === b ? '#0F172A' : '#FFFFFF',
@@ -128,6 +130,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             }}
             style={{
               padding: '8px 12px',
+              minHeight: '44px',
               borderRadius: 'var(--radius-sm)',
               background: '#F8FAFC',
               color: '#0F172A',
@@ -150,6 +153,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
           }}
           style={{
             padding: '8px 12px',
+            minHeight: '44px',
             borderRadius: 'var(--radius-sm)',
             background: 'transparent',
             color: 'var(--text-primary)',
@@ -173,6 +177,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             alignItems: 'center',
             justifyContent: 'space-between',
             padding: '8px 12px',
+            minHeight: '44px',
             borderRadius: 'var(--radius-sm)',
             background: 'transparent',
             color: 'var(--text-primary)',
@@ -205,6 +210,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
           }}
           style={{
             padding: '8px 12px',
+            minHeight: '44px',
             borderRadius: 'var(--radius-sm)',
             background: 'transparent',
             color: 'var(--text-primary)',
@@ -234,6 +240,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             }}
             style={{
               padding: '6px 12px',
+              minHeight: '44px',
               borderRadius: 'var(--radius-sm)',
               background: selectedCategory === cat ? '#F3F4F6' : 'transparent',
               color: selectedCategory === cat ? '#111827' : 'var(--text-secondary)',
@@ -264,6 +271,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
               alignItems: 'center',
               justifyContent: 'space-between',
               padding: '6px 10px',
+              minHeight: '44px',
               borderRadius: 'var(--radius-sm)',
               cursor: 'pointer',
               fontSize: '0.8rem',
@@ -311,6 +319,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
               border: 'none',
               color: '#0F172A',
               padding: '10px',
+              minHeight: '44px',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center'
@@ -331,6 +340,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             border: '1px solid #CBD5E1',
             borderRadius: '6px',
             padding: '6px 10px',
+            minHeight: '44px',
             fontSize: '0.78rem',
             fontWeight: 700,
             color: '#0F172A',
@@ -381,7 +391,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       {/* Desktop Sticky Left Sidebar (>= 768px) */}
       <aside className="desktop-sidebar" style={{
         width: '260px',
-        minWidth: '260px',
+        minWidth: 'min(80vw, 260px)',
         height: '100vh',
         position: 'sticky',
         top: 0,

@@ -84,7 +84,7 @@ export const ShoeFinderWizard: React.FC<ShoeFinderWizardProps> = ({ shoes, onClo
             <label style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', display: 'block', marginBottom: '8px' }}>
               1. What is your primary intended usage?
             </label>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '10px' }}>
               {[
                 { id: 'race', label: ' Marathon Race Day' },
                 { id: 'speed', label: ' Speed & Tempo Workouts' },

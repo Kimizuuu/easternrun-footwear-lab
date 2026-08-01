@@ -162,7 +162,7 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
         {/* Grid of Shoe Cards (280px min-width) */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
           gap: '28px'
         }}>
           {sortedShoes.map((shoe) => (

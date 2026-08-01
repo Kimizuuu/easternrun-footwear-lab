@@ -102,21 +102,24 @@ export const ImageZoomModal: React.FC<ImageZoomModalProps> = ({
           <button
             onClick={handleZoomIn}
             title="Zoom In"
-            style={{ background: 'transparent', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '8px', borderRadius: '4px' }}
+            aria-label="Zoom in"
+            style={{ background: 'transparent', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '8px', borderRadius: '4px', minHeight: '44px', minWidth: '44px' }}
           >
             <ZoomIn size={18} />
           </button>
           <button
             onClick={handleZoomOut}
             title="Zoom Out"
-            style={{ background: 'transparent', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '8px', borderRadius: '4px' }}
+            aria-label="Zoom out"
+            style={{ background: 'transparent', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '8px', borderRadius: '4px', minHeight: '44px', minWidth: '44px' }}
           >
             <ZoomOut size={18} />
           </button>
           <button
             onClick={handleResetZoom}
             title="Reset Zoom"
-            style={{ background: 'transparent', border: 'none', color: '#94A3B8', cursor: 'pointer', padding: '8px', borderRadius: '4px' }}
+            aria-label="Rotate image"
+            style={{ background: 'transparent', border: 'none', color: '#94A3B8', cursor: 'pointer', padding: '8px', borderRadius: '4px', minHeight: '44px', minWidth: '44px' }}
           >
             <RotateCcw size={16} />
           </button>
@@ -124,7 +127,8 @@ export const ImageZoomModal: React.FC<ImageZoomModalProps> = ({
           <button
             onClick={onClose}
             title="Close Zoom Lightbox (Esc)"
-            style={{ background: '#DC2626', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '4px 8px', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', fontWeight: 700 }}
+            aria-label="Close zoom"
+            style={{ background: '#DC2626', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '4px 8px', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', fontWeight: 700, minHeight: '44px', minWidth: '44px' }}
           >
             <X size={16} /> Close
           </button>

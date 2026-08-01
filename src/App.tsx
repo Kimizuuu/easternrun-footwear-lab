@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { INITIAL_SHOES_DATA } from './data/shoesData';
 import type { Shoe, UserReview } from './types/shoe';
 import { SidebarNav } from './components/SidebarNav';
@@ -12,6 +12,28 @@ import { LegalModal } from './components/LegalModal';
 import { RunnersGuideModal } from './components/RunnersGuideModal';
 import { SiteFooter } from './components/SiteFooter';
 import { Analytics } from '@vercel/analytics/react';
+
+class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
+  constructor(props: {children: React.ReactNode}) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', fontFamily: 'Inter, sans-serif', background: '#0F172A', color: '#F8FAFC', padding: '24px', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '2rem', marginBottom: '16px' }}>Something went wrong</h1>
+          <p style={{ color: '#94A3B8', marginBottom: '24px' }}>An unexpected error occurred. Please refresh the page.</p>
+          <button onClick={() => window.location.reload()} style={{ padding: '12px 24px', background: '#3B82F6', color: '#FFF', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1rem' }}>Refresh Page</button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 export function App() {
   const [shoes, setShoes] = useState<Shoe[]>(INITIAL_SHOES_DATA);
@@ -73,6 +95,7 @@ export function App() {
   };
 
   return (
+    <ErrorBoundary>
     <div className="app-root-container" style={{ display: 'flex', minHeight: '100vh', background: '#FFFFFF' }}>
       {/* Fixed Left Sidebar Nav on Desktop / Sticky Mobile Bar on Phone */}
       <SidebarNav
@@ -177,6 +200,7 @@ export function App() {
 
       <Analytics />
     </div>
+    </ErrorBoundary>
   );
 }
 

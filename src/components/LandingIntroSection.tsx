@@ -40,7 +40,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
         background: '#0F172A',
         color: '#FFFFFF',
         overflow: 'hidden',
-        padding: '48px 24px'
+        padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 24px)'
       }}>
         {/* Background Sunset Photography with Overlay Gradient */}
         <img
@@ -48,6 +48,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           alt="EasternRun Marathon Performance Lab"
           loading="lazy"
           decoding="async"
+          onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
           style={{
             position: 'absolute',
             inset: 0,
@@ -117,7 +118,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           {/* Website Purpose & Overview Cards */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
             gap: '16px',
             marginTop: '24px',
             paddingTop: '24px',
@@ -188,7 +189,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           maxWidth: '1280px',
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: '40px',
           alignItems: 'center'
         }}>
@@ -255,6 +256,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               alt="EasternRun Shoe Stride Measurement"
               loading="lazy"
               decoding="async"
+              onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
             <div style={{
@@ -283,7 +285,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           maxWidth: '1280px',
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: '40px',
           alignItems: 'center'
         }}>
@@ -294,6 +296,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               alt="Track & Marathon Road Wear Testing"
               loading="lazy"
               decoding="async"
+              onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
             <div style={{

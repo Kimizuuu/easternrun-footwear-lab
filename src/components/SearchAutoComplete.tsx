@@ -111,6 +111,7 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
         <input
           ref={inputRef}
           type="text"
+          aria-label="Search shoes by name, brand, or category"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => {
@@ -220,6 +221,7 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
                         alt={shoe.name}
                         loading="lazy"
                         decoding="async"
+                        onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       />
                     </div>

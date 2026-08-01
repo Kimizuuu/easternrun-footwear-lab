@@ -48,6 +48,7 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
           alt={shoe.name}
           loading="lazy"
           decoding="async"
+          onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
           style={{
             width: '100%',
             height: '100%',
@@ -106,6 +107,7 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
             border: '1px solid #CBD5E1',
             borderRadius: '4px',
             padding: '8px 12px',
+            minHeight: '44px',
             fontSize: '0.75rem',
             fontWeight: 700,
             cursor: 'pointer',
@@ -195,6 +197,7 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
               border: 'none',
               borderRadius: '4px',
               padding: '10px 16px',
+              minHeight: '44px',
               fontSize: '0.8rem',
               fontWeight: 700,
               cursor: 'pointer',

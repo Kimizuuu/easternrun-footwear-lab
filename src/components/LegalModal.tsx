@@ -50,13 +50,16 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
           </div>
           <button
             onClick={onClose}
+            aria-label="Close legal information"
             style={{
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',
               color: '#64748B',
               padding: '10px',
-              borderRadius: '4px'
+              borderRadius: '4px',
+              minHeight: '44px',
+              minWidth: '44px'
             }}
           >
             <X size={18} />

@@ -75,7 +75,8 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
-              gap: '6px'
+              gap: '6px',
+              minHeight: '44px'
             }}
           >
             <ArrowLeft size={18} /> Back
@@ -95,7 +96,8 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '6px'
+                gap: '6px',
+                minHeight: '44px'
               }}
             >
               <Ruler size={16} />
@@ -115,7 +117,8 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '6px'
+                gap: '6px',
+                minHeight: '44px'
               }}
             >
               <Scale size={16} />
@@ -167,7 +170,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
         {/* SECTION 1: STUDIO GALLERY & HIGH-DEFINITION LIGHTBOX STAGE */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: '32px',
           alignItems: 'start'
         }}>
@@ -191,6 +194,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
                 alt={`${shoe.name} Angle ${selectedPhotoIndex + 1}`}
                 loading="lazy"
                 decoding="async"
+                onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
 
@@ -281,7 +285,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
                       flexShrink: 0
                     }}
                   >
-                    <img src={img} alt={`Thumb ${idx + 1}`} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={img} alt={`Thumb ${idx + 1}`} loading="lazy" decoding="async" onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </button>
                 ))}
               </div>
@@ -302,7 +306,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
               Key Specs
             </h3>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.9rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '16px', fontSize: '0.9rem' }}>
               <div>
                 <span style={{ fontSize: '0.75rem', color: '#64748B', textTransform: 'uppercase', fontWeight: 700, display: 'block' }}>MSRP PRICE</span>
                 <strong style={{ fontSize: '1.2rem', color: '#0F172A', fontFamily: 'var(--font-mono)' }}>${shoe.msrpUsd}</strong>
@@ -379,7 +383,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '24px',
             paddingTop: '16px',
             borderTop: '1px solid #1E293B'
@@ -415,7 +419,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '20px'
           }}>
             {/* Sector 1: Walking */}
@@ -492,7 +496,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
             gap: '32px'
           }}>
             {/* Verified Pros */}
@@ -539,6 +543,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
 
             <button
               onClick={() => onOpenAddReview(shoe)}
+              aria-label="Add a review"
               style={{
                 background: '#0F172A',
                 color: '#FFFFFF',

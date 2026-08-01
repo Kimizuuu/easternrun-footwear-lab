@@ -30,7 +30,7 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
         justifyContent: 'center',
         padding: '20px'
       }}>
-        <div style={{ background: '#FFF', padding: '32px', borderRadius: 'var(--radius-lg)', textAlign: 'center', maxWidth: '400px' }}>
+        <div style={{ background: '#FFF', padding: 'clamp(16px, 4vw, 32px)', borderRadius: 'var(--radius-lg)', textAlign: 'center', maxWidth: '400px' }}>
           <h3 style={{ margin: '0 0 10px 0', fontSize: '1.2rem', fontWeight: 800 }}>No Shoes in Compare Tray</h3>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '20px' }}>
             Tap "+ Add to Compare" on shoe cards to compare up to 3 shoes side by side.
@@ -106,7 +106,7 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
         </div>
 
         {/* Matrix Content */}
-        <div style={{ overflowY: 'auto', overflowX: 'auto', flex: 1, padding: '24px' }}>
+        <div style={{ overflowY: 'auto', overflowX: 'auto', flex: 1, padding: 'clamp(12px, 3vw, 24px)' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
             <thead>
               <tr>
@@ -120,7 +120,7 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
                       <strong style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>{shoe.name}</strong>
                       <button
                         onClick={() => onRemoveShoe(shoe.id)}
-                        style={{ background: '#FEE2E2', color: '#DC2626', border: 'none', borderRadius: '4px', padding: '3px 8px', fontSize: '0.72rem', fontWeight: 700, cursor: 'pointer' }}
+                        style={{ background: '#FEE2E2', color: '#DC2626', border: 'none', borderRadius: '4px', padding: '8px 12px', minHeight: '44px', fontSize: '0.72rem', fontWeight: 700, cursor: 'pointer' }}
                       >
                         Remove
                       </button>

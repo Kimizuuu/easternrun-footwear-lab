@@ -161,7 +161,7 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
                     #{idx + 1}
                   </div>
 
-                  <img src={shoe.image} alt={shoe.name} loading="lazy" decoding="async" style={{ width: '50px', height: '35px', objectFit: 'cover', borderRadius: '4px' }} />
+                  <img src={shoe.image} alt={shoe.name} loading="lazy" decoding="async" onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }} style={{ width: '50px', height: '35px', objectFit: 'cover', borderRadius: '4px' }} />
 
                   <div>
                     <strong style={{ color: 'var(--text-primary)', fontSize: '0.95rem', display: 'block' }}>
