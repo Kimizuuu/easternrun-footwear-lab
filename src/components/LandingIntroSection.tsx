@@ -114,7 +114,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             />
           </div>
 
-          {/* Detailed Lab Methodology & Database Overview Bar */}
+          {/* Website Purpose & Overview Cards */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
@@ -132,11 +132,11 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               backdropFilter: 'blur(8px)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                <span style={{ fontSize: '1.4rem', color: '#F8FAFC', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>43+ Models</span>
-                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(59, 130, 246, 0.2)', color: '#60A5FA', borderRadius: '4px', fontWeight: 700 }}>VERIFIED</span>
+                <span style={{ fontSize: '1.2rem', color: '#F8FAFC', fontWeight: 900, letterSpacing: '-0.2px' }}>OUR PURPOSE</span>
+                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(59, 130, 246, 0.2)', color: '#60A5FA', borderRadius: '4px', fontWeight: 700 }}>MISSION</span>
               </div>
               <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
-                Complete database covering Li-Ning, ANTA, Xtep, 361°, and Qiaodan marathon racers & daily workhorses.
+                An independent, objective platform built to help runners research, evaluate, and choose performance footwear without marketing bias.
               </p>
             </div>
 
@@ -148,11 +148,11 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               backdropFilter: 'blur(8px)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                <span style={{ fontSize: '1.4rem', color: '#60A5FA', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>89% Rebound</span>
-                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(16, 185, 129, 0.2)', color: '#34D399', borderRadius: '4px', fontWeight: 700 }}>LAB SCORES</span>
+                <span style={{ fontSize: '1.2rem', color: '#60A5FA', fontWeight: 900, letterSpacing: '-0.2px' }}>WHAT WE DO</span>
+                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(16, 185, 129, 0.2)', color: '#34D399', borderRadius: '4px', fontWeight: 700 }}>TOOLS</span>
               </div>
               <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
-                Measured PEBA energy return, Shore C durometer hardness, and full 3D spoon carbon plate stiffness.
+                We analyze technical specs, pricing, and performance data to provide side-by-side comparison trays, rankings, and shoe finder wizards.
               </p>
             </div>
 
@@ -164,11 +164,11 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               backdropFilter: 'blur(8px)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                <span style={{ fontSize: '1.4rem', color: '#F8FAFC', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>100% Unbiased</span>
-                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(245, 158, 11, 0.2)', color: '#FBBF24', borderRadius: '4px', fontWeight: 700 }}>COMMUNITY</span>
+                <span style={{ fontSize: '1.2rem', color: '#F8FAFC', fontWeight: 900, letterSpacing: '-0.2px' }}>INDEPENDENT</span>
+                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(245, 158, 11, 0.2)', color: '#FBBF24', borderRadius: '4px', fontWeight: 700 }}>UNBIASED</span>
               </div>
               <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
-                Synthesized real runner distance reviews past 600km+, traction test scores, and true-to-size fit guidance.
+                Zero brand sponsorship control. Pure transparent metrics, open community reviews, and real distance testing feedback.
               </p>
             </div>
           </div>
