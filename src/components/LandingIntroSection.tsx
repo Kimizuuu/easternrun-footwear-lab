@@ -78,7 +78,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
         }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255, 255, 255, 0.12)', border: '1px solid rgba(255, 255, 255, 0.25)', padding: '4px 12px', borderRadius: '20px' }}>
             <span style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#F8FAFC' }}>
-              FOOTWEAR PERFORMANCE INTELLIGENCE
+              SHOE DATABASE
             </span>
           </div>
 
@@ -91,7 +91,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             color: '#F8FAFC',
             maxWidth: '1100px'
           }}>
-            Performance Footwear Intelligence: Independent Lab Science Meets Real-World Road Truth
+            Independent Lab Reviews for Chinese Running Shoes
           </h1>
 
           <p style={{
@@ -102,7 +102,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             maxWidth: '960px',
             fontWeight: 300
           }}>
-            Welcome to <strong>EasternRun</strong>. We exist to strip away footwear marketing hype. By pairing mechanical lab testing with synthesized community wear-tester feedback across Li-Ning, ANTA, and 361°, we deliver unbiased data-driven benchmarks for marathon super-shoes and daily workhorses.
+            Unbiased lab testing and real runner reviews for Li-Ning, ANTA, Xtep, and 361° running shoes. Compare specs, energy return, and race performance.
           </p>
 
           {/* Hero Auto-Suggest Omni Search Bar */}
@@ -163,15 +163,15 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#60A5FA' }}>
               <Activity size={20} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>CHAPTER I • THE SCIENCE OF FOAM</span>
+              <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>HOW IT WORKS</span>
             </div>
 
             <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, margin: 0, lineHeight: 1.15, color: '#F8FAFC' }}>
-              How Supercritical Gas Expansion Transformed Marathon Efficiency
+              Lab-Tested Foam & Plate Technology
             </h2>
 
             <p style={{ fontSize: '1rem', color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
-              The modern running era was defined by the transition from standard EVA foams to aliphatic TPU and nitrogen-infused supercritical PEBA compounds. In our lab tests, supercritical formulations demonstrate energy return resilience between 80% and 89%, preserving runner leg freshness over 42.195 kilometers.
+              We test midsole energy return, carbon plate stiffness, and outsole grip in controlled lab conditions. Every shoe gets the same rigorous benchmarks so you can compare fairly.
             </p>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '6px' }}>
@@ -191,7 +191,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
                   gap: '6px'
                 }}
               >
-                <BookOpen size={16} /> Read Full 18-Topic Science Guide
+                <BookOpen size={16} /> Read Guide
               </button>
 
               <button
@@ -210,7 +210,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
                   gap: '6px'
                 }}
               >
-                <Target size={16} /> Launch Sector Advisor
+                <Target size={16} /> Find Your Shoe
               </button>
             </div>
           </div>
@@ -232,8 +232,8 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               background: 'linear-gradient(to top, rgba(15,23,42,0.95), transparent)',
               color: '#FFFFFF'
             }}>
-              <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#94A3B8', letterSpacing: '0.05em' }}>LAB TEST READOUT</span>
-              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.95rem', fontWeight: 700 }}>Outsole Rubber Friction & Forefoot Toe-Off Compression Analysis</h4>
+              <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#94A3B8', letterSpacing: '0.05em' }}>LAB TESTING</span>
+              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.95rem', fontWeight: 700 }}>Foam rebound and outsole grip testing</h4>
             </div>
           </div>
         </div>
@@ -271,8 +271,8 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               background: 'linear-gradient(to top, rgba(15,23,42,0.9), transparent)',
               color: '#FFFFFF'
             }}>
-              <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#CBD5E1', letterSpacing: '0.05em' }}>COMMUNITY WEAR-TESTS</span>
-              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.95rem', fontWeight: 700 }}>Real-World Marathon Race Day & Track Interval Validation</h4>
+              <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#CBD5E1', letterSpacing: '0.05em' }}>REAL REVIEWS</span>
+              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.95rem', fontWeight: 700 }}>Road-tested by marathon and track runners</h4>
             </div>
           </div>
 
@@ -280,15 +280,15 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#475569' }}>
               <MessageSquareQuote size={20} color="#2563EB" />
-              <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>CHAPTER II • VERIFIED ROAD METRICS</span>
+              <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>COMMUNITY DATA</span>
             </div>
 
             <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, margin: 0, lineHeight: 1.15, color: '#0F172A' }}>
-              Synthesizing Thousands of Distance Kilometers
+              Runner-Verified Reviews & Data
             </h2>
 
             <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.65, margin: 0 }}>
-              Laboratory durometer readings tell only half the story. Every entry in our database incorporates verified distance reviews from marathon runners and track athletes testing traction on wet asphalt, upper mesh breathability in heat, and outsole rubber durability past 600 kilometers.
+              Every shoe is reviewed by real runners logging serious distance. We combine lab data with on-road feedback for the full picture.
             </p>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '6px' }}>
@@ -308,7 +308,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
                   gap: '6px'
                 }}
               >
-                <Scale size={16} /> Open Side-by-Side Compare Tray
+                <Scale size={16} /> Compare Shoes
               </button>
 
               <button
@@ -327,7 +327,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
                   gap: '6px'
                 }}
               >
-                <Award size={16} /> View Top 10 Leaderboard
+                <Award size={16} /> Top 10
               </button>
             </div>
           </div>

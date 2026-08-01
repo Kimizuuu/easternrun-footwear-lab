@@ -181,7 +181,7 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
           borderTop: '1px solid #F1F5F9'
         }}>
           <div>
-            <span style={{ fontSize: '0.72rem', color: '#64748B', display: 'block', fontWeight: 600 }}>MSRP Price</span>
+            <span style={{ fontSize: '0.72rem', color: '#64748B', display: 'block', fontWeight: 600 }}>Price</span>
             <strong style={{ fontSize: '1.15rem', color: '#0F172A', fontFamily: 'var(--font-mono)', fontWeight: 800 }}>
               ${shoe.msrpUsd}
             </strong>

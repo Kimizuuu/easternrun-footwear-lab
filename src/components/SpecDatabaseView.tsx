@@ -92,7 +92,7 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
       {/* Catalog Filter & Grid Container */}
       <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(14px, 3vw, 28px)' }}>
         {/* Leaderboard Monetization Banner */}
-        <AdBanner format="horizontal" label="Featured Sponsored Partner" />
+        <AdBanner format="horizontal" label="Sponsored" />
 
         {/* Clean Filter & Sort Bar */}
         <div 

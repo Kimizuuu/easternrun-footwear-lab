@@ -78,7 +78,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
               gap: '6px'
             }}
           >
-            <ArrowLeft size={18} /> Back to Full Catalog
+            <ArrowLeft size={18} /> Back
           </button>
 
           <div style={{ display: 'flex', gap: '12px' }}>
@@ -99,7 +99,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
               }}
             >
               <Ruler size={16} />
-              <span>International Size Matrix</span>
+              <span>Size Guide</span>
             </button>
 
             <button
@@ -132,7 +132,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
             <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              INDEPENDENT LAB REPORT
+              LAB REPORT
             </span>
             <span style={{ fontSize: '0.78rem', color: '#94A3B8' }}>•</span>
             <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 600 }}>{shoe.brand} Performance Footwear</span>
@@ -140,7 +140,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
             <h1 style={{ fontSize: 'clamp(2rem, 3.8vw, 3rem)', fontWeight: 900, color: '#0F172A', margin: 0, letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-              {shoe.name} Detailed Mechanical Review
+              {shoe.name}
             </h1>
 
             <div style={{
@@ -155,12 +155,12 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             }}>
               <Star size={18} fill="#EAB308" color="#EAB308" />
               <span style={{ fontSize: '1.4rem', fontWeight: 900, fontFamily: 'var(--font-mono)' }}>{shoe.overallRating}</span>
-              <span style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 600 }}>/ 100 Overall Score</span>
+              <span style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 600 }}>/ 100</span>
             </div>
           </div>
 
           <p style={{ fontSize: '1.1rem', color: '#475569', margin: '12px 0 0 0', lineHeight: 1.6, fontWeight: 400 }}>
-            {shoe.tagline}. Full mechanical tear-down, supercritical PEBA foam energy return %, and verified wear-tester road benchmarks below.
+            {shoe.tagline}
           </p>
         </div>
 
@@ -299,7 +299,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             gap: '20px'
           }}>
             <h3 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 900, color: '#0F172A' }}>
-              Essential Laboratory Parameters
+              Key Specs
             </h3>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.9rem' }}>
@@ -347,7 +347,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             </div>
 
             <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '16px' }}>
-              <span style={{ fontSize: '0.75rem', color: '#64748B', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '4px' }}>VERIFIED LIFESPAN EXPECTATION</span>
+              <span style={{ fontSize: '0.75rem', color: '#64748B', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '4px' }}>LIFESPAN</span>
               <strong style={{ fontSize: '1rem', color: '#0F172A' }}>{shoe.specs.estimatedLifespanKm} Kilometers</strong>
               <span style={{ fontSize: '0.8rem', color: '#64748B', display: 'block', marginTop: '2px' }}>
                 Outsole Rubber: {shoe.specs.outsoleRubber} (Wet Grip Score: {shoe.specs.wetTractionScore}/10)
@@ -369,7 +369,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <Activity size={24} color="#60A5FA" />
             <h2 style={{ fontSize: '1.6rem', fontWeight: 900, margin: 0, color: '#F8FAFC' }}>
-              Deep-Dive Midsole & Structural Analysis
+              Midsole & Structure
             </h2>
           </div>
 
@@ -385,21 +385,21 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             borderTop: '1px solid #1E293B'
           }}>
             <div>
-              <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#F8FAFC', margin: '0 0 6px 0' }}>Midsole Hysteresis Rebound</h4>
+              <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#F8FAFC', margin: '0 0 6px 0' }}>Energy Return</h4>
               <p style={{ fontSize: '0.9rem', color: '#CBD5E1', lineHeight: 1.5, margin: 0 }}>
                 {shoe.specs.foamName} supercritical foam compound yields {shoe.specs.foamResiliencePercent}% energy return in mechanical laboratory drop-compression tests.
               </p>
             </div>
 
             <div>
-              <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#F8FAFC', margin: '0 0 6px 0' }}>Plate Propulsion & Bending Resistance</h4>
+              <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#F8FAFC', margin: '0 0 6px 0' }}>Carbon Plate</h4>
               <p style={{ fontSize: '0.9rem', color: '#CBD5E1', lineHeight: 1.5, margin: 0 }}>
                 Features a {shoe.specs.carbonPlate} with a rigidity score of {shoe.specs.carbonStiffnessIndex}/10, controlling foam compression and increasing forefoot toe-off lever efficiency.
               </p>
             </div>
 
             <div>
-              <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#F8FAFC', margin: '0 0 6px 0' }}>Upper Lockdown & Breathability</h4>
+              <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#F8FAFC', margin: '0 0 6px 0' }}>Upper & Fit</h4>
               <p style={{ fontSize: '0.9rem', color: '#CBD5E1', lineHeight: 1.5, margin: 0 }}>
                 Constructed from {shoe.specs.upperMaterial} (Breathability Score: {shoe.specs.breathabilityScore}/10). Fit profile: {shoe.specs.fitWidth}.
               </p>
@@ -410,7 +410,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
         {/* SECTION 3: 4 BIOMECHANICAL SECTOR SUITABILITY CARDS */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 900, color: '#0F172A', margin: 0 }}>
-            Biomechanical Sector Performance Scores
+            Performance Scores
           </h2>
 
           <div style={{
@@ -421,7 +421,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             {/* Sector 1: Walking */}
             <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '10px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Casual Walking & All-Day Wear</h4>
+                <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Walking</h4>
                 <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>{shoe.useCaseValues.walkingScore}/10</strong>
               </div>
               <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
@@ -432,7 +432,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             {/* Sector 2: Daily Miles */}
             <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '10px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Daily Mileage & Training</h4>
+                <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Daily Training</h4>
                 <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>{shoe.useCaseValues.dailyRunScore}/10</strong>
               </div>
               <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
@@ -443,7 +443,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             {/* Sector 3: Tempo */}
             <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '10px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Tempo & Speed Workouts</h4>
+                <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Speed Work</h4>
                 <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>{shoe.useCaseValues.speedWorkoutScore}/10</strong>
               </div>
               <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
@@ -454,7 +454,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             {/* Sector 4: Marathon Race Day */}
             <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '10px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Marathon Race Day Output</h4>
+                <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Race Day</h4>
                 <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#2563EB' }}>{shoe.useCaseValues.marathonRaceScore}/10</strong>
               </div>
               <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
@@ -475,7 +475,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
           gap: '24px'
         }}>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 900, color: '#0F172A', margin: 0 }}>
-            Wear-Tester Verdict & Runner Consensus
+            Verdict
           </h2>
 
           <div style={{
@@ -487,7 +487,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             color: '#334155',
             lineHeight: 1.6
           }}>
-            <strong>Final Lab Verdict:</strong> {shoe.finalConsensusVerdict}
+            <strong>Verdict:</strong> {shoe.finalConsensusVerdict}
           </div>
 
           <div style={{
@@ -498,7 +498,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             {/* Verified Pros */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#166534', margin: 0, display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <ThumbsUp size={18} /> Verified Performance Strengths
+                <ThumbsUp size={18} /> Pros
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {shoe.communityPros?.map((pro, idx) => (
@@ -513,7 +513,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             {/* Verified Cons */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#991B1B', margin: 0, display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <ThumbsDown size={18} /> Trade-offs & Limitations
+                <ThumbsDown size={18} /> Cons
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {shoe.communityCons?.map((con, idx) => (
@@ -532,9 +532,9 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
             <div>
               <h2 style={{ fontSize: '1.6rem', fontWeight: 900, color: '#0F172A', margin: 0 }}>
-                Community Wear-Tester Reviews ({shoe.userReviews?.length || 0})
+                Reviews ({shoe.userReviews?.length || 0})
               </h2>
-              <span style={{ fontSize: '0.85rem', color: '#64748B' }}>Verified distance reviews from marathons and interval training</span>
+              
             </div>
 
             <button
@@ -550,7 +550,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
                 cursor: 'pointer'
               }}
             >
-              Add Wear-Tester Review
+              Add Review
             </button>
           </div>
 

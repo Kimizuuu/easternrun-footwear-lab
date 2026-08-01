@@ -82,7 +82,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
                   style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: '8px 0', fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
                 >
                   <ChevronRight size={14} color="#3B82F6" />
-                  <span>Head-to-Head Compare Tray</span>
+                  <span>Compare Shoes</span>
                 </button>
               </li>
               <li>
@@ -91,7 +91,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
                   style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: '8px 0', fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
                 >
                   <ChevronRight size={14} color="#3B82F6" />
-                  <span>Benchmark Rankings (Top 10)</span>
+                  <span>Top 10 Rankings</span>
                 </button>
               </li>
               <li>
@@ -100,40 +100,12 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
                   style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', padding: '8px 0', fontSize: 'inherit', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '6px' }}
                 >
                   <ChevronRight size={14} color="#3B82F6" />
-                  <span>Runner's Tech Guide (18 Topics)</span>
+                  <span>Runner's Guide</span>
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Technical Knowledge */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-            <h4 style={{ fontSize: '0.85rem', fontWeight: 800, color: '#F8FAFC', textTransform: 'uppercase', letterSpacing: '0.08em', margin: 0 }}>
-              Footwear Science & Metrics
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.85rem', color: '#CBD5E1' }}>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ color: '#94A3B8' }}>•</span>
-                <span>Supercritical PEBA Energy Return (80–89%)</span>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ color: '#94A3B8' }}>•</span>
-                <span>3D Spoon & Winged Carbon Plate Rigidity</span>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ color: '#94A3B8' }}>•</span>
-                <span>Shore C Foam Durometer Hardness Labs</span>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ color: '#94A3B8' }}>•</span>
-                <span>Outsole Rubber Wet-Asphalt Friction Scores</span>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ color: '#94A3B8' }}>•</span>
-                <span>Wide Last Sizing Matrix (265mm = US 9)</span>
-              </li>
-            </ul>
-          </div>
 
           {/* Column 4: Proprietary & Legal Rights */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -141,7 +113,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
               Rights & Attribution
             </h4>
             <p style={{ fontSize: '0.82rem', color: '#94A3B8', lineHeight: 1.5, margin: 0 }}>
-              All rating algorithms, database schemas, and lab comparison methodologies are protected under copyright. Product imagery and brand trademarks belong to Li-Ning Co., Ltd., ANTA Sports Products Ltd., and 361 Degrees International Limited, hosted under Fair Use (17 U.S.C. § 107) for non-commercial review.
+              Product imagery and brand trademarks belong to their respective owners.
             </p>
             <button
               onClick={onOpenLegal}
@@ -180,13 +152,11 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
           color: '#64748B'
         }}>
           <div>
-            © 2026 EasternRun Footwear Intelligence System. All Rights Reserved.
+            © 2026 EasternRun. All Rights Reserved.
           </div>
 
           <div style={{ display: 'flex', gap: '20px' }}>
-            <span>Independent Lab Analysis</span>
-            <span>r/RunningShoeGeeks Consensus</span>
-            <span>Fair Use Notice</span>
+            <span onClick={onOpenLegal} style={{ cursor: 'pointer', textDecoration: 'underline' }}>Legal</span>
           </div>
         </div>
       </div>
