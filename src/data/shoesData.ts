@@ -1830,13 +1830,13 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Marathon Super-Shoe',
     dominantSector: 'Marathon Race Day',
-    image: '/images/qiaodan/FEIYING PB6.0/23.webp',
+    image: '/images/qiaodan/feiying_pb6/23.webp',
     galleryImages: [
-      '/images/qiaodan/FEIYING PB6.0/23.webp',
-      '/images/qiaodan/FEIYING PB6.0/24.webp',
-      '/images/qiaodan/FEIYING PB6.0/25.webp',
-      '/images/qiaodan/FEIYING PB6.0/26.webp',
-      '/images/qiaodan/FEIYING PB6.0/27.webp'
+      '/images/qiaodan/feiying_pb6/23.webp',
+      '/images/qiaodan/feiying_pb6/24.webp',
+      '/images/qiaodan/feiying_pb6/25.webp',
+      '/images/qiaodan/feiying_pb6/26.webp',
+      '/images/qiaodan/feiying_pb6/27.webp'
     ],
     msrpUsd: 210,
     msrpRmb: 1499,
@@ -1885,12 +1885,12 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Marathon Super-Shoe',
     dominantSector: 'Marathon Race Day',
-    image: '/images/qiaodan/FEIYING PB5.0/2_38866acb-c340-4750-9017-8b426660d97e.webp',
+    image: '/images/qiaodan/feiying_pb5/2_38866acb-c340-4750-9017-8b426660d97e.webp',
     galleryImages: [
-      '/images/qiaodan/FEIYING PB5.0/2_38866acb-c340-4750-9017-8b426660d97e.webp',
-      '/images/qiaodan/FEIYING PB5.0/3_3058c7fd-382c-4f64-9052-0bcf5f79261a.webp',
-      '/images/qiaodan/FEIYING PB5.0/4_f07d5d69-a74a-407d-aaea-12e70d20a7ba.webp',
-      '/images/qiaodan/FEIYING PB5.0/6_7f561fd6-5f0c-4d04-9ef6-1fd243600302.webp'
+      '/images/qiaodan/feiying_pb5/2_38866acb-c340-4750-9017-8b426660d97e.webp',
+      '/images/qiaodan/feiying_pb5/3_3058c7fd-382c-4f64-9052-0bcf5f79261a.webp',
+      '/images/qiaodan/feiying_pb5/4_f07d5d69-a74a-407d-aaea-12e70d20a7ba.webp',
+      '/images/qiaodan/feiying_pb5/6_7f561fd6-5f0c-4d04-9ef6-1fd243600302.webp'
     ],
     msrpUsd: 180,
     msrpRmb: 1299,
@@ -1939,13 +1939,13 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Marathon Super-Shoe',
     dominantSector: 'Marathon Race Day',
-    image: '/images/qiaodan/FEIYING PLAID3.0/1_04ed10b2-392a-4073-a4a7-cb6c189b8842.webp',
+    image: '/images/qiaodan/feiying_plaid3/1_04ed10b2-392a-4073-a4a7-cb660b4865dc.webp',
     galleryImages: [
-      '/images/qiaodan/FEIYING PLAID3.0/1_04ed10b2-392a-4073-a4a7-cb6c189b8842.webp',
-      '/images/qiaodan/FEIYING PLAID3.0/2_7d440fce-d489-4cc9-8173-3811807d9f78.webp',
-      '/images/qiaodan/FEIYING PLAID3.0/3_6f644017-c9ed-440e-bb68-71b5042bcde2.webp',
-      '/images/qiaodan/FEIYING PLAID3.0/4_108dc697-9421-4c88-b414-4ac1a719c8f2.webp',
-      '/images/qiaodan/FEIYING PLAID3.0/5_786a1d19-0579-4060-ab23-1d70155b9678.webp'
+      '/images/qiaodan/feiying_plaid3/1_04ed10b2-392a-4073-a4a7-cb660b4865dc.webp',
+      '/images/qiaodan/feiying_plaid3/2_7d440fce-d489-4cc9-8173-3814caae697c.webp',
+      '/images/qiaodan/feiying_plaid3/3_6f644017-c9ed-440e-bb68-71b5042bcde2.webp',
+      '/images/qiaodan/feiying_plaid3/4_108dc697-9421-4c88-b414-4accca0c098a.webp',
+      '/images/qiaodan/feiying_plaid3/5_786a1d19-0579-4060-ab23-1d758d14444e.webp'
     ],
     msrpUsd: 240,
     msrpRmb: 1699,
@@ -1994,12 +1994,12 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Marathon Super-Shoe',
     dominantSector: 'Marathon Race Day',
-    image: '/images/qiaodan/FEIYING PLAID 2.0/2_3fc8d63d-f9e4-4b82-8cd1-62d29486c953.webp',
+    image: '/images/qiaodan/feiying_plaid2/2_3fc8d63d-f9e4-4b82-8cd1-628bfbb3f35d.webp',
     galleryImages: [
-      '/images/qiaodan/FEIYING PLAID 2.0/2_3fc8d63d-f9e4-4b82-8cd1-62d29486c953.webp',
-      '/images/qiaodan/FEIYING PLAID 2.0/3_a17f8b24-5df5-4adf-952c-e3aeb5c7dd4d.webp',
-      '/images/qiaodan/FEIYING PLAID 2.0/4_651bd008-cdaa-44aa-b7ff-c7cebe23ac5d.webp',
-      '/images/qiaodan/FEIYING PLAID 2.0/5_f31dc62c-b5c9-4191-b7a1-15b5cdcfda7a.webp'
+      '/images/qiaodan/feiying_plaid2/2_3fc8d63d-f9e4-4b82-8cd1-628bfbb3f35d.webp',
+      '/images/qiaodan/feiying_plaid2/3_a17f8b24-5df5-4adf-952c-e3aeb5c7dd4d.webp',
+      '/images/qiaodan/feiying_plaid2/4_651bd008-cdaa-44aa-b7ff-c7010e2788ba.webp',
+      '/images/qiaodan/feiying_plaid2/5_f31dc62c-b5c9-4191-b7a1-15afb588fd2e.webp'
     ],
     msrpUsd: 210,
     msrpRmb: 1499,
@@ -2048,13 +2048,13 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Tempo & Race',
     dominantSector: 'Tempo & Speed Workouts',
-    image: '/images/qiaodan/LELI 2.0/001_8a2fc687-52ff-427e-9608-8232e9c5d140.webp',
+    image: '/images/qiaodan/leli2/001_8a2fc687-52ff-427e-9608-8232e9c5d7ae.webp',
     galleryImages: [
-      '/images/qiaodan/LELI 2.0/001_8a2fc687-52ff-427e-9608-8232e9c5d140.webp',
-      '/images/qiaodan/LELI 2.0/002_ab3d4d02-9a34-4671-9c2d-539b589688bc.webp',
-      '/images/qiaodan/LELI 2.0/003_6ea22fd2-8ac7-41ca-b009-484eea0af583.webp',
-      '/images/qiaodan/LELI 2.0/004_3fab5a7a-41aa-41dc-95a4-303912980bc9.webp',
-      '/images/qiaodan/LELI 2.0/QD_1_c958916f-639c-428a-8c7d-363f16d8eeb3.webp'
+      '/images/qiaodan/leli2/001_8a2fc687-52ff-427e-9608-8232e9c5d7ae.webp',
+      '/images/qiaodan/leli2/002_ab3d4d02-9a34-4671-9c2d-539b58968c1f.webp',
+      '/images/qiaodan/leli2/003_6ea22fd2-8ac7-41ca-b009-484eea0aff5c.webp',
+      '/images/qiaodan/leli2/004_3fab5a7a-41aa-41dc-95a4-3039129808c8.webp',
+      '/images/qiaodan/leli2/QD_1_c958916f-639c-428a-8c7d-363f16d83329.webp'
     ],
     msrpUsd: 130,
     msrpRmb: 899,
@@ -2103,13 +2103,14 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Daily Trainer',
     dominantSector: 'Daily Mileage & Training',
-    image: '/images/qiaodan/LH600 2.0/001_b4c16896-818a-4170-be7e-0ba46bd1cb90.webp',
+    image: '/images/qiaodan/lh600_2/001_b4c16896-818a-4170-be7e-0ba46bd15dc7.webp',
     galleryImages: [
-      '/images/qiaodan/LH600 2.0/001_b4c16896-818a-4170-be7e-0ba46bd1cb90.webp',
-      '/images/qiaodan/LH600 2.0/002_100d23ed-aaf7-4d21-86cd-a463dfbd5677.webp',
-      '/images/qiaodan/LH600 2.0/003_d2635824-6ae4-405a-9c85-6523263eef25.webp',
-      '/images/qiaodan/LH600 2.0/004_2b1d7c09-d628-4330-a6bc-d1b09bee2e92.webp',
-      '/images/qiaodan/LH600 2.0/005_65445c44-1f27-485d-8d02-f2378197aa3a.webp'
+      '/images/qiaodan/lh600_2/001_b4c16896-818a-4170-be7e-0ba46bd15dc7.webp',
+      '/images/qiaodan/lh600_2/002_100d23ed-aaf7-4d21-86cd-a463dfbd4d77.webp',
+      '/images/qiaodan/lh600_2/003_d2635824-6ae4-405a-9c85-6523263e1787.webp',
+      '/images/qiaodan/lh600_2/004_2b1d7c09-d628-4330-a6bc-d1b09beec32e.webp',
+      '/images/qiaodan/lh600_2/005_65445c44-1f27-485d-8d02-f237819773b3.webp',
+      '/images/qiaodan/lh600_2/10_ff60cbcf-54ed-4b16-9895-d2fa411e4bb9.webp'
     ],
     msrpUsd: 100,
     msrpRmb: 699,
@@ -2158,12 +2159,13 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Max Cushion',
     dominantSector: 'Casual Walking & All-Day Wear',
-    image: '/images/qiaodan/Qinghong FREE/001_302d8137-bcc7-4c42-b996-cb36ea2e68be.webp',
+    image: '/images/qiaodan/qinghong_free/001_302d8137-bcc7-4c42-b996-cb3684b4756c.webp',
     galleryImages: [
-      '/images/qiaodan/Qinghong FREE/001_302d8137-bcc7-4c42-b996-cb36ea2e68be.webp',
-      '/images/qiaodan/Qinghong FREE/002_6a0eb973-7bb4-4b6f-bca3-8e7152011b93.webp',
-      '/images/qiaodan/Qinghong FREE/003_080e57cb-7b5c-43c3-81f3-4c1e4ee9f0ec.webp',
-      '/images/qiaodan/Qinghong FREE/QD_1.webp'
+      '/images/qiaodan/qinghong_free/001_302d8137-bcc7-4c42-b996-cb3684b4756c.webp',
+      '/images/qiaodan/qinghong_free/002_6a0eb973-7bb4-4b6f-bca3-8e71542886e9.webp',
+      '/images/qiaodan/qinghong_free/003_080e57cb-7b5c-43c3-81f3-4c1e99da9478.webp',
+      '/images/qiaodan/qinghong_free/a5c49ed68e2d86a976094cbccf531acb.webp',
+      '/images/qiaodan/qinghong_free/QD_1.webp'
     ],
     msrpUsd: 85,
     msrpRmb: 599,
@@ -2212,13 +2214,14 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Tempo & Race',
     dominantSector: 'Tempo & Speed Workouts',
-    image: '/images/qiaodan/Rapid 4.0/001_9678fe97-e434-4fd8-8339-9b6317c2a71f.webp',
+    image: '/images/qiaodan/rapid4/001_9678fe97-e434-4fd8-8339-9b6317c2d624.webp',
     galleryImages: [
-      '/images/qiaodan/Rapid 4.0/001_9678fe97-e434-4fd8-8339-9b6317c2a71f.webp',
-      '/images/qiaodan/Rapid 4.0/002.webp',
-      '/images/qiaodan/Rapid 4.0/003_11003ff6-4af4-480a-be65-c934949a8fe0.webp',
-      '/images/qiaodan/Rapid 4.0/004_005c47a3-d09b-4234-b985-f5f2695fceca.webp',
-      '/images/qiaodan/Rapid 4.0/005_9a542471-c25a-492b-b82d-7b926a503e7e.webp'
+      '/images/qiaodan/rapid4/001_9678fe97-e434-4fd8-8339-9b6317c2d624.webp',
+      '/images/qiaodan/rapid4/002.webp',
+      '/images/qiaodan/rapid4/003_11003ff6-4af4-480a-be65-c934949a401f.webp',
+      '/images/qiaodan/rapid4/004_005c47a3-d09b-4234-b985-f5f2695f693f.webp',
+      '/images/qiaodan/rapid4/005_9a542471-c25a-492b-b82d-7b926a50b6ed.webp',
+      '/images/qiaodan/rapid4/39735138_015.webp'
     ],
     msrpUsd: 115,
     msrpRmb: 799,
@@ -2267,13 +2270,13 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Daily Trainer',
     dominantSector: 'Daily Mileage & Training',
-    image: '/images/qiaodan/THUNDER 1.0/16_c19bbedc-ffd0-4149-b885-f7a30b4ac125.webp',
+    image: '/images/qiaodan/thunder1/16_c19bbedc-ffd0-4149-b885-f7a30b4c0c41.webp',
     galleryImages: [
-      '/images/qiaodan/THUNDER 1.0/16_c19bbedc-ffd0-4149-b885-f7a30b4ac125.webp',
-      '/images/qiaodan/THUNDER 1.0/17_01ade25c-eb0a-4831-b4af-5711eb5d4ae9.webp',
-      '/images/qiaodan/THUNDER 1.0/18_f2d9865e-c6da-46bd-9761-78cc76fb5a49.webp',
-      '/images/qiaodan/THUNDER 1.0/19_23d12d85-6d10-46c1-801f-05a23eedeb84.webp',
-      '/images/qiaodan/THUNDER 1.0/20_73b9da85-2d30-4dac-bcb5-d19fa778ceca.webp'
+      '/images/qiaodan/thunder1/16_c19bbedc-ffd0-4149-b885-f7a30b4c0c41.webp',
+      '/images/qiaodan/thunder1/17_01ade25c-eb0a-4831-b4af-5711eb52608c.webp',
+      '/images/qiaodan/thunder1/18_f2d9865e-c6da-46bd-9761-78cc76f77612.webp',
+      '/images/qiaodan/thunder1/19_23d12d85-6d10-46c1-801f-05a23ee37929.webp',
+      '/images/qiaodan/thunder1/20_73b9da85-2d30-4dac-bcb5-d19fa77ac000.webp'
     ],
     msrpUsd: 95,
     msrpRmb: 649,
@@ -2322,13 +2325,13 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Qiaodan',
     category: 'Daily Trainer',
     dominantSector: 'Daily Mileage & Training',
-    image: '/images/qiaodan/WIND 4.0/1_ee81fbad-2dab-4ac9-aac5-26a53a024194.webp',
+    image: '/images/qiaodan/wind4/1_ee81fbad-2dab-4ac9-aac5-26a53a024194.webp',
     galleryImages: [
-      '/images/qiaodan/WIND 4.0/1_ee81fbad-2dab-4ac9-aac5-26a53a024194.webp',
-      '/images/qiaodan/WIND 4.0/2_8bcb6ccf-dae4-4e8e-84d7-a2e99f349d2c.webp',
-      '/images/qiaodan/WIND 4.0/3_71f59baf-b4b4-497e-b3ca-20a9ed185233.webp',
-      '/images/qiaodan/WIND 4.0/4_c143a6bc-4183-4328-9514-24cdd0e0d306.webp',
-      '/images/qiaodan/WIND 4.0/5_aa86dc9b-0bb5-4318-b651-5ae9e68a5957.webp'
+      '/images/qiaodan/wind4/1_ee81fbad-2dab-4ac9-aac5-26a53a024194.webp',
+      '/images/qiaodan/wind4/2_8bcb6ccf-dae4-4e8e-84d7-a2e99f349d28.webp',
+      '/images/qiaodan/wind4/3_71f59baf-b4b4-497e-b3ca-20a9ed18523e.webp',
+      '/images/qiaodan/wind4/4_c143a6bc-4183-4328-9514-24cdd0e0d301.webp',
+      '/images/qiaodan/wind4/5_aa86dc9b-0bb5-4318-b651-5ae9e68a5953.webp'
     ],
     msrpUsd: 105,
     msrpRmb: 729,
