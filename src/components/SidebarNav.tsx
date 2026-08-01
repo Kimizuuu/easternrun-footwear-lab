@@ -88,7 +88,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             Brands
           </span>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-            {['All', 'Li-Ning', 'Anta', 'Xtep', '361°', 'Qiaodan'].map((b) => (
+            {['All', 'Li-Ning', 'Anta', 'Xtep', '361°', 'Qiaodan', 'Nike', 'Adidas', 'Saucony', 'ASICS'].map((b) => (
               <button
                 key={b}
                 onClick={() => {

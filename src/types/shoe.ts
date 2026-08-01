@@ -1,4 +1,4 @@
-export type Brand = 'Li-Ning' | 'Anta' | 'Xtep' | '361°' | 'Qiaodan';
+export type Brand = 'Li-Ning' | 'Anta' | 'Xtep' | '361°' | 'Qiaodan' | 'Nike' | 'Adidas' | 'Saucony' | 'ASICS';
 
 export type Category = 
   | 'Marathon Super-Shoe' 
@@ -60,7 +60,7 @@ export interface UserReview {
 export interface Shoe {
   id: string;
   name: string;
-  brand: 'Li-Ning' | 'Anta' | 'Xtep' | '361°' | 'Qiaodan';
+  brand: Brand;
   category: Category;
   dominantSector: DominantSector;
   image: string;
