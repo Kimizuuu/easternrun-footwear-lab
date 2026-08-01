@@ -2790,7 +2790,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Non-Plated Super-Trainer King with Pure Lightstrike Pro Bounce',
     description: 'The Adidas Adizero EVO SL brings the pure, uninhibited bounce of full Lightstrike Pro super-foam to an affordable $150 non-plated trainer. Inspired by the record-breaking EVO Pro 1, it delivers effortless bounce and natural foot movement for daily workouts.',
-    overallRating: 88,
+    overallRating: 92,
     useCaseValues: {
       walkingScore: 85,
       walkingAnalysis: 'Smooth non-plated feel makes it comfortable for casual wear and warmups.',
