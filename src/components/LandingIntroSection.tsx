@@ -29,11 +29,11 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
       flexDirection: 'column',
       gap: '0'
     }}>
-      {/* CHAPTER 1: FULL-BLEED CINEMATIC HERO DOCUMENTARY BANNER */}
+      {/* CHAPTER 1: HERO DOCUMENTARY BANNER */}
       <div style={{
         position: 'relative',
         width: '100%',
-        minHeight: '75vh',
+        minHeight: '70vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -45,7 +45,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
         {/* Background Sunset Photography with Overlay Gradient */}
         <img
           src="/images/landing/landing_runner_sunset.jpg"
-          alt="EasternRun Marathon Performance Lab"
+          alt="EasternRun Footwear Lab"
           loading="lazy"
           decoding="async"
           onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
@@ -56,14 +56,14 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             height: '100%',
             objectFit: 'cover',
             objectPosition: 'center',
-            opacity: 0.35,
-            filter: 'brightness(0.85) contrast(1.1)'
+            opacity: 0.25,
+            filter: 'brightness(0.8) contrast(1.1)'
           }}
         />
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(circle at center, rgba(15, 23, 42, 0.5) 0%, rgba(15, 23, 42, 0.96) 100%), linear-gradient(to bottom, transparent 60%, #0F172A 100%)'
+          background: 'radial-gradient(circle at center, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.98) 100%), linear-gradient(to bottom, transparent 60%, #0F172A 100%)'
         }} />
 
         {/* Documentary Main Header Content */}
@@ -77,14 +77,14 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           alignItems: 'flex-start',
           gap: '20px'
         }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255, 255, 255, 0.12)', border: '1px solid rgba(255, 255, 255, 0.25)', padding: '4px 12px', borderRadius: '20px' }}>
-            <span style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#F8FAFC' }}>
-              SHOE DATABASE
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', padding: '4px 12px', borderRadius: '4px' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#94A3B8' }}>
+              DATABASE & REVIEWS
             </span>
           </div>
 
           <h1 style={{
-            fontSize: 'clamp(2rem, 4.5vw, 3.8rem)',
+            fontSize: 'clamp(2rem, 4.5vw, 3.6rem)',
             fontWeight: 900,
             lineHeight: 1.1,
             margin: 0,
@@ -96,14 +96,14 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           </h1>
 
           <p style={{
-            fontSize: 'clamp(0.98rem, 1.5vw, 1.25rem)',
-            color: '#CBD5E1',
+            fontSize: 'clamp(0.95rem, 1.4vw, 1.2rem)',
+            color: '#94A3B8',
             lineHeight: 1.6,
             margin: 0,
             maxWidth: '960px',
-            fontWeight: 300
+            fontWeight: 400
           }}>
-            Unbiased product specifications and real runner reviews for Li-Ning, ANTA, Xtep, 361°, and Qiaodan. Compare official specs, energy return metrics, and race performance.
+            Unbiased specifications and performance data for Li-Ning, ANTA, Xtep, 361°, and Qiaodan footwear alongside Western benchmark references.
           </p>
 
           {/* Hero Auto-Suggest Omni Search Bar */}
@@ -111,64 +111,61 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             <SearchAutoComplete
               shoes={shoes}
               onSelectShoe={onSelectShoe}
-              placeholder="Search 33 models, foams (BOOM, PEBA, NITROEDGE), or brands..."
+              placeholder="Search models, foams (BOOM, PEBA, NITROEDGE), or brands..."
             />
           </div>
 
-          {/* Website Purpose & Overview Cards */}
+          {/* Website Purpose & Overview Cards — Clean Monochrome */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
             gap: '16px',
             marginTop: '24px',
             paddingTop: '24px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.15)',
+            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
             width: '100%'
           }}>
             <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
+              background: 'rgba(255, 255, 255, 0.03)',
               border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '10px',
-              padding: '16px',
+              borderRadius: '8px',
+              padding: '18px',
               backdropFilter: 'blur(8px)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                <span style={{ fontSize: '1.2rem', color: '#F8FAFC', fontWeight: 900, letterSpacing: '-0.2px' }}>OUR PURPOSE</span>
-                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(59, 130, 246, 0.2)', color: '#60A5FA', borderRadius: '4px', fontWeight: 700 }}>MISSION</span>
-              </div>
-              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
+              <h3 style={{ fontSize: '0.85rem', color: '#F8FAFC', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', margin: '0 0 8px 0' }}>
+                OUR PURPOSE
+              </h3>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.5 }}>
                 An independent, objective platform built to help runners research, evaluate, and choose performance footwear without marketing bias.
               </p>
             </div>
 
             <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
+              background: 'rgba(255, 255, 255, 0.03)',
               border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '10px',
-              padding: '16px',
+              borderRadius: '8px',
+              padding: '18px',
               backdropFilter: 'blur(8px)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                <span style={{ fontSize: '1.2rem', color: '#60A5FA', fontWeight: 900, letterSpacing: '-0.2px' }}>WHAT WE DO</span>
-                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(16, 185, 129, 0.2)', color: '#34D399', borderRadius: '4px', fontWeight: 700 }}>TOOLS</span>
-              </div>
-              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
+              <h3 style={{ fontSize: '0.85rem', color: '#F8FAFC', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', margin: '0 0 8px 0' }}>
+                WHAT WE DO
+              </h3>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.5 }}>
                 We analyze technical specs, pricing, and performance data to provide side-by-side comparison trays, rankings, and shoe finder wizards.
               </p>
             </div>
 
             <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
+              background: 'rgba(255, 255, 255, 0.03)',
               border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '10px',
-              padding: '16px',
+              borderRadius: '8px',
+              padding: '18px',
               backdropFilter: 'blur(8px)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                <span style={{ fontSize: '1.2rem', color: '#F8FAFC', fontWeight: 900, letterSpacing: '-0.2px' }}>INDEPENDENT</span>
-                <span style={{ fontSize: '0.7rem', padding: '2px 6px', background: 'rgba(245, 158, 11, 0.2)', color: '#FBBF24', borderRadius: '4px', fontWeight: 700 }}>UNBIASED</span>
-              </div>
-              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
+              <h3 style={{ fontSize: '0.85rem', color: '#F8FAFC', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', margin: '0 0 8px 0' }}>
+                INDEPENDENT METRICS
+              </h3>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.5 }}>
                 Zero brand sponsorship control. Pure transparent metrics, open community reviews, and real distance testing feedback.
               </p>
             </div>
@@ -176,7 +173,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
         </div>
       </div>
 
-      {/* CHAPTER 2: FULL-WIDTH DARK ETERNAL EDITORIAL STRIP — LAB METHODOLOGY & STRIDE */}
+      {/* CHAPTER 2: EDITORIAL METHODOLOGY */}
       <div style={{
         width: '100%',
         background: '#0F172A',
@@ -194,18 +191,18 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           alignItems: 'center'
         }}>
           {/* Narrative Text Column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#60A5FA' }}>
-              <Activity size={20} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>HOW IT WORKS</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94A3B8' }}>
+              <Activity size={18} />
+              <span style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>LAB METHODOLOGY</span>
             </div>
 
             <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, margin: 0, lineHeight: 1.15, color: '#F8FAFC' }}>
               Manufacturer Specs & Performance Data
             </h2>
 
-            <p style={{ fontSize: '1rem', color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
-              We compile official manufacturer specifications, technical disclosures, and real runner feedback into one database so you can compare every shoe fairly.
+            <p style={{ fontSize: '0.95rem', color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
+              We compile official specifications, laboratory disclosures, and runner testing metrics into a standardized database for fair comparisons.
             </p>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '6px' }}>
@@ -233,7 +230,7 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
                 style={{
                   background: 'transparent',
                   color: '#F8FAFC',
-                  border: '1px solid #475569',
+                  border: '1px solid #334155',
                   borderRadius: '6px',
                   padding: '10px 18px',
                   fontSize: '0.85rem',
@@ -250,10 +247,10 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           </div>
 
           {/* Photo Panel (Shoe Stride) */}
-          <div style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', height: '340px', boxShadow: '0 10px 20px rgba(0,0,0,0.3)' }}>
+          <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: '320px', border: '1px solid #1E293B' }}>
             <img
               src="/images/landing/landing_shoe_stride.jpg"
-              alt="EasternRun Shoe Stride Measurement"
+              alt="EasternRun Stride Measurement"
               loading="lazy"
               decoding="async"
               onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
@@ -268,13 +265,13 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               color: '#FFFFFF'
             }}>
               <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#94A3B8', letterSpacing: '0.05em' }}>SPECIFICATION DATABASE</span>
-              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.95rem', fontWeight: 700 }}>Official foam specs, plate stiffness, and rubber grip data</h4>
+              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.9rem', fontWeight: 700 }}>Official foam specs, plate stiffness, and rubber grip data</h4>
             </div>
           </div>
         </div>
       </div>
 
-      {/* CHAPTER 3: FULL-WIDTH LIGHT EDITORIAL STRIP — WEAR-TESTER TRUTHS & TRACK START */}
+      {/* CHAPTER 3: COMMUNITY & WEAR-TEST DATA */}
       <div style={{
         width: '100%',
         background: '#FFFFFF',
@@ -290,10 +287,10 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
           alignItems: 'center'
         }}>
           {/* Photo Panel (Track Start Stance) */}
-          <div style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', height: '340px', boxShadow: '0 10px 20px rgba(0,0,0,0.08)' }}>
+          <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: '320px', border: '1px solid #E2E8F0' }}>
             <img
               src="/images/landing/landing_track_start.jpg"
-              alt="Track & Marathon Road Wear Testing"
+              alt="Road & Track Testing"
               loading="lazy"
               decoding="async"
               onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
@@ -308,23 +305,23 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
               color: '#FFFFFF'
             }}>
               <span style={{ fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', color: '#CBD5E1', letterSpacing: '0.05em' }}>REAL REVIEWS</span>
-              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.95rem', fontWeight: 700 }}>Road-tested by marathon and track runners</h4>
+              <h4 style={{ margin: '2px 0 0 0', fontSize: '0.9rem', fontWeight: 700 }}>Road-tested by marathon and track runners</h4>
             </div>
           </div>
 
           {/* Narrative Text Column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#475569' }}>
-              <MessageSquareQuote size={20} color="#2563EB" />
-              <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>COMMUNITY DATA</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748B' }}>
+              <MessageSquareQuote size={18} color="#2563EB" />
+              <span style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>COMMUNITY EVALUATIONS</span>
             </div>
 
             <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, margin: 0, lineHeight: 1.15, color: '#0F172A' }}>
               Runner-Verified Reviews & Data
             </h2>
 
-            <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.65, margin: 0 }}>
-              Every shoe is evaluated using official manufacturer technical data and real-world distance feedback from runners for a complete, transparent picture.
+            <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.65, margin: 0 }}>
+              Every shoe model combines manufacturer technical specifications with verified community feedback for an objective evaluation.
             </p>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '6px' }}>
