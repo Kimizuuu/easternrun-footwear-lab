@@ -200,7 +200,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'The Ultimate High-Mileage Daily Workhorse',
     description: 'Combines full-length supercritical BOOM cushioning with LIGHTFOAM ULTRA stability and TUFF OS 1000km+ high-abrasion rubber.',
-    overallRating: 83,
+    overallRating: 85,
     useCaseValues: {
       walkingScore: 90,
       walkingAnalysis: 'Very comfortable for casual walking.',
@@ -258,7 +258,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Featherweight Breathable Daily Cruiser',
     description: 'Engineered with ultra-light BOOM foam and translucent MONO mesh upper for effortless summer miles and casual wear.',
-    overallRating: 81,
+    overallRating: 84,
     useCaseValues: {
       walkingScore: 96,
       walkingAnalysis: 'DOMINANT SECTOR. Exceptionally comfortable for casual walking at 190g.',
@@ -478,7 +478,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Versatile Speed Workout & Tempo Specialist',
     description: 'Combines NITROEDGE supercritical foam with a TPU carbon shank for high-tempo interval workouts.',
-    overallRating: 81,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 68,
       walkingAnalysis: 'Decent walking comfort.',
@@ -531,7 +531,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Ultra-Comfortable Travel & Daily Walking Specialist',
     description: 'Anta’s best-selling travel and daily walking trainer with plush Peak Gravity cushion and wide toe-box fit.',
-    overallRating: 76,
+    overallRating: 79,
     useCaseValues: {
       walkingScore: 98,
       walkingAnalysis: 'DOMINANT SECTOR. Ranked on r/RunningShoeGeeks as #1 best budget walking shoe under $90.',
@@ -583,7 +583,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'High-Mileage Workhorse Daily Trainer',
     description: '3rd-generation PG7 daily trainer designed for high-mileage base building.',
-    overallRating: 75,
+    overallRating: 78,
     useCaseValues: {
       walkingScore: 92,
       walkingAnalysis: 'Soft landing for daily walking.',
@@ -635,7 +635,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Urban Walking & All-Day Commuter Trainer',
     description: 'Designed for city walking, urban commutes, and light daily runs.',
-    overallRating: 72,
+    overallRating: 75,
     useCaseValues: {
       walkingScore: 95,
       walkingAnalysis: 'DOMINANT SECTOR. Perfect urban walking shoe.',
@@ -687,7 +687,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'The Classic Iconic Budget Daily Cruiser',
     description: 'Original classic PG7 trainer known for extreme value and soft heel protection.',
-    overallRating: 71,
+    overallRating: 74,
     useCaseValues: {
       walkingScore: 94,
       walkingAnalysis: 'DOMINANT SECTOR. Unbeatable value at $70 for casual walking.',
@@ -739,7 +739,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Plush Cushioning Recovery & High Mileage Trainer',
     description: 'Features A-FLASHFOAM high-resilience midsole with 36mm heel stack.',
-    overallRating: 76,
+    overallRating: 79,
     useCaseValues: {
       walkingScore: 88,
       walkingAnalysis: 'Deep plush heel cushion.',
@@ -791,7 +791,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Lightweight Agile Daily & Gym Trainer',
     description: 'Engineered with lightweight A-FLASHFOAM and midfoot TPU stability bridge.',
-    overallRating: 75,
+    overallRating: 78,
     useCaseValues: {
       walkingScore: 90,
       walkingAnalysis: 'Lightweight 215g feel.',
@@ -1125,7 +1125,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Speed Workout & Interval Trainer',
     description: 'Combines Qu!kFLAME foam with a carbon shank for energetic speed reps.',
-    overallRating: 83,
+    overallRating: 85,
     useCaseValues: {
       walkingScore: 62,
       walkingAnalysis: 'Decent walking feel.',
@@ -1180,7 +1180,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Carbon-Assisted Tempo Workhorse',
     description: 'Budget-friendly carbon-assisted speed trainer for interval reps.',
-    overallRating: 82,
+    overallRating: 84,
     useCaseValues: {
       walkingScore: 63,
       walkingAnalysis: 'Forgiving feel.',
@@ -1236,7 +1236,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Wide-Friendly Speed Workout Specialist',
     description: 'Designed with an accommodating wider fit for runners with broad feet seeking carbon speed.',
-    overallRating: 81,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 65,
       walkingAnalysis: 'Wide accommodating toe box.',
@@ -1291,7 +1291,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Budget Carbon-Plated Racer',
     description: 'Full Qu!kFLAME supercritical foam with a curved carbon plate for road races.',
-    overallRating: 81,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 64,
       walkingAnalysis: 'Stiff running plate.',
@@ -1346,7 +1346,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Wide-Fit Budget Carbon Racer',
     description: 'Wide-fit variant of the acclaimed Flame 3.0 carbon racer under $120.',
-    overallRating: 80,
+    overallRating: 82,
     useCaseValues: {
       walkingScore: 63,
       walkingAnalysis: 'Forgiving forefoot room.',
@@ -1401,7 +1401,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Best Budget Carbon Super-Shoe Alternative on Reddit',
     description: 'Renowned on r/RunningShoeGeeks as one of the best value carbon-plated racers under $120. Features Qu!kFLAME PEBA foam and a curved carbon plate.',
-    overallRating: 80,
+    overallRating: 82,
     useCaseValues: {
       walkingScore: 62,
       walkingAnalysis: 'More forgiving than extreme super-shoes.',
@@ -1566,7 +1566,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'High-Mileage Workhorse Daily Trainer',
     description: 'Full-length Qu!kFOAM supercritical cushioning for daily base miles and easy recovery runs.',
-    overallRating: 80,
+    overallRating: 82,
     useCaseValues: {
       walkingScore: 90,
       walkingAnalysis: 'Soft plush step-in comfort.',
@@ -1622,7 +1622,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Reliable Budget Daily Workhorse',
     description: 'Durable daily trainer with Qu!kFOAM cushion and high-abrasion rubber.',
-    overallRating: 77,
+    overallRating: 80,
     useCaseValues: {
       walkingScore: 90,
       walkingAnalysis: 'Soft for daily walking.',
@@ -1677,7 +1677,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Plush Max Cushion Recovery Trainer',
     description: '36mm heel stack Qu!kFOAM Max cushion for absorbing impact on recovery miles.',
-    overallRating: 73,
+    overallRating: 76,
     useCaseValues: {
       walkingScore: 92,
       walkingAnalysis: 'Plush heel cushion.',
@@ -1732,7 +1732,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Featherweight Ultra-Breathable Walking & Daily Cruiser',
     description: 'Engineered with 195g ultra-light Qu!kFOAM and translucent airy upper mesh for effortless daily walking.',
-    overallRating: 75,
+    overallRating: 78,
     useCaseValues: {
       walkingScore: 97,
       walkingAnalysis: 'DOMINANT SECTOR. Ultra-comfortable featherweight walking and standing shoe.',
@@ -1787,7 +1787,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Plush Soft Step-In Daily & Walking Trainer',
     description: 'Plush step-in cushioning designed for casual walking, standing, and easy daily runs.',
-    overallRating: 72,
+    overallRating: 75,
     useCaseValues: {
       walkingScore: 95,
       walkingAnalysis: 'DOMINANT SECTOR. Soft step-in heel comfort for all-day wear.',
@@ -2062,7 +2062,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Lightweight Carbon-Shank Tempo & Speed Trainer',
     description: 'A versatile speed trainer blending Q-KUNGFU supercritical foam with a responsive midfoot shank for half-marathons and speed reps.',
-    overallRating: 83,
+    overallRating: 85,
     useCaseValues: {
       walkingScore: 68,
       walkingAnalysis: 'More flexible than full carbon racers.',
@@ -2118,7 +2118,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'High-Mileage Daily Workhorse with 800km+ Durability',
     description: 'Built for high weekly mileage, featuring protective dual-density foam, TPU arch support shank, and high-wear rubber outsole.',
-    overallRating: 80,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 88,
       walkingAnalysis: 'Very comfortable for all-day wear.',
@@ -2173,7 +2173,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Super Soft Plush Max Cushion & Walking Cruiser',
     description: 'Ultra-soft step-in feel with max stack supercritical cushioning for easy recovery jogs, long walks, and all-day comfort.',
-    overallRating: 73,
+    overallRating: 76,
     useCaseValues: {
       walkingScore: 97,
       walkingAnalysis: 'DOMINANT SECTOR. Pillow-soft step-in comfort for all-day standing.',
@@ -2229,7 +2229,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Agile Speed Workout & Track Interval Specialist',
     description: 'Low-profile responsive trainer built for track intervals, tempo runs, and fast 5K-10K racing.',
-    overallRating: 81,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 72,
       walkingAnalysis: 'Light and nimble.',
@@ -2284,7 +2284,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Smooth & Bouncy High-Mileage Daily Workhorse',
     description: 'Delivers energetic impact absorption and smooth heel-to-toe transition for everyday training runs.',
-    overallRating: 80,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 85,
       walkingAnalysis: 'Smooth daily walking feel.',
@@ -2339,7 +2339,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Lightweight & Breathable Daily Performance Trainer',
     description: 'Designed for daily miles in warm weather with high ventilation MONO mesh and energetic supercritical foam.',
-    overallRating: 81,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 88,
       walkingAnalysis: 'Airy feel for walking.',
@@ -2595,7 +2595,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Ultimate Durable Daily Workhorse with Upgraded ReactX Foam',
     description: "The Nike Pegasus 41 introduces ReactX foam, offering 13% more energy return and a reduced carbon footprint. Paired with dual forefoot and heel Air Zoom units, it remains the world's most trusted daily running workhorse.",
-    overallRating: 86,
+    overallRating: 88,
     useCaseValues: {
       walkingScore: 92,
       walkingAnalysis: 'Exceptional all-day walking comfort and classic neutral support.',
@@ -2725,7 +2725,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Non-Plated Super-Trainer King with Pure Lightstrike Pro Bounce',
     description: 'The Adidas Adizero EVO SL brings the pure, uninhibited bounce of full Lightstrike Pro super-foam to an affordable $150 non-plated trainer. Inspired by the record-breaking EVO Pro 1, it delivers effortless bounce and natural foot movement for daily workouts.',
-    overallRating: 92,
+    overallRating: 94,
     useCaseValues: {
       walkingScore: 85,
       walkingAnalysis: 'Smooth non-plated feel makes it comfortable for casual wear and warmups.',
