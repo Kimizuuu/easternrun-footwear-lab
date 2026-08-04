@@ -2530,7 +2530,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Versatile Plated Tempo Trainer with High-Stack ZoomX Cushioning',
     description: 'The Nike Zoom Fly 6 is redesigned from the ground up to be significantly lighter than previous iterations. Featuring ZoomX foam encased in a durable carrier with a full-length Flyplate, it is the perfect training companion to the Vaporfly and Alphafly.',
-    overallRating: 83,
+    overallRating: 89,
     useCaseValues: {
       walkingScore: 70,
       walkingAnalysis: 'Comfortable cushion, though slightly stiff forefoot plate.',
@@ -2595,7 +2595,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Ultimate Durable Daily Workhorse with Upgraded ReactX Foam',
     description: "The Nike Pegasus 41 introduces ReactX foam, offering 13% more energy return and a reduced carbon footprint. Paired with dual forefoot and heel Air Zoom units, it remains the world's most trusted daily running workhorse.",
-    overallRating: 81,
+    overallRating: 86,
     useCaseValues: {
       walkingScore: 92,
       walkingAnalysis: 'Exceptional all-day walking comfort and classic neutral support.',
