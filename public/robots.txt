@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://easternrun.fit/sitemap.xml
+Sitemap: https://www.easternrun.fit/sitemap.xml
