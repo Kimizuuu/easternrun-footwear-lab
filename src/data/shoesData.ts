@@ -2400,7 +2400,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Gold Standard Marathon Super-Shoe with Dual Air Zoom Pods',
     description: 'The Nike Alphafly 3 is the pinnacle of marathon racing engineering. Featuring a continuous ZoomX foam midsole, dual forefoot Air Zoom pods, and a full-length Flyplate, it delivers unmatched propulsion and energy return for sub-3 marathoners.',
-    overallRating: 90,
+    overallRating: 91,
     useCaseValues: {
       walkingScore: 55,
       walkingAnalysis: 'High stack and aggressive toe spring make it unstable for slow walking.',
@@ -2465,7 +2465,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Ultra-Lightweight 198g Marathon Speed & 10k/Half Marathon Benchmark',
     description: 'The Nike Vaporfly 3 sets the global standard for lightweight racing performance. Weighing under 200g with 40mm of sculpted ZoomX foam and a full-length Flyplate, it offers snappy, featherweight speed from 5k to 42.2km.',
-    overallRating: 89,
+    overallRating: 91,
     useCaseValues: {
       walkingScore: 50,
       walkingAnalysis: 'Narrow heel base makes slow walking feel wobbly.',
@@ -2660,7 +2660,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Elite Marathon Benchmark with Resilient Lightstrike Pro & ENERGYRODS',
     description: 'The Adidas Adizero Adios Pro 4 is built for podium performances. Redesigned with a lighter forefoot rocker point, dual-layer Lightstrike Pro foam, carbon ENERGYRODS 2.0, and Continental outsole rubber, it is trusted by major marathon winners worldwide.',
-    overallRating: 89,
+    overallRating: 91,
     useCaseValues: {
       walkingScore: 52,
       walkingAnalysis: 'Aggressive rocker point is engineered purely for running momentum.',
@@ -2725,7 +2725,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Non-Plated Super-Trainer King with Pure Lightstrike Pro Bounce',
     description: 'The Adidas Adizero EVO SL brings the pure, uninhibited bounce of full Lightstrike Pro super-foam to an affordable $150 non-plated trainer. Inspired by the record-breaking EVO Pro 1, it delivers effortless bounce and natural foot movement for daily workouts.',
-    overallRating: 89,
+    overallRating: 92,
     useCaseValues: {
       walkingScore: 85,
       walkingAnalysis: 'Smooth non-plated feel makes it comfortable for casual wear and warmups.',
