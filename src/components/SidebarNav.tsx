@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Scale, ChevronRight } from 'lucide-react';
+import { Menu, X, Scale } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import type { Shoe } from '../types/shoe';
 import { SearchAutoComplete } from './SearchAutoComplete';
@@ -255,40 +255,33 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         </button>
       </div>
 
-      {/* Category Filter Section */}
+      {/* Category & Sector Filter Dropdown */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>
-          CATEGORIES
+        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          CATEGORIES & SECTORS
         </span>
-
-        {['All', 'Marathon Super-Shoe', 'Daily Trainer', 'Tempo & Race', 'Max Cushion'].map((cat) => {
-          const isActive = selectedCategory === cat;
-          return (
-            <button
-              key={cat}
-              onClick={() => handleCategoryClick(cat)}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '10px 14px',
-                minHeight: '44px',
-                borderRadius: '6px',
-                background: isActive ? '#0F172A' : '#F8FAFC',
-                color: isActive ? '#FFFFFF' : '#334155',
-                border: isActive ? '1px solid #0F172A' : '1px solid #E2E8F0',
-                fontSize: '0.85rem',
-                fontWeight: isActive ? 700 : 500,
-                cursor: 'pointer',
-                textAlign: 'left',
-                transition: 'all 0.15s ease'
-              }}
-            >
-              <span>{cat}</span>
-              {isActive && <ChevronRight size={16} color="#FFFFFF" />}
-            </button>
-          );
-        })}
+        <select
+          value={selectedCategory}
+          onChange={(e) => handleCategoryClick(e.target.value)}
+          style={{
+            width: '100%',
+            padding: '10px 12px',
+            borderRadius: '6px',
+            border: '1px solid #CBD5E1',
+            background: '#F8FAFC',
+            fontSize: '0.85rem',
+            fontWeight: 700,
+            color: '#0F172A',
+            minHeight: '44px',
+            cursor: 'pointer'
+          }}
+        >
+          <option value="All">All Categories (Overall)</option>
+          <option value="Marathon Super-Shoe">Marathon Super-Shoe (Race)</option>
+          <option value="Tempo & Race">Tempo & Race (Speed)</option>
+          <option value="Daily Trainer">Daily Trainer (Daily)</option>
+          <option value="Max Cushion">Max Cushion (Cushion)</option>
+        </select>
       </div>
 
       {/* Models Quick List */}
