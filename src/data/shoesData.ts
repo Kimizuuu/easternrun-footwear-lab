@@ -2852,7 +2852,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Aggressive High-Toe-Spring Super-Shoe for Fast Forefoot Runners',
     description: "The Saucony Endorphin Elite 2 features Saucony's most responsive PWRRUN HG super-foam paired with a slotted full-length carbon plate. Designed for aggressive forefoot runners seeking maximum turnover and toe-off spring.",
-    overallRating: 88,
+    overallRating: 91,
     useCaseValues: {
       walkingScore: 48,
       walkingAnalysis: 'Aggressive forefoot cutout and rocker feel unnatural for walking.',
@@ -2915,7 +2915,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Smooth, Accessible Super-Shoe with SPEEDROLL Geometry',
     description: 'The Saucony Endorphin Pro 4 features a dual-foam setup combining bouncy PWRRUN HG top foam with durable PWRRUN PB base foam and a full carbon plate. It provides a smooth, accessible super-shoe experience suitable for all foot strike patterns.',
-    overallRating: 87,
+    overallRating: 90,
     useCaseValues: {
       walkingScore: 65,
       walkingAnalysis: 'Fairly comfortable, though carbon plate remains stiff.',
@@ -2978,7 +2978,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Gold Standard Nylon-Plated Super-Trainer for Daily Speedwork',
     description: 'The Saucony Endorphin Speed 4 is widely regarded as one of the best running shoes ever made. Featuring full PWRRUN PB super-foam and a flexible re-engineered winged nylon plate, it seamlessly handles daily mileage, tempo workouts, and races.',
-    overallRating: 86,
+    overallRating: 89,
     useCaseValues: {
       walkingScore: 86,
       walkingAnalysis: 'Flexible nylon plate makes it surprisingly comfortable for casual wear.',
