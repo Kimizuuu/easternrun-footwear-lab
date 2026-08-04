@@ -3085,7 +3085,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       '/images/western/adidas_primex2strung/1.webp',
       '/images/western/adidas_primex2strung/2.webp',
       '/images/western/adidas_primex2strung/3.webp',
-      '/images/western/adidas_primex2strung/4.webp'
+      '/images/western/adidas_primex2strung/4.webp',
+      '/images/western/adidas_primex2strung/5.webp'
     ],
     msrpUsd: 300,
     msrpRmb: 2299,
@@ -3146,7 +3147,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       '/images/western/adidas_takumisen10/1.webp',
       '/images/western/adidas_takumisen10/2.webp',
       '/images/western/adidas_takumisen10/3.webp',
-      '/images/western/adidas_takumisen10/4.webp'
+      '/images/western/adidas_takumisen10/4.webp',
+      '/images/western/adidas_takumisen10/5.webp'
     ],
     msrpUsd: 180,
     msrpRmb: 1299,
@@ -3207,7 +3209,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       '/images/western/adidas_supernovarise/1.webp',
       '/images/western/adidas_supernovarise/2.webp',
       '/images/western/adidas_supernovarise/3.webp',
-      '/images/western/adidas_supernovarise/4.webp'
+      '/images/western/adidas_supernovarise/4.webp',
+      '/images/western/adidas_supernovarise/5.webp'
     ],
     msrpUsd: 140,
     msrpRmb: 999,
@@ -3268,7 +3271,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       '/images/western/adidas_adizerosl2/1.webp',
       '/images/western/adidas_adizerosl2/2.webp',
       '/images/western/adidas_adizerosl2/3.webp',
-      '/images/western/adidas_adizerosl2/4.webp'
+      '/images/western/adidas_adizerosl2/4.webp',
+      '/images/western/adidas_adizerosl2/5.webp'
     ],
     msrpUsd: 130,
     msrpRmb: 899,
