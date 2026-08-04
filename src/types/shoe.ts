@@ -1,4 +1,4 @@
-export type Brand = 'Li-Ning' | 'Anta' | 'Xtep' | '361°' | 'Qiaodan' | 'Nike' | 'Adidas' | 'Saucony' | 'ASICS' | 'Mizuno' | 'New Balance';
+export type Brand = 'Li-Ning' | 'Anta' | 'Xtep' | '361°' | 'Qiaodan' | 'Nike' | 'Adidas' | 'Saucony' | 'ASICS' | 'Mizuno' | 'New Balance' | 'HOKA' | 'Brooks' | 'Skechers';
 
 export type Category = 
   | 'Marathon Super-Shoe' 
