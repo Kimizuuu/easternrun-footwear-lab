@@ -195,11 +195,11 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
           </div>
         </div>
 
-        {/* Grid of Shoe Cards (280px min-width) */}
+        {/* Grid of Shoe Cards (350px min-width = 3 per row on desktop) */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
-          gap: '28px'
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 350px), 1fr))',
+          gap: '32px'
         }}>
           {sortedShoes.map((shoe) => {
             const { score, label } = getShoeDisplayScore(shoe);
