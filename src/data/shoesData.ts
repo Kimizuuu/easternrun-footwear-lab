@@ -2789,7 +2789,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Benchmark Plated Workout Workhorse for Long Distance Training',
     description: 'The Adidas Adizero Boston 13 combines a top layer of Lightstrike Pro super-foam with a protective Lightstrike 2.0 base and glass-fiber ENERGYRODS. Built to handle 800+ km of grueling marathon training blocks.',
-    overallRating: 84,
+    overallRating: 89,
     useCaseValues: {
       walkingScore: 78,
       walkingAnalysis: 'Firm and stable underfoot, suitable for walking.',
@@ -3041,7 +3041,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Global Benchmark Max-Cushion Stability Daily Trainer',
     description: 'The ASICS GEL-Kayano 31 is the gold standard for adaptive stability and max cushioning. Featuring FF BLAST™ PLUS ECO foam, rearfoot PureGEL™, and the 4D Guidance System™, it gently guides overpronating runners without harsh medial posts.',
-    overallRating: 83,
+    overallRating: 87,
     useCaseValues: {
       walkingScore: 98,
       walkingAnalysis: 'Best-in-class walking and all-day standing comfort for severe overpronators or neutral runners.',
