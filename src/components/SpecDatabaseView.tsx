@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { Shoe, Category } from '../types/shoe';
 import { ShoeCardGSMArena } from './ShoeCardGSMArena';
 import { LandingIntroSection } from './LandingIntroSection';
@@ -10,6 +10,8 @@ interface SpecDatabaseViewProps {
   comparedShoes: Shoe[];
   onToggleCompare: (shoe: Shoe) => void;
   selectedBrand: string;
+  selectedCategory: string;
+  setSelectedCategory: (cat: string) => void;
   searchQuery: string;
   onOpenWizard: () => void;
   onOpenCompare: () => void;
@@ -23,21 +25,26 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
   comparedShoes,
   onToggleCompare,
   selectedBrand = 'All',
+  selectedCategory = 'All',
+  setSelectedCategory,
   searchQuery,
   onOpenWizard,
   onOpenCompare,
   onOpenTop10,
   onOpenGuide,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('All');
   const [sortBy, setSortBy] = useState<'race' | 'speed' | 'daily' | 'walking' | 'overall' | 'weight' | 'resilience' | 'price'>('overall');
 
-  const handleCategorySelect = (cat: Category | 'All') => {
+  useEffect(() => {
+    if (selectedCategory === 'Marathon Super-Shoe') setSortBy('race');
+    else if (selectedCategory === 'Tempo & Race') setSortBy('speed');
+    else if (selectedCategory === 'Daily Trainer') setSortBy('daily');
+    else if (selectedCategory === 'Max Cushion') setSortBy('walking');
+    else setSortBy('overall');
+  }, [selectedCategory]);
+
+  const handleCategorySelect = (cat: string) => {
     setSelectedCategory(cat);
-    if (cat === 'Marathon Super-Shoe') setSortBy('race');
-    else if (cat === 'Tempo & Race') setSortBy('speed');
-    else if (cat === 'Daily Trainer') setSortBy('daily');
-    else if (cat === 'Max Cushion') setSortBy('walking');
   };
 
   // Filtering logic

@@ -181,6 +181,8 @@ export function MainApp() {
                   comparedShoes={comparedShoes}
                   onToggleCompare={handleToggleCompare}
                   selectedBrand={selectedBrand}
+                  selectedCategory={selectedCategory}
+                  setSelectedCategory={setSelectedCategory}
                   searchQuery={searchQuery}
                   onOpenWizard={() => setIsWizardOpen(true)}
                   onOpenCompare={() => setIsCompareOpen(true)}
