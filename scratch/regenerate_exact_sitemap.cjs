@@ -58,6 +58,30 @@ shoes.forEach(shoe => {
 `;
 });
 
+// 2. Brand Hub Pages
+const brandSlugs = ['li-ning', 'anta', '361-degrees', 'qiaodan', 'nike', 'adidas', 'saucony', 'asics'];
+brandSlugs.forEach(slug => {
+  sitemap += `  <url>
+    <loc>${baseUrl}/brand/${slug}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+`;
+});
+
+// 3. Best-Of Category Ranking Hub Pages
+const bestSlugs = ['marathon-super-shoes', 'budget-running-shoes', 'daily-trainers', 'max-cushion'];
+bestSlugs.forEach(slug => {
+  sitemap += `  <url>
+    <loc>${baseUrl}/best/${slug}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+`;
+});
+
 // 2. Head-to-Head Comparison Pages
 const comparisonSet = new Set();
 const comparisonPairs = [];

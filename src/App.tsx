@@ -15,6 +15,8 @@ import { LegalModal } from './components/LegalModal';
 import { RunnersGuideModal } from './components/RunnersGuideModal';
 import { SiteFooter } from './components/SiteFooter';
 import { SEOHead } from './components/SEOHead';
+import { BrandHubPage } from './components/BrandHubPage';
+import { CategoryHubPage } from './components/CategoryHubPage';
 import { Analytics } from '@vercel/analytics/react';
 
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
@@ -210,6 +212,32 @@ export function MainApp() {
           <Route
             path="/compare/:compareSlug"
             element={<ShoeComparePage shoes={shoes} />}
+          />
+
+          {/* BRAND HUB PAGE ROUTE */}
+          <Route
+            path="/brand/:brandSlug"
+            element={
+              <BrandHubPage
+                shoes={shoes}
+                comparedShoes={comparedShoes}
+                onSelectShoe={handleSelectShoe}
+                onToggleCompare={handleToggleCompare}
+              />
+            }
+          />
+
+          {/* BEST OF CATEGORY HUB PAGE ROUTE */}
+          <Route
+            path="/best/:categorySlug"
+            element={
+              <CategoryHubPage
+                shoes={shoes}
+                comparedShoes={comparedShoes}
+                onSelectShoe={handleSelectShoe}
+                onToggleCompare={handleToggleCompare}
+              />
+            }
           />
 
           {/* CATCH-ALL ROUTE */}

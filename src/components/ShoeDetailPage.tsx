@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Check, ChevronLeft, ChevronRight, Scale, ThumbsUp, ThumbsDown, Ruler, ZoomIn, Activity, Star } from 'lucide-react';
+import { ArrowLeft, Check, ChevronLeft, ChevronRight, Scale, ThumbsUp, ThumbsDown, Ruler, ZoomIn, Activity, Star, Share2 } from 'lucide-react';
 import type { Shoe } from '../types/shoe';
 import { SizeChartModal } from './SizeChartModal';
 import { ImageZoomModal } from './ImageZoomModal';
@@ -157,6 +157,32 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             >
               <Scale size={16} />
               {isCompared ? 'In Compare Tray' : 'Compare Shoe'}
+            </button>
+
+            {/* Share Button */}
+            <button
+              onClick={() => {
+                const url = window.location.href;
+                navigator.clipboard.writeText(url);
+                alert('Copied review link to clipboard!');
+              }}
+              style={{
+                background: '#FFFFFF',
+                color: '#0F172A',
+                border: '1px solid #CBD5E1',
+                borderRadius: '6px',
+                padding: '8px 16px',
+                fontSize: '0.82rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                minHeight: '44px'
+              }}
+            >
+              <Share2 size={16} />
+              <span>Share Review</span>
             </button>
           </div>
         </div>

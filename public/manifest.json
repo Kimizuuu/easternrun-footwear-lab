@@ -1,0 +1,17 @@
+{
+  "short_name": "EasternRun",
+  "name": "EasternRun — Independent Running Shoe Database & Review Lab",
+  "description": "Independent spec database, lab testing data, and runner reviews for Li-Ning, ANTA, Xtep, 361°, and Qiaodan running shoes alongside Western benchmarks.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512 192x192 144x144 96x96"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0F172A",
+  "theme_color": "#0F172A",
+  "display": "standalone",
+  "orientation": "portrait"
+}
