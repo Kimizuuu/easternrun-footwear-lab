@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const baseUrl = 'https://easternrun.netlify.app';
+const baseUrl = 'https://easternrun.fit';
 
 const shoesDataPath = path.join(__dirname, '..', 'src', 'data', 'shoesData.ts');
 const shoesContent = fs.readFileSync(shoesDataPath, 'utf8');
