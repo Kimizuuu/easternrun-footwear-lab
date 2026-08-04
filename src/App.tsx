@@ -226,10 +226,10 @@ export function MainApp() {
         />
       </div>
 
-      {/* Modals */}
       {isCompareOpen && (
         <CompareGSMArena
           shoes={comparedShoes}
+          allShoes={shoes}
           onClose={() => setIsCompareOpen(false)}
           onRemoveShoe={handleRemoveCompare}
           onSelectShoe={handleSelectShoe}
