@@ -30,7 +30,15 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
   onOpenGuide,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('All');
-  const [sortBy, setSortBy] = useState<'race' | 'speed' | 'weight' | 'resilience' | 'price'>('race');
+  const [sortBy, setSortBy] = useState<'race' | 'speed' | 'daily' | 'walking' | 'overall' | 'weight' | 'resilience' | 'price'>('overall');
+
+  const handleCategorySelect = (cat: Category | 'All') => {
+    setSelectedCategory(cat);
+    if (cat === 'Marathon Super-Shoe') setSortBy('race');
+    else if (cat === 'Tempo & Race') setSortBy('speed');
+    else if (cat === 'Daily Trainer') setSortBy('daily');
+    else if (cat === 'Max Cushion') setSortBy('walking');
+  };
 
   // Filtering logic
   const filteredShoes = shoes.filter((shoe) => {
@@ -63,11 +71,29 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
   const sortedShoes = [...filteredShoes].sort((a, b) => {
     if (sortBy === 'race') return b.useCaseValues.marathonRaceScore - a.useCaseValues.marathonRaceScore;
     if (sortBy === 'speed') return b.useCaseValues.speedWorkoutScore - a.useCaseValues.speedWorkoutScore;
+    if (sortBy === 'daily') return b.useCaseValues.dailyRunScore - a.useCaseValues.dailyRunScore;
+    if (sortBy === 'walking') return b.useCaseValues.walkingScore - a.useCaseValues.walkingScore;
+    if (sortBy === 'overall') return b.overallRating - a.overallRating;
     if (sortBy === 'weight') return a.specs.weightGrams - b.specs.weightGrams;
     if (sortBy === 'resilience') return b.specs.foamResiliencePercent - a.specs.foamResiliencePercent;
     if (sortBy === 'price') return a.msrpUsd - b.msrpUsd;
     return 0;
   });
+
+  const getShoeDisplayScore = (shoe: Shoe): { score: number; label: string } => {
+    if (sortBy === 'race') return { score: shoe.useCaseValues.marathonRaceScore, label: 'Race' };
+    if (sortBy === 'speed') return { score: shoe.useCaseValues.speedWorkoutScore, label: 'Speed' };
+    if (sortBy === 'daily') return { score: shoe.useCaseValues.dailyRunScore, label: 'Daily' };
+    if (sortBy === 'walking') return { score: shoe.useCaseValues.walkingScore, label: 'Cushion' };
+    if (sortBy === 'overall') return { score: shoe.overallRating, label: 'Overall' };
+    
+    if (selectedCategory === 'Marathon Super-Shoe') return { score: shoe.useCaseValues.marathonRaceScore, label: 'Race' };
+    if (selectedCategory === 'Tempo & Race') return { score: shoe.useCaseValues.speedWorkoutScore, label: 'Speed' };
+    if (selectedCategory === 'Daily Trainer') return { score: shoe.useCaseValues.dailyRunScore, label: 'Daily' };
+    if (selectedCategory === 'Max Cushion') return { score: shoe.useCaseValues.walkingScore, label: 'Cushion' };
+
+    return { score: shoe.overallRating, label: 'Overall' };
+  };
 
   const categories: (Category | 'All')[] = [
     'All',
@@ -114,7 +140,7 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => handleCategorySelect(cat)}
                 style={{
                   padding: '6px 14px',
                   borderRadius: '4px',
@@ -150,8 +176,11 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
                 cursor: 'pointer'
               }}
             >
+              <option value="overall">Overall Rating</option>
               <option value="race">Race Day Score</option>
               <option value="speed">Speed Workout Score</option>
+              <option value="daily">Daily Training Score</option>
+              <option value="walking">Max Cushion / Walking</option>
               <option value="weight">Lightest Weight</option>
               <option value="price">Lowest Price</option>
               <option value="resilience">Midsole Energy Return</option>
@@ -165,15 +194,20 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
           gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
           gap: '28px'
         }}>
-          {sortedShoes.map((shoe) => (
-            <ShoeCardGSMArena
-              key={shoe.id}
-              shoe={shoe}
-              onSelect={onSelectShoe}
-              isCompared={comparedShoes.some((s) => s.id === shoe.id)}
-              onToggleCompare={onToggleCompare}
-            />
-          ))}
+          {sortedShoes.map((shoe) => {
+            const { score, label } = getShoeDisplayScore(shoe);
+            return (
+              <ShoeCardGSMArena
+                key={shoe.id}
+                shoe={shoe}
+                onSelect={onSelectShoe}
+                isCompared={comparedShoes.some((s) => s.id === shoe.id)}
+                onToggleCompare={onToggleCompare}
+                displayScore={score}
+                displayScoreLabel={label}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

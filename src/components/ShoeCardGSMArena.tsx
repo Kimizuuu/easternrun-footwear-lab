@@ -7,6 +7,8 @@ interface ShoeCardGSMArenaProps {
   onSelect: (shoe: Shoe) => void;
   isCompared: boolean;
   onToggleCompare: (shoe: Shoe) => void;
+  displayScore?: number;
+  displayScoreLabel?: string;
 }
 
 export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
@@ -14,7 +16,12 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
   onSelect,
   isCompared,
   onToggleCompare,
+  displayScore,
+  displayScoreLabel,
 }) => {
+  const activeScore = displayScore !== undefined ? displayScore : shoe.overallRating;
+  const scoreLabel = displayScoreLabel ? displayScoreLabel : 'Overall';
+
   return (
     <article
       className="card-clean"
@@ -72,7 +79,7 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
           </span>
         </div>
 
-        {/* Overall Rating Badge (100-Basis) */}
+        {/* Dynamic Sector Rating Badge (100-Basis) */}
         <div style={{ position: 'absolute', top: '12px', right: '12px' }}>
           <div style={{
             background: '#0F172A',
@@ -87,8 +94,8 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
             boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
           }}>
             <Star size={13} fill="#EAB308" color="#EAB308" />
-            <span>{shoe.overallRating}</span>
-            <span style={{ color: '#94A3B8', fontSize: '0.7rem', fontWeight: 500 }}>/100</span>
+            <span>{activeScore}</span>
+            <span style={{ color: '#94A3B8', fontSize: '0.7rem', fontWeight: 500 }}>/100 ({scoreLabel})</span>
           </div>
         </div>
 
