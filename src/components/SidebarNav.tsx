@@ -255,33 +255,39 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         </button>
       </div>
 
-      {/* Category & Sector Filter Dropdown */}
+      {/* Category Filter Buttons (1-by-1 List) */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-          CATEGORIES & SECTORS
+        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>
+          CATEGORIES
         </span>
-        <select
-          value={selectedCategory}
-          onChange={(e) => handleCategoryClick(e.target.value)}
-          style={{
-            width: '100%',
-            padding: '10px 12px',
-            borderRadius: '6px',
-            border: '1px solid #CBD5E1',
-            background: '#F8FAFC',
-            fontSize: '0.85rem',
-            fontWeight: 700,
-            color: '#0F172A',
-            minHeight: '44px',
-            cursor: 'pointer'
-          }}
-        >
-          <option value="All">All Categories (Overall)</option>
-          <option value="Marathon Super-Shoe">Marathon Super-Shoe (Race)</option>
-          <option value="Tempo & Race">Tempo & Race (Speed)</option>
-          <option value="Daily Trainer">Daily Trainer (Daily)</option>
-          <option value="Max Cushion">Max Cushion (Cushion)</option>
-        </select>
+
+        {['All', 'Marathon Super-Shoe', 'Daily Trainer', 'Tempo & Race', 'Max Cushion'].map((cat) => {
+          const isActive = selectedCategory === cat;
+          return (
+            <button
+              key={cat}
+              onClick={() => handleCategoryClick(cat)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '10px 14px',
+                minHeight: '44px',
+                borderRadius: '6px',
+                background: isActive ? '#0F172A' : '#F8FAFC',
+                color: isActive ? '#FFFFFF' : '#334155',
+                border: isActive ? '1px solid #0F172A' : '1px solid #E2E8F0',
+                fontSize: '0.85rem',
+                fontWeight: isActive ? 700 : 500,
+                cursor: 'pointer',
+                textAlign: 'left',
+                transition: 'all 0.15s ease'
+              }}
+            >
+              <span>{cat}</span>
+            </button>
+          );
+        })}
       </div>
 
       {/* Models Quick List */}
