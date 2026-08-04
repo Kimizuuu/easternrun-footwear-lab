@@ -960,7 +960,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'High-Bounce Carbon Marathon Super-Shoe',
     description: 'Features Qu!kFLAME PEBA supercritical compound and bionic carbon fiber plate.',
-    overallRating: 88,
+    overallRating: 90,
     useCaseValues: {
       walkingScore: 50,
       walkingAnalysis: 'Stiff rocker geometry.',
@@ -1015,7 +1015,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Hybrid Carbon Speed Workout Specialist',
     description: 'Combines Qu!kFLAME PEBA cushioning with a carbon plate for speed workouts and half marathons.',
-    overallRating: 85,
+    overallRating: 87,
     useCaseValues: {
       walkingScore: 58,
       walkingAnalysis: 'Forward tilt geometry.',
@@ -1070,7 +1070,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Versatile Speed & Tempo Trainer',
     description: 'Combines Qu!kFLAME PEBA foam with a curved carbon plate for daily speed work.',
-    overallRating: 84,
+    overallRating: 86,
     useCaseValues: {
       walkingScore: 60,
       walkingAnalysis: 'Forward running tilt.',
