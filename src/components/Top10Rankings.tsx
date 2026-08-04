@@ -51,17 +51,20 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
           border: '1px solid var(--border-subtle)'
         }}
       >
+        {/* Header */}
         <div style={{
           padding: '16px 24px',
-          background: '#F8FAFC',
-          borderBottom: '1px solid var(--border-subtle)',
+          background: '#0F172A',
+          color: '#FFFFFF',
+          borderBottom: '1px solid #1E293B',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          flexShrink: 0
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <Award size={22} color="#EAB308" />
-            <h2 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, color: 'var(--text-primary)' }}>
+            <h2 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, color: '#FFFFFF' }}>
               EasternRun Performance Benchmark Charts
             </h2>
           </div>
@@ -69,8 +72,8 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
           <button
             onClick={onClose}
             style={{
-              background: '#F1F5F9',
-              color: 'var(--text-secondary)',
+              background: '#1E293B',
+              color: '#94A3B8',
               border: 'none',
               borderRadius: '50%',
               width: '44px',
@@ -85,12 +88,15 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
           </button>
         </div>
 
+        {/* Tab Navigation */}
         <div style={{
           display: 'flex',
-          background: '#FFF',
-          borderBottom: '1px solid var(--border-subtle)',
-          padding: '0 24px',
-          overflowX: 'auto'
+          background: '#F8FAFC',
+          borderBottom: '1px solid #E2E8F0',
+          padding: '12px 24px',
+          overflowX: 'auto',
+          gap: '8px',
+          flexShrink: 0
         }}>
           {[
             { id: 'marathon', label: 'Marathon Race Day', icon: Flame },
@@ -105,21 +111,24 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
                 key={t.id}
                 onClick={() => setTab(t.id as any)}
                 style={{
-                  padding: '12px 18px',
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: isActive ? '2px solid var(--accent-primary)' : '2px solid transparent',
-                  color: isActive ? 'var(--accent-primary)' : 'var(--text-secondary)',
-                  fontWeight: 700,
+                  padding: '8px 16px',
+                  borderRadius: '6px',
+                  background: isActive ? '#2563EB' : '#FFFFFF',
+                  border: isActive ? '1px solid #2563EB' : '1px solid #CBD5E1',
+                  color: isActive ? '#FFFFFF' : '#475569',
+                  fontWeight: isActive ? 700 : 600,
                   fontSize: '0.85rem',
                   cursor: 'pointer',
                   whiteSpace: 'nowrap',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '6px'
+                  gap: '8px',
+                  minHeight: '44px',
+                  boxShadow: isActive ? '0 2px 4px rgba(37, 99, 235, 0.2)' : 'none',
+                  transition: 'all 0.15s ease'
                 }}
               >
-                <Icon size={16} /> {t.label}
+                <Icon size={16} color={isActive ? '#FFFFFF' : '#64748B'} /> {t.label}
               </button>
             );
           })}
