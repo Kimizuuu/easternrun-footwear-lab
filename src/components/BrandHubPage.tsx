@@ -37,6 +37,12 @@ const BRAND_TECH_OVERVIEWS: Record<string, { title: string; foamTech: string; pl
     plateTech: 'Full 3D Spoon Carbon & TPU Speed Shanks',
     description: 'Qiaodan provides elite marathon racing performance with high-rebound Q-KUNGFU PEBA formulations and spoon-shaped carbon propulsion plates.'
   },
+  'xtep': {
+    title: 'Xtep Champion Running Lab',
+    foamTech: 'X-TEP ACE Super-Critical PEBA Foam',
+    plateTech: 'T700 Carbon Fiber & Nylon Propulsion Plates',
+    description: 'Xtep is China’s marathon championship dominant brand, holding record-breaking podium finishes with high-rebound X-TEP ACE PEBA foam and indestructible military-grade CPU outsole traction.'
+  },
   'nike': {
     title: 'Nike Running Benchmark',
     foamTech: 'ZoomX PEBA & ReactX Foam',
@@ -57,9 +63,39 @@ const BRAND_TECH_OVERVIEWS: Record<string, { title: string; foamTech: string; pl
   },
   'asics': {
     title: 'ASICS Stability & Cushion',
-    foamTech: 'FF BLAST™ PLUS / FF BLAST™ TURBO',
+    foamTech: 'FF BLAST™ PLUS / FF BLAST™ TURBO+',
     plateTech: '4D Guidance System & PureGEL Rearfoot',
-    description: 'ASICS premium mileage workhorses featuring 4D Guidance stability geometry and soft FF BLAST cushioning.'
+    description: 'ASICS premium mileage workhorses and race day speed demons featuring FlyteFoam Blast TURBO+ PEBA foam and PureGEL impact protection.'
+  },
+  'mizuno': {
+    title: 'Mizuno Wave Performance',
+    foamTech: 'MIZUNO ENERZY NXT & ENERZY LITE+ PEBA',
+    plateTech: 'Pebax & Carbon-Infused Wave Plates',
+    description: 'Mizuno combines innovative Smooth Speed Assist geometry with bio-based ENERZY NXT foam and structural Wave Plates for explosive forefoot efficiency.'
+  },
+  'new-balance': {
+    title: 'New Balance FuelCell & Fresh Foam',
+    foamTech: '100% PEBA FuelCell & Soft Fresh Foam X',
+    plateTech: 'Energy Arc Carbon Fiber Plate System',
+    description: 'New Balance delivers cloud-soft daily recovery training with Fresh Foam X alongside ultra-bouncy 100% PEBA FuelCell super-shoes.'
+  },
+  'hoka': {
+    title: 'HOKA Max-Cushion & Rocker Lab',
+    foamTech: 'Supercritical Gas-Injected EVA & Marshmallow Foam',
+    plateTech: 'Early-Stage Meta-Rocker & Carbon Plates',
+    description: 'HOKA pioneers max-cushion comfort and Meta-Rocker geometries, offering effortless leg-saving shock absorption for running, walking, and recovery.'
+  },
+  'brooks': {
+    title: 'Brooks Run Happy Performance',
+    foamTech: 'DNA LOFT v3 Supercritical Nitrogen-Infused Foam',
+    plateTech: 'GuideRails Support & Speed Vault Plates',
+    description: 'Brooks combines nitrogen-infused DNA LOFT v3 foam with GuideRails holistic support, creating America’s most trusted daily workhorses.'
+  },
+  'skechers': {
+    title: 'Skechers Performance & Walking',
+    foamTech: 'Hyper Burst Supercritical & ULTRA GO Foam',
+    plateTech: 'Hyper Pillar Technology & Cushion Geometry',
+    description: 'Skechers delivers world-renowned walking and daily standing comfort powered by high-rebound Hyper Pillar Technology and Air-Cooled Goga Mat insoles.'
   }
 };
 
@@ -72,18 +108,11 @@ export const BrandHubPage: React.FC<BrandHubPageProps> = ({
   const { brandSlug } = useParams<{ brandSlug: string }>();
   const normalizedSlug = (brandSlug || '').toLowerCase();
 
-  // Match brand shoes
+  // Match brand shoes dynamically
   const brandShoes = shoes.filter(s => {
-    const b = s.brand.toLowerCase();
-    if (normalizedSlug === 'li-ning' && b.includes('li-ning')) return true;
-    if (normalizedSlug === 'anta' && b.includes('anta')) return true;
-    if (normalizedSlug === '361-degrees' && (b.includes('361') || b.includes('361°'))) return true;
-    if (normalizedSlug === 'qiaodan' && b.includes('qiaodan')) return true;
-    if (normalizedSlug === 'nike' && b.includes('nike')) return true;
-    if (normalizedSlug === 'adidas' && b.includes('adidas')) return true;
-    if (normalizedSlug === 'saucony' && b.includes('saucony')) return true;
-    if (normalizedSlug === 'asics' && b.includes('asics')) return true;
-    return false;
+    const b = s.brand.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const target = normalizedSlug.replace(/[^a-z0-9]/g, '').replace('degrees', '361');
+    return b.includes(target) || target.includes(b) || (target.includes('361') && b.includes('361'));
   }).sort((a, b) => b.overallRating - a.overallRating);
 
   const info = BRAND_TECH_OVERVIEWS[normalizedSlug] || {
