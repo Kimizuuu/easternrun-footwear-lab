@@ -25,7 +25,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Pinnacle Flagship Marathon Super-Shoe',
     description: 'Li-Ning’s flagship 42K race-day weapon. Engineered with 6th-gen PEBA supercritical BOOM foam, a full 3D curved carbon plate, and GCU ground control traction rubber.',
-    overallRating: 97,
+    overallRating: 94,
     useCaseValues: {
       walkingScore: 45,
       walkingAnalysis: 'Not recommended for casual walking. Stiff carbon plate and aggressive toe rocker force a fast forward tilt.',
@@ -84,7 +84,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'High-Performance Marathon Carbon Racer',
     description: 'Designed for competitive marathoners seeking aggressive carbon propulsion with lightweight PEBA supercritical cushioning.',
-    overallRating: 95,
+    overallRating: 92,
     useCaseValues: {
       walkingScore: 50,
       walkingAnalysis: 'Rigid carbon plate geometry makes casual walking stiff.',
@@ -142,7 +142,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Versatile Speed Trainer & Half-Marathon Specialist',
     description: 'Combines a curved carbon shank plate with full BOOM supercritical foam for tempo workouts and race days.',
-    overallRating: 91,
+    overallRating: 89,
     useCaseValues: {
       walkingScore: 65,
       walkingAnalysis: 'More forgiving than full carbon models.',
@@ -258,7 +258,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Featherweight Breathable Daily Cruiser',
     description: 'Engineered with ultra-light BOOM foam and translucent MONO mesh upper for effortless summer miles and casual wear.',
-    overallRating: 85,
+    overallRating: 84,
     useCaseValues: {
       walkingScore: 96,
       walkingAnalysis: 'DOMINANT SECTOR. Exceptionally comfortable for casual walking at 190g.',
@@ -318,7 +318,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Flagship Carbon Fiber Marathon Race Weapon',
     description: 'Anta’s elite marathon carbon super-shoe with NITROEDGE PEBA supercritical foam and 3D spoon carbon plate.',
-    overallRating: 96,
+    overallRating: 93,
     useCaseValues: {
       walkingScore: 48,
       walkingAnalysis: 'Stiff carbon spoon plate is rigid for walking.',
@@ -372,7 +372,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'High-Stability Marathon Carbon Racer',
     description: 'Engineered for full marathons with dual-density NITROEDGE foam and bionic carbon plate.',
-    overallRating: 94,
+    overallRating: 91,
     useCaseValues: {
       walkingScore: 52,
       walkingAnalysis: 'Offers good midfoot stability.',
@@ -425,7 +425,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Responsive Speed Trainer & Half-Marathon Specialist',
     description: 'Combines full NITROEDGE supercritical foam with a curved carbon plate for tempo runs and 21K races.',
-    overallRating: 90,
+    overallRating: 88,
     useCaseValues: {
       walkingScore: 60,
       walkingAnalysis: 'Built for running momentum.',
@@ -478,7 +478,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Versatile Speed Workout & Tempo Specialist',
     description: 'Combines NITROEDGE supercritical foam with a TPU carbon shank for high-tempo interval workouts.',
-    overallRating: 86,
+    overallRating: 84,
     useCaseValues: {
       walkingScore: 68,
       walkingAnalysis: 'Decent walking comfort.',
@@ -531,7 +531,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Ultra-Comfortable Travel & Daily Walking Specialist',
     description: 'Anta’s best-selling travel and daily walking trainer with plush Peak Gravity cushion and wide toe-box fit.',
-    overallRating: 80,
+    overallRating: 79,
     useCaseValues: {
       walkingScore: 98,
       walkingAnalysis: 'DOMINANT SECTOR. Ranked on r/RunningShoeGeeks as #1 best budget walking shoe under $90.',
@@ -583,7 +583,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'High-Mileage Workhorse Daily Trainer',
     description: '3rd-generation PG7 daily trainer designed for high-mileage base building.',
-    overallRating: 79,
+    overallRating: 78,
     useCaseValues: {
       walkingScore: 92,
       walkingAnalysis: 'Soft landing for daily walking.',
@@ -635,7 +635,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Urban Walking & All-Day Commuter Trainer',
     description: 'Designed for city walking, urban commutes, and light daily runs.',
-    overallRating: 76,
+    overallRating: 75,
     useCaseValues: {
       walkingScore: 95,
       walkingAnalysis: 'DOMINANT SECTOR. Perfect urban walking shoe.',
@@ -687,7 +687,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'The Classic Iconic Budget Daily Cruiser',
     description: 'Original classic PG7 trainer known for extreme value and soft heel protection.',
-    overallRating: 75,
+    overallRating: 74,
     useCaseValues: {
       walkingScore: 94,
       walkingAnalysis: 'DOMINANT SECTOR. Unbeatable value at $70 for casual walking.',
@@ -739,7 +739,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Plush Cushioning Recovery & High Mileage Trainer',
     description: 'Features A-FLASHFOAM high-resilience midsole with 36mm heel stack.',
-    overallRating: 80,
+    overallRating: 79,
     useCaseValues: {
       walkingScore: 88,
       walkingAnalysis: 'Deep plush heel cushion.',
@@ -791,7 +791,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Lightweight Agile Daily & Gym Trainer',
     description: 'Engineered with lightweight A-FLASHFOAM and midfoot TPU stability bridge.',
-    overallRating: 79,
+    overallRating: 78,
     useCaseValues: {
       walkingScore: 90,
       walkingAnalysis: 'Lightweight 215g feel.',
@@ -849,7 +849,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Flagship Carbon Fiber Marathon Race Weapon',
     description: '361°’s top-tier marathon super-shoe featuring full Qu!kFLAME CQT PEBA foam and bionic 3D carbon spoon plate.',
-    overallRating: 96,
+    overallRating: 93,
     useCaseValues: {
       walkingScore: 46,
       walkingAnalysis: 'Aggressive carbon spoon plate.',
@@ -905,7 +905,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Ultra-Lightweight Carbon Marathon Racer',
     description: 'Sub-180g carbon racing specialist built for fast marathon cadences.',
-    overallRating: 95,
+    overallRating: 92,
     useCaseValues: {
       walkingScore: 48,
       walkingAnalysis: 'Stiff carbon plate geometry.',
@@ -960,7 +960,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'High-Bounce Carbon Marathon Super-Shoe',
     description: 'Features Qu!kFLAME PEBA supercritical compound and bionic carbon fiber plate.',
-    overallRating: 94,
+    overallRating: 91,
     useCaseValues: {
       walkingScore: 50,
       walkingAnalysis: 'Stiff rocker geometry.',
@@ -1015,7 +1015,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Hybrid Carbon Speed Workout Specialist',
     description: 'Combines Qu!kFLAME PEBA cushioning with a carbon plate for speed workouts and half marathons.',
-    overallRating: 90,
+    overallRating: 88,
     useCaseValues: {
       walkingScore: 58,
       walkingAnalysis: 'Forward tilt geometry.',
@@ -1070,7 +1070,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Versatile Speed & Tempo Trainer',
     description: 'Combines Qu!kFLAME PEBA foam with a curved carbon plate for daily speed work.',
-    overallRating: 89,
+    overallRating: 87,
     useCaseValues: {
       walkingScore: 60,
       walkingAnalysis: 'Forward running tilt.',
@@ -1125,7 +1125,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Speed Workout & Interval Trainer',
     description: 'Combines Qu!kFLAME foam with a carbon shank for energetic speed reps.',
-    overallRating: 88,
+    overallRating: 86,
     useCaseValues: {
       walkingScore: 62,
       walkingAnalysis: 'Decent walking feel.',
@@ -1180,7 +1180,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Carbon-Assisted Tempo Workhorse',
     description: 'Budget-friendly carbon-assisted speed trainer for interval reps.',
-    overallRating: 87,
+    overallRating: 85,
     useCaseValues: {
       walkingScore: 63,
       walkingAnalysis: 'Forgiving feel.',
@@ -1236,7 +1236,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Wide-Friendly Speed Workout Specialist',
     description: 'Designed with an accommodating wider fit for runners with broad feet seeking carbon speed.',
-    overallRating: 86,
+    overallRating: 84,
     useCaseValues: {
       walkingScore: 65,
       walkingAnalysis: 'Wide accommodating toe box.',
@@ -1291,7 +1291,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Budget Carbon-Plated Racer',
     description: 'Full Qu!kFLAME supercritical foam with a curved carbon plate for road races.',
-    overallRating: 86,
+    overallRating: 84,
     useCaseValues: {
       walkingScore: 64,
       walkingAnalysis: 'Stiff running plate.',
@@ -1346,7 +1346,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Wide-Fit Budget Carbon Racer',
     description: 'Wide-fit variant of the acclaimed Flame 3.0 carbon racer under $120.',
-    overallRating: 85,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 63,
       walkingAnalysis: 'Forgiving forefoot room.',
@@ -1401,7 +1401,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Best Budget Carbon Super-Shoe Alternative on Reddit',
     description: 'Renowned on r/RunningShoeGeeks as one of the best value carbon-plated racers under $120. Features Qu!kFLAME PEBA foam and a curved carbon plate.',
-    overallRating: 85,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 62,
       walkingAnalysis: 'More forgiving than extreme super-shoes.',
@@ -1456,7 +1456,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Nylon Glass-Fiber Speed Trainer',
     description: 'Features Qu!kFLAME CQT midsole with a nylon glass-fiber plate for high durability speed reps.',
-    overallRating: 89,
+    overallRating: 87,
     useCaseValues: {
       walkingScore: 60,
       walkingAnalysis: 'Propulsive geometry.',
@@ -1511,7 +1511,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Next-Gen Carbon Marathon Racer',
     description: 'Features Qu!kFLAME PEBA supercritical foam and full 3D bionic carbon plate.',
-    overallRating: 94,
+    overallRating: 91,
     useCaseValues: {
       walkingScore: 50,
       walkingAnalysis: 'Stiff running plate.',
@@ -1566,7 +1566,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'High-Mileage Workhorse Daily Trainer',
     description: 'Full-length Qu!kFOAM supercritical cushioning for daily base miles and easy recovery runs.',
-    overallRating: 84,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 90,
       walkingAnalysis: 'Soft plush step-in comfort.',
@@ -1622,7 +1622,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Reliable Budget Daily Workhorse',
     description: 'Durable daily trainer with Qu!kFOAM cushion and high-abrasion rubber.',
-    overallRating: 82,
+    overallRating: 80,
     useCaseValues: {
       walkingScore: 90,
       walkingAnalysis: 'Soft for daily walking.',
@@ -1677,7 +1677,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Plush Max Cushion Recovery Trainer',
     description: '36mm heel stack Qu!kFOAM Max cushion for absorbing impact on recovery miles.',
-    overallRating: 78,
+    overallRating: 76,
     useCaseValues: {
       walkingScore: 92,
       walkingAnalysis: 'Plush heel cushion.',
@@ -1732,7 +1732,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Featherweight Ultra-Breathable Walking & Daily Cruiser',
     description: 'Engineered with 195g ultra-light Qu!kFOAM and translucent airy upper mesh for effortless daily walking.',
-    overallRating: 80,
+    overallRating: 78,
     useCaseValues: {
       walkingScore: 97,
       walkingAnalysis: 'DOMINANT SECTOR. Ultra-comfortable featherweight walking and standing shoe.',
@@ -1787,7 +1787,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Plush Soft Step-In Daily & Walking Trainer',
     description: 'Plush step-in cushioning designed for casual walking, standing, and easy daily runs.',
-    overallRating: 77,
+    overallRating: 75,
     useCaseValues: {
       walkingScore: 95,
       walkingAnalysis: 'DOMINANT SECTOR. Soft step-in heel comfort for all-day wear.',
@@ -1844,7 +1844,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Flagship Supercritical Marathon Super-Shoe',
     description: 'Qiaodan flagship 42K race weapon featuring 6th-gen Q-KUNGFU PEBA supercritical foam, full-length carbon plate, and CPU ultra-grip rubber.',
-    overallRating: 96,
+    overallRating: 93,
     useCaseValues: {
       walkingScore: 50,
       walkingAnalysis: 'Stiff carbon plate designed purely for race pace.',
@@ -1898,7 +1898,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'High-Performance Proven Marathon Carbon Racer',
     description: 'Proven marathon contender combining Q-KUNGFU PRO supercritical PEBA foam with a spoon carbon plate for exceptional propulsion.',
-    overallRating: 94,
+    overallRating: 91,
     useCaseValues: {
       walkingScore: 55,
       walkingAnalysis: 'Stiff plate geometry.',
@@ -1953,7 +1953,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Ultra-Bouncy Max-Stack Carbon Super-Shoe',
     description: 'Qiaodan’s highest energy return racer featuring dual-density Q-KUNGFU TURBO PEBA foam and a wide carbon fiber wing plate.',
-    overallRating: 97,
+    overallRating: 94,
     useCaseValues: {
       walkingScore: 48,
       walkingAnalysis: 'Aggressive geometry for race pace.',
@@ -2007,7 +2007,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'High-Rebound Carbon Marathon Racer',
     description: 'Engineered for sub-3 marathoners with high-resilience PEBA foam and a full carbon plate.',
-    overallRating: 95,
+    overallRating: 92,
     useCaseValues: {
       walkingScore: 50,
       walkingAnalysis: 'Race day geometry.',
@@ -2062,7 +2062,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Lightweight Carbon-Shank Tempo & Speed Trainer',
     description: 'A versatile speed trainer blending Q-KUNGFU supercritical foam with a responsive midfoot shank for half-marathons and speed reps.',
-    overallRating: 88,
+    overallRating: 86,
     useCaseValues: {
       walkingScore: 68,
       walkingAnalysis: 'More flexible than full carbon racers.',
@@ -2118,7 +2118,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'High-Mileage Daily Workhorse with 800km+ Durability',
     description: 'Built for high weekly mileage, featuring protective dual-density foam, TPU arch support shank, and high-wear rubber outsole.',
-    overallRating: 84,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 88,
       walkingAnalysis: 'Very comfortable for all-day wear.',
@@ -2173,7 +2173,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Super Soft Plush Max Cushion & Walking Cruiser',
     description: 'Ultra-soft step-in feel with max stack supercritical cushioning for easy recovery jogs, long walks, and all-day comfort.',
-    overallRating: 78,
+    overallRating: 76,
     useCaseValues: {
       walkingScore: 97,
       walkingAnalysis: 'DOMINANT SECTOR. Pillow-soft step-in comfort for all-day standing.',
@@ -2229,7 +2229,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Agile Speed Workout & Track Interval Specialist',
     description: 'Low-profile responsive trainer built for track intervals, tempo runs, and fast 5K-10K racing.',
-    overallRating: 85,
+    overallRating: 84,
     useCaseValues: {
       walkingScore: 72,
       walkingAnalysis: 'Light and nimble.',
@@ -2284,7 +2284,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Smooth & Bouncy High-Mileage Daily Workhorse',
     description: 'Delivers energetic impact absorption and smooth heel-to-toe transition for everyday training runs.',
-    overallRating: 84,
+    overallRating: 83,
     useCaseValues: {
       walkingScore: 85,
       walkingAnalysis: 'Smooth daily walking feel.',
@@ -2339,7 +2339,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Wide Retail',
     tagline: 'Lightweight & Breathable Daily Performance Trainer',
     description: 'Designed for daily miles in warm weather with high ventilation MONO mesh and energetic supercritical foam.',
-    overallRating: 85,
+    overallRating: 84,
     useCaseValues: {
       walkingScore: 88,
       walkingAnalysis: 'Airy feel for walking.',
@@ -2660,7 +2660,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'Elite Marathon Benchmark with Resilient Lightstrike Pro & ENERGYRODS',
     description: 'The Adidas Adizero Adios Pro 4 is built for podium performances. Redesigned with a lighter forefoot rocker point, dual-layer Lightstrike Pro foam, carbon ENERGYRODS 2.0, and Continental outsole rubber, it is trusted by major marathon winners worldwide.',
-    overallRating: 93,
+    overallRating: 92,
     useCaseValues: {
       walkingScore: 52,
       walkingAnalysis: 'Aggressive rocker point is engineered purely for running momentum.',
