@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, MessageSquareQuote, Award, Target, Scale, BookOpen } from 'lucide-react';
+import { Activity, MessageSquareQuote, Award, Target, Scale, BookOpen, BarChart2, ShieldCheck } from 'lucide-react';
 import type { Shoe } from '../types/shoe';
 import { SearchAutoComplete } from './SearchAutoComplete';
 
@@ -115,57 +115,99 @@ export const LandingIntroSection: React.FC<LandingIntroSectionProps> = ({
             />
           </div>
 
-          {/* Website Purpose & Overview Cards — Clean Monochrome */}
+          {/* Website Purpose & Overview Cards — Tech Glassmorphism Design */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
-            gap: '16px',
-            marginTop: '24px',
-            paddingTop: '24px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+            gap: '18px',
+            marginTop: '28px',
+            paddingTop: '28px',
+            borderTop: '1px solid rgba(255, 255, 255, 0.12)',
             width: '100%'
           }}>
+            {/* Card 1 */}
             <div style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '8px',
-              padding: '18px',
-              backdropFilter: 'blur(8px)'
+              background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              borderTop: '2px solid #38BDF8',
+              borderRadius: '10px',
+              padding: '20px',
+              backdropFilter: 'blur(12px)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.25)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '10px'
             }}>
-              <h3 style={{ fontSize: '0.85rem', color: '#F8FAFC', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', margin: '0 0 8px 0' }}>
-                OUR PURPOSE
-              </h3>
-              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.5 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Target size={18} color="#38BDF8" />
+                  <h3 style={{ fontSize: '0.85rem', color: '#F8FAFC', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', margin: 0 }}>
+                    OUR PURPOSE
+                  </h3>
+                </div>
+                <span style={{ fontSize: '0.68rem', padding: '2px 8px', background: 'rgba(56, 189, 248, 0.12)', color: '#38BDF8', borderRadius: '4px', fontWeight: 700, border: '1px solid rgba(56, 189, 248, 0.25)' }}>
+                  MISSION
+                </span>
+              </div>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.55 }}>
                 An independent, objective platform built to help runners research, evaluate, and choose performance footwear without marketing bias.
               </p>
             </div>
 
+            {/* Card 2 */}
             <div style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '8px',
-              padding: '18px',
-              backdropFilter: 'blur(8px)'
+              background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              borderTop: '2px solid #818CF8',
+              borderRadius: '10px',
+              padding: '20px',
+              backdropFilter: 'blur(12px)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.25)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '10px'
             }}>
-              <h3 style={{ fontSize: '0.85rem', color: '#F8FAFC', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', margin: '0 0 8px 0' }}>
-                WHAT WE DO
-              </h3>
-              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.5 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <BarChart2 size={18} color="#818CF8" />
+                  <h3 style={{ fontSize: '0.85rem', color: '#F8FAFC', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', margin: 0 }}>
+                    WHAT WE DO
+                  </h3>
+                </div>
+                <span style={{ fontSize: '0.68rem', padding: '2px 8px', background: 'rgba(129, 140, 248, 0.12)', color: '#818CF8', borderRadius: '4px', fontWeight: 700, border: '1px solid rgba(129, 140, 248, 0.25)' }}>
+                  ANALYTICS
+                </span>
+              </div>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.55 }}>
                 We analyze technical specs, pricing, and performance data to provide side-by-side comparison trays, rankings, and shoe finder wizards.
               </p>
             </div>
 
+            {/* Card 3 */}
             <div style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '8px',
-              padding: '18px',
-              backdropFilter: 'blur(8px)'
+              background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              borderTop: '2px solid #34D399',
+              borderRadius: '10px',
+              padding: '20px',
+              backdropFilter: 'blur(12px)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.25)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '10px'
             }}>
-              <h3 style={{ fontSize: '0.85rem', color: '#F8FAFC', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', margin: '0 0 8px 0' }}>
-                INDEPENDENT METRICS
-              </h3>
-              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.5 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <ShieldCheck size={18} color="#34D399" />
+                  <h3 style={{ fontSize: '0.85rem', color: '#F8FAFC', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', margin: 0 }}>
+                    INDEPENDENT METRICS
+                  </h3>
+                </div>
+                <span style={{ fontSize: '0.68rem', padding: '2px 8px', background: 'rgba(52, 211, 153, 0.12)', color: '#34D399', borderRadius: '4px', fontWeight: 700, border: '1px solid rgba(52, 211, 153, 0.25)' }}>
+                  UNBIASED
+                </span>
+              </div>
+              <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.55 }}>
                 Zero brand sponsorship control. Pure transparent metrics, open community reviews, and real distance testing feedback.
               </p>
             </div>
