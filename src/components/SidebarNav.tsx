@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, X, Scale } from 'lucide-react';
+import { Menu, X, Scale, ChevronRight } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import type { Shoe } from '../types/shoe';
 import { SearchAutoComplete } from './SearchAutoComplete';
 
@@ -34,10 +35,30 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
   setSelectedBrand,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleMobileSelectShoe = (shoe: Shoe) => {
     onSelectShoe(shoe);
     setIsMobileMenuOpen(false);
+  };
+
+  const handleCategoryClick = (cat: string) => {
+    setSelectedCategory(cat);
+    setIsMobileMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+    }
+  };
+
+  const handleBrandClick = (b: string) => {
+    if (setSelectedBrand) {
+      setSelectedBrand(b);
+    }
+    setIsMobileMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+    }
   };
 
   const navContent = (
@@ -92,21 +113,19 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             {['All', 'Li-Ning', 'Anta', 'Xtep', '361°', 'Qiaodan', 'Nike', 'Adidas', 'Saucony', 'ASICS'].map((b) => (
               <button
                 key={b}
-                onClick={() => {
-                  setSelectedBrand(b);
-                  setIsMobileMenuOpen(false);
-                }}
+                onClick={() => handleBrandClick(b)}
                 style={{
                   flex: '1 1 44%',
-                  padding: '12px 0',
+                  padding: '10px 0',
                   minHeight: '44px',
-                  borderRadius: 'var(--radius-sm)',
-                  border: selectedBrand === b ? '1px solid #0F172A' : '1px solid var(--border-subtle)',
+                  borderRadius: '6px',
+                  border: selectedBrand === b ? '1px solid #0F172A' : '1px solid #E2E8F0',
                   background: selectedBrand === b ? '#0F172A' : '#FFFFFF',
-                  color: selectedBrand === b ? '#FFFFFF' : 'var(--text-secondary)',
-                  fontSize: '0.8rem',
+                  color: selectedBrand === b ? '#FFFFFF' : '#475569',
+                  fontSize: '0.82rem',
                   fontWeight: selectedBrand === b ? 700 : 500,
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease'
                 }}
               >
                 {b}
@@ -226,34 +245,39 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       </div>
 
       {/* Category Filter Section */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-        <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '4px' }}>
-          Categories
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>
+          CATEGORIES
         </span>
 
-        {['All', 'Marathon Super-Shoe', 'Daily Trainer', 'Tempo & Race', 'Max Cushion'].map((cat) => (
-          <button
-            key={cat}
-            onClick={() => {
-              setSelectedCategory(cat);
-              setIsMobileMenuOpen(false);
-            }}
-            style={{
-              padding: '6px 12px',
-              minHeight: '44px',
-              borderRadius: 'var(--radius-sm)',
-              background: selectedCategory === cat ? '#F3F4F6' : 'transparent',
-              color: selectedCategory === cat ? '#111827' : 'var(--text-secondary)',
-              border: 'none',
-              fontSize: '0.82rem',
-              fontWeight: selectedCategory === cat ? 700 : 500,
-              cursor: 'pointer',
-              textAlign: 'left'
-            }}
-          >
-            {cat}
-          </button>
-        ))}
+        {['All', 'Marathon Super-Shoe', 'Daily Trainer', 'Tempo & Race', 'Max Cushion'].map((cat) => {
+          const isActive = selectedCategory === cat;
+          return (
+            <button
+              key={cat}
+              onClick={() => handleCategoryClick(cat)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '10px 14px',
+                minHeight: '44px',
+                borderRadius: '6px',
+                background: isActive ? '#0F172A' : '#F8FAFC',
+                color: isActive ? '#FFFFFF' : '#334155',
+                border: isActive ? '1px solid #0F172A' : '1px solid #E2E8F0',
+                fontSize: '0.85rem',
+                fontWeight: isActive ? 700 : 500,
+                cursor: 'pointer',
+                textAlign: 'left',
+                transition: 'all 0.15s ease'
+              }}
+            >
+              <span>{cat}</span>
+              {isActive && <ChevronRight size={16} color="#FFFFFF" />}
+            </button>
+          );
+        })}
       </div>
 
       {/* Models Quick List */}
