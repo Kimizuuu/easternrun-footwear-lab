@@ -3080,15 +3080,12 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Adidas',
     category: 'Marathon Super-Shoe',
     dominantSector: 'Marathon Race Day',
-    image: '/images/western/adidas_primex2strung/1.webp',
+    image: '/images/western/adios_pro4/7.webp',
     galleryImages: [
-      '/images/western/adidas_primex2strung/1.webp',
-      '/images/western/adidas_primex2strung/2.webp',
-      '/images/western/adidas_primex2strung/3.webp',
-      '/images/western/adidas_primex2strung/4.webp',
-      '/images/western/adidas_primex2strung/5.webp',
-      '/images/western/adidas_primex2strung/6.webp',
-      '/images/western/adidas_primex2strung/7.webp'
+      '/images/western/adios_pro4/7.webp',
+      '/images/western/adios_pro4/8.webp',
+      '/images/western/adios_pro4/5.webp',
+      '/images/western/adios_pro4/1.webp'
     ],
     msrpUsd: 300,
     msrpRmb: 2299,
@@ -3144,15 +3141,12 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Adidas',
     category: 'Tempo & Race',
     dominantSector: 'Tempo & Speed Workouts',
-    image: '/images/western/adidas_takumisen10/1.webp',
+    image: '/images/western/evo_sl/3.webp',
     galleryImages: [
-      '/images/western/adidas_takumisen10/1.webp',
-      '/images/western/adidas_takumisen10/2.webp',
-      '/images/western/adidas_takumisen10/3.webp',
-      '/images/western/adidas_takumisen10/4.webp',
-      '/images/western/adidas_takumisen10/5.webp',
-      '/images/western/adidas_takumisen10/6.webp',
-      '/images/western/adidas_takumisen10/7.webp'
+      '/images/western/evo_sl/3.webp',
+      '/images/western/evo_sl/4.webp',
+      '/images/western/evo_sl/5.webp',
+      '/images/western/evo_sl/1.webp'
     ],
     msrpUsd: 180,
     msrpRmb: 1299,
@@ -3272,15 +3266,12 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Adidas',
     category: 'Daily Trainer',
     dominantSector: 'Tempo & Speed Workouts',
-    image: '/images/western/adidas_adizerosl2/1.webp',
+    image: '/images/western/evo_sl/7.webp',
     galleryImages: [
-      '/images/western/adidas_adizerosl2/1.webp',
-      '/images/western/adidas_adizerosl2/2.webp',
-      '/images/western/adidas_adizerosl2/3.webp',
-      '/images/western/adidas_adizerosl2/4.webp',
-      '/images/western/adidas_adizerosl2/5.webp',
-      '/images/western/adidas_adizerosl2/6.webp',
-      '/images/western/adidas_adizerosl2/7.webp'
+      '/images/western/evo_sl/7.webp',
+      '/images/western/evo_sl/8.webp',
+      '/images/western/evo_sl/2.webp',
+      '/images/western/evo_sl/1.webp'
     ],
     msrpUsd: 130,
     msrpRmb: 899,
