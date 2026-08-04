@@ -43,12 +43,22 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
     setIsMobileMenuOpen(false);
   };
 
+  const scrollToCatalog = () => {
+    setTimeout(() => {
+      const catalogElem = document.getElementById('database-catalog-section');
+      if (catalogElem) {
+        catalogElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   const handleCategoryClick = (cat: string) => {
     setSelectedCategory(cat);
     setIsMobileMenuOpen(false);
     if (location.pathname !== '/') {
       navigate('/');
     }
+    scrollToCatalog();
   };
 
   const handleBrandClick = (b: string) => {
@@ -59,6 +69,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
     if (location.pathname !== '/') {
       navigate('/');
     }
+    scrollToCatalog();
   };
 
   const navContent = (
