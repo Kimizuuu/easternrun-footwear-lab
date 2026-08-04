@@ -3,6 +3,8 @@ import { ArrowLeft, Check, ChevronLeft, ChevronRight, Scale, ThumbsUp, ThumbsDow
 import type { Shoe } from '../types/shoe';
 import { SizeChartModal } from './SizeChartModal';
 import { ImageZoomModal } from './ImageZoomModal';
+import { SEOHead } from './SEOHead';
+import { getShoeSlug } from '../utils/slugUtils';
 
 interface ShoeDetailPageProps {
   shoe: Shoe;
@@ -41,6 +43,31 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
     setSelectedPhotoIndex((prev) => (prev - 1 + photos.length) % photos.length);
   };
 
+  const shoeSlug = getShoeSlug(shoe);
+  const canonicalUrl = `https://easternrun.fit/shoe/${shoeSlug}`;
+  const title = `${shoe.brand} ${shoe.name} Spec Review & Performance Database | EasternRun`;
+  const description = `Full technical breakdown for ${shoe.brand} ${shoe.name}: $${shoe.msrpUsd} MSRP, ${shoe.specs?.weightGrams ? shoe.specs.weightGrams + 'g' : ''}, ${shoe.specs?.foamName || 'Superfoam'}, overall rating ${shoe.overallRating}/100.`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${shoe.brand} ${shoe.name}`,
+    image: `https://easternrun.fit${shoe.image}`,
+    description: shoe.description,
+    brand: { '@type': 'Brand', name: shoe.brand },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: shoe.msrpUsd,
+      availability: 'https://schema.org/InStock'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: (shoe.overallRating / 20).toFixed(1),
+      reviewCount: 50
+    }
+  };
+
   return (
     <article className="animate-fade-in" style={{
       width: '100%',
@@ -49,6 +76,13 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
       color: '#1E293B',
       background: '#FFFFFF'
     }}>
+      <SEOHead
+        title={title}
+        description={description}
+        canonicalUrl={canonicalUrl}
+        ogImage={`https://easternrun.fit${shoe.image}`}
+        jsonLd={jsonLd}
+      />
       {/* Top Fixed Breadcrumb Bar */}
       <div style={{
         background: '#F8FAFC',

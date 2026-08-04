@@ -1,6 +1,8 @@
 import React from 'react';
-import { X } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import type { Shoe } from '../types/shoe';
+import { getCompareSlug } from '../utils/slugUtils';
 
 interface CompareGSMArenaProps {
   shoes: Shoe[];
@@ -14,6 +16,8 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
   onClose,
   onRemoveShoe,
 }) => {
+  const navigate = useNavigate();
+
   if (shoes.length === 0) {
     return (
       <div style={{
@@ -40,6 +44,14 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
       </div>
     );
   }
+
+  const handleOpenFullPageCompare = () => {
+    if (shoes.length >= 2) {
+      const slug = getCompareSlug(shoes[0], shoes[1]);
+      onClose();
+      navigate(`/compare/${slug}`);
+    }
+  };
 
   return (
     <div style={{
@@ -77,33 +89,59 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
           borderBottom: '1px solid var(--border-subtle)',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '12px'
         }}>
           <div>
             <h2 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, color: 'var(--text-primary)' }}>
               Side-by-Side Specifics & Dominance Matrix
             </h2>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Comparing {shoes.length} Li-Ning model(s)</span>
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Comparing {shoes.length} model(s)</span>
           </div>
 
-          <button
-            onClick={onClose}
-            style={{
-              background: '#F1F5F9',
-              color: 'var(--text-secondary)',
-              border: 'none',
-              borderRadius: '50%',
-              width: '44px',
-              height: '44px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer'
-            }}
-          >
-            <X size={18} />
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {shoes.length >= 2 && (
+              <button
+                onClick={handleOpenFullPageCompare}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '8px 14px',
+                  background: '#2563EB',
+                  color: '#FFF',
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontSize: '0.85rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  minHeight: '44px'
+                }}
+              >
+                Open Shareable SEO Page <ExternalLink size={14} />
+              </button>
+            )}
+            <button
+              onClick={onClose}
+              style={{
+                background: '#F1F5F9',
+                color: 'var(--text-secondary)',
+                border: 'none',
+                borderRadius: '50%',
+                width: '44px',
+                height: '44px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer'
+              }}
+            >
+              <X size={18} />
+            </button>
+          </div>
         </div>
+
 
         {/* Matrix Content */}
         <div style={{ overflowY: 'auto', overflowX: 'auto', flex: 1, padding: 'clamp(12px, 3vw, 24px)' }}>

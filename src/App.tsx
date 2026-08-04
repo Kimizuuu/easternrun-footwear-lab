@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate, useParams, Navigate, useLocation } from 'react-router-dom';
 import { INITIAL_SHOES_DATA } from './data/shoesData';
 import type { Shoe, UserReview } from './types/shoe';
+import { getShoeBySlug, getShoeSlug } from './utils/slugUtils';
 import { SidebarNav } from './components/SidebarNav';
 import { SpecDatabaseView } from './components/SpecDatabaseView';
 import { ShoeDetailPage } from './components/ShoeDetailPage';
+import { ShoeComparePage } from './components/ShoeComparePage';
 import { CompareGSMArena } from './components/CompareGSMArena';
 import { Top10Rankings } from './components/Top10Rankings';
 import { ShoeFinderWizard } from './components/ShoeFinderWizard';
@@ -11,6 +14,7 @@ import { AddReviewModal } from './components/AddReviewModal';
 import { LegalModal } from './components/LegalModal';
 import { RunnersGuideModal } from './components/RunnersGuideModal';
 import { SiteFooter } from './components/SiteFooter';
+import { SEOHead } from './components/SEOHead';
 import { Analytics } from '@vercel/analytics/react';
 
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
@@ -35,13 +39,51 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
   }
 }
 
-export function App() {
+// Helper component to handle Shoe Detail route with slug resolution
+const ShoeDetailRouteWrapper: React.FC<{
+  shoes: Shoe[];
+  comparedShoes: Shoe[];
+  onToggleCompare: (shoe: Shoe) => void;
+  onOpenAddReview: (shoe: Shoe) => void;
+}> = ({ shoes, comparedShoes, onToggleCompare, onOpenAddReview }) => {
+  const { shoeSlug } = useParams<{ shoeSlug: string }>();
+  const navigate = useNavigate();
+  const shoe = getShoeBySlug(shoeSlug || '', shoes);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [shoeSlug]);
+
+  if (!shoe) {
+    return <Navigate to="/" replace />;
+  }
+
+  return (
+    <ShoeDetailPage
+      shoe={shoe}
+      onBack={() => navigate('/')}
+      isCompared={comparedShoes.some((s) => s.id === shoe.id)}
+      onToggleCompare={onToggleCompare}
+      onOpenAddReview={onOpenAddReview}
+    />
+  );
+};
+
+// Scroll to top automatically on route changes
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]);
+  return null;
+};
+
+export function MainApp() {
   const [shoes, setShoes] = useState<Shoe[]>(INITIAL_SHOES_DATA);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBrand, setSelectedBrand] = useState<string>('All');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [comparedShoes, setComparedShoes] = useState<Shoe[]>([]);
-  const [selectedShoeDetail, setSelectedShoeDetail] = useState<Shoe | null>(null);
   const [isCompareOpen, setIsCompareOpen] = useState(false);
   const [isTop10Open, setIsTop10Open] = useState(false);
   const [isWizardOpen, setIsWizardOpen] = useState(false);
@@ -49,10 +91,14 @@ export function App() {
   const [isGuideOpen, setIsGuideOpen] = useState(false);
   const [shoeForReview, setShoeForReview] = useState<Shoe | null>(null);
 
-  // Automatic Scroll Restoration: Always scroll window to top when changing selected shoe detail or returning to catalog
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [selectedShoeDetail]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Determine currently active shoe ID if on /shoe/:slug route
+  const matchShoeSlug = location.pathname.startsWith('/shoe/')
+    ? location.pathname.replace('/shoe/', '')
+    : null;
+  const currentActiveShoe = matchShoeSlug ? getShoeBySlug(matchShoeSlug, shoes) : null;
 
   const handleToggleCompare = (shoe: Shoe) => {
     if (comparedShoes.some((s) => s.id === shoe.id)) {
@@ -80,27 +126,33 @@ export function App() {
       }
       return s;
     }));
+  };
 
-    if (selectedShoeDetail && selectedShoeDetail.id === shoeId) {
-      setSelectedShoeDetail({
-        ...selectedShoeDetail,
-        userReviews: [newReview, ...selectedShoeDetail.userReviews]
-      });
+  const handleSelectShoe = (shoe: Shoe | null) => {
+    if (shoe) {
+      navigate(`/shoe/${getShoeSlug(shoe)}`);
+    } else {
+      navigate('/');
     }
   };
 
-  const handleSelectShoe = (shoe: Shoe) => {
-    setSelectedShoeDetail(shoe);
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  };
-
   return (
-    <ErrorBoundary>
     <div className="app-root-container" style={{ display: 'flex', minHeight: '100vh', background: '#FFFFFF' }}>
+      <ScrollToTop />
+
+      {/* Default Root SEO Head */}
+      {location.pathname === '/' && (
+        <SEOHead
+          title="EasternRun — Independent Running Shoe Database & Review Lab"
+          description="Explore detailed specs, lab measurements, overall ratings, and community reviews of Chinese running super-shoes alongside Western benchmark references."
+          canonicalUrl="https://easternrun.fit/"
+        />
+      )}
+
       {/* Fixed Left Sidebar Nav on Desktop / Sticky Mobile Bar on Phone */}
       <SidebarNav
         shoes={shoes}
-        selectedShoeId={selectedShoeDetail?.id || null}
+        selectedShoeId={currentActiveShoe?.id || null}
         onSelectShoe={handleSelectShoe}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
@@ -117,34 +169,52 @@ export function App() {
 
       {/* Main Content Area */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
-        {selectedShoeDetail ? (
-          /* INDIVIDUAL SHOE LAB REVIEW PAGE */
-          <ShoeDetailPage
-            shoe={selectedShoeDetail}
-            onBack={() => handleSelectShoe(null as any)}
-            isCompared={comparedShoes.some((s) => s.id === selectedShoeDetail.id)}
-            onToggleCompare={handleToggleCompare}
-            onOpenAddReview={(s) => setShoeForReview(s)}
+        <Routes>
+          {/* CATALOG HOME ROUTE */}
+          <Route
+            path="/"
+            element={
+              <main style={{ flex: 1, padding: 0 }}>
+                <SpecDatabaseView
+                  shoes={shoes}
+                  onSelectShoe={handleSelectShoe}
+                  comparedShoes={comparedShoes}
+                  onToggleCompare={handleToggleCompare}
+                  selectedBrand={selectedBrand}
+                  searchQuery={searchQuery}
+                  onOpenWizard={() => setIsWizardOpen(true)}
+                  onOpenCompare={() => setIsCompareOpen(true)}
+                  onOpenTop10={() => setIsTop10Open(true)}
+                  onOpenGuide={() => setIsGuideOpen(true)}
+                />
+              </main>
+            }
           />
-        ) : (
-          /* STREAMLINED FULL-BLEED DOCUMENTARY LANDING CATALOG VIEW */
-          <main style={{ flex: 1, padding: 0 }}>
-            <SpecDatabaseView
-              shoes={shoes}
-              onSelectShoe={handleSelectShoe}
-              comparedShoes={comparedShoes}
-              onToggleCompare={handleToggleCompare}
-              selectedBrand={selectedBrand}
-              searchQuery={searchQuery}
-              onOpenWizard={() => setIsWizardOpen(true)}
-              onOpenCompare={() => setIsCompareOpen(true)}
-              onOpenTop10={() => setIsTop10Open(true)}
-              onOpenGuide={() => setIsGuideOpen(true)}
-            />
-          </main>
-        )}
 
-        {/* Comprehensive Multi-Column Site Footer */}
+          {/* INDIVIDUAL SHOE REVIEW ROUTE */}
+          <Route
+            path="/shoe/:shoeSlug"
+            element={
+              <ShoeDetailRouteWrapper
+                shoes={shoes}
+                comparedShoes={comparedShoes}
+                onToggleCompare={handleToggleCompare}
+                onOpenAddReview={(s) => setShoeForReview(s)}
+              />
+            }
+          />
+
+          {/* DYNAMIC HEAD-TO-HEAD COMPARISON ROUTE */}
+          <Route
+            path="/compare/:compareSlug"
+            element={<ShoeComparePage shoes={shoes} />}
+          />
+
+          {/* CATCH-ALL ROUTE */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+
+        {/* Site Footer */}
         <SiteFooter
           onOpenWizard={() => setIsWizardOpen(true)}
           onOpenCompare={() => setIsCompareOpen(true)}
@@ -200,6 +270,15 @@ export function App() {
 
       <Analytics />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <ErrorBoundary>
+      <BrowserRouter>
+        <MainApp />
+      </BrowserRouter>
     </ErrorBoundary>
   );
 }
