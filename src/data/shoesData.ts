@@ -25,7 +25,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Pinnacle Flagship Marathon Super-Shoe',
     description: 'Li-Ning’s flagship 42K race-day weapon. Engineered with 6th-gen PEBA supercritical BOOM foam, a full 3D curved carbon plate, and GCU ground control traction rubber.',
-    overallRating: 91,
+    overallRating: 92,
     useCaseValues: {
       walkingScore: 45,
       walkingAnalysis: 'Not recommended for casual walking. Stiff carbon plate and aggressive toe rocker force a fast forward tilt.',
@@ -2400,7 +2400,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     availability: 'Global Shipping',
     tagline: 'The Gold Standard Marathon Super-Shoe with Dual Air Zoom Pods',
     description: 'The Nike Alphafly 3 is the pinnacle of marathon racing engineering. Featuring a continuous ZoomX foam midsole, dual forefoot Air Zoom pods, and a full-length Flyplate, it delivers unmatched propulsion and energy return for sub-3 marathoners.',
-    overallRating: 91,
+    overallRating: 93,
     useCaseValues: {
       walkingScore: 55,
       walkingAnalysis: 'High stack and aggressive toe spring make it unstable for slow walking.',
