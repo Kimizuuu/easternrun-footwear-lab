@@ -3312,4 +3312,1094 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     finalConsensusVerdict: 'Outstanding value sub-$130 daily speed trainer with super-foam bounce.',
     userReviews: []
   }
+,
+  {
+  "id": "nike_invincible3",
+  "name": "Nike Invincible 3",
+  "brand": "Nike",
+  "category": "Daily Trainer",
+  "dominantSector": "Daily Mileage & Training",
+  "image": "/images/western/invincible_3/1.webp",
+  "galleryImages": [
+    "/images/western/invincible_3/1.webp",
+    "/images/western/invincible_3/2.webp"
+  ],
+  "msrpUsd": 180,
+  "msrpRmb": 1399,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "Maximum Cushioning ZoomX Monster for Recovery & Long Runs",
+  "description": "The Nike Invincible 3 pairs a massive stack of full-length ZoomX foam with a wider base and Flyknit upper, offering unmatched plushness and leg-saving impact protection.",
+  "overallRating": 88,
+  "useCaseValues": {
+    "walkingScore": 90,
+    "dailyRunScore": 92,
+    "speedWorkoutScore": 72,
+    "longDistanceScore": 93,
+    "marathonRaceScore": 78,
+    "trailScore": 55,
+    "durabilityScore": 84
+  },
+  "communityPros": [
+      "Ultra-plush full-length ZoomX foam",
+      "Wider base than v2 provides improved stability",
+      "Excellent leg preservation on 20km+ recovery runs"
+    ],
+    "communityCons": [
+      "Slight heel slip for runners with narrow ankles",
+      "Heavy upper feel compared to race shoes"
+    ],
+  "specs": {
+      "weightGrams": 310,
+      "weightOz": 10.93,
+      "heelStackMm": 40,
+      "forefootStackMm": 31,
+      "dropMm": 9,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 7.8,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 8.5,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "Full ZoomX Midsole",
+      "description": "Nike’s highest energy return PEBA-based foam for maximum shock absorption."
+    },
+    {
+      "title": "Wider Platform",
+      "description": "Increased forefoot and heel footprint for enhanced inherent stability."
+    },
+    {
+      "title": "Flyknit Upper",
+      "description": "Zonal breathability and secure midfoot lockdown."
+    }
+  ]
+},
+  {
+  "id": "nike_pegasusplus",
+  "name": "Nike Pegasus Plus",
+  "brand": "Nike",
+  "category": "Tempo & Race",
+  "dominantSector": "Tempo & Speed Workouts",
+  "image": "/images/western/pegasus_plus/1.webp",
+  "galleryImages": [
+    "/images/western/pegasus_plus/1.webp",
+    "/images/western/pegasus_plus/2.webp"
+  ],
+  "msrpUsd": 180,
+  "msrpRmb": 1399,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "Full-Length ZoomX Speed Trainer — The Spirit of Pegasus Turbo",
+  "description": "Reviving the legendary Pegasus Turbo lineage, the Pegasus Plus features a full-length ZoomX midsole and iconic central racing stripe for energetic daily speed sessions.",
+  "overallRating": 87,
+  "useCaseValues": {
+    "walkingScore": 88,
+    "dailyRunScore": 89,
+    "speedWorkoutScore": 91,
+    "longDistanceScore": 86,
+    "marathonRaceScore": 82,
+    "trailScore": 60,
+    "durabilityScore": 82
+  },
+  "communityPros": [
+      "Lightweight and energetic full-length ZoomX ride",
+      "Classic racing stripe aesthetic",
+      "Snappy toe-off without a carbon plate"
+    ],
+    "communityCons": [
+      "Premium price point",
+      "Outsole rubber thin in high-wear zones"
+    ],
+  "specs": {
+      "weightGrams": 245,
+      "weightOz": 8.64,
+      "heelStackMm": 34,
+      "forefootStackMm": 24,
+      "dropMm": 10,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.4,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 7.9,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "Full ZoomX Foam",
+      "description": "Ultra-lightweight PEBA foam delivers propulsive energy return."
+    },
+    {
+      "title": "Flyknit Upper with Stripe",
+      "description": "Adaptive fit with vintage Pegasus Turbo racing stripe DNA."
+    },
+    {
+      "title": "Waffle Outsole",
+      "description": "Generous rubber coverage for multi-surface grip."
+    }
+  ]
+},
+  {
+  "id": "nike_vomero17",
+  "name": "Nike Vomero 17",
+  "brand": "Nike",
+  "category": "Daily Trainer",
+  "dominantSector": "Daily Mileage & Training",
+  "image": "/images/western/vomero_17/1.webp",
+  "galleryImages": [
+    "/images/western/vomero_17/1.webp"
+  ],
+  "msrpUsd": 160,
+  "msrpRmb": 1199,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "Dual ZoomX + Cushlon 3.0 Plush Cushion Champion",
+  "description": "The Nike Vomero 17 discards the air bag in favor of a dual-density midsole stacking top-tier ZoomX over durable Cushlon 3.0, delivering a silky smooth daily ride.",
+  "overallRating": 87,
+  "useCaseValues": {
+    "walkingScore": 92,
+    "dailyRunScore": 91,
+    "speedWorkoutScore": 78,
+    "longDistanceScore": 90,
+    "marathonRaceScore": 80,
+    "trailScore": 62,
+    "durabilityScore": 88
+  },
+  "communityPros": [
+      "Dual-foam ZoomX over Cushlon 3.0 balances softness and bounce",
+      "Super comfortable engineered mesh upper",
+      "Durable high-mileage outsole"
+    ],
+    "communityCons": [
+      "A bit heavy for fast tempo intervals"
+    ],
+  "specs": {
+      "weightGrams": 280,
+      "weightOz": 9.88,
+      "heelStackMm": 39,
+      "forefootStackMm": 29,
+      "dropMm": 10,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.2,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 8.8,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "Dual Density Midsole",
+      "description": "Top ZoomX layer for bounce + bottom Cushlon 3.0 for stability and life."
+    },
+    {
+      "title": "Plush Collar & Tongue",
+      "description": "Luxurious heel counter prevents slipping and hotspots."
+    }
+  ]
+},
+  {
+  "id": "saucony_triumph22",
+  "name": "Saucony Triumph 22",
+  "brand": "Saucony",
+  "category": "Daily Trainer",
+  "dominantSector": "Daily Mileage & Training",
+  "image": "/images/western/triumph_22/1.webp",
+  "galleryImages": [
+    "/images/western/triumph_22/1.webp"
+  ],
+  "msrpUsd": 160,
+  "msrpRmb": 1299,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "PEBA-Powered Max Cushion Cruiser with PWRRUN PB",
+  "description": "Saucony upgraded the Triumph 22 with full-length PWRRUN PB super-foam, bringing race-day PEBA cushioning and bounce to an ultra-plush daily trainer.",
+  "overallRating": 89,
+  "useCaseValues": {
+    "walkingScore": 93,
+    "dailyRunScore": 93,
+    "speedWorkoutScore": 80,
+    "longDistanceScore": 92,
+    "marathonRaceScore": 82,
+    "trailScore": 60,
+    "durabilityScore": 89
+  },
+  "communityPros": [
+      "Full PWRRUN PB PEBA midsole gives awesome spring",
+      "Wider platform for inherent stability",
+      "Luxurious upper plushness"
+    ],
+    "communityCons": [
+      "Slightly heavier than Triumph 21"
+    ],
+  "specs": {
+      "weightGrams": 286,
+      "weightOz": 10.09,
+      "heelStackMm": 37,
+      "forefootStackMm": 27,
+      "dropMm": 10,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.1,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 9,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "PWRRUN PB Midsole",
+      "description": "Full-length beaded PEBA foam for maximum rebound and longevity."
+    },
+    {
+      "title": "Adaptive Fit System",
+      "description": "Soft engineered mesh with midfoot webbing lockdown."
+    }
+  ]
+},
+  {
+  "id": "saucony_ride17",
+  "name": "Saucony Ride 17",
+  "brand": "Saucony",
+  "category": "Daily Trainer",
+  "dominantSector": "Daily Mileage & Training",
+  "image": "/images/western/ride_17/1.webp",
+  "galleryImages": [
+    "/images/western/ride_17/1.webp"
+  ],
+  "msrpUsd": 140,
+  "msrpRmb": 999,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "PWRRUN+ TPU Upgrade for Vibrant Daily Miles",
+  "description": "The Ride 17 receives a major upgrade with full-length PWRRUN+ TPU foam, transforming Saucony’s staple workhorse into an energetic, responsive daily trainer.",
+  "overallRating": 86,
+  "useCaseValues": {
+    "walkingScore": 90,
+    "dailyRunScore": 90,
+    "speedWorkoutScore": 82,
+    "longDistanceScore": 88,
+    "marathonRaceScore": 79,
+    "trailScore": 62,
+    "durabilityScore": 90
+  },
+  "communityPros": [
+      "PWRRUN+ TPU foam is vastly superior to older EVA",
+      "Excellent durability across 800+ km",
+      "Smooth heel-to-toe transition"
+    ],
+    "communityCons": [
+      "Firm initial step-in compared to max-cushion models"
+    ],
+  "specs": {
+      "weightGrams": 282,
+      "weightOz": 9.95,
+      "heelStackMm": 35,
+      "forefootStackMm": 27,
+      "dropMm": 8,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.3,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 9.1,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "PWRRUN+ Foam",
+      "description": "Bouncy TPU-based foam that maintains properties in extreme weather."
+    },
+    {
+      "title": "Increased Outsole Coverage",
+      "description": "XT-900 carbon rubber for high-mileage resistance."
+    }
+  ]
+},
+  {
+  "id": "saucony_kinvara15",
+  "name": "Saucony Kinvara 15",
+  "brand": "Saucony",
+  "category": "Tempo & Race",
+  "dominantSector": "Tempo & Speed Workouts",
+  "image": "/images/western/kinvara_15/1.webp",
+  "galleryImages": [
+    "/images/western/kinvara_15/1.webp"
+  ],
+  "msrpUsd": 130,
+  "msrpRmb": 899,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "198g Ultra-Lightweight 4mm Drop Natural Speed Trainer",
+  "description": "Staying true to lightweight minimalist performance, the Kinvara 15 offers a featherweight 198g build, low 4mm drop, and direct ground feel for tempo workouts.",
+  "overallRating": 85,
+  "useCaseValues": {
+    "walkingScore": 84,
+    "dailyRunScore": 83,
+    "speedWorkoutScore": 89,
+    "longDistanceScore": 80,
+    "marathonRaceScore": 78,
+    "trailScore": 58,
+    "durabilityScore": 80
+  },
+  "communityPros": [
+      "Incredible 198g weight feels weightless",
+      "Responsive ground connection for track & tempo",
+      "Nimble low-drop agility"
+    ],
+    "communityCons": [
+      "Exposed foam outsole wears down faster on rough asphalt"
+    ],
+  "specs": {
+      "weightGrams": 198,
+      "weightOz": 6.98,
+      "heelStackMm": 29,
+      "forefootStackMm": 25,
+      "dropMm": 4,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 9,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 7.4,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "PWRRUN Midsole + PWRRUN+ Sockliner",
+      "description": "Crisp foam core with soft step-in comfort."
+    },
+    {
+      "title": "Minimalist 4mm Drop",
+      "description": "Promotes natural forefoot striking and ankle mobility."
+    }
+  ]
+},
+  {
+  "id": "asics_metaspeedskyparis",
+  "name": "ASICS Metaspeed Sky Paris",
+  "brand": "ASICS",
+  "category": "Marathon Super-Shoe",
+  "dominantSector": "Marathon Race Day",
+  "image": "/images/western/metaspeed_sky_paris/1.webp",
+  "galleryImages": [
+    "/images/western/metaspeed_sky_paris/1.webp"
+  ],
+  "msrpUsd": 250,
+  "msrpRmb": 1699,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "183g Featherweight Carbon Marathon King with FF TURBO+",
+  "description": "Weighing an astonishing 183g, the Metaspeed Sky Paris features ASICS’ newest FlyteFoam Blast TURBO+ PEBA foam and a full-length carbon plate tuned for stride-style marathoners.",
+  "overallRating": 94,
+  "useCaseValues": {
+    "walkingScore": 68,
+    "dailyRunScore": 70,
+    "speedWorkoutScore": 92,
+    "longDistanceScore": 95,
+    "marathonRaceScore": 97,
+    "trailScore": 40,
+    "durabilityScore": 82
+  },
+  "communityPros": [
+      "Insanely light 183g weight",
+      "FF TURBO+ PEBA foam is noticeably softer and bouncier",
+      "Subtle, highly efficient carbon propulsion"
+    ],
+    "communityCons": [
+      "Aggressive rocker not suited for slow recovery jogs"
+    ],
+  "specs": {
+      "weightGrams": 183,
+      "weightOz": 6.46,
+      "heelStackMm": 39.5,
+      "forefootStackMm": 34.5,
+      "dropMm": 5,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 9.4,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 8,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "FF TURBO+ Foam",
+      "description": "PEBA-based super-foam provides 8%+ higher energy return than v1 TURBO."
+    },
+    {
+      "title": "Stride-Optimized Carbon Plate",
+      "description": "Wide carbon plate positioned near top of midsole to extend stride length."
+    },
+    {
+      "title": "MOTION WRAP 2.0 Upper",
+      "description": "Ultra-thin woven mesh with exceptional lockdown."
+    }
+  ]
+},
+  {
+  "id": "asics_superblast2",
+  "name": "ASICS Superblast 2",
+  "brand": "ASICS",
+  "category": "Daily Trainer",
+  "dominantSector": "Daily Mileage & Training",
+  "image": "/images/western/superblast_2/1.webp",
+  "galleryImages": [
+    "/images/western/superblast_2/1.webp"
+  ],
+  "msrpUsd": 220,
+  "msrpRmb": 1599,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "The Ultimate Non-Plated Super-Trainer with FF TURBO+",
+  "description": "The ASICS Superblast 2 inherits the FF TURBO+ PEBA foam from Paris race shoes, layering it over FF BLAST+ ECO to create the ultimate high-stack, non-plated daily workhorse.",
+  "overallRating": 93,
+  "useCaseValues": {
+    "walkingScore": 88,
+    "dailyRunScore": 95,
+    "speedWorkoutScore": 92,
+    "longDistanceScore": 96,
+    "marathonRaceScore": 90,
+    "trailScore": 58,
+    "durabilityScore": 91
+  },
+  "communityPros": [
+      "FF TURBO+ top layer gives race-day bounce without a plate",
+      "Massive 45mm stack saves legs on 30km+ long runs",
+      "Versatile from 4:00/km tempo to 5:30/km easy pace"
+    ],
+    "communityCons": [
+      "High $220 price tag",
+      "Limited retail stock availability"
+    ],
+  "specs": {
+      "weightGrams": 249,
+      "weightOz": 8.78,
+      "heelStackMm": 45,
+      "forefootStackMm": 37,
+      "dropMm": 8,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.6,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 9.2,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "FF TURBO+ PEBA Top Layer",
+      "description": "Same race-foam as Metaspeed Paris for explosive trampoline pop."
+    },
+    {
+      "title": "FF BLAST+ ECO Base",
+      "description": "Bio-based bottom foam adds structural durability and protection."
+    },
+    {
+      "title": "ASICSGRIP Outsole",
+      "description": "Superior wet & dry traction rubber."
+    }
+  ]
+},
+  {
+  "id": "asics_novablast4",
+  "name": "ASICS Novablast 4",
+  "brand": "ASICS",
+  "category": "Daily Trainer",
+  "dominantSector": "Daily Mileage & Training",
+  "image": "/images/western/novablast_4/1.webp",
+  "galleryImages": [
+    "/images/western/novablast_4/1.webp"
+  ],
+  "msrpUsd": 140,
+  "msrpRmb": 999,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "Trampoline-Effect Daily Rebound King with FF BLAST+ ECO",
+  "description": "Featuring geometric geometric trampoline outsole sculpting and eco-friendly FF BLAST+ ECO foam, the Novablast 4 remains the benchmark for fun, bouncy daily training.",
+  "overallRating": 89,
+  "useCaseValues": {
+    "walkingScore": 92,
+    "dailyRunScore": 94,
+    "speedWorkoutScore": 86,
+    "longDistanceScore": 90,
+    "marathonRaceScore": 83,
+    "trailScore": 60,
+    "durabilityScore": 88
+  },
+  "communityPros": [
+      "Fun trampoline pop on forefoot strike",
+      "FF BLAST+ ECO is softer and more stable than v3",
+      "Unbeatable value at $140 MSRP"
+    ],
+    "communityCons": [
+      "Can feel slightly tall for sharp cornering"
+    ],
+  "specs": {
+      "weightGrams": 260,
+      "weightOz": 9.17,
+      "heelStackMm": 41.5,
+      "forefootStackMm": 33.5,
+      "dropMm": 8,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.4,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 8.7,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "Trampoline-Inspired Outsole Pod",
+      "description": "Central cutout flexes to maximize energy return."
+    },
+    {
+      "title": "Woven Upper",
+      "description": "Engineered stretch woven fabric replaces mesh for enhanced fit."
+    }
+  ]
+},
+  {
+  "id": "xtep-160x-6-pro",
+  "name": "Xtep 160X 6.0 PRO",
+  "brand": "Xtep",
+  "category": "Marathon Super-Shoe",
+  "dominantSector": "Marathon Race Day",
+  "image": "/images/western/xtep_160x_6pro/1.webp",
+  "galleryImages": [
+    "/images/western/xtep_160x_6pro/1.webp"
+  ],
+  "msrpUsd": 260,
+  "msrpRmb": 1699,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "World Championship Certified X-TEP ACE PEBA Carbon Racer",
+  "description": "The flagship Chinese super-shoe worn by elite marathon champions, featuring super-critical X-TEP ACE PEBA foam, a full-length spoon carbon plate, and CPU wear-resistant outsole.",
+  "overallRating": 93,
+  "useCaseValues": {
+    "walkingScore": 65,
+    "dailyRunScore": 68,
+    "speedWorkoutScore": 93,
+    "longDistanceScore": 96,
+    "marathonRaceScore": 97,
+    "trailScore": 45,
+    "durabilityScore": 92
+  },
+  "communityPros": [
+      "Incredible 88%+ rebound rate from X-TEP ACE PEBA",
+      "Legendary CPU rubber outsole lasts 1000km+",
+      "Aggressive forward carbon propulsion"
+    ],
+    "communityCons": [
+      "Stiff ride at paces slower than 4:30/km"
+    ],
+  "specs": {
+      "weightGrams": 198,
+      "weightOz": 6.98,
+      "heelStackMm": 39,
+      "forefootStackMm": 33,
+      "dropMm": 6,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 9.2,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 9.8,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "X-TEP ACE Super-Critical PEBA",
+      "description": "Super-critical gas-foamed PEBA for extreme energy return."
+    },
+    {
+      "title": "T700 Carbon Plate",
+      "description": "Full-length spoon-shaped carbon structure for rigid lever propulsion."
+    },
+    {
+      "title": "CPU Outsole Rubber",
+      "description": "Military-grade polyurethane grip that outlasts traditional blown rubber by 3x."
+    }
+  ]
+},
+  {
+  "id": "xtep-260-3-0",
+  "name": "Xtep 260 3.0",
+  "brand": "Xtep",
+  "category": "Tempo & Race",
+  "dominantSector": "Tempo & Speed Workouts",
+  "image": "/images/western/xtep_260_3/1.webp",
+  "galleryImages": [
+    "/images/western/xtep_260_3/1.webp"
+  ],
+  "msrpUsd": 130,
+  "msrpRmb": 799,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "Nylon-Plated High-Mileage Speed Workout Specialist",
+  "description": "Engineered as the ultimate workout partner for marathon training blocks, the Xtep 260 3.0 pairs a flexible Nylon plate with X-TEP ACE foam for responsive tempo runs.",
+  "overallRating": 88,
+  "useCaseValues": {
+    "walkingScore": 85,
+    "dailyRunScore": 90,
+    "speedWorkoutScore": 92,
+    "longDistanceScore": 89,
+    "marathonRaceScore": 85,
+    "trailScore": 55,
+    "durabilityScore": 91
+  },
+  "communityPros": [
+      "Nylon plate provides snap without carbon harshness",
+      "CPU outsole delivers phenomenal wet grip",
+      "Outstanding price-to-performance ratio"
+    ],
+    "communityCons": [
+      "Slightly firm heel landing"
+    ],
+  "specs": {
+      "weightGrams": 235,
+      "weightOz": 8.29,
+      "heelStackMm": 36,
+      "forefootStackMm": 28,
+      "dropMm": 8,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.5,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 9.5,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "Flexible Nylon Plate",
+      "description": "Forgiving propulsion plate designed for high training volume."
+    },
+    {
+      "title": "X-TEP ACE Foam Core",
+      "description": "Lightweight PEBA foam cushion for crisp toe-off."
+    }
+  ]
+},
+  {
+  "id": "mizuno_waverebellionpro2",
+  "name": "Mizuno Wave Rebellion Pro 2",
+  "brand": "Mizuno",
+  "category": "Marathon Super-Shoe",
+  "dominantSector": "Marathon Race Day",
+  "image": "/images/western/wave_rebellion_pro2/1.webp",
+  "galleryImages": [
+    "/images/western/wave_rebellion_pro2/1.webp"
+  ],
+  "msrpUsd": 250,
+  "msrpRmb": 1799,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "50mm Extreme Beveled Carbon Monster with Smooth Speed Assist",
+  "description": "Featuring an aggressive 50mm heel stack with extreme heel cut-away, the Wave Rebellion Pro 2 forces an ultra-efficient forefoot strike backed by MIZUNO ENERZY LITE+ foam.",
+  "overallRating": 92,
+  "useCaseValues": {
+    "walkingScore": 50,
+    "dailyRunScore": 60,
+    "speedWorkoutScore": 94,
+    "longDistanceScore": 94,
+    "marathonRaceScore": 96,
+    "trailScore": 35,
+    "durabilityScore": 85
+  },
+  "communityPros": [
+      "Unrivaled forward propulsion for forefoot runners",
+      "MIZUNO ENERZY LITE+ PEBA foam is explosive",
+      "G3 outsole delivers supreme grip"
+    ],
+    "communityCons": [
+      "Impossible to walk or slow-jog in due to extreme heel bevel"
+    ],
+  "specs": {
+      "weightGrams": 215,
+      "weightOz": 7.58,
+      "heelStackMm": 50,
+      "forefootStackMm": 38,
+      "dropMm": 12,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.8,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 8.6,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "Smooth Speed Assist",
+      "description": "Biomechanically engineered bevel forces midfoot/forefoot land."
+    },
+    {
+      "title": "Carbon-Infused Wave Plate",
+      "description": "Full-length rigid plate amplifies energy return."
+    },
+    {
+      "title": "G3 Outsole",
+      "description": "Resin outsole pods provide aggressive traction."
+    }
+  ]
+},
+  {
+  "id": "mizuno_waverider28",
+  "name": "Mizuno Wave Rider 28",
+  "brand": "Mizuno",
+  "category": "Daily Trainer",
+  "dominantSector": "Daily Mileage & Training",
+  "image": "/images/western/wave_rider28/1.webp",
+  "galleryImages": [
+    "/images/western/wave_rider28/1.webp"
+  ],
+  "msrpUsd": 140,
+  "msrpRmb": 999,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "Enerzy NXT Upgrade for Legendary Japanese Workhorse",
+  "description": "The 28th generation of Mizuno’s iconic Wave Rider introduces MIZUNO ENERZY NXT bio-based foam under the heel, giving the classic Wave Plate ride a softer, modern bounce.",
+  "overallRating": 87,
+  "useCaseValues": {
+    "walkingScore": 91,
+    "dailyRunScore": 92,
+    "speedWorkoutScore": 82,
+    "longDistanceScore": 88,
+    "marathonRaceScore": 80,
+    "trailScore": 65,
+    "durabilityScore": 93
+  },
+  "communityPros": [
+      "ENERZY NXT foam gives noticeable softness update",
+      "Iconic Mizuno Wave Plate stability",
+      "Indestructible X10 rubber outsole"
+    ],
+    "communityCons": [
+      "Traditional 12mm drop may feel steep for low-drop fans"
+    ],
+  "specs": {
+      "weightGrams": 275,
+      "weightOz": 9.7,
+      "heelStackMm": 38.5,
+      "forefootStackMm": 26.5,
+      "dropMm": 12,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.2,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 9.6,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "MIZUNO ENERZY NXT",
+      "description": "Next-gen plant-based foam for enhanced softness and eco footprint."
+    },
+    {
+      "title": "Pebax Wave Plate",
+      "description": "Disperses impact shock evenly across midfoot."
+    }
+  ]
+},
+  {
+  "id": "nb_sc_elite_v4",
+  "name": "New Balance FuelCell SuperComp Elite v4",
+  "brand": "New Balance",
+  "category": "Marathon Super-Shoe",
+  "dominantSector": "Marathon Race Day",
+  "image": "/images/western/sc_elite_v4/1.webp",
+  "galleryImages": [
+    "/images/western/sc_elite_v4/1.webp"
+  ],
+  "msrpUsd": 250,
+  "msrpRmb": 1799,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "100% PEBA FuelCell + Energy Arc Carbon Plate Super-Shoe",
+  "description": "Overhauling New Balance’s race tech, the SC Elite v4 features 100% PEBA FuelCell foam paired with a redesigned angular carbon Energy Arc plate for smooth marathon speed.",
+  "overallRating": 92,
+  "useCaseValues": {
+    "walkingScore": 75,
+    "dailyRunScore": 78,
+    "speedWorkoutScore": 93,
+    "longDistanceScore": 95,
+    "marathonRaceScore": 96,
+    "trailScore": 45,
+    "durabilityScore": 84
+  },
+  "communityPros": [
+      "100% PEBA FuelCell foam is significantly bouncier than v3",
+      "Energy Arc carbon plate delivers smooth, non-harsh propulsion",
+      "FantomFit upper lockdown"
+    ],
+    "communityCons": [
+      "Upper feels a bit stiff around top eyelets"
+    ],
+  "specs": {
+      "weightGrams": 237,
+      "weightOz": 8.36,
+      "heelStackMm": 40,
+      "forefootStackMm": 36,
+      "dropMm": 4,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.7,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 8.2,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "100% PEBA FuelCell",
+      "description": "Pure PEBA foam compound for explosive rebound."
+    },
+    {
+      "title": "Energy Arc System",
+      "description": "Voided midsole channel allows carbon plate to flex and spring back."
+    },
+    {
+      "title": "FantomFit Upper",
+      "description": "Ultra-light bonded mesh construction."
+    }
+  ]
+},
+  {
+  "id": "nb_rebel_v4",
+  "name": "New Balance FuelCell Rebel v4",
+  "brand": "New Balance",
+  "category": "Tempo & Race",
+  "dominantSector": "Tempo & Speed Workouts",
+  "image": "/images/western/rebel_v4/1.webp",
+  "galleryImages": [
+    "/images/western/rebel_v4/1.webp"
+  ],
+  "msrpUsd": 140,
+  "msrpRmb": 999,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "212g Non-Plated PEBA-Blend Lightweight Speed Demon",
+  "description": "The Rebel v4 receives a geometric geometric makeover with a wider base, PEBA-blend FuelCell foam, and ultra-light 212g weight, making it a favorite non-plated speed trainer.",
+  "overallRating": 90,
+  "useCaseValues": {
+    "walkingScore": 88,
+    "dailyRunScore": 91,
+    "speedWorkoutScore": 94,
+    "longDistanceScore": 87,
+    "marathonRaceScore": 84,
+    "trailScore": 58,
+    "durabilityScore": 83
+  },
+  "communityPros": [
+      "Super light 212g weight feels explosive underfoot",
+      "PEBA/EVA blend FuelCell is snappy and fun",
+      "Wider platform improves cornering stability"
+    ],
+    "communityCons": [
+      "Foam compresses slightly on runs over 25km"
+    ],
+  "specs": {
+      "weightGrams": 212,
+      "weightOz": 7.48,
+      "heelStackMm": 30,
+      "forefootStackMm": 24,
+      "dropMm": 6,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 9.1,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 8,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "PEBA-Blend FuelCell",
+      "description": "Combines PEBA pop with EVA structural stability."
+    },
+    {
+      "title": "FantomFit Mesh",
+      "description": "Breathable, race-inspired upper."
+    }
+  ]
+},
+  {
+  "id": "nb_1080_v13",
+  "name": "New Balance Fresh Foam X 1080 v13",
+  "brand": "New Balance",
+  "category": "Daily Trainer",
+  "dominantSector": "Daily Mileage & Training",
+  "image": "/images/western/1080_v13/1.webp",
+  "galleryImages": [
+    "/images/western/1080_v13/1.webp"
+  ],
+  "msrpUsd": 165,
+  "msrpRmb": 1299,
+  "releaseYear": 2024,
+  "availability": "Global Shipping",
+  "tagline": "Pillow-Soft Fresh Foam X Max Cushion King",
+  "description": "The 1080 v13 redefines pillowy comfort with a reformulated Fresh Foam X midsole that delivers cloud-like shock absorption for recovery days and long daily miles.",
+  "overallRating": 91,
+  "useCaseValues": {
+    "walkingScore": 96,
+    "dailyRunScore": 95,
+    "speedWorkoutScore": 75,
+    "longDistanceScore": 94,
+    "marathonRaceScore": 80,
+    "trailScore": 60,
+    "durabilityScore": 87
+  },
+  "communityPros": [
+      "Incredible marshmallow-soft step-in comfort",
+      "Best walking and recovery run shoe on the market",
+      "Smooth forefoot rocker"
+    ],
+    "communityCons": [
+      "Too soft for fast tempo or interval work"
+    ],
+  "specs": {
+      "weightGrams": 262,
+      "weightOz": 9.24,
+      "heelStackMm": 38,
+      "forefootStackMm": 32,
+      "dropMm": 6,
+      "foamName": "Super-Foam Midsole",
+      "foamType": "PEBA / EVA Super-Foam",
+      "foamResiliencePercent": 85,
+      "carbonPlate": "Integrated Performance System",
+      "carbonStiffnessIndex": 7.5,
+      "upperMaterial": "Engineered Breathable Mesh",
+      "breathabilityScore": 8.5,
+      "outsoleRubber": "High-Durability Rubber Outsole",
+      "wetTractionScore": 8.5,
+      "estimatedLifespanKm": 750,
+      "fitWidth": "Standard (True to Size)",
+      "archSupport": "Neutral"
+    },
+    "finalConsensusVerdict": "Top-tier daily & race day performer engineered for speed, comfort, and durability.",
+    "userReviews": [],
+  "techHighlights": [
+    {
+      "title": "Softest Fresh Foam X Formula",
+      "description": "Engineered for maximum compression and pillow comfort."
+    },
+    {
+      "title": "Engineered Mesh Upper",
+      "description": "Second-skin fit with padded collar."
+    }
+  ]
+}
 ];

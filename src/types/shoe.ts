@@ -1,4 +1,4 @@
-export type Brand = 'Li-Ning' | 'Anta' | 'Xtep' | '361°' | 'Qiaodan' | 'Nike' | 'Adidas' | 'Saucony' | 'ASICS';
+export type Brand = 'Li-Ning' | 'Anta' | 'Xtep' | '361°' | 'Qiaodan' | 'Nike' | 'Adidas' | 'Saucony' | 'ASICS' | 'Mizuno' | 'New Balance';
 
 export type Category = 
   | 'Marathon Super-Shoe' 
@@ -14,13 +14,16 @@ export type DominantSector =
 
 export interface UseCaseValues {
   walkingScore: number;
-  walkingAnalysis: string;
+  walkingAnalysis?: string;
   dailyRunScore: number;
-  dailyRunAnalysis: string;
+  dailyRunAnalysis?: string;
   speedWorkoutScore: number;
-  speedWorkoutAnalysis: string;
+  speedWorkoutAnalysis?: string;
   marathonRaceScore: number;
-  marathonRaceAnalysis: string;
+  marathonRaceAnalysis?: string;
+  longDistanceScore?: number;
+  trailScore?: number;
+  durabilityScore?: number;
 }
 
 export interface ShoeSpecs {
@@ -78,5 +81,6 @@ export interface Shoe {
   specs: ShoeSpecs;
   finalConsensusVerdict: string;
   podiumHighlights?: string[];
+  techHighlights?: { title: string; description: string }[];
   userReviews: UserReview[];
 }
