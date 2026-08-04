@@ -3080,12 +3080,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Adidas',
     category: 'Marathon Super-Shoe',
     dominantSector: 'Marathon Race Day',
-    image: '/images/western/adios_pro4/7.webp',
+    image: '/images/fallback-shoe.jpg',
     galleryImages: [
-      '/images/western/adios_pro4/7.webp',
-      '/images/western/adios_pro4/8.webp',
-      '/images/western/adios_pro4/5.webp',
-      '/images/western/adios_pro4/1.webp'
+      '/images/fallback-shoe.jpg'
     ],
     msrpUsd: 300,
     msrpRmb: 2299,
@@ -3141,12 +3138,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Adidas',
     category: 'Tempo & Race',
     dominantSector: 'Tempo & Speed Workouts',
-    image: '/images/western/evo_sl/3.webp',
+    image: '/images/fallback-shoe.jpg',
     galleryImages: [
-      '/images/western/evo_sl/3.webp',
-      '/images/western/evo_sl/4.webp',
-      '/images/western/evo_sl/5.webp',
-      '/images/western/evo_sl/1.webp'
+      '/images/fallback-shoe.jpg'
     ],
     msrpUsd: 180,
     msrpRmb: 1299,
@@ -3266,12 +3260,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     brand: 'Adidas',
     category: 'Daily Trainer',
     dominantSector: 'Tempo & Speed Workouts',
-    image: '/images/western/evo_sl/7.webp',
+    image: '/images/fallback-shoe.jpg',
     galleryImages: [
-      '/images/western/evo_sl/7.webp',
-      '/images/western/evo_sl/8.webp',
-      '/images/western/evo_sl/2.webp',
-      '/images/western/evo_sl/1.webp'
+      '/images/fallback-shoe.jpg'
     ],
     msrpUsd: 130,
     msrpRmb: 899,
