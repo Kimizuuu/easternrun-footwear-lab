@@ -460,7 +460,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '10px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Walking</h4>
-                <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>{shoe.useCaseValues.walkingScore}/10</strong>
+                <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>{shoe.useCaseValues.walkingScore}/100</strong>
               </div>
               <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
                 {shoe.useCaseValues.walkingAnalysis}
@@ -471,7 +471,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '10px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Daily Training</h4>
-                <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>{shoe.useCaseValues.dailyRunScore}/10</strong>
+                <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>{shoe.useCaseValues.dailyRunScore}/100</strong>
               </div>
               <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
                 {shoe.useCaseValues.dailyRunAnalysis}
@@ -482,7 +482,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '10px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Speed Work</h4>
-                <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>{shoe.useCaseValues.speedWorkoutScore}/10</strong>
+                <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>{shoe.useCaseValues.speedWorkoutScore}/100</strong>
               </div>
               <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
                 {shoe.useCaseValues.speedWorkoutAnalysis}
@@ -493,7 +493,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '10px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <h4 style={{ fontSize: '1rem', fontWeight: 800, margin: 0, color: '#0F172A' }}>Race Day</h4>
-                <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#2563EB' }}>{shoe.useCaseValues.marathonRaceScore}/10</strong>
+                <strong style={{ fontSize: '1.2rem', fontFamily: 'var(--font-mono)', color: '#2563EB' }}>{shoe.useCaseValues.marathonRaceScore}/100</strong>
               </div>
               <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.5, margin: 0 }}>
                 {shoe.useCaseValues.marathonRaceAnalysis}
