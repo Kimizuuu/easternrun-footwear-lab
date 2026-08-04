@@ -2710,14 +2710,10 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     dominantSector: 'Tempo & Speed Workouts',
     image: '/images/western/evo_sl/1.webp',
     galleryImages: [
-      '/images/western/evo_sl/1.webp',
-      '/images/western/evo_sl/2.webp',
-      '/images/western/evo_sl/3.webp',
-      '/images/western/evo_sl/4.webp',
-      '/images/western/evo_sl/5.webp',
-      '/images/western/evo_sl/6.webp',
-      '/images/western/evo_sl/7.webp',
-      '/images/western/evo_sl/8.webp'
+      '/images/western/adidas_evosl/1.webp',
+      '/images/western/adidas_evosl/2.webp',
+      '/images/western/boston_13/1.webp',
+      '/images/western/boston_13/2.webp'
     ],
     msrpUsd: 150,
     msrpRmb: 1099,
@@ -2779,9 +2775,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       '/images/western/boston_13/2.webp',
       '/images/western/boston_13/3.webp',
       '/images/western/boston_13/4.webp',
-      '/images/western/boston_13/5.webp',
-      '/images/western/boston_13/6.webp',
-      '/images/western/boston_13/7.webp'
+      '/images/western/boston_13/5.webp'
     ],
     msrpUsd: 160,
     msrpRmb: 1199,
