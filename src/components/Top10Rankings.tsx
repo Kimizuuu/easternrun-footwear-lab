@@ -174,8 +174,8 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
                 </div>
 
                 <div style={{ textAlign: 'right' }}>
-                  {tab === 'marathon' && <strong style={{ color: '#DC2626', fontFamily: 'var(--font-mono)' }}>{shoe.useCaseValues.marathonRaceScore} / 10</strong>}
-                  {tab === 'speed' && <strong style={{ color: '#D97706', fontFamily: 'var(--font-mono)' }}>{shoe.useCaseValues.speedWorkoutScore} / 10</strong>}
+                  {tab === 'marathon' && <strong style={{ color: '#DC2626', fontFamily: 'var(--font-mono)' }}>{shoe.useCaseValues.marathonRaceScore} / 100</strong>}
+                  {tab === 'speed' && <strong style={{ color: '#D97706', fontFamily: 'var(--font-mono)' }}>{shoe.useCaseValues.speedWorkoutScore} / 100</strong>}
                   {tab === 'value' && <strong style={{ color: '#059669', fontFamily: 'var(--font-mono)' }}>${shoe.msrpUsd}</strong>}
                   {tab === 'durability' && <strong style={{ color: '#2563EB', fontFamily: 'var(--font-mono)' }}>{shoe.specs.estimatedLifespanKm} km</strong>}
                 </div>
