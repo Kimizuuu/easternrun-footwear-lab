@@ -96,6 +96,30 @@ const BRAND_TECH_OVERVIEWS: Record<string, { title: string; foamTech: string; pl
     foamTech: 'Hyper Burst Supercritical & ULTRA GO Foam',
     plateTech: 'Hyper Pillar Technology & Cushion Geometry',
     description: 'Skechers delivers world-renowned walking and daily standing comfort powered by high-rebound Hyper Pillar Technology and Air-Cooled Goga Mat insoles.'
+  },
+  'salomon': {
+    title: 'Salomon Mountain & Trail Lab',
+    foamTech: 'EnergyCell+ & Energy Foam Cushioning',
+    plateTech: 'Profeel Film & Mud Contagrip Lugs',
+    description: 'Salomon is the world benchmark for technical trail running and mountain racing, equipped with 5.5mm Mud Contagrip lugs and Sensifit foot wrap.'
+  },
+  'on-running': {
+    title: 'On Running Swiss CloudTec',
+    foamTech: 'CloudTec® Zero-Gravity & Dual-Density Helion™ Foam',
+    plateTech: 'Speedboard® Flex & Carbon Propulsion Plates',
+    description: 'Swiss-engineered CloudTec pod geometry paired with responsive Speedboards for effortless all-day walking, travel, and bouncy running performance.'
+  },
+  'altra': {
+    title: 'Altra Zero Drop & FootShape',
+    foamTech: 'Altra EGO™ & EGO MAX Responsive Cushioning',
+    plateTech: 'StoneGuard™ Rock Protection & Zero Drop',
+    description: 'Altra features 0mm Zero Drop positioning and wide FootShape™ toe boxes, encouraging natural foot splay and healthy posture on trails and roads.'
+  },
+  'la-sportiva': {
+    title: 'La Sportiva Mountain Skyrunning',
+    foamTech: 'Compressed EVA & Injection Molded Midsole',
+    plateTech: 'STB Control Frame & FriXion Red Rubber',
+    description: 'La Sportiva skyrunning performance footwear engineered for vertical mountain kilometer races, steep ridge scrambles, and rugged terrain.'
   }
 };
 
