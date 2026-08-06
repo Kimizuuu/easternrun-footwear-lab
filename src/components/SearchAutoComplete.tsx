@@ -14,7 +14,7 @@ interface SearchAutoCompleteProps {
 export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
   shoes,
   onSelectShoe,
-  placeholder = "Search 33 models, foams (BOOM, PEBA), or brands...",
+  placeholder = "Search 92 models, foams (ZoomX, BOOM, PEBA), or brands...",
   autoFocus = false,
   style,
 }) => {

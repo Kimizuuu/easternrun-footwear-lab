@@ -73,7 +73,7 @@ export const Header: React.FC<HeaderProps> = ({
                 RUN<span style={{ color: 'var(--accent-primary)' }}>ARENA</span>
               </h1>
               <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                Chinese Running Shoes Database
+                Global & Chinese Running Shoes Database
               </span>
             </div>
           </div>
