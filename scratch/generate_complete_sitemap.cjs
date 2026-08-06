@@ -47,10 +47,14 @@ brandSlugs.forEach(b => {
 
 // 3. Category Landing Hubs (4 Categories)
 const categorySlugs = [
-  'marathon-super-shoe',
-  'daily-trainer',
+  'marathon-super-shoes',
+  'daily-trainers',
   'tempo-and-race',
-  'max-cushion'
+  'max-cushion',
+  'mountain-and-trail',
+  'walking',
+  'running',
+  'budget-running-shoes'
 ];
 
 categorySlugs.forEach(c => {

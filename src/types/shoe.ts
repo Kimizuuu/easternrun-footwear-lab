@@ -4,13 +4,17 @@ export type Category =
   | 'Marathon Super-Shoe' 
   | 'Daily Trainer' 
   | 'Tempo & Race' 
-  | 'Max Cushion';
+  | 'Max Cushion'
+  | 'Mountain & Trail';
+
+export type MacroSector = 'All' | 'Running' | 'Walking & Travel' | 'Mountain & Trail';
 
 export type DominantSector = 
   | 'Casual Walking & All-Day Wear'
   | 'Daily Mileage & Training'
   | 'Tempo & Speed Workouts'
-  | 'Marathon Race Day';
+  | 'Marathon Race Day'
+  | 'Mountain & Trail Climbing';
 
 export interface UseCaseValues {
   walkingScore: number;

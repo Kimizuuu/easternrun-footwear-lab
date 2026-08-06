@@ -5423,8 +5423,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "id": "salomon_speedcross6",
   "name": "Salomon Speedcross 6",
   "brand": "Salomon",
-  "category": "Daily Trainer",
-  "dominantSector": "Daily Mileage & Training",
+  "category": "Mountain & Trail",
+  "dominantSector": "Mountain & Trail Climbing",
   "image": "/images/western/speedcross_6/1.webp",
   "galleryImages": [
     "/images/western/speedcross_6/1.webp"
@@ -5479,8 +5479,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "id": "hoka_speedgoat6",
   "name": "HOKA Speedgoat 6",
   "brand": "HOKA",
-  "category": "Daily Trainer",
-  "dominantSector": "Daily Mileage & Training",
+  "category": "Mountain & Trail",
+  "dominantSector": "Mountain & Trail Climbing",
   "image": "/images/western/speedgoat_6/1.webp",
   "galleryImages": [
     "/images/western/speedgoat_6/1.webp"
@@ -5535,8 +5535,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "id": "nike_pegasustrail5",
   "name": "Nike Pegasus Trail 5",
   "brand": "Nike",
-  "category": "Daily Trainer",
-  "dominantSector": "Daily Mileage & Training",
+  "category": "Mountain & Trail",
+  "dominantSector": "Mountain & Trail Climbing",
   "image": "/images/western/pegasus_trail5/1.webp",
   "galleryImages": [
     "/images/western/pegasus_trail5/1.webp"
@@ -5591,8 +5591,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "id": "altra_lonepeak8",
   "name": "Altra Lone Peak 8",
   "brand": "Altra",
-  "category": "Daily Trainer",
-  "dominantSector": "Daily Mileage & Training",
+  "category": "Mountain & Trail",
+  "dominantSector": "Mountain & Trail Climbing",
   "image": "/images/western/lonepeak_8/1.webp",
   "galleryImages": [
     "/images/western/lonepeak_8/1.webp"

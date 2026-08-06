@@ -261,7 +261,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
           CATEGORIES
         </span>
 
-        {['All', 'Marathon Super-Shoe', 'Daily Trainer', 'Tempo & Race', 'Max Cushion'].map((cat) => {
+        {['All', 'Marathon Super-Shoe', 'Daily Trainer', 'Tempo & Race', 'Max Cushion', 'Mountain & Trail'].map((cat) => {
           const isActive = selectedCategory === cat;
           return (
             <button

@@ -9,17 +9,19 @@ interface Top10RankingsProps {
 }
 
 export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, onSelectShoe }) => {
-  const [tab, setTab] = useState<'marathon' | 'speed' | 'value' | 'durability'>('marathon');
+  const [tab, setTab] = useState<'marathon' | 'speed' | 'walking' | 'trail' | 'durability'>('marathon');
 
   const marathonTop = [...shoes].sort((a, b) => b.useCaseValues.marathonRaceScore - a.useCaseValues.marathonRaceScore);
   const speedTop = [...shoes].sort((a, b) => b.useCaseValues.speedWorkoutScore - a.useCaseValues.speedWorkoutScore);
-  const valueTop = [...shoes].sort((a, b) => a.msrpUsd - b.msrpUsd);
+  const walkingTop = [...shoes].sort((a, b) => b.useCaseValues.walkingScore - a.useCaseValues.walkingScore);
+  const trailTop = [...shoes].sort((a, b) => (b.useCaseValues.trailScore || 0) - (a.useCaseValues.trailScore || 0));
   const durabilityTop = [...shoes].sort((a, b) => b.specs.estimatedLifespanKm - a.specs.estimatedLifespanKm);
 
   const activeList = 
     tab === 'marathon' ? marathonTop :
     tab === 'speed' ? speedTop :
-    tab === 'value' ? valueTop : durabilityTop;
+    tab === 'walking' ? walkingTop :
+    tab === 'trail' ? trailTop : durabilityTop;
 
   return (
     <div style={{
@@ -99,10 +101,11 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
           flexShrink: 0
         }}>
           {[
-            { id: 'marathon', label: 'Marathon Race Day', icon: Flame },
-            { id: 'speed', label: 'Tempo & Speed Workouts', icon: Zap },
-            { id: 'value', label: 'Best Price Value ($)', icon: Zap },
-            { id: 'durability', label: 'Outsole Lifespan Kings', icon: ShieldCheck },
+            { id: 'marathon', label: '🏃 Marathon Race Day', icon: Flame },
+            { id: 'speed', label: '⚡ Tempo & Speed', icon: Zap },
+            { id: 'walking', label: '🚶 Walking & Travel', icon: Award },
+            { id: 'trail', label: '🏔️ Mountain & Trail', icon: ShieldCheck },
+            { id: 'durability', label: '🛡️ Durability Kings', icon: ShieldCheck },
           ].map((t) => {
             const Icon = t.icon;
             const isActive = tab === t.id;
@@ -185,7 +188,8 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
                 <div style={{ textAlign: 'right' }}>
                   {tab === 'marathon' && <strong style={{ color: '#DC2626', fontFamily: 'var(--font-mono)' }}>{shoe.useCaseValues.marathonRaceScore} / 100</strong>}
                   {tab === 'speed' && <strong style={{ color: '#D97706', fontFamily: 'var(--font-mono)' }}>{shoe.useCaseValues.speedWorkoutScore} / 100</strong>}
-                  {tab === 'value' && <strong style={{ color: '#059669', fontFamily: 'var(--font-mono)' }}>${shoe.msrpUsd}</strong>}
+                  {tab === 'walking' && <strong style={{ color: '#059669', fontFamily: 'var(--font-mono)' }}>{shoe.useCaseValues.walkingScore} / 100</strong>}
+                  {tab === 'trail' && <strong style={{ color: '#16A34A', fontFamily: 'var(--font-mono)' }}>{shoe.useCaseValues.trailScore || 90} / 100</strong>}
                   {tab === 'durability' && <strong style={{ color: '#2563EB', fontFamily: 'var(--font-mono)' }}>{shoe.specs.estimatedLifespanKm} km</strong>}
                 </div>
               </div>

@@ -40,6 +40,27 @@ const CATEGORY_HUB_INFO: Record<string, { title: string; subtitle: string; descr
     description: 'Maximum stack height shoes engineered with soft foam compounds for joint impact absorption, standing comfort, and recovery miles.',
     filterFn: (s) => s.category === 'Max Cushion',
     sortFn: (a, b) => b.useCaseValues.walkingScore - a.useCaseValues.walkingScore
+  },
+  'mountain-and-trail': {
+    title: 'Best Mountain & Trail Climbing Shoes (2026)',
+    subtitle: 'Technical Trail, Skyrunning & Mountain Scrambling',
+    description: 'Top-ranked trail running and mountain climbing shoes evaluated by lug depth, Vibram Megagrip traction, rock protection, and trail stability.',
+    filterFn: (s) => s.category === 'Mountain & Trail' || (s.useCaseValues.trailScore && s.useCaseValues.trailScore > 85) ? true : false,
+    sortFn: (a, b) => (b.useCaseValues.trailScore || 0) - (a.useCaseValues.trailScore || 0)
+  },
+  'walking': {
+    title: 'Best Walking & All-Day Standing Shoes (2026)',
+    subtitle: 'All-Day Comfort, Travel & Standing Shifts',
+    description: 'Top-ranked walking and daily travel shoes evaluated by heel impact absorption, arch support, and all-day standing comfort.',
+    filterFn: (s) => s.useCaseValues.walkingScore >= 90 || s.dominantSector.includes('Walking'),
+    sortFn: (a, b) => b.useCaseValues.walkingScore - a.useCaseValues.walkingScore
+  },
+  'running': {
+    title: 'Best Road Running Shoes (2026)',
+    subtitle: 'Marathon Racing, Tempo & Daily Mileage',
+    description: 'Top-ranked road running shoes evaluated by energy return percentage, weight, carbon plate snap, and marathon race scores.',
+    filterFn: (s) => s.category !== 'Mountain & Trail',
+    sortFn: (a, b) => b.overallRating - a.overallRating
   }
 };
 
