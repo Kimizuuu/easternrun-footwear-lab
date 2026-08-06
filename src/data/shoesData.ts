@@ -57,7 +57,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (89/100): Pure Marathon Race Weapon. Completely dominates 42K Race Day.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (89/100): Pure Marathon Race Weapon. Completely dominates 42K Race Day.',
     userReviews: []
   },
   {
@@ -116,7 +116,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (86/100): Elite Carbon Marathon Racer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (86/100): Elite Carbon Marathon Racer.',
     userReviews: []
   },
   {
@@ -174,7 +174,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (87/100): Highly Recommended Speed Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (87/100): Highly Recommended Speed Trainer.',
     userReviews: []
   },
   {
@@ -232,7 +232,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (88/100): Ultimate High-Mileage Workhorse with 1000km+ durability.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (88/100): Ultimate High-Mileage Workhorse with 1000km+ durability.',
     userReviews: []
   },
   {
@@ -290,7 +290,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (85/100): Perfect Lightweight Walking Cruiser.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (85/100): Perfect Lightweight Walking Cruiser.',
     userReviews: []
   },
 
@@ -350,7 +350,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (88/100): Elite Carbon Marathon Racer under $200.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (88/100): Elite Carbon Marathon Racer under $200.',
     userReviews: []
   },
   {
@@ -404,7 +404,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (86/100): High-Stability Carbon Super-Shoe.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (86/100): High-Stability Carbon Super-Shoe.',
     userReviews: []
   },
   {
@@ -457,7 +457,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (84/100): Fast & Punchy Speed Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (84/100): Fast & Punchy Speed Trainer.',
     userReviews: []
   },
   {
@@ -510,7 +510,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (82/100): Versatile Speed Workhorse.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (82/100): Versatile Speed Workhorse.',
     userReviews: []
   },
   {
@@ -563,7 +563,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (91/100): #1 Best Budget Walking & Travel Shoe under $90.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (91/100): #1 Best Budget Walking & Travel Shoe under $90.',
     userReviews: []
   },
   {
@@ -615,7 +615,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (85/100): Reliable High-Mileage Workhorse.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (85/100): Reliable High-Mileage Workhorse.',
     userReviews: []
   },
   {
@@ -667,7 +667,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (81/100): Ideal Urban Walking & Standing Shoe.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (81/100): Ideal Urban Walking & Standing Shoe.',
     userReviews: []
   },
   {
@@ -719,7 +719,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (83/100): Best Value All-Day Entry Shoe.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (83/100): Best Value All-Day Entry Shoe.',
     userReviews: []
   },
   {
@@ -771,7 +771,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (83/100): Maximum Cushion Daily Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (83/100): Maximum Cushion Daily Trainer.',
     userReviews: []
   },
   {
@@ -823,7 +823,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (84/100): Lightweight Daily & Gym Cruiser.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (84/100): Lightweight Daily & Gym Cruiser.',
     userReviews: []
   },
 
@@ -881,7 +881,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (90/100): Flagship Carbon Marathon Weapon.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (90/100): Flagship Carbon Marathon Weapon.',
     userReviews: []
   },
   {
@@ -937,7 +937,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (89/100): Ultra-Lightweight Carbon Racer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (89/100): Ultra-Lightweight Carbon Racer.',
     userReviews: []
   },
   {
@@ -992,7 +992,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (88/100): High-Bounce Carbon Marathon Super-Shoe.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (88/100): High-Bounce Carbon Marathon Super-Shoe.',
     userReviews: []
   },
   {
@@ -1047,7 +1047,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (86/100): Hybrid Carbon Speed Workout Specialist.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (86/100): Hybrid Carbon Speed Workout Specialist.',
     userReviews: []
   },
   {
@@ -1102,7 +1102,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (85/100): Versatile Speed & Tempo Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (85/100): Versatile Speed & Tempo Trainer.',
     userReviews: []
   },
   {
@@ -1157,7 +1157,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (84/100): Speed Workout & Interval Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (84/100): Speed Workout & Interval Trainer.',
     userReviews: []
   },
   {
@@ -1212,7 +1212,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (84/100): Carbon-Assisted Tempo Workhorse.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (84/100): Carbon-Assisted Tempo Workhorse.',
     userReviews: []
   },
   {
@@ -1268,7 +1268,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (83/100): Wide-Friendly Speed Workout Specialist.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (83/100): Wide-Friendly Speed Workout Specialist.',
     userReviews: []
   },
   {
@@ -1323,7 +1323,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (83/100): Budget Carbon-Plated Racer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (83/100): Budget Carbon-Plated Racer.',
     userReviews: []
   },
   {
@@ -1378,7 +1378,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (84/100): Wide-Fit Budget Carbon Racer under $120.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (84/100): Wide-Fit Budget Carbon Racer under $120.',
     userReviews: []
   },
   {
@@ -1433,7 +1433,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (84/100): Best Value Carbon Racer Under $120.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (84/100): Best Value Carbon Racer Under $120.',
     userReviews: []
   },
   {
@@ -1488,7 +1488,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (86/100): Durable Nylon Glass-Fiber Speed Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (86/100): Durable Nylon Glass-Fiber Speed Trainer.',
     userReviews: []
   },
   {
@@ -1543,7 +1543,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (87/100): Next-Gen Carbon Marathon Racer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (87/100): Next-Gen Carbon Marathon Racer.',
     userReviews: []
   },
   {
@@ -1598,7 +1598,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (86/100): High-Mileage Workhorse Daily Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (86/100): High-Mileage Workhorse Daily Trainer.',
     userReviews: []
   },
   {
@@ -1654,7 +1654,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (84/100): Reliable Budget Daily Workhorse.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (84/100): Reliable Budget Daily Workhorse.',
     userReviews: []
   },
   {
@@ -1709,7 +1709,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (83/100): Plush Max Cushion Recovery Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (83/100): Plush Max Cushion Recovery Trainer.',
     userReviews: []
   },
   {
@@ -1764,7 +1764,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (86/100): Perfect Featherweight Daily & Walking Cruiser.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (86/100): Perfect Featherweight Daily & Walking Cruiser.',
     userReviews: []
   },
   {
@@ -1819,7 +1819,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (85/100): Plush Soft Step-In Daily & Walking Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (85/100): Plush Soft Step-In Daily & Walking Trainer.',
     userReviews: []
   },
 
@@ -1876,7 +1876,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (91/100): Premier Marathon Super-Shoe.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (91/100): Premier Marathon Super-Shoe.',
     userReviews: []
   },
   {
@@ -1930,7 +1930,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (89/100): High-Performance Marathon Racer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (89/100): High-Performance Marathon Racer.',
     userReviews: []
   },
   {
@@ -1985,7 +1985,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (92/100): Top Tier Max-Bounce Super-Shoe.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (92/100): Top Tier Max-Bounce Super-Shoe.',
     userReviews: []
   },
   {
@@ -2039,7 +2039,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (90/100): Excellent Marathon Carbon Racer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (90/100): Excellent Marathon Carbon Racer.',
     userReviews: []
   },
   {
@@ -2094,7 +2094,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (86/100): Agile & Responsive Tempo Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (86/100): Agile & Responsive Tempo Trainer.',
     userReviews: []
   },
   {
@@ -2150,7 +2150,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (87/100): Durable High-Mileage Daily Workhorse.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (87/100): Durable High-Mileage Daily Workhorse.',
     userReviews: []
   },
   {
@@ -2205,7 +2205,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Wide Friendly',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (85/100): Plush Soft Walking & Recovery Cruiser.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (85/100): Plush Soft Walking & Recovery Cruiser.',
     userReviews: []
   },
   {
@@ -2261,7 +2261,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (87/100): Fast & Agile Track Interval Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (87/100): Fast & Agile Track Interval Trainer.',
     userReviews: []
   },
   {
@@ -2316,7 +2316,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (86/100): Smooth & Energetic Daily Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (86/100): Smooth & Energetic Daily Trainer.',
     userReviews: []
   },
   {
@@ -2371,7 +2371,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       fitWidth: 'Standard (True to Size)',
       archSupport: 'Neutral'
     },
-    finalConsensusVerdict: 'Consensus (87/100): Lightweight Breathable Daily Trainer.',
+    finalConsensusVerdict: 'r/RunningShoeGeeks Consensus (87/100): Lightweight Breathable Daily Trainer.',
     userReviews: []
   }
 ,
