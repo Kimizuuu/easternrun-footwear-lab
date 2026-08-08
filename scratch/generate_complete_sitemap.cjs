@@ -29,11 +29,12 @@ urls.push({
   priority: '1.0'
 });
 
-// 2. Brand Landing Hubs (14 Brands)
+// 2. Brand Landing Hubs (18 Brands)
 const brandSlugs = [
   'li-ning', 'anta', 'xtep', '361-degrees', 'qiaodan',
   'nike', 'adidas', 'saucony', 'asics', 'mizuno',
-  'new-balance', 'hoka', 'brooks', 'skechers'
+  'new-balance', 'hoka', 'brooks', 'skechers',
+  'salomon', 'on-running', 'altra', 'la-sportiva'
 ];
 
 brandSlugs.forEach(b => {
