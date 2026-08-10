@@ -118,20 +118,20 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
         {/* Integrated Category Tabs & Reactive Sort Controls Bar */}
         <div 
           style={{
-            background: '#FFFFFF',
-            border: '1px solid #E2E8F0',
-            borderRadius: '8px',
-            padding: '14px 18px',
-            marginBottom: '24px',
+            background: '#E0E5EC',
+            border: '1px solid rgba(255, 255, 255, 0.4)',
+            borderRadius: '22px',
+            padding: '18px 22px',
+            marginBottom: '36px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '14px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
+            gap: '18px',
+            boxShadow: 'var(--neu-shadow)'
           }}
         >
           {/* Top Row: Category Filter Tabs */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.05em', marginRight: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.05em', marginRight: '2px' }}>
               CATEGORIES:
             </span>
 
@@ -142,16 +142,18 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
                   style={{
-                    padding: '6px 14px',
-                    minHeight: '36px',
-                    borderRadius: '20px',
-                    background: isActive ? '#0F172A' : '#F1F5F9',
-                    color: isActive ? '#FFFFFF' : '#475569',
-                    border: isActive ? '1px solid #0F172A' : '1px solid #E2E8F0',
-                    fontSize: '0.8rem',
-                    fontWeight: isActive ? 700 : 500,
+                    padding: '9px 18px',
+                    minHeight: '40px',
+                    borderRadius: '24px',
+                    background: isActive ? 'linear-gradient(145deg, #ffffff, #cbd5e1)' : 'linear-gradient(145deg, #ffffff, #e2e8f0)',
+                    color: isActive ? '#0F172A' : '#475569',
+                    border: isActive ? '1.5px solid #0F172A' : '1px solid rgba(255, 255, 255, 0.8)',
+                    boxShadow: isActive ? 'inset 3px 3px 6px #b4bec9, inset -3px -3px 6px #ffffff, 0 4px 12px rgba(15,23,42,0.1)' : 'var(--neu-shadow-sm)',
+                    fontSize: '0.82rem',
+                    fontWeight: isActive ? 900 : 600,
                     cursor: 'pointer',
-                    transition: 'all 0.15s ease'
+                    transition: 'all 0.18s ease',
+                    transform: isActive ? 'scale(1.02)' : 'scale(1)'
                   }}
                 >
                   {cat === 'All' ? 'All Categories' : cat}
@@ -161,8 +163,8 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
           </div>
 
           {/* Bottom Row: Reactive Sort Dropdown & Model Count */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', paddingTop: '10px', borderTop: '1px solid #F1F5F9' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: '1 1 280px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '14px', paddingTop: '14px', borderTop: '1px solid rgba(255, 255, 255, 0.3)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: '1 1 280px' }}>
               <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
                 SORT ORDER:
               </span>
@@ -173,16 +175,17 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
                 onChange={(e) => setSortBy(e.target.value as any)}
                 style={{
                   flex: 1,
-                  padding: '8px 14px',
-                  borderRadius: '6px',
-                  border: '1px solid #CBD5E1',
-                  background: '#F8FAFC',
+                  padding: '10px 16px',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  background: '#E0E5EC',
+                  boxShadow: 'var(--neu-pressed)',
                   fontSize: '0.85rem',
                   fontWeight: 700,
                   color: '#0F172A',
                   outline: 'none',
                   cursor: 'pointer',
-                  minHeight: '40px'
+                  minHeight: '42px'
                 }}
               >
                 <option value="overall">Highest Overall Rating First</option>
@@ -198,18 +201,27 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
 
             {/* Model Count Badge */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#475569', background: '#F1F5F9', padding: '6px 12px', borderRadius: '20px', border: '1px solid #E2E8F0' }}>
+              <span style={{
+                fontSize: '0.8rem',
+                fontWeight: 700,
+                color: '#334155',
+                background: '#E0E5EC',
+                boxShadow: 'var(--neu-pressed-sm)',
+                padding: '8px 16px',
+                borderRadius: '24px',
+                border: '1px solid rgba(255, 255, 255, 0.3)'
+              }}>
                 {sortedShoes.length} Models Displayed
               </span>
             </div>
           </div>
         </div>
 
-        {/* Grid of Shoe Cards (350px min-width = 3 per row on desktop) */}
+        {/* Grid of Shoe Cards (360px min-width = generous expanded preview stage) */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 350px), 1fr))',
-          gap: '32px'
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 360px), 1fr))',
+          gap: '36px'
         }}>
           {sortedShoes.map((shoe) => {
             const { score, label } = getShoeDisplayScore(shoe);

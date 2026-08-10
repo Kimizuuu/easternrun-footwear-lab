@@ -30,10 +30,9 @@ export const Header: React.FC<HeaderProps> = ({
       position: 'sticky',
       top: 0,
       zIndex: 100,
-      background: 'rgba(255, 255, 255, 0.92)',
-      backdropFilter: 'blur(16px)',
-      borderBottom: '1px solid var(--border-subtle)',
-      boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
+      background: '#E0E5EC',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.4)',
+      boxShadow: '0 8px 16px #b8c2cc'
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -56,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div style={{
               width: '38px',
               height: '38px',
-              borderRadius: 'var(--radius-sm)',
+              borderRadius: '10px',
               background: 'var(--accent-primary)',
               color: '#FFF',
               fontWeight: 900,
@@ -64,7 +63,8 @@ export const Header: React.FC<HeaderProps> = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              letterSpacing: '-0.5px'
+              letterSpacing: '-0.5px',
+              boxShadow: '4px 4px 8px #b8c2cc'
             }}>
               ER
             </div>
@@ -102,21 +102,14 @@ export const Header: React.FC<HeaderProps> = ({
               style={{
                 width: '100%',
                 padding: '9px 14px 9px 38px',
-                borderRadius: 'var(--radius-full)',
-                background: '#F1F5F9',
-                border: '1px solid transparent',
+                borderRadius: '20px',
+                background: '#E0E5EC',
+                boxShadow: 'var(--neu-pressed)',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
                 color: 'var(--text-primary)',
                 fontSize: '0.85rem',
                 outline: 'none',
-                transition: 'var(--transition-fast)'
-              }}
-              onFocus={(e) => {
-                e.target.style.background = '#FFF';
-                e.target.style.borderColor = 'var(--accent-primary)';
-              }}
-              onBlur={(e) => {
-                e.target.style.background = '#F1F5F9';
-                e.target.style.borderColor = 'transparent';
+                fontWeight: 600
               }}
             />
           </div>
@@ -125,38 +118,28 @@ export const Header: React.FC<HeaderProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <button
               onClick={onOpenWizard}
+              className="neu-button"
               style={{
-                background: '#EFF6FF',
-                color: '#2563EB',
-                border: '1px solid #BFDBFE',
-                borderRadius: 'var(--radius-full)',
-                padding: '7px 14px',
-                minHeight: '44px',
+                borderRadius: '20px',
+                padding: '7px 16px',
+                minHeight: '40px',
                 fontSize: '0.8rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
+                fontWeight: 700,
                 gap: '6px'
               }}
             >
-              <Compass size={15} /> Shoe Advisor
+              <Compass size={15} color="#2563EB" /> Shoe Advisor
             </button>
 
             <button
               onClick={onOpenTop10}
+              className="neu-button"
               style={{
-                background: '#FFF',
-                color: 'var(--text-primary)',
-                border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-full)',
-                padding: '7px 14px',
-                minHeight: '44px',
+                borderRadius: '20px',
+                padding: '7px 16px',
+                minHeight: '40px',
                 fontSize: '0.8rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
+                fontWeight: 700,
                 gap: '6px'
               }}
             >
@@ -165,19 +148,14 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={onOpenCompare}
+              className="neu-button"
               style={{
                 position: 'relative',
-                background: compareCount > 0 ? 'var(--accent-primary)' : '#FFF',
-                color: compareCount > 0 ? '#FFF' : 'var(--text-primary)',
-                border: compareCount > 0 ? 'none' : '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-full)',
-                padding: '7px 14px',
-                minHeight: '44px',
+                borderRadius: '20px',
+                padding: '7px 16px',
+                minHeight: '40px',
                 fontSize: '0.8rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
+                fontWeight: 800,
                 gap: '6px'
               }}
             >
@@ -185,8 +163,8 @@ export const Header: React.FC<HeaderProps> = ({
               Compare
               {compareCount > 0 && (
                 <span style={{
-                  background: '#FFF',
-                  color: 'var(--accent-primary)',
+                  background: '#2563EB',
+                  color: '#FFF',
                   borderRadius: '50%',
                   width: '18px',
                   height: '18px',
@@ -207,32 +185,38 @@ export const Header: React.FC<HeaderProps> = ({
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '6px',
-          overflowX: 'auto'
+          gap: '8px',
+          overflowX: 'auto',
+          paddingBottom: '4px'
         }}>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', marginRight: '4px' }}>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 800, textTransform: 'uppercase', marginRight: '4px' }}>
             Brands:
           </span>
-          {BRANDS.map((brand) => (
-            <button
-              key={brand}
-              onClick={() => setSelectedBrand(brand)}
-              style={{
-                background: selectedBrand === brand ? 'var(--accent-primary)' : '#F1F5F9',
-                color: selectedBrand === brand ? '#FFF' : 'var(--text-secondary)',
-                border: 'none',
-                borderRadius: 'var(--radius-full)',
-                padding: '4px 14px',
-                fontSize: '0.8rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                whiteSpace: 'nowrap',
-                transition: 'var(--transition-fast)'
-              }}
-            >
-              {brand}
-            </button>
-          ))}
+          {BRANDS.map((brand) => {
+            const isActive = selectedBrand === brand;
+            return (
+              <button
+                key={brand}
+                onClick={() => setSelectedBrand(brand)}
+                style={{
+                  background: isActive ? 'linear-gradient(145deg, #ffffff, #cbd5e1)' : 'linear-gradient(145deg, #ffffff, #e2e8f0)',
+                  color: isActive ? '#0F172A' : '#475569',
+                  border: isActive ? '1.5px solid #0F172A' : '1px solid rgba(255, 255, 255, 0.8)',
+                  borderRadius: '20px',
+                  boxShadow: isActive ? 'inset 2px 2px 4px #b4bec9, inset -2px -2px 4px #ffffff, 0 4px 10px rgba(15,23,42,0.1)' : 'var(--neu-shadow-sm)',
+                  padding: '5px 15px',
+                  fontSize: '0.8rem',
+                  fontWeight: isActive ? 900 : 600,
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                  transition: 'all 0.18s ease',
+                  transform: isActive ? 'scale(1.02)' : 'scale(1)'
+                }}
+              >
+                {brand}
+              </button>
+            );
+          })}
         </div>
       </div>
     </header>

@@ -117,7 +117,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       {/* Brand Selection Dropdown */}
       {setSelectedBrand && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Filter by Brand
           </span>
           <select
@@ -127,13 +127,14 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             style={{
               width: '100%',
               padding: '10px 14px',
-              minHeight: '44px',
-              borderRadius: '6px',
-              border: '1px solid #CBD5E1',
-              background: '#F8FAFC',
+              minHeight: '42px',
+              borderRadius: '12px',
+              border: '1px solid rgba(255, 255, 255, 0.4)',
+              background: '#E0E5EC',
+              boxShadow: 'var(--neu-pressed)',
               color: '#0F172A',
               fontSize: '0.85rem',
-              fontWeight: 600,
+              fontWeight: 700,
               outline: 'none',
               cursor: 'pointer'
             }}
@@ -148,8 +149,8 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       )}
 
       {/* Main Navigation */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-        <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '4px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           Menu
         </span>
 
@@ -159,18 +160,14 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
               onOpenGuide();
               setIsMobileMenuOpen(false);
             }}
+            className="neu-button"
             style={{
-              padding: '8px 12px',
-              minHeight: '44px',
-              borderRadius: 'var(--radius-sm)',
-              background: '#F8FAFC',
-              color: '#0F172A',
-              border: '1px solid #E2E8F0',
-              fontSize: '0.88rem',
-              fontWeight: 700,
-              cursor: 'pointer',
-              textAlign: 'left',
-              marginBottom: '2px'
+              padding: '10px 14px',
+              minHeight: '42px',
+              borderRadius: '12px',
+              justifyContent: 'flex-start',
+              fontSize: '0.85rem',
+              fontWeight: 700
             }}
           >
             Runner's Tech Guide
@@ -182,17 +179,14 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             onOpenWizard();
             setIsMobileMenuOpen(false);
           }}
+          className="neu-button"
           style={{
-            padding: '8px 12px',
-            minHeight: '44px',
-            borderRadius: 'var(--radius-sm)',
-            background: 'transparent',
-            color: 'var(--text-primary)',
-            border: 'none',
-            fontSize: '0.88rem',
-            fontWeight: 600,
-            cursor: 'pointer',
-            textAlign: 'left'
+            padding: '10px 14px',
+            minHeight: '42px',
+            borderRadius: '12px',
+            justifyContent: 'flex-start',
+            fontSize: '0.85rem',
+            fontWeight: 700
           }}
         >
           Sector Advisor
@@ -203,31 +197,28 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             onOpenCompare();
             setIsMobileMenuOpen(false);
           }}
+          className="neu-button"
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            padding: '8px 12px',
-            minHeight: '44px',
-            borderRadius: 'var(--radius-sm)',
-            background: 'transparent',
-            color: 'var(--text-primary)',
-            border: 'none',
-            fontSize: '0.88rem',
-            fontWeight: 600,
-            cursor: 'pointer',
-            textAlign: 'left'
+            padding: '10px 14px',
+            minHeight: '42px',
+            borderRadius: '12px',
+            fontSize: '0.85rem',
+            fontWeight: 700
           }}
         >
           <span>Compare Tray</span>
           {compareCount > 0 && (
             <span style={{
-              background: '#111827',
+              background: '#2563EB',
               color: '#FFF',
-              borderRadius: 'var(--radius-full)',
+              borderRadius: '20px',
               padding: '2px 8px',
               fontSize: '0.72rem',
-              fontWeight: 700
+              fontWeight: 800,
+              boxShadow: '0 2px 8px rgba(37,99,235,0.4)'
             }}>
               {compareCount}
             </span>
@@ -239,26 +230,23 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
             onOpenTop10();
             setIsMobileMenuOpen(false);
           }}
+          className="neu-button"
           style={{
-            padding: '8px 12px',
-            minHeight: '44px',
-            borderRadius: 'var(--radius-sm)',
-            background: 'transparent',
-            color: 'var(--text-primary)',
-            border: 'none',
-            fontSize: '0.88rem',
-            fontWeight: 600,
-            cursor: 'pointer',
-            textAlign: 'left'
+            padding: '10px 14px',
+            minHeight: '42px',
+            borderRadius: '12px',
+            justifyContent: 'flex-start',
+            fontSize: '0.85rem',
+            fontWeight: 700
           }}
         >
           Benchmark Rankings
         </button>
       </div>
 
-      {/* Category Filter Buttons (1-by-1 List) */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>
+      {/* Category Filter Buttons */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           CATEGORIES
         </span>
 
@@ -273,13 +261,14 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 padding: '10px 14px',
-                minHeight: '44px',
-                borderRadius: '6px',
-                background: isActive ? '#0F172A' : '#F8FAFC',
-                color: isActive ? '#FFFFFF' : '#334155',
-                border: isActive ? '1px solid #0F172A' : '1px solid #E2E8F0',
-                fontSize: '0.85rem',
-                fontWeight: isActive ? 700 : 500,
+                minHeight: '40px',
+                borderRadius: '12px',
+                background: isActive ? 'linear-gradient(145deg, #ffffff, #cbd5e1)' : 'linear-gradient(145deg, #ffffff, #e2e8f0)',
+                color: isActive ? '#0F172A' : '#475569',
+                border: isActive ? '1.5px solid #0F172A' : '1px solid rgba(255, 255, 255, 0.8)',
+                boxShadow: isActive ? 'inset 2px 2px 4px #b4bec9, inset -2px -2px 4px #ffffff' : 'var(--neu-shadow-sm)',
+                fontSize: '0.82rem',
+                fontWeight: isActive ? 900 : 600,
                 cursor: 'pointer',
                 textAlign: 'left',
                 transition: 'all 0.15s ease'
@@ -292,8 +281,8 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
       </div>
 
       {/* Quick Shoe Directory Dropdown */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid #F1F5F9' }}>
-        <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid rgba(255, 255, 255, 0.4)' }}>
+        <span style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           Quick Shoe Directory ({shoes.length})
         </span>
         <select
@@ -308,13 +297,14 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
           style={{
             width: '100%',
             padding: '10px 12px',
-            minHeight: '44px',
-            borderRadius: '6px',
-            border: '1px solid #E2E8F0',
-            background: '#F8FAFC',
+            minHeight: '42px',
+            borderRadius: '12px',
+            border: '1px solid rgba(255, 255, 255, 0.4)',
+            background: '#E0E5EC',
+            boxShadow: 'var(--neu-pressed)',
             color: '#334155',
             fontSize: '0.82rem',
-            fontWeight: 600,
+            fontWeight: 700,
             outline: 'none',
             cursor: 'pointer'
           }}
@@ -434,8 +424,9 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         height: '100vh',
         position: 'sticky',
         top: 0,
-        background: '#FFFFFF',
-        borderRight: '1px solid var(--border-subtle)',
+        background: '#E0E5EC',
+        borderRight: '1px solid rgba(255, 255, 255, 0.4)',
+        boxShadow: '8px 0 20px #b8c2cc',
         display: 'flex',
         flexDirection: 'column',
         padding: '22px 18px',

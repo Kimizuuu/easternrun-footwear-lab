@@ -307,7 +307,17 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
                 loading="lazy"
                 decoding="async"
                 onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  width: 'auto',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  objectPosition: 'center center',
+                  mixBlendMode: 'multiply',
+                  margin: 'auto',
+                  display: 'block'
+                }}
               />
 
               {/* Overlay Zoom Trigger */}

@@ -18,26 +18,29 @@ export const FloatingCompareTray: React.FC<FloatingCompareTrayProps> = ({
   if (comparedShoes.length === 0) return null;
 
   return (
-    <div style={{
-      position: 'fixed',
-      bottom: '20px',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      zIndex: 9999,
-      maxWidth: '92vw',
-      width: '680px',
-      background: '#0F172A',
-      color: '#FFFFFF',
-      borderRadius: '12px',
-      padding: '12px 18px',
-      boxShadow: '0 20px 30px -10px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: '16px',
-      backdropFilter: 'blur(12px)',
-      animation: 'fadeIn 0.2s ease-out'
-    }}>
+    <div
+      className="neu-dark-panel"
+      style={{
+        position: 'fixed',
+        bottom: '24px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 9999,
+        maxWidth: '92vw',
+        width: '680px',
+        background: '#1E293B',
+        color: '#FFFFFF',
+        borderRadius: '30px',
+        padding: '14px 22px',
+        boxShadow: 'var(--neu-dark-shadow)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '16px',
+        animation: 'fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
+      }}
+    >
       {/* Thumbnails Row */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1, minWidth: 0, overflowX: 'auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>

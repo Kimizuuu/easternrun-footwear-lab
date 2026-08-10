@@ -24,16 +24,17 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
 
   return (
     <article
-      className="card-clean"
+      className="neu-card"
       style={{
-        borderRadius: '8px',
+        borderRadius: '16px',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
-        background: '#FFFFFF',
-        border: '1px solid #E2E8F0',
-        transition: 'border-color 0.15s ease',
-        transform: 'translateZ(0)', // GPU hardware acceleration for 60fps mobile scrolling
+        background: '#E8EEF3',
+        boxShadow: 'var(--neu-shadow)',
+        border: '1px solid rgba(255, 255, 255, 0.8)',
+        transition: 'all 0.2s ease',
+        transform: 'translateZ(0)',
         willChange: 'transform'
       }}
     >
@@ -41,12 +42,16 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
       <div 
         style={{
           position: 'relative',
-          height: '250px',
+          height: '240px',
           width: '100%',
           overflow: 'hidden',
           cursor: 'pointer',
-          background: '#F8FAFC',
-          borderBottom: '1px solid #E2E8F0'
+          background: '#E8EEF3',
+          boxShadow: 'inset 4px 4px 8px #c2c9d0, inset -4px -4px 8px #ffffff',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '16px 20px'
         }}
         onClick={() => onSelect(shoe)}
       >
@@ -57,49 +62,56 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
           decoding="async"
           onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
           style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            display: 'block'
+            maxWidth: '100%',
+            maxHeight: '100%',
+            width: 'auto',
+            height: 'auto',
+            objectFit: 'contain',
+            objectPosition: 'center center',
+            mixBlendMode: 'multiply',
+            display: 'block',
+            transition: 'transform 0.3s ease'
           }}
         />
 
-        {/* Dominant Sector Badge */}
+        {/* Dominant Sector Dual-Tone White Neumorphic Badge */}
         <div style={{ position: 'absolute', top: '14px', left: '14px' }}>
           <span style={{
-            background: 'rgba(255, 255, 255, 0.95)',
-            color: '#1E293B',
-            border: '1px solid #CBD5E1',
-            borderRadius: '4px',
-            padding: '5px 12px',
-            fontSize: '0.78rem',
-            fontWeight: 700
+            background: 'linear-gradient(145deg, #ffffff, #e2e8f0)',
+            color: '#0F172A',
+            border: '1px solid rgba(255, 255, 255, 0.9)',
+            borderRadius: '20px',
+            padding: '6px 14px',
+            fontSize: '0.75rem',
+            fontWeight: 800,
+            boxShadow: '4px 4px 8px #b4bec9, -4px -4px 8px #ffffff'
           }}>
             {shoe.dominantSector}
           </span>
         </div>
 
-        {/* Dynamic Sector Rating Badge (100-Basis) */}
+        {/* Dynamic Rating Neumorphic Badge */}
         <div style={{ position: 'absolute', top: '14px', right: '14px' }}>
           <div style={{
             background: '#0F172A',
             color: '#FFFFFF',
-            borderRadius: '4px',
-            padding: '5px 10px',
-            fontSize: '0.85rem',
+            borderRadius: '20px',
+            padding: '6px 14px',
+            fontSize: '0.82rem',
             fontWeight: 800,
             display: 'flex',
             alignItems: 'center',
-            gap: '4px',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
+            gap: '5px',
+            boxShadow: '4px 4px 10px rgba(15,23,42,0.3)',
+            border: '1px solid rgba(255, 255, 255, 0.1)'
           }}>
-            <Star size={14} fill="#EAB308" color="#EAB308" />
+            <Star size={13} fill="#EAB308" color="#EAB308" />
             <span>{activeScore}</span>
-            <span style={{ color: '#94A3B8', fontSize: '0.72rem', fontWeight: 500 }}>/100 ({scoreLabel})</span>
+            <span style={{ color: '#CBD5E1', fontSize: '0.7rem', fontWeight: 500 }}>/100 ({scoreLabel})</span>
           </div>
         </div>
 
-        {/* Compare Button */}
+        {/* Tactile Neumorphic Compare Button */}
         <button
           onClick={(e) => {
             e.stopPropagation();
@@ -109,21 +121,22 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
             position: 'absolute',
             bottom: '14px',
             right: '14px',
-            background: isCompared ? '#0F172A' : '#FFFFFF',
-            color: isCompared ? '#FFFFFF' : '#334155',
-            border: '1px solid #CBD5E1',
-            borderRadius: '4px',
-            padding: '8px 14px',
-            minHeight: '44px',
+            background: '#E0E5EC',
+            color: isCompared ? '#2563EB' : '#0F172A',
+            border: '1px solid rgba(255, 255, 255, 0.7)',
+            borderRadius: '20px',
+            padding: '6px 14px',
+            minHeight: '38px',
             fontSize: '0.78rem',
-            fontWeight: 700,
+            fontWeight: 800,
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
-            gap: '6px'
+            gap: '6px',
+            boxShadow: isCompared ? 'inset 3px 3px 6px #b8c2cc, inset -3px -3px 6px #ffffff' : '4px 4px 8px #b8c2cc, -4px -4px 8px #ffffff'
           }}
         >
-          {isCompared ? <Check size={14} /> : <Scale size={14} />}
+          {isCompared ? <Check size={14} color="#2563EB" /> : <Scale size={14} />}
           {isCompared ? 'Compared' : 'Compare'}
         </button>
       </div>
@@ -134,13 +147,13 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
           <h3 
             onClick={() => onSelect(shoe)}
             style={{
-              fontSize: '1.18rem',
+              fontSize: '1.15rem',
               fontWeight: 800,
-              margin: '0 0 6px 0',
+              margin: '0 0 4px 0',
               cursor: 'pointer',
               color: '#0F172A',
               lineHeight: 1.3,
-              height: '2.8rem',
+              height: '2.7rem',
               overflow: 'hidden',
               display: '-webkit-box',
               WebkitLineClamp: 2,
@@ -149,56 +162,58 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
           >
             {shoe.name}
           </h3>
-          <span style={{ fontSize: '0.85rem', color: '#64748B', fontWeight: 500, display: 'block' }}>
+          <span style={{ fontSize: '0.82rem', color: '#64748B', fontWeight: 600, display: 'block' }}>
             {shoe.brand} • {shoe.category}
           </span>
         </div>
 
-        {/* Key Specs Grid */}
+        {/* Key Specs Inset Dark Neumorphic Grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '8px',
-          background: '#F8FAFC',
-          border: '1px solid #E2E8F0',
-          borderRadius: '6px',
-          padding: '10px 12px',
+          gap: '6px',
+          background: 'linear-gradient(145deg, #0F172A, #1E293B)',
+          color: '#FFFFFF',
+          boxShadow: 'inset 3px 3px 6px #080d17, inset -3px -3px 6px #28374d, 0 4px 12px rgba(15,23,42,0.25)',
+          borderRadius: '12px',
+          padding: '12px 8px',
           fontSize: '0.78rem',
-          textAlign: 'center'
+          textAlign: 'center',
+          border: '1px solid rgba(255, 255, 255, 0.1)'
         }}>
           <div>
-            <span style={{ color: '#64748B', display: 'block', fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 700 }}>Weight</span>
-            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.weightGrams}g</strong>
+            <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.62rem', textTransform: 'uppercase', fontWeight: 700 }}>Weight</span>
+            <strong style={{ color: '#F8FAFC', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.weightGrams}g</strong>
           </div>
 
           <div>
-            <span style={{ color: '#64748B', display: 'block', fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 700 }}>Drop</span>
-            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.dropMm}mm</strong>
+            <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.62rem', textTransform: 'uppercase', fontWeight: 700 }}>Drop</span>
+            <strong style={{ color: '#F8FAFC', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.dropMm}mm</strong>
           </div>
 
           <div title="Lab-measured Midsole Energy Return (Resilience %)">
-            <span style={{ color: '#64748B', display: 'block', fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 700 }}>Energy Ret</span>
-            <strong style={{ color: '#2563EB', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.foamResiliencePercent}%</strong>
+            <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.62rem', textTransform: 'uppercase', fontWeight: 700 }}>Energy Ret</span>
+            <strong style={{ color: '#38BDF8', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.foamResiliencePercent}%</strong>
           </div>
 
           <div title="Plate Stiffness Index (1-10 Scale)">
-            <span style={{ color: '#64748B', display: 'block', fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 700 }}>Stiffness</span>
-            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>
+            <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.62rem', textTransform: 'uppercase', fontWeight: 700 }}>Stiffness</span>
+            <strong style={{ color: '#34D399', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>
               {shoe.specs.carbonStiffnessIndex > 0 ? `${shoe.specs.carbonStiffnessIndex}/10` : 'Flex'}
             </strong>
           </div>
         </div>
 
-        {/* Bottom MSRP & Review Trigger Action */}
+        {/* Bottom MSRP & View Specs Tactile Button */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           paddingTop: '8px',
-          borderTop: '1px solid #F1F5F9'
+          borderTop: '1px solid rgba(255, 255, 255, 0.6)'
         }}>
           <div>
-            <span style={{ fontSize: '0.72rem', color: '#64748B', display: 'block', fontWeight: 600 }}>Price</span>
+            <span style={{ fontSize: '0.7rem', color: '#64748B', display: 'block', fontWeight: 600 }}>Price</span>
             <strong style={{ fontSize: '1.15rem', color: '#0F172A', fontFamily: 'var(--font-mono)', fontWeight: 800 }}>
               ${shoe.msrpUsd}
             </strong>
@@ -206,19 +221,14 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
 
           <button
             onClick={() => onSelect(shoe)}
+            className="neu-button"
             style={{
-              background: '#0F172A',
-              color: '#FFFFFF',
-              border: 'none',
-              borderRadius: '4px',
-              padding: '10px 16px',
-              minHeight: '44px',
-              fontSize: '0.8rem',
+              padding: '10px 18px',
+              minHeight: '40px',
+              fontSize: '0.82rem',
               fontWeight: 700,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px'
+              gap: '6px',
+              color: '#0F172A'
             }}
           >
             <span>View Specs</span>

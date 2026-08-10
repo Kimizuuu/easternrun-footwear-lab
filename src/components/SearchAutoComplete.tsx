@@ -107,11 +107,11 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
-          background: '#FFFFFF',
-          border: isOpen ? '2px solid #2563EB' : '1.5px solid #94A3B8',
-          borderRadius: '8px',
-          padding: '2px 6px 2px 14px',
-          boxShadow: isOpen ? '0 10px 15px -3px rgba(37, 99, 235, 0.15)' : '0 1px 3px rgba(0, 0, 0, 0.08)',
+          background: '#E0E5EC',
+          boxShadow: 'var(--neu-pressed)',
+          border: isOpen ? '1px solid #2563EB' : '1px solid rgba(255, 255, 255, 0.4)',
+          borderRadius: '14px',
+          padding: '4px 6px 4px 14px',
           transition: 'all 0.15s ease'
         }}
       >
@@ -134,10 +134,10 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
             height: '42px',
             border: 'none',
             outline: 'none',
-            fontSize: '0.92rem',
+            fontSize: '0.9rem',
             color: '#0F172A',
             background: 'transparent',
-            fontWeight: 500
+            fontWeight: 600
           }}
         />
 
@@ -167,17 +167,12 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
 
         <button
           type="submit"
+          className="neu-button"
           style={{
-            background: '#0F172A',
-            color: '#FFFFFF',
-            border: 'none',
-            borderRadius: '6px',
-            padding: '8px 14px',
+            padding: '8px 16px',
             fontSize: '0.8rem',
-            fontWeight: 700,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
+            fontWeight: 800,
+            borderRadius: '10px',
             gap: '4px',
             minHeight: '36px',
             flexShrink: 0
@@ -191,13 +186,13 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
       {isOpen && (
         <div style={{
           position: 'absolute',
-          top: 'calc(100% + 6px)',
+          top: 'calc(100% + 8px)',
           left: 0,
           right: 0,
-          background: '#FFFFFF',
-          borderRadius: '8px',
-          border: '1px solid #E2E8F0',
-          boxShadow: '0 20px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1)',
+          background: '#E0E5EC',
+          borderRadius: '16px',
+          border: '1px solid rgba(255, 255, 255, 0.6)',
+          boxShadow: 'var(--neu-shadow-lg)',
           overflow: 'hidden',
           zIndex: 999,
           maxHeight: '400px',
