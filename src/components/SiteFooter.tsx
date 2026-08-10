@@ -56,7 +56,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '4px' }}>
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22C55E' }} />
               <span style={{ fontSize: '0.75rem', color: '#94A3B8', fontFamily: 'var(--font-mono)' }}>
-                System Online • v2.4.0 Engine
+                Independent Footwear Lab Active
               </span>
             </div>
           </div>
