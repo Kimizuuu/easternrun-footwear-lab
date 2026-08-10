@@ -3319,10 +3319,10 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Nike",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/invincible_3/1.webp",
+  "image": "/images/western/nike_invincible3/1.webp",
   "galleryImages": [
-    "/images/western/invincible_3/1.webp",
-    "/images/western/invincible_3/2.webp"
+    "/images/western/nike_invincible3/1.webp",
+    "/images/western/nike_invincible3/2.webp"
   ],
   "msrpUsd": 180,
   "msrpRmb": 1399,
@@ -3391,10 +3391,10 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Nike",
   "category": "Tempo & Race",
   "dominantSector": "Tempo & Speed Workouts",
-  "image": "/images/western/pegasus_plus/1.webp",
+  "image": "/images/western/nike_pegasusplus/1.webp",
   "galleryImages": [
-    "/images/western/pegasus_plus/1.webp",
-    "/images/western/pegasus_plus/2.webp"
+    "/images/western/nike_pegasusplus/1.webp",
+    "/images/western/nike_pegasusplus/2.webp"
   ],
   "msrpUsd": 180,
   "msrpRmb": 1399,
@@ -3463,9 +3463,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Nike",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/vomero_17/1.webp",
+  "image": "/images/western/nike_vomero17/1.webp",
   "galleryImages": [
-    "/images/western/vomero_17/1.webp"
+    "/images/western/nike_vomero17/1.webp"
   ],
   "msrpUsd": 160,
   "msrpRmb": 1199,
@@ -3529,9 +3529,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Saucony",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/triumph_22/1.webp",
+  "image": "/images/western/saucony_triumph22/1.webp",
   "galleryImages": [
-    "/images/western/triumph_22/1.webp"
+    "/images/western/saucony_triumph22/1.webp"
   ],
   "msrpUsd": 160,
   "msrpRmb": 1299,
@@ -3595,9 +3595,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Saucony",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/ride_17/1.webp",
+  "image": "/images/western/saucony_ride17/1.webp",
   "galleryImages": [
-    "/images/western/ride_17/1.webp"
+    "/images/western/saucony_ride17/1.webp"
   ],
   "msrpUsd": 140,
   "msrpRmb": 999,
@@ -3661,9 +3661,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Saucony",
   "category": "Tempo & Race",
   "dominantSector": "Tempo & Speed Workouts",
-  "image": "/images/western/kinvara_15/1.webp",
+  "image": "/images/western/saucony_kinvara15/1.webp",
   "galleryImages": [
-    "/images/western/kinvara_15/1.webp"
+    "/images/western/saucony_kinvara15/1.webp"
   ],
   "msrpUsd": 130,
   "msrpRmb": 899,
@@ -3727,9 +3727,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "ASICS",
   "category": "Marathon Super-Shoe",
   "dominantSector": "Marathon Race Day",
-  "image": "/images/western/metaspeed_sky_paris/1.webp",
+  "image": "/images/western/asics_metaspeedskyparis/1.webp",
   "galleryImages": [
-    "/images/western/metaspeed_sky_paris/1.webp"
+    "/images/western/asics_metaspeedskyparis/1.webp"
   ],
   "msrpUsd": 250,
   "msrpRmb": 1699,
@@ -3797,9 +3797,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "ASICS",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/superblast_2/1.webp",
+  "image": "/images/western/asics_superblast2/1.webp",
   "galleryImages": [
-    "/images/western/superblast_2/1.webp"
+    "/images/western/asics_superblast2/1.webp"
   ],
   "msrpUsd": 220,
   "msrpRmb": 1599,
@@ -3868,9 +3868,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "ASICS",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/novablast_4/1.webp",
+  "image": "/images/western/asics_novablast4/1.webp",
   "galleryImages": [
-    "/images/western/novablast_4/1.webp"
+    "/images/western/asics_novablast4/1.webp"
   ],
   "msrpUsd": 140,
   "msrpRmb": 999,
@@ -4206,9 +4206,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "New Balance",
   "category": "Marathon Super-Shoe",
   "dominantSector": "Marathon Race Day",
-  "image": "/images/western/sc_elite_v4/1.webp",
+  "image": "/images/western/nb_sc_elite_v4/1.webp",
   "galleryImages": [
-    "/images/western/sc_elite_v4/1.webp"
+    "/images/western/nb_sc_elite_v4/1.webp"
   ],
   "msrpUsd": 250,
   "msrpRmb": 1799,
@@ -4276,9 +4276,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "New Balance",
   "category": "Tempo & Race",
   "dominantSector": "Tempo & Speed Workouts",
-  "image": "/images/western/rebel_v4/1.webp",
+  "image": "/images/western/nb_rebel_v4/1.webp",
   "galleryImages": [
-    "/images/western/rebel_v4/1.webp"
+    "/images/western/nb_rebel_v4/1.webp"
   ],
   "msrpUsd": 140,
   "msrpRmb": 999,
@@ -4342,9 +4342,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "New Balance",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/1080_v13/1.webp",
+  "image": "/images/western/nb_1080_v13/1.webp",
   "galleryImages": [
-    "/images/western/1080_v13/1.webp"
+    "/images/western/nb_1080_v13/1.webp"
   ],
   "msrpUsd": 165,
   "msrpRmb": 1299,
@@ -4466,9 +4466,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "HOKA",
   "category": "Max Cushion",
   "dominantSector": "Casual Walking & All-Day Wear",
-  "image": "/images/western/bondi_8/1.webp",
+  "image": "/images/western/hoka_bondi8/1.webp",
   "galleryImages": [
-    "/images/western/bondi_8/1.webp"
+    "/images/western/hoka_bondi8/1.webp"
   ],
   "msrpUsd": 165,
   "msrpRmb": 1399,
@@ -4523,9 +4523,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Brooks",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/ghost_16/1.webp",
+  "image": "/images/western/brooks_ghost16/1.webp",
   "galleryImages": [
-    "/images/western/ghost_16/1.webp"
+    "/images/western/brooks_ghost16/1.webp"
   ],
   "msrpUsd": 140,
   "msrpRmb": 1099,
@@ -4636,9 +4636,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "HOKA",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/clifton_9/1.webp",
+  "image": "/images/western/hoka_clifton9/1.webp",
   "galleryImages": [
-    "/images/western/clifton_9/1.webp"
+    "/images/western/hoka_clifton9/1.webp"
   ],
   "msrpUsd": 145,
   "msrpRmb": 1199,
@@ -4692,9 +4692,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "HOKA",
   "category": "Tempo & Race",
   "dominantSector": "Tempo & Speed Workouts",
-  "image": "/images/western/mach_6/1.webp",
+  "image": "/images/western/hoka_mach6/1.webp",
   "galleryImages": [
-    "/images/western/mach_6/1.webp"
+    "/images/western/hoka_mach6/1.webp"
   ],
   "msrpUsd": 140,
   "msrpRmb": 1099,
@@ -4748,9 +4748,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Brooks",
   "category": "Max Cushion",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/glycerin_21/1.webp",
+  "image": "/images/western/brooks_glycerin21/1.webp",
   "galleryImages": [
-    "/images/western/glycerin_21/1.webp"
+    "/images/western/brooks_glycerin21/1.webp"
   ],
   "msrpUsd": 160,
   "msrpRmb": 1299,
@@ -4804,9 +4804,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "ASICS",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/gt2000_12/1.webp",
+  "image": "/images/western/asics_gt2000_12/1.webp",
   "galleryImages": [
-    "/images/western/gt2000_12/1.webp"
+    "/images/western/asics_gt2000_12/1.webp"
   ],
   "msrpUsd": 140,
   "msrpRmb": 999,
@@ -4974,9 +4974,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Nike",
   "category": "Marathon Super-Shoe",
   "dominantSector": "Marathon Race Day",
-  "image": "/images/western/vaporfly_2/1.webp",
+  "image": "/images/western/nike_vaporfly2/1.webp",
   "galleryImages": [
-    "/images/western/vaporfly_2/1.webp"
+    "/images/western/nike_vaporfly2/1.webp"
   ],
   "msrpUsd": 250,
   "msrpRmb": 1599,
@@ -5031,9 +5031,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Nike",
   "category": "Marathon Super-Shoe",
   "dominantSector": "Marathon Race Day",
-  "image": "/images/western/alphafly_2/1.webp",
+  "image": "/images/western/nike_alphafly2/1.webp",
   "galleryImages": [
-    "/images/western/alphafly_2/1.webp"
+    "/images/western/nike_alphafly2/1.webp"
   ],
   "msrpUsd": 275,
   "msrpRmb": 2299,
@@ -5088,9 +5088,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Adidas",
   "category": "Marathon Super-Shoe",
   "dominantSector": "Marathon Race Day",
-  "image": "/images/western/adios_pro3/1.webp",
+  "image": "/images/western/adidas_adiospro3/1.webp",
   "galleryImages": [
-    "/images/western/adios_pro3/1.webp"
+    "/images/western/adidas_adiospro3/1.webp"
   ],
   "msrpUsd": 250,
   "msrpRmb": 1899,
@@ -5144,9 +5144,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Adidas",
   "category": "Tempo & Race",
   "dominantSector": "Tempo & Speed Workouts",
-  "image": "/images/western/boston_12/1.webp",
+  "image": "/images/western/adidas_boston12/1.webp",
   "galleryImages": [
-    "/images/western/boston_12/1.webp"
+    "/images/western/adidas_boston12/1.webp"
   ],
   "msrpUsd": 160,
   "msrpRmb": 1299,
@@ -5368,9 +5368,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "HOKA",
   "category": "Tempo & Race",
   "dominantSector": "Tempo & Speed Workouts",
-  "image": "/images/western/mach_5/1.webp",
+  "image": "/images/western/hoka_mach5/1.webp",
   "galleryImages": [
-    "/images/western/mach_5/1.webp"
+    "/images/western/hoka_mach5/1.webp"
   ],
   "msrpUsd": 140,
   "msrpRmb": 1099,
@@ -5481,9 +5481,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "HOKA",
   "category": "Mountain & Trail",
   "dominantSector": "Mountain & Trail Climbing",
-  "image": "/images/western/speedgoat_6/1.webp",
+  "image": "/images/western/hoka_speedgoat6/1.webp",
   "galleryImages": [
-    "/images/western/speedgoat_6/1.webp"
+    "/images/western/hoka_speedgoat6/1.webp"
   ],
   "msrpUsd": 155,
   "msrpRmb": 1299,
@@ -5537,9 +5537,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Nike",
   "category": "Mountain & Trail",
   "dominantSector": "Mountain & Trail Climbing",
-  "image": "/images/western/pegasus_trail5/1.webp",
+  "image": "/images/western/nike_pegasustrail5/1.webp",
   "galleryImages": [
-    "/images/western/pegasus_trail5/1.webp"
+    "/images/western/nike_pegasustrail5/1.webp"
   ],
   "msrpUsd": 150,
   "msrpRmb": 1099,
@@ -5761,9 +5761,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "ASICS",
   "category": "Max Cushion",
   "dominantSector": "Casual Walking & All-Day Wear",
-  "image": "/images/western/nimbus_26/1.webp",
+  "image": "/images/western/asics_gelnimbus26/1.webp",
   "galleryImages": [
-    "/images/western/nimbus_26/1.webp"
+    "/images/western/asics_gelnimbus26/1.webp"
   ],
   "msrpUsd": 160,
   "msrpRmb": 1299,
@@ -5818,9 +5818,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "HOKA",
   "category": "Marathon Super-Shoe",
   "dominantSector": "Marathon Race Day",
-  "image": "/images/western/cielo_x1/1.webp",
+  "image": "/images/western/hoka_cielox1/1.webp",
   "galleryImages": [
-    "/images/western/cielo_x1/1.webp"
+    "/images/western/hoka_cielox1/1.webp"
   ],
   "msrpUsd": 275,
   "msrpRmb": 2099,
@@ -5931,9 +5931,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "ASICS",
   "category": "Tempo & Race",
   "dominantSector": "Tempo & Speed Workouts",
-  "image": "/images/western/magic_speed4/1.webp",
+  "image": "/images/western/asics_magicspeed4/1.webp",
   "galleryImages": [
-    "/images/western/magic_speed4/1.webp"
+    "/images/western/asics_magicspeed4/1.webp"
   ],
   "msrpUsd": 180,
   "msrpRmb": 1299,
@@ -5987,9 +5987,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Adidas",
   "category": "Mountain & Trail",
   "dominantSector": "Mountain & Trail Climbing",
-  "image": "/images/western/agravic_speed_ultra/1.webp",
+  "image": "/images/western/adidas_terrex_agravic_speed_ultra/1.webp",
   "galleryImages": [
-    "/images/western/agravic_speed_ultra/1.webp"
+    "/images/western/adidas_terrex_agravic_speed_ultra/1.webp"
   ],
   "msrpUsd": 220,
   "msrpRmb": 1699,
@@ -6043,9 +6043,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Brooks",
   "category": "Daily Trainer",
   "dominantSector": "Daily Mileage & Training",
-  "image": "/images/western/adrenaline_gts23/1.webp",
+  "image": "/images/western/brooks_adrenaline_gts23/1.webp",
   "galleryImages": [
-    "/images/western/adrenaline_gts23/1.webp"
+    "/images/western/brooks_adrenaline_gts23/1.webp"
   ],
   "msrpUsd": 140,
   "msrpRmb": 1099,
@@ -6099,9 +6099,9 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
   "brand": "Nike",
   "category": "Mountain & Trail",
   "dominantSector": "Mountain & Trail Climbing",
-  "image": "/images/western/ultrafly/1.webp",
+  "image": "/images/western/nike_ultrafly/1.webp",
   "galleryImages": [
-    "/images/western/ultrafly/1.webp"
+    "/images/western/nike_ultrafly/1.webp"
   ],
   "msrpUsd": 260,
   "msrpRmb": 1899,
