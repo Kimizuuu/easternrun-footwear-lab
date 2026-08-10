@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Check, ChevronLeft, ChevronRight, Scale, ThumbsUp, ThumbsDown, Ruler, ZoomIn, Activity, Star, Share2 } from 'lucide-react';
+import { ArrowLeft, Check, ChevronLeft, ChevronRight, Scale, ThumbsUp, ThumbsDown, Ruler, ZoomIn, Activity, Star, Share2, ChevronDown, ChevronUp } from 'lucide-react';
 import type { Shoe } from '../types/shoe';
 import { SizeChartModal } from './SizeChartModal';
 import { ImageZoomModal } from './ImageZoomModal';
@@ -24,6 +24,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
   const [isSizeChartOpen, setIsSizeChartOpen] = useState(false);
   const [isZoomModalOpen, setIsZoomModalOpen] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   // Automatically scroll window to top when shoe detail page mounts or shoe changes
   useEffect(() => {
@@ -48,25 +49,76 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
   const title = `${shoe.brand} ${shoe.name} Spec Review & Performance Database | EasternRun`;
   const description = `Full technical breakdown for ${shoe.brand} ${shoe.name}: $${shoe.msrpUsd} MSRP, ${shoe.specs?.weightGrams ? shoe.specs.weightGrams + 'g' : ''}, ${shoe.specs?.foamName || 'Superfoam'}, overall rating ${shoe.overallRating}/100.`;
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: `${shoe.brand} ${shoe.name}`,
-    image: `https://easternrun.fit${shoe.image}`,
-    description: shoe.description,
-    brand: { '@type': 'Brand', name: shoe.brand },
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'USD',
-      price: shoe.msrpUsd,
-      availability: 'https://schema.org/InStock'
+  const jsonLdBase: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: `${shoe.brand} ${shoe.name}`,
+      image: `https://easternrun.fit${shoe.image}`,
+      description: shoe.description,
+      brand: { '@type': 'Brand', name: shoe.brand },
+      category: shoe.category,
+      sku: shoe.id,
+      color: 'Multiple',
+      material: shoe.specs?.upperMaterial || 'Synthetic',
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'USD',
+        price: shoe.msrpUsd,
+        availability: 'https://schema.org/InStock'
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: (shoe.overallRating / 20).toFixed(1),
+        reviewCount: shoe.userReviews?.length || 1
+      }
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: (shoe.overallRating / 20).toFixed(1),
-      reviewCount: 50
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Review',
+      itemReviewed: {
+        '@type': 'Product',
+        name: `${shoe.brand} ${shoe.name}`
+      },
+      author: {
+        '@type': 'Organization',
+        name: 'EasternRun Editor'
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: (shoe.overallRating / 20).toFixed(1),
+        bestRating: '5'
+      },
+      reviewBody: shoe.finalConsensusVerdict
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://easternrun.fit/' },
+        { '@type': 'ListItem', position: 2, name: shoe.brand, item: `https://easternrun.fit/brand/${shoe.brand.toLowerCase()}` },
+        { '@type': 'ListItem', position: 3, name: shoe.name, item: canonicalUrl }
+      ]
     }
-  };
+  ];
+
+  const jsonLd = shoe.faqItems && shoe.faqItems.length > 0
+    ? [
+        ...jsonLdBase,
+        {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: shoe.faqItems.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: faq.answer
+            }
+          }))
+        }
+      ]
+    : jsonLdBase;
 
   return (
     <article className="animate-fade-in" style={{
@@ -659,6 +711,73 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
           </div>
         </div>
 
+        {/* SECTION 6: EDITOR REVIEW */}
+        {shoe.editorReview && (
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid #E2E8F0',
+            borderRadius: '12px',
+            padding: 'clamp(20px, 4vw, 36px)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px'
+          }}>
+            <h2 style={{ fontSize: '1.6rem', fontWeight: 900, color: '#0F172A', margin: 0 }}>
+              📝 EasternRun Editor Review
+            </h2>
+            <article style={{ fontSize: '1rem', color: '#334155', lineHeight: 1.8 }}>
+              {shoe.editorReview}
+            </article>
+          </div>
+        )}
+
+        {/* SECTION 7: FAQ ACCORDION */}
+        {shoe.faqItems && shoe.faqItems.length > 0 && (
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid #E2E8F0',
+            borderRadius: '12px',
+            padding: 'clamp(20px, 4vw, 36px)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '20px'
+          }}>
+            <h2 style={{ fontSize: '1.6rem', fontWeight: 900, color: '#0F172A', margin: 0 }}>
+              ❓ Frequently Asked Questions
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {shoe.faqItems.map((faq, index) => (
+                <div key={index} style={{ border: '1px solid #E2E8F0', borderRadius: '8px', overflow: 'hidden' }}>
+                  <button
+                    onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                    style={{
+                      width: '100%',
+                      background: '#F8FAFC',
+                      border: 'none',
+                      padding: '16px 20px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      cursor: 'pointer',
+                      fontSize: '1rem',
+                      fontWeight: 700,
+                      color: '#0F172A',
+                      textAlign: 'left'
+                    }}
+                  >
+                    {faq.question}
+                    {openFaqIndex === index ? <ChevronUp size={20} color="#64748B" /> : <ChevronDown size={20} color="#64748B" />}
+                  </button>
+                  {openFaqIndex === index && (
+                    <div style={{ padding: '16px 20px', background: '#FFFFFF', fontSize: '0.95rem', color: '#475569', lineHeight: 1.6, borderTop: '1px solid #E2E8F0' }}>
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Modals */}

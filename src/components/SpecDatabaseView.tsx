@@ -115,86 +115,93 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
         {/* Leaderboard Monetization Banner */}
         <AdBanner format="horizontal" label="Sponsored" />
 
-        {/* Integrated 1-Selectable Option Control Bar */}
+        {/* Integrated Category Tabs & Reactive Sort Controls Bar */}
         <div 
           style={{
             background: '#FFFFFF',
             border: '1px solid #E2E8F0',
             borderRadius: '8px',
-            padding: '12px 18px',
+            padding: '14px 18px',
             marginBottom: '24px',
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '12px',
+            flexDirection: 'column',
+            gap: '14px',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
           }}
         >
-          {/* Integrated Unified Select Option */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: '1 1 300px' }}>
-            <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
-              DATABASE VIEW & SORT:
+          {/* Top Row: Category Filter Tabs */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.05em', marginRight: '6px' }}>
+              CATEGORIES:
             </span>
 
-            <select
-              value={
-                selectedCategory === 'Marathon Super-Shoe' ? 'race' :
-                selectedCategory === 'Tempo & Race' ? 'speed' :
-                selectedCategory === 'Daily Trainer' ? 'daily' :
-                selectedCategory === 'Max Cushion' ? 'walking' :
-                sortBy
-              }
-              onChange={(e) => {
-                const val = e.target.value;
-                if (val === 'race') {
-                  setSelectedCategory('Marathon Super-Shoe');
-                  setSortBy('race');
-                } else if (val === 'speed') {
-                  setSelectedCategory('Tempo & Race');
-                  setSortBy('speed');
-                } else if (val === 'daily') {
-                  setSelectedCategory('Daily Trainer');
-                  setSortBy('daily');
-                } else if (val === 'walking') {
-                  setSelectedCategory('Max Cushion');
-                  setSortBy('walking');
-                } else {
-                  setSelectedCategory('All');
-                  setSortBy(val as any);
-                }
-              }}
-              style={{
-                flex: 1,
-                padding: '10px 14px',
-                borderRadius: '6px',
-                border: '1px solid #CBD5E1',
-                background: '#F8FAFC',
-                fontSize: '0.88rem',
-                fontWeight: 700,
-                color: '#0F172A',
-                outline: 'none',
-                cursor: 'pointer',
-                minHeight: '44px'
-              }}
-            >
-              <option value="overall">All Shoes — Overall Rating</option>
-              <option value="race">Marathon Super-Shoes — Race Day Score</option>
-              <option value="speed">Tempo & Speed Workouts — Speed Score</option>
-              <option value="daily">Daily Trainers — Daily Mileage Score</option>
-              <option value="walking">Max Cushion & Walking — All-Day Comfort Score</option>
-              <option value="trail">Mountain & Trail Climbing — Trail & Scrambling Score</option>
-              <option value="weight">All Shoes — Lightest Weight First</option>
-              <option value="price">All Shoes — Lowest Price First</option>
-              <option value="resilience">All Shoes — Midsole Energy Return (%)</option>
-            </select>
+            {['All', 'Marathon Super-Shoe', 'Daily Trainer', 'Tempo & Race', 'Max Cushion', 'Mountain & Trail'].map((cat) => {
+              const isActive = selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  style={{
+                    padding: '6px 14px',
+                    minHeight: '36px',
+                    borderRadius: '20px',
+                    background: isActive ? '#0F172A' : '#F1F5F9',
+                    color: isActive ? '#FFFFFF' : '#475569',
+                    border: isActive ? '1px solid #0F172A' : '1px solid #E2E8F0',
+                    fontSize: '0.8rem',
+                    fontWeight: isActive ? 700 : 500,
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease'
+                  }}
+                >
+                  {cat === 'All' ? 'All Categories' : cat}
+                </button>
+              );
+            })}
           </div>
 
-          {/* Model Count Badge */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#475569', background: '#F1F5F9', padding: '6px 12px', borderRadius: '20px', border: '1px solid #E2E8F0' }}>
-              {sortedShoes.length} Models Displayed
-            </span>
+          {/* Bottom Row: Reactive Sort Dropdown & Model Count */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', paddingTop: '10px', borderTop: '1px solid #F1F5F9' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: '1 1 280px' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
+                SORT ORDER:
+              </span>
+
+              <select
+                aria-label="Sort models"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as any)}
+                style={{
+                  flex: 1,
+                  padding: '8px 14px',
+                  borderRadius: '6px',
+                  border: '1px solid #CBD5E1',
+                  background: '#F8FAFC',
+                  fontSize: '0.85rem',
+                  fontWeight: 700,
+                  color: '#0F172A',
+                  outline: 'none',
+                  cursor: 'pointer',
+                  minHeight: '40px'
+                }}
+              >
+                <option value="overall">Highest Overall Rating First</option>
+                <option value="race">Marathon Race Score</option>
+                <option value="speed">Speed & Tempo Score</option>
+                <option value="daily">Daily Mileage Score</option>
+                <option value="walking">Walking & Cushion Score</option>
+                <option value="weight">Lightest Weight First</option>
+                <option value="price">Lowest Price First ($ USD)</option>
+                <option value="resilience">Midsole Energy Return (%)</option>
+              </select>
+            </div>
+
+            {/* Model Count Badge */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#475569', background: '#F1F5F9', padding: '6px 12px', borderRadius: '20px', border: '1px solid #E2E8F0' }}>
+                {sortedShoes.length} Models Displayed
+              </span>
+            </div>
           </div>
         </div>
 

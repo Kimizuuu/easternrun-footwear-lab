@@ -17,6 +17,7 @@ import { SiteFooter } from './components/SiteFooter';
 import { SEOHead } from './components/SEOHead';
 import { BrandHubPage } from './components/BrandHubPage';
 import { CategoryHubPage } from './components/CategoryHubPage';
+import { FloatingCompareTray } from './components/FloatingCompareTray';
 import { Analytics } from '@vercel/analytics/react';
 
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
@@ -145,8 +146,8 @@ export function MainApp() {
       {/* Default Root SEO Head */}
       {location.pathname === '/' && (
         <SEOHead
-          title="EasternRun — Independent Running Shoe Database & Review Lab"
-          description="Explore detailed specs, lab measurements, overall ratings, and community reviews of Chinese running super-shoes alongside Western benchmark references."
+          title="EasternRun — Independent Global Running Shoe Database & Review Lab"
+          description="Explore transparent specs, lab measurements, overall ratings, and independent runner reviews for global performance running shoes and emerging footwear innovations."
           canonicalUrl="https://easternrun.fit/"
         />
       )}
@@ -296,6 +297,13 @@ export function MainApp() {
       <RunnersGuideModal
         isOpen={isGuideOpen}
         onClose={() => setIsGuideOpen(false)}
+      />
+
+      <FloatingCompareTray
+        comparedShoes={comparedShoes}
+        onRemoveShoe={handleRemoveCompare}
+        onClearAll={() => setComparedShoes([])}
+        onOpenCompare={() => setIsCompareOpen(true)}
       />
 
       <Analytics />

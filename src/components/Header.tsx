@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenTop10,
   onOpenWizard,
 }) => {
-  const BRANDS: (Brand | 'All')[] = ['All', 'Li-Ning', 'Anta', 'Xtep', '361°', 'Qiaodan', 'Nike', 'Adidas', 'Saucony', 'ASICS', 'Mizuno', 'New Balance', 'HOKA', 'Brooks', 'Skechers', 'Salomon', 'On Running', 'Altra', 'La Sportiva'];
+  const BRANDS: (Brand | 'All')[] = ['All', 'Li-Ning', 'ANTA', 'Xtep', '361°', 'Qiaodan', 'Nike', 'Adidas', 'Saucony', 'ASICS', 'Mizuno', 'New Balance', 'HOKA', 'Brooks', 'Skechers', 'Salomon', 'On Running', 'Altra', 'La Sportiva'];
 
   return (
     <header style={{
@@ -66,14 +66,14 @@ export const Header: React.FC<HeaderProps> = ({
               justifyContent: 'center',
               letterSpacing: '-0.5px'
             }}>
-              RA
+              ER
             </div>
             <div>
               <h1 style={{ fontSize: '1.3rem', fontWeight: 800, margin: 0, color: 'var(--text-primary)', letterSpacing: '-0.5px' }}>
-                RUN<span style={{ color: 'var(--accent-primary)' }}>ARENA</span>
+                Eastern<span style={{ color: 'var(--accent-primary)' }}>Run</span>
               </h1>
               <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                Global & Chinese Running Shoes Database
+                Independent Global Running Shoe Database
               </span>
             </div>
           </div>

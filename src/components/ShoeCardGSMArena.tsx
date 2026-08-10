@@ -154,30 +154,38 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
           </span>
         </div>
 
-        {/* Key Specs Row */}
+        {/* Key Specs Grid */}
         <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '8px',
           background: '#F8FAFC',
           border: '1px solid #E2E8F0',
           borderRadius: '6px',
-          padding: '12px 16px',
-          fontSize: '0.82rem'
+          padding: '10px 12px',
+          fontSize: '0.78rem',
+          textAlign: 'center'
         }}>
           <div>
-            <span style={{ color: '#64748B', display: 'block', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 700 }}>Weight</span>
-            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)' }}>{shoe.specs.weightGrams}g</strong>
+            <span style={{ color: '#64748B', display: 'block', fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 700 }}>Weight</span>
+            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.weightGrams}g</strong>
           </div>
 
           <div>
-            <span style={{ color: '#64748B', display: 'block', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 700 }}>Drop</span>
-            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)' }}>{shoe.specs.dropMm}mm</strong>
+            <span style={{ color: '#64748B', display: 'block', fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 700 }}>Drop</span>
+            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.dropMm}mm</strong>
           </div>
 
-          <div>
-            <span style={{ color: '#64748B', display: 'block', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 700 }}>Foam</span>
-            <strong style={{ color: '#2563EB', fontFamily: 'var(--font-mono)' }}>{shoe.specs.foamResiliencePercent}%</strong>
+          <div title="Lab-measured Midsole Energy Return (Resilience %)">
+            <span style={{ color: '#64748B', display: 'block', fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 700 }}>Energy Ret</span>
+            <strong style={{ color: '#2563EB', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.foamResiliencePercent}%</strong>
+          </div>
+
+          <div title="Plate Stiffness Index (1-10 Scale)">
+            <span style={{ color: '#64748B', display: 'block', fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 700 }}>Stiffness</span>
+            <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>
+              {shoe.specs.carbonStiffnessIndex > 0 ? `${shoe.specs.carbonStiffnessIndex}/10` : 'Flex'}
+            </strong>
           </div>
         </div>
 

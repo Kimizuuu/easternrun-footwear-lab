@@ -94,19 +94,28 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
         ...style
       }}
     >
-      {/* Search Input Box */}
-      <div style={{
-        position: 'relative',
-        display: 'flex',
-        alignItems: 'center',
-        background: '#FFFFFF',
-        border: isOpen ? '2px solid #0F172A' : '1px solid #CBD5E1',
-        borderRadius: '8px',
-        padding: '2px 14px',
-        boxShadow: isOpen ? '0 10px 15px -3px rgba(0, 0, 0, 0.1)' : '0 1px 2px rgba(0, 0, 0, 0.05)',
-        transition: 'all 0.15s ease'
-      }}>
-        <Search size={18} color="#64748B" style={{ flexShrink: 0, marginRight: '10px' }} />
+      {/* Search Form Box */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (suggestions.length > 0) {
+            const chosen = selectedIndex >= 0 ? suggestions[selectedIndex] : suggestions[0];
+            handleChoose(chosen);
+          }
+        }}
+        style={{
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          background: '#FFFFFF',
+          border: isOpen ? '2px solid #2563EB' : '1.5px solid #94A3B8',
+          borderRadius: '8px',
+          padding: '2px 6px 2px 14px',
+          boxShadow: isOpen ? '0 10px 15px -3px rgba(37, 99, 235, 0.15)' : '0 1px 3px rgba(0, 0, 0, 0.08)',
+          transition: 'all 0.15s ease'
+        }}
+      >
+        <Search size={18} color="#475569" style={{ flexShrink: 0, marginRight: '10px' }} />
 
         <input
           ref={inputRef}
@@ -134,6 +143,7 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
 
         {query.length > 0 && (
           <button
+            type="button"
             onClick={() => {
               setQuery('');
               setIsOpen(false);
@@ -144,16 +154,38 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
               border: 'none',
               cursor: 'pointer',
               color: '#94A3B8',
-              padding: '4px',
+              padding: '6px',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              marginRight: '4px'
             }}
           >
             <X size={16} />
           </button>
         )}
-      </div>
+
+        <button
+          type="submit"
+          style={{
+            background: '#0F172A',
+            color: '#FFFFFF',
+            border: 'none',
+            borderRadius: '6px',
+            padding: '8px 14px',
+            fontSize: '0.8rem',
+            fontWeight: 700,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+            minHeight: '36px',
+            flexShrink: 0
+          }}
+        >
+          <span>Search</span>
+        </button>
+      </form>
 
       {/* Auto-Suggestion Dropdown Popup */}
       {isOpen && (

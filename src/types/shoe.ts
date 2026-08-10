@@ -1,4 +1,4 @@
-export type Brand = 'Li-Ning' | 'Anta' | 'Xtep' | '361°' | 'Qiaodan' | 'Nike' | 'Adidas' | 'Saucony' | 'ASICS' | 'Mizuno' | 'New Balance' | 'HOKA' | 'Brooks' | 'Skechers' | 'Salomon' | 'On Running' | 'Altra' | 'La Sportiva';
+export type Brand = 'Li-Ning' | 'ANTA' | 'Anta' | 'Xtep' | '361°' | 'Qiaodan' | 'Nike' | 'Adidas' | 'Saucony' | 'ASICS' | 'Mizuno' | 'New Balance' | 'HOKA' | 'Brooks' | 'Skechers' | 'Salomon' | 'On Running' | 'Altra' | 'La Sportiva';
 
 export type Category = 
   | 'Marathon Super-Shoe' 
@@ -87,4 +87,6 @@ export interface Shoe {
   podiumHighlights?: string[];
   techHighlights?: { title: string; description: string }[];
   userReviews: UserReview[];
+  editorReview?: string;
+  faqItems?: { question: string; answer: string }[];
 }

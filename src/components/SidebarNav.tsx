@@ -114,35 +114,36 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         />
       </div>
 
-      {/* Brand Selection Tabs */}
+      {/* Brand Selection Dropdown */}
       {setSelectedBrand && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '2px' }}>
-            Brands
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            Filter by Brand
           </span>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-            {['All', 'Li-Ning', 'Anta', 'Xtep', '361°', 'Qiaodan', 'Nike', 'Adidas', 'Saucony', 'ASICS', 'Mizuno', 'New Balance', 'HOKA', 'Brooks', 'Skechers', 'Salomon', 'On Running', 'Altra', 'La Sportiva'].map((b) => (
-              <button
-                key={b}
-                onClick={() => handleBrandClick(b)}
-                style={{
-                  flex: '1 1 44%',
-                  padding: '10px 0',
-                  minHeight: '44px',
-                  borderRadius: '6px',
-                  border: selectedBrand === b ? '1px solid #0F172A' : '1px solid #E2E8F0',
-                  background: selectedBrand === b ? '#0F172A' : '#FFFFFF',
-                  color: selectedBrand === b ? '#FFFFFF' : '#475569',
-                  fontSize: '0.82rem',
-                  fontWeight: selectedBrand === b ? 700 : 500,
-                  cursor: 'pointer',
-                  transition: 'all 0.15s ease'
-                }}
-              >
-                {b}
-              </button>
+          <select
+            aria-label="Filter database by brand"
+            value={selectedBrand}
+            onChange={(e) => handleBrandClick(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '10px 14px',
+              minHeight: '44px',
+              borderRadius: '6px',
+              border: '1px solid #CBD5E1',
+              background: '#F8FAFC',
+              color: '#0F172A',
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              outline: 'none',
+              cursor: 'pointer'
+            }}
+          >
+            {['All', 'Li-Ning', 'ANTA', 'Xtep', '361°', 'Qiaodan', 'Nike', 'Adidas', 'Saucony', 'ASICS', 'Mizuno', 'New Balance', 'HOKA', 'Brooks', 'Skechers', 'Salomon', 'On Running', 'Altra', 'La Sportiva'].map((b) => (
+              <option key={b} value={b}>
+                {b === 'All' ? 'All Brands (105 Models)' : b}
+              </option>
             ))}
-          </div>
+          </select>
         </div>
       )}
 
@@ -290,37 +291,41 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
         })}
       </div>
 
-      {/* Models Quick List */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginTop: 'auto', overflowY: 'auto', maxHeight: '180px' }}>
-        <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>
-          Database Models ({shoes.length})
+      {/* Quick Shoe Directory Dropdown */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid #F1F5F9' }}>
+        <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          Quick Shoe Directory ({shoes.length})
         </span>
-
-        {shoes.map((shoe) => (
-          <div
-            key={shoe.id}
-            onClick={() => handleMobileSelectShoe(shoe)}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '6px 10px',
-              minHeight: '44px',
-              borderRadius: 'var(--radius-sm)',
-              cursor: 'pointer',
-              fontSize: '0.8rem',
-              color: 'var(--text-primary)',
-              transition: 'background-color 0.15s ease'
-            }}
-          >
-            <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontWeight: 500 }}>
-              {shoe.name}
-            </span>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-              ${shoe.msrpUsd}
-            </span>
-          </div>
-        ))}
+        <select
+          aria-label="Jump directly to shoe model"
+          defaultValue=""
+          onChange={(e) => {
+            const targetShoe = shoes.find(s => s.id === e.target.value);
+            if (targetShoe) {
+              handleMobileSelectShoe(targetShoe);
+            }
+          }}
+          style={{
+            width: '100%',
+            padding: '10px 12px',
+            minHeight: '44px',
+            borderRadius: '6px',
+            border: '1px solid #E2E8F0',
+            background: '#F8FAFC',
+            color: '#334155',
+            fontSize: '0.82rem',
+            fontWeight: 600,
+            outline: 'none',
+            cursor: 'pointer'
+          }}
+        >
+          <option value="" disabled>Select shoe model...</option>
+          {shoes.map((shoe) => (
+            <option key={shoe.id} value={shoe.id}>
+              {shoe.name} • ${shoe.msrpUsd}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );
