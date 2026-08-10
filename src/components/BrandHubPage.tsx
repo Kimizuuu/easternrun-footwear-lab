@@ -139,8 +139,18 @@ export const BrandHubPage: React.FC<BrandHubPageProps> = ({
     return b.includes(target) || target.includes(b) || (target.includes('361') && b.includes('361'));
   }).sort((a, b) => b.overallRating - a.overallRating);
 
+  if (brandShoes.length === 0) {
+    return (
+      <div style={{ maxWidth: '800px', margin: '60px auto', padding: '32px', textAlign: 'center', fontFamily: 'var(--font-main)' }}>
+        <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', marginBottom: '12px' }}>Brand Not Found (404)</h1>
+        <p style={{ color: '#64748B', marginBottom: '24px' }}>The requested brand "{brandSlug}" could not be found in our database.</p>
+        <Link to="/" style={{ display: 'inline-block', padding: '12px 24px', background: '#0F172A', color: '#FFF', textDecoration: 'none', borderRadius: '8px', fontWeight: 700 }}>Return to Database Catalog</Link>
+      </div>
+    );
+  }
+
   const info = BRAND_TECH_OVERVIEWS[normalizedSlug] || {
-    title: `${brandSlug?.toUpperCase()} Running Shoes`,
+    title: `${brandShoes[0]?.brand || brandSlug?.toUpperCase()} Running Shoes`,
     foamTech: 'Supercritical Midsole Compounds',
     plateTech: 'Carbon & TPU Propulsion Plates',
     description: `Explore detailed specs, lab scores, and runner reviews for ${brandSlug} performance running shoes.`
@@ -185,7 +195,7 @@ export const BrandHubPage: React.FC<BrandHubPageProps> = ({
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.1)', padding: '4px 12px', borderRadius: '4px', marginBottom: '14px' }}>
           <Shield size={14} color="#38BDF8" />
           <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-            OFFICIAL BRAND TECH HUB
+            EASTERNRUN BRAND SPECIFICATIONS HUB
           </span>
         </div>
 

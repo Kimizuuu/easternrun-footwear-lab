@@ -28,9 +28,9 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
     e.preventDefault();
     setErrorMessage('');
 
-    // 1. Rate Limiting Security Check (Max 3 submissions per minute per user)
-    if (!rateLimiter.isAllowed('submit_review', 3, 60000)) {
-      setErrorMessage('Rate limit exceeded. Please wait a minute before submitting another review.');
+    // 1. Form Submission Throttle (Prevent accidental double clicks)
+    if (!rateLimiter.isAllowed('submit_review', 3000)) {
+      setErrorMessage('Please wait a moment before submitting another review.');
       return;
     }
 

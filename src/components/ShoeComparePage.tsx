@@ -53,47 +53,53 @@ export const ShoeComparePage: React.FC<ShoeComparePageProps> = ({ shoes }) => {
   const canonicalUrl = `https://easternrun.fit/compare/${getShoeSlug(shoe1)}-vs-${getShoeSlug(shoe2)}`;
   const ogImage = shoe1.image ? `https://easternrun.fit${shoe1.image}` : undefined;
 
-  // Generate dual Product & AggregateRating Schema.org JSON-LD
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: shoe1.name,
-      image: `https://easternrun.fit${shoe1.image}`,
-      description: shoe1.description,
-      brand: { '@type': 'Brand', name: shoe1.brand },
-      offers: {
-        '@type': 'Offer',
-        priceCurrency: 'USD',
-        price: shoe1.msrpUsd,
-        availability: 'https://schema.org/InStock'
-      },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: (shoe1.overallRating / 20).toFixed(1),
-        reviewCount: 42
-      }
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: shoe2.name,
-      image: `https://easternrun.fit${shoe2.image}`,
-      description: shoe2.description,
-      brand: { '@type': 'Brand', name: shoe2.brand },
-      offers: {
-        '@type': 'Offer',
-        priceCurrency: 'USD',
-        price: shoe2.msrpUsd,
-        availability: 'https://schema.org/InStock'
-      },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: (shoe2.overallRating / 20).toFixed(1),
-        reviewCount: 38
-      }
+  const p1Schema: any = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: shoe1.name,
+    image: `https://easternrun.fit${shoe1.image}`,
+    description: shoe1.description,
+    brand: { '@type': 'Brand', name: shoe1.brand },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: shoe1.msrpUsd,
+      availability: 'https://schema.org/InStock'
     }
-  ];
+  };
+  if (shoe1.userReviews && shoe1.userReviews.length > 0) {
+    const totalStars = shoe1.userReviews.reduce((acc, r) => acc + r.rating, 0);
+    p1Schema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: (totalStars / shoe1.userReviews.length).toFixed(1),
+      reviewCount: shoe1.userReviews.length
+    };
+  }
+
+  const p2Schema: any = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: shoe2.name,
+    image: `https://easternrun.fit${shoe2.image}`,
+    description: shoe2.description,
+    brand: { '@type': 'Brand', name: shoe2.brand },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: shoe2.msrpUsd,
+      availability: 'https://schema.org/InStock'
+    }
+  };
+  if (shoe2.userReviews && shoe2.userReviews.length > 0) {
+    const totalStars = shoe2.userReviews.reduce((acc, r) => acc + r.rating, 0);
+    p2Schema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: (totalStars / shoe2.userReviews.length).toFixed(1),
+      reviewCount: shoe2.userReviews.length
+    };
+  }
+
+  const jsonLd = [p1Schema, p2Schema];
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px 16px 60px 16px' }}>

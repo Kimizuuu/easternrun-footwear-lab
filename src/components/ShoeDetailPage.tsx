@@ -4,7 +4,7 @@ import type { Shoe } from '../types/shoe';
 import { SizeChartModal } from './SizeChartModal';
 import { ImageZoomModal } from './ImageZoomModal';
 import { SEOHead } from './SEOHead';
-import { getShoeSlug } from '../utils/slugUtils';
+import { getShoeSlug, toCleanSlug } from '../utils/slugUtils';
 
 interface ShoeDetailPageProps {
   shoe: Shoe;
@@ -28,7 +28,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
 
   // Automatically scroll window to top when shoe detail page mounts or shoe changes
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [shoe.id]);
 
   const photos = shoe.galleryImages && shoe.galleryImages.length > 0 ? shoe.galleryImages : [shoe.image];
@@ -45,34 +45,42 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
   };
 
   const shoeSlug = getShoeSlug(shoe);
+  const brandSlug = toCleanSlug(shoe.brand);
   const canonicalUrl = `https://easternrun.fit/shoe/${shoeSlug}`;
   const title = `${shoe.brand} ${shoe.name} Spec Review & Performance Database | EasternRun`;
   const description = `Full technical breakdown for ${shoe.brand} ${shoe.name}: $${shoe.msrpUsd} MSRP, ${shoe.specs?.weightGrams ? shoe.specs.weightGrams + 'g' : ''}, ${shoe.specs?.foamName || 'Superfoam'}, overall rating ${shoe.overallRating}/100.`;
 
+  const productSchema: any = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${shoe.brand} ${shoe.name}`,
+    image: `https://easternrun.fit${shoe.image}`,
+    description: shoe.description,
+    brand: { '@type': 'Brand', name: shoe.brand },
+    category: shoe.category,
+    sku: shoe.id,
+    color: 'Multiple',
+    material: shoe.specs?.upperMaterial || 'Synthetic',
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: shoe.msrpUsd,
+      availability: 'https://schema.org/InStock'
+    }
+  };
+
+  // Only emit aggregateRating when real user reviews exist
+  if (shoe.userReviews && shoe.userReviews.length > 0) {
+    const totalStars = shoe.userReviews.reduce((acc, r) => acc + r.rating, 0);
+    productSchema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: (totalStars / shoe.userReviews.length).toFixed(1),
+      reviewCount: shoe.userReviews.length
+    };
+  }
+
   const jsonLdBase: object[] = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: `${shoe.brand} ${shoe.name}`,
-      image: `https://easternrun.fit${shoe.image}`,
-      description: shoe.description,
-      brand: { '@type': 'Brand', name: shoe.brand },
-      category: shoe.category,
-      sku: shoe.id,
-      color: 'Multiple',
-      material: shoe.specs?.upperMaterial || 'Synthetic',
-      offers: {
-        '@type': 'Offer',
-        priceCurrency: 'USD',
-        price: shoe.msrpUsd,
-        availability: 'https://schema.org/InStock'
-      },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: (shoe.overallRating / 20).toFixed(1),
-        reviewCount: shoe.userReviews?.length || 1
-      }
-    },
+    productSchema,
     {
       '@context': 'https://schema.org',
       '@type': 'Review',
@@ -82,7 +90,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
       },
       author: {
         '@type': 'Organization',
-        name: 'EasternRun Editor'
+        name: 'EasternRun Footwear Lab'
       },
       reviewRating: {
         '@type': 'Rating',
@@ -96,7 +104,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://easternrun.fit/' },
-        { '@type': 'ListItem', position: 2, name: shoe.brand, item: `https://easternrun.fit/brand/${shoe.brand.toLowerCase()}` },
+        { '@type': 'ListItem', position: 2, name: shoe.brand, item: `https://easternrun.fit/brand/${brandSlug}` },
         { '@type': 'ListItem', position: 3, name: shoe.name, item: canonicalUrl }
       ]
     }

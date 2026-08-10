@@ -13,6 +13,13 @@ interface CategoryHubPageProps {
 }
 
 const CATEGORY_HUB_INFO: Record<string, { title: string; subtitle: string; description: string; filterFn: (s: Shoe) => boolean; sortFn: (a: Shoe, b: Shoe) => number }> = {
+  'marathon-super-shoe': {
+    title: 'Best Marathon Super-Shoes (2026)',
+    subtitle: 'Elite Race Day Carbon Plated Racers',
+    description: 'Top-ranked marathon super-shoes evaluated by race day score, energy return percentage, carbon plate rigidity, and stack height compliance.',
+    filterFn: (s) => s.category === 'Marathon Super-Shoe',
+    sortFn: (a, b) => b.useCaseValues.marathonRaceScore - a.useCaseValues.marathonRaceScore
+  },
   'marathon-super-shoes': {
     title: 'Best Marathon Super-Shoes (2026)',
     subtitle: 'Elite Race Day Carbon Plated Racers',
@@ -20,12 +27,12 @@ const CATEGORY_HUB_INFO: Record<string, { title: string; subtitle: string; descr
     filterFn: (s) => s.category === 'Marathon Super-Shoe',
     sortFn: (a, b) => b.useCaseValues.marathonRaceScore - a.useCaseValues.marathonRaceScore
   },
-  'budget-running-shoes': {
-    title: 'Best Budget Running Shoes Under $100',
-    subtitle: 'High Performance, Sub-$100 Footwear',
-    description: 'Top value-for-money running shoes priced at or under $100 featuring supercritical foams and durable rubber outsoles without premium markup.',
-    filterFn: (s) => s.msrpUsd <= 100,
-    sortFn: (a, b) => b.overallRating - a.overallRating
+  'daily-trainer': {
+    title: 'Best Daily Trainers & Workhorses',
+    subtitle: 'Versatile High-Mileage Daily Run Shoes',
+    description: 'Durable, comfortable daily running shoes engineered for high weekly mileage, easy recovery runs, and long-term outsole longevity.',
+    filterFn: (s) => s.category === 'Daily Trainer',
+    sortFn: (a, b) => b.useCaseValues.dailyRunScore - a.useCaseValues.dailyRunScore
   },
   'daily-trainers': {
     title: 'Best Daily Trainers & Workhorses',
@@ -34,6 +41,13 @@ const CATEGORY_HUB_INFO: Record<string, { title: string; subtitle: string; descr
     filterFn: (s) => s.category === 'Daily Trainer',
     sortFn: (a, b) => b.useCaseValues.dailyRunScore - a.useCaseValues.dailyRunScore
   },
+  'tempo-race': {
+    title: 'Best Tempo & Speed Workout Shoes (2026)',
+    subtitle: 'Lightweight Plated & Non-Plated Speed Trainers',
+    description: 'Top-ranked speed trainers evaluated by midsole energy return, turnover quickness, and interval pace responsiveness.',
+    filterFn: (s) => s.category === 'Tempo & Race',
+    sortFn: (a, b) => b.useCaseValues.speedWorkoutScore - a.useCaseValues.speedWorkoutScore
+  },
   'max-cushion': {
     title: 'Best Max Cushion & Recovery Shoes',
     subtitle: 'Plush Impact Protection & Easy Walking',
@@ -41,12 +55,26 @@ const CATEGORY_HUB_INFO: Record<string, { title: string; subtitle: string; descr
     filterFn: (s) => s.category === 'Max Cushion',
     sortFn: (a, b) => b.useCaseValues.walkingScore - a.useCaseValues.walkingScore
   },
+  'mountain-trail': {
+    title: 'Best Mountain & Trail Climbing Shoes (2026)',
+    subtitle: 'Technical Trail, Skyrunning & Mountain Scrambling',
+    description: 'Top-ranked trail running and mountain climbing shoes evaluated by lug depth, traction rubber, rock protection, and trail stability.',
+    filterFn: (s) => s.category === 'Mountain & Trail' || (s.useCaseValues.trailScore && s.useCaseValues.trailScore > 85) ? true : false,
+    sortFn: (a, b) => (b.useCaseValues.trailScore || 0) - (a.useCaseValues.trailScore || 0)
+  },
   'mountain-and-trail': {
     title: 'Best Mountain & Trail Climbing Shoes (2026)',
     subtitle: 'Technical Trail, Skyrunning & Mountain Scrambling',
-    description: 'Top-ranked trail running and mountain climbing shoes evaluated by lug depth, Vibram Megagrip traction, rock protection, and trail stability.',
+    description: 'Top-ranked trail running and mountain climbing shoes evaluated by lug depth, traction rubber, rock protection, and trail stability.',
     filterFn: (s) => s.category === 'Mountain & Trail' || (s.useCaseValues.trailScore && s.useCaseValues.trailScore > 85) ? true : false,
     sortFn: (a, b) => (b.useCaseValues.trailScore || 0) - (a.useCaseValues.trailScore || 0)
+  },
+  'budget-running-shoes': {
+    title: 'Best Budget Running Shoes Under $100',
+    subtitle: 'High Performance, Sub-$100 Footwear',
+    description: 'Top value-for-money running shoes priced at or under $100 featuring supercritical foams and durable rubber outsoles without premium markup.',
+    filterFn: (s) => s.msrpUsd <= 100,
+    sortFn: (a, b) => b.overallRating - a.overallRating
   },
   'walking': {
     title: 'Best Walking & All-Day Standing Shoes (2026)',
@@ -73,13 +101,17 @@ export const CategoryHubPage: React.FC<CategoryHubPageProps> = ({
   const { categorySlug } = useParams<{ categorySlug: string }>();
   const normalizedSlug = (categorySlug || '').toLowerCase();
 
-  const info = CATEGORY_HUB_INFO[normalizedSlug] || {
-    title: 'Best Performance Running Shoes',
-    subtitle: 'Top Rated Models',
-    description: 'Explore curated rankings and lab spec evaluations across performance running footwear.',
-    filterFn: () => true,
-    sortFn: (a, b) => b.overallRating - a.overallRating
-  };
+  const info = CATEGORY_HUB_INFO[normalizedSlug];
+
+  if (!info) {
+    return (
+      <div style={{ maxWidth: '800px', margin: '60px auto', padding: '32px', textAlign: 'center', fontFamily: 'var(--font-main)' }}>
+        <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', marginBottom: '12px' }}>Category Not Found (404)</h1>
+        <p style={{ color: '#64748B', marginBottom: '24px' }}>The requested category "{categorySlug}" does not exist in our footwear database.</p>
+        <Link to="/" style={{ display: 'inline-block', padding: '12px 24px', background: '#0F172A', color: '#FFF', textDecoration: 'none', borderRadius: '8px', fontWeight: 700 }}>Return to Database Catalog</Link>
+      </div>
+    );
+  }
 
   const categoryShoes = shoes.filter(info.filterFn).sort(info.sortFn);
   const canonicalUrl = `https://easternrun.fit/best/${normalizedSlug}`;

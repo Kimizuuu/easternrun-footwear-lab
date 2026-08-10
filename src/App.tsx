@@ -54,11 +54,17 @@ const ShoeDetailRouteWrapper: React.FC<{
   const shoe = getShoeBySlug(shoeSlug || '', shoes);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [shoeSlug]);
 
   if (!shoe) {
-    return <Navigate to="/" replace />;
+    return (
+      <div style={{ maxWidth: '800px', margin: '60px auto', padding: '32px', textAlign: 'center', fontFamily: 'var(--font-main)' }}>
+        <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', marginBottom: '12px' }}>Shoe Model Not Found (404)</h1>
+        <p style={{ color: '#64748B', marginBottom: '24px' }}>The requested footwear model "{shoeSlug}" could not be found in our lab database.</p>
+        <button onClick={() => navigate('/')} style={{ padding: '12px 24px', background: '#0F172A', color: '#FFF', border: 'none', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}>Return to Database Catalog</button>
+      </div>
+    );
   }
 
   return (
@@ -76,17 +82,65 @@ const ShoeDetailRouteWrapper: React.FC<{
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [pathname]);
   return null;
 };
 
 export function MainApp() {
-  const [shoes, setShoes] = useState<Shoe[]>(INITIAL_SHOES_DATA);
-  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // 1. Initial State with localStorage Persistence
+  const [shoes, setShoes] = useState<Shoe[]>(() => {
+    try {
+      const savedReviewsRaw = localStorage.getItem('easternrun_user_reviews');
+      if (!savedReviewsRaw) return INITIAL_SHOES_DATA;
+      const savedReviews: Record<string, UserReview[]> = JSON.parse(savedReviewsRaw);
+
+      return INITIAL_SHOES_DATA.map((s) => ({
+        ...s,
+        userReviews: [...(savedReviews[s.id] || []), ...(s.userReviews || [])]
+      }));
+    } catch {
+      return INITIAL_SHOES_DATA;
+    }
+  });
+
+  const [comparedShoes, setComparedShoes] = useState<Shoe[]>(() => {
+    try {
+      const savedCompareIdsRaw = localStorage.getItem('easternrun_compare_list');
+      if (!savedCompareIdsRaw) return [];
+      const savedIds: string[] = JSON.parse(savedCompareIdsRaw);
+      return INITIAL_SHOES_DATA.filter((s) => savedIds.includes(s.id));
+    } catch {
+      return [];
+    }
+  });
+
+  // Sync searchQuery with URL query parameter ?q=...
+  const urlSearchQuery = new URLSearchParams(location.search).get('q') || '';
+  const [searchQuery, setSearchQueryState] = useState(urlSearchQuery);
+
+  useEffect(() => {
+    const q = new URLSearchParams(location.search).get('q') || '';
+    setSearchQueryState(q);
+  }, [location.search]);
+
+  const setSearchQuery = (q: string) => {
+    setSearchQueryState(q);
+    const searchParams = new URLSearchParams(location.search);
+    if (q.trim().length > 0) {
+      searchParams.set('q', q);
+    } else {
+      searchParams.delete('q');
+    }
+    const newSearch = searchParams.toString();
+    navigate({ search: newSearch ? `?${newSearch}` : '' }, { replace: true });
+  };
+
   const [selectedBrand, setSelectedBrand] = useState<string>('All');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [comparedShoes, setComparedShoes] = useState<Shoe[]>([]);
   const [isCompareOpen, setIsCompareOpen] = useState(false);
   const [isTop10Open, setIsTop10Open] = useState(false);
   const [isWizardOpen, setIsWizardOpen] = useState(false);
@@ -94,8 +148,15 @@ export function MainApp() {
   const [isGuideOpen, setIsGuideOpen] = useState(false);
   const [shoeForReview, setShoeForReview] = useState<Shoe | null>(null);
 
-  const navigate = useNavigate();
-  const location = useLocation();
+  // Save compared shoes to localStorage on change
+  useEffect(() => {
+    try {
+      const ids = comparedShoes.map((s) => s.id);
+      localStorage.setItem('easternrun_compare_list', JSON.stringify(ids));
+    } catch {
+      // Ignore quota errors
+    }
+  }, [comparedShoes]);
 
   // Determine currently active shoe ID if on /shoe/:slug route
   const matchShoeSlug = location.pathname.startsWith('/shoe/')
@@ -120,15 +181,28 @@ export function MainApp() {
   };
 
   const handleAddUserReview = (shoeId: string, newReview: UserReview) => {
-    setShoes(shoes.map((s) => {
-      if (s.id === shoeId) {
-        return {
-          ...s,
-          userReviews: [newReview, ...s.userReviews]
-        };
+    setShoes((prevShoes) => {
+      const updated = prevShoes.map((s) => {
+        if (s.id === shoeId) {
+          return {
+            ...s,
+            userReviews: [newReview, ...s.userReviews]
+          };
+        }
+        return s;
+      });
+
+      try {
+        const savedReviewsRaw = localStorage.getItem('easternrun_user_reviews');
+        const savedReviews: Record<string, UserReview[]> = savedReviewsRaw ? JSON.parse(savedReviewsRaw) : {};
+        savedReviews[shoeId] = [newReview, ...(savedReviews[shoeId] || [])];
+        localStorage.setItem('easternrun_user_reviews', JSON.stringify(savedReviews));
+      } catch {
+        // Ignore quota errors
       }
-      return s;
-    }));
+
+      return updated;
+    });
   };
 
   const handleSelectShoe = (shoe: Shoe | null) => {
