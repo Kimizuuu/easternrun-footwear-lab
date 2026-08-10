@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+# Host & Sitemap Specification
+Host: https://easternrun.fit
 Sitemap: https://easternrun.fit/sitemap.xml

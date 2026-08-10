@@ -11,7 +11,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4797992029063175" crossorigin="anonymous"></script>
     
     <!-- Enterprise Content Security Policy (CSP) & Defense Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://pagead2.googlesyndication.com; connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; frame-ancestors 'none'; object-src 'none'; base-uri 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://pagead2.googlesyndication.com https://*.doubleclick.net; connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://vitals.vercel-insights.com https://*.vercel-insights.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self';" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
@@ -21,25 +21,90 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="canonical" href="https://easternrun.fit/" />
+    
     <meta name="theme-color" content="#0F172A" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="description" content="EasternRun is an independent, transparent running shoe database and review lab. Compare technical specs, pricing, and lab performance metrics for global running footwear including Nike, Adidas, Asics, Hoka, Li-Ning, ANTA, Xtep, and 361°." />
+    <meta name="description" content="EasternRun is an independent, transparent running shoe database and review lab. Compare technical specs, lab measurements, energy return, and runner reviews for 105 global footwear models including Nike, Adidas, ASICS, HOKA, Li-Ning, ANTA, Xtep, and 361°." />
+    
     <!-- OpenGraph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://easternrun.fit/" />
     <meta property="og:title" content="EasternRun — Independent Global Running Shoe Database & Review Lab" />
-    <meta property="og:description" content="Explore transparent specs, lab measurements, ratings, and runner reviews for global performance running shoes with zero brand bias." />
+    <meta property="og:description" content="Explore transparent specs, lab measurements, ratings, and runner reviews for 105 global performance running shoes with zero brand bias." />
     <meta property="og:image" content="https://easternrun.fit/images/og-preview.jpg" />
+    
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="EasternRun — Independent Global Running Shoe Database & Review Lab" />
-    <meta name="twitter:description" content="Explore transparent specs, lab measurements, ratings, and runner reviews for global performance running shoes with zero brand bias." />
+    <meta name="twitter:description" content="Explore transparent specs, lab measurements, ratings, and runner reviews for 105 global performance running shoes with zero brand bias." />
     <meta name="twitter:image" content="https://easternrun.fit/images/og-preview.jpg" />
+    
     <title>EasternRun — Running Shoe Database & Review Lab</title>
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "EasternRun",
+      "alternateName": ["EasternRun Fit", "EasternRun Footwear Lab"],
+      "url": "https://easternrun.fit/",
+      "description": "Independent global running shoe database and technical review lab. Compare technical specs, lab energy return data, plate stiffness ratings, and wear-tester reviews.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://easternrun.fit/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Semantic SEO Pre-rendered Content Fallback for Web Crawlers -->
+      <div id="ssr-crawler-fallback" style="font-family: system-ui, -apple-system, sans-serif; max-width: 1280px; margin: 0 auto; padding: 24px;">
+        <header style="margin-bottom: 32px; border-bottom: 2px solid #E2E8F0; padding-bottom: 20px;">
+          <h1 style="font-size: 2rem; font-weight: 800; color: #0F172A; margin-bottom: 8px;">
+            EasternRun — Independent Global Running Shoe Database & Review Lab
+          </h1>
+          <p style="font-size: 1.1rem; color: #475569; max-width: 800px; line-height: 1.6;">
+            Transparent performance metrics, lab energy return data, plate stiffness ratings, and runner reviews for 105 global footwear models across Li-Ning, ANTA, Xtep, 361°, Qiaodan, Nike, Adidas, ASICS, HOKA, Saucony, Mizuno, New Balance, and Brooks.
+          </p>
+        </header>
+
+        <section style="margin-bottom: 40px;">
+          <h2 style="font-size: 1.5rem; font-weight: 700; color: #0F172A; margin-bottom: 16px;">
+            Browse Footwear Brands
+          </h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="/brand/li-ning" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">Li-Ning</a>
+            <a href="/brand/anta" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">ANTA</a>
+            <a href="/brand/xtep" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">Xtep</a>
+            <a href="/brand/361-degrees" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">361°</a>
+            <a href="/brand/qiaodan" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">Qiaodan</a>
+            <a href="/brand/nike" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">Nike</a>
+            <a href="/brand/adidas" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">Adidas</a>
+            <a href="/brand/asics" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">ASICS</a>
+            <a href="/brand/hoka" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">HOKA</a>
+            <a href="/brand/saucony" style="padding: 8px 16px; background: #F1F5F9; border-radius: 8px; color: #0F172A; text-decoration: none; font-weight: 600;">Saucony</a>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 40px;">
+          <h2 style="font-size: 1.5rem; font-weight: 700; color: #0F172A; margin-bottom: 16px;">
+            Browse Running Categories
+          </h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="/best/marathon-super-shoe" style="padding: 8px 16px; background: #EFF6FF; border-radius: 8px; color: #1D4ED8; text-decoration: none; font-weight: 600;">Marathon Super-Shoe</a>
+            <a href="/best/daily-trainer" style="padding: 8px 16px; background: #EFF6FF; border-radius: 8px; color: #1D4ED8; text-decoration: none; font-weight: 600;">Daily Trainer</a>
+            <a href="/best/tempo-race" style="padding: 8px 16px; background: #EFF6FF; border-radius: 8px; color: #1D4ED8; text-decoration: none; font-weight: 600;">Tempo & Race</a>
+            <a href="/best/max-cushion" style="padding: 8px 16px; background: #EFF6FF; border-radius: 8px; color: #1D4ED8; text-decoration: none; font-weight: 600;">Max Cushion</a>
+            <a href="/best/mountain-trail" style="padding: 8px 16px; background: #EFF6FF; border-radius: 8px; color: #1D4ED8; text-decoration: none; font-weight: 600;">Mountain & Trail</a>
+          </div>
+        </section>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

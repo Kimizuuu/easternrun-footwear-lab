@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.easternrun.fit"
+        }
+      ],
+      "destination": "https://easternrun.fit/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/sitemap.xml",
@@ -9,7 +22,7 @@
         },
         {
           "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=3600"
+          "value": "public, max-age=3600, s-maxage=86400"
         }
       ]
     },
@@ -19,6 +32,10 @@
         {
           "key": "Content-Type",
           "value": "text/plain; charset=UTF-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400"
         }
       ]
     }
