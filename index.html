@@ -10,7 +10,7 @@
     <!-- Google AdSense Official Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4797992029063175" crossorigin="anonymous"></script>
     
-    <!-- Enterprise Content Security Policy (CSP) & Defense Headers -->
+    <!-- Content Security Policy (partial — 'unsafe-inline' required for Vite SPA inline scripts; primary security via Vercel edge headers) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://pagead2.googlesyndication.com https://*.doubleclick.net; connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://vitals.vercel-insights.com https://*.vercel-insights.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self';" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />

@@ -229,6 +229,14 @@ Sitemap: ${baseUrl}/sitemap.xml
         let shoeHtml = templateHtml
           .replace(/<title>.*?<\/title>/, `<title>${shoeTitle}</title>`)
           .replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${shoeDesc.replace(/"/g, '&quot;')}" />`)
+          .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${shoeCanonical}" />`)
+          .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${shoeCanonical}" />`)
+          .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${shoeTitle.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${shoeDesc.slice(0, 200).replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta property="og:image" content="[^"]*" \/>/, `<meta property="og:image" content="https://easternrun.fit${shoe.image}" />`)
+          .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${shoeTitle.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${shoeDesc.slice(0, 200).replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="https://easternrun.fit${shoe.image}" />`)
           .replace('<div id="root"></div>', `<div id="root">${shoeContentHtml}</div>`)
           + `<script type="application/ld+json">${JSON.stringify(shoeProductSchema)}</script>`;
 
@@ -268,6 +276,12 @@ Sitemap: ${baseUrl}/sitemap.xml
         let brandHtml = templateHtml
           .replace(/<title>.*?<\/title>/, `<title>${brandTitle}</title>`)
           .replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${brandDesc.replace(/"/g, '&quot;')}" />`)
+          .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${brandCanonical}" />`)
+          .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${brandCanonical}" />`)
+          .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${brandTitle.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${brandDesc.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${brandTitle.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${brandDesc.replace(/"/g, '&quot;')}" />`)
           .replace('<div id="root"></div>', `<div id="root">${brandContentHtml}</div>`);
 
         fs.writeFileSync(path.join(brandDir, 'index.html'), brandHtml, 'utf8');
@@ -282,6 +296,7 @@ Sitemap: ${baseUrl}/sitemap.xml
         const catShoes = shoes.filter(s => s.category === category.name);
         const catTitle = `Best ${category.name} Running Shoes (2026) — EasternRun`;
         const catDesc = `Explore curated rankings, lab energy return data, and spec evaluations for top ${category.name} running shoes.`;
+        const catCanonical = `${baseUrl}/best/${category.slug}`;
 
         const catContentHtml = `
           <div id="ssr-cat-fallback" style="font-family: system-ui, -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 24px;">
@@ -304,6 +319,12 @@ Sitemap: ${baseUrl}/sitemap.xml
         let catHtml = templateHtml
           .replace(/<title>.*?<\/title>/, `<title>${catTitle}</title>`)
           .replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${catDesc.replace(/"/g, '&quot;')}" />`)
+          .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${catCanonical}" />`)
+          .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${catCanonical}" />`)
+          .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${catTitle.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${catDesc.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${catTitle.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${catDesc.replace(/"/g, '&quot;')}" />`)
           .replace('<div id="root"></div>', `<div id="root">${catContentHtml}</div>`);
 
         fs.writeFileSync(path.join(catDir, 'index.html'), catHtml, 'utf8');

@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Research and working asset folders (not part of the app build)
+361/
+Li ning/
+Anta/
+Qiaodan/
+Missing shoers/
+Famous International References Shoes/
+scratch/
+
+# Dead server code (project is a static SPA deployed to Vercel)
+server/
