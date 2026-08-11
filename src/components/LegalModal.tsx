@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, ShieldCheck, Copyright, AlertCircle, Mail } from 'lucide-react';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface LegalModalProps {
   isOpen: boolean;
@@ -7,6 +8,7 @@ interface LegalModalProps {
 }
 
 export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
+  useBodyScrollLock(isOpen);
   if (!isOpen) return null;
 
   return (
@@ -21,7 +23,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
       zIndex: 999,
       padding: '20px'
     }}>
-      <div className="animate-scale-in" style={{
+      <div className="animate-scale-in" role="dialog" aria-modal="true" aria-label="Proprietary Rights, Copyright & Trademark Attribution" style={{
         background: '#FFFFFF',
         borderRadius: '8px',
         maxWidth: '680px',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, Star, AlertCircle, ThumbsUp, ThumbsDown } from 'lucide-react';
 import type { Shoe, UserReview } from '../types/shoe';
 import { sanitizeText, rateLimiter } from '../utils/security';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface AddReviewModalProps {
   shoe: Shoe | null;
@@ -14,8 +15,7 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
   onClose,
   onSubmitReview,
 }) => {
-  if (!shoe) return null;
-
+  // All hooks must be declared unconditionally (Rules of Hooks)
   const [userName, setUserName] = useState('');
   const [rating, setRating] = useState(5);
   const [title, setTitle] = useState('');
@@ -24,6 +24,10 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
   const [proText, setProText] = useState('');
   const [conText, setConText] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  // Early return AFTER all hooks
+  useBodyScrollLock(!!shoe);
+  if (!shoe) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,6 +104,9 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
     }}>
       <div
         className="animate-fade-in"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`Write a review for ${shoe.name}`}
         style={{
           width: '100%',
           maxWidth: '520px',

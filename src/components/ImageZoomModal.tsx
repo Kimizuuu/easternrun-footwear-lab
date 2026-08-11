@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, ZoomIn, ZoomOut, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface ImageZoomModalProps {
   isOpen: boolean;
@@ -19,52 +20,40 @@ export const ImageZoomModal: React.FC<ImageZoomModalProps> = ({
   shoeName,
 }) => {
   const [zoomScale, setZoomScale] = useState<number>(1);
+  useBodyScrollLock(isOpen);
 
   // Reset zoom scale when index or modal changes
   useEffect(() => {
     setZoomScale(1);
   }, [currentIndex, isOpen]);
 
-  // Handle ESC key press
+  // Handle keyboard navigation — handlers defined inside effect to avoid stale closures
   useEffect(() => {
+    if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowRight') handleNext();
-      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'ArrowRight') onSelectIndex((currentIndex + 1) % photos.length);
+      if (e.key === 'ArrowLeft') onSelectIndex((currentIndex - 1 + photos.length) % photos.length);
     };
-
-    if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-    }
+    window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentIndex, photos.length]);
+  }, [isOpen, currentIndex, photos.length, onClose, onSelectIndex]);
 
   if (!isOpen || photos.length === 0) return null;
 
   const currentPhoto = photos[currentIndex] || photos[0];
 
-  const handleZoomIn = () => {
-    setZoomScale((prev) => Math.min(prev + 0.5, 3));
-  };
-
-  const handleZoomOut = () => {
-    setZoomScale((prev) => Math.max(prev - 0.5, 0.8));
-  };
-
-  const handleResetZoom = () => {
-    setZoomScale(1);
-  };
-
-  const handleNext = () => {
-    onSelectIndex((currentIndex + 1) % photos.length);
-  };
-
-  const handlePrev = () => {
-    onSelectIndex((currentIndex - 1 + photos.length) % photos.length);
-  };
+  const handleZoomIn = () => setZoomScale((prev) => Math.min(prev + 0.5, 3));
+  const handleZoomOut = () => setZoomScale((prev) => Math.max(prev - 0.5, 0.8));
+  const handleResetZoom = () => setZoomScale(1);
+  const handleNext = () => onSelectIndex((currentIndex + 1) % photos.length);
+  const handlePrev = () => onSelectIndex((currentIndex - 1 + photos.length) % photos.length);
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Image gallery: ${shoeName}`}
       style={{
         position: 'fixed',
         inset: 0,
@@ -152,9 +141,13 @@ export const ImageZoomModal: React.FC<ImageZoomModalProps> = ({
           loading="lazy"
           decoding="async"
           onClick={() => {
-            if (zoomScale === 1) setZoomScale(1.8);
-            else if (zoomScale === 1.8) setZoomScale(2.5);
-            else setZoomScale(1);
+            // Cycle zoom: 1 → 1.8 → 2.5 → 1, relative to current scale.
+            // Using threshold bands so toolbar zoom changes don't break the cycle.
+            setZoomScale((prev) => {
+              if (prev < 1.4) return 1.8;
+              if (prev < 2.2) return 2.5;
+              return 1;
+            });
           }}
           style={{
             maxWidth: '90%',

@@ -20,7 +20,7 @@ export const AdBanner: React.FC<AdBannerProps> = ({
       if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
         ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
       }
-    } catch (e) {
+    } catch {
       // Ignore adblocker errors
     }
   }, []);

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Ruler, Info, CheckCircle2 } from 'lucide-react';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface SizeChartModalProps {
   isOpen: boolean;
@@ -11,6 +12,7 @@ export const SizeChartModal: React.FC<SizeChartModalProps> = ({ isOpen, onClose,
   const [activeBrandTab, setActiveBrandTab] = useState<'Li-Ning' | 'Anta' | '361°'>(
     brandName === 'Li-Ning' ? 'Li-Ning' : brandName === 'Anta' ? 'Anta' : '361°'
   );
+  useBodyScrollLock(isOpen);
 
   if (!isOpen) return null;
 
@@ -72,7 +74,7 @@ export const SizeChartModal: React.FC<SizeChartModalProps> = ({ isOpen, onClose,
       zIndex: 999,
       padding: '20px'
     }}>
-      <div className="animate-scale-in" style={{
+      <div className="animate-scale-in" role="dialog" aria-modal="true" aria-label="International Footwear Sizing Conversion & Fit Guide" style={{
         background: '#FFFFFF',
         borderRadius: '8px',
         maxWidth: '720px',

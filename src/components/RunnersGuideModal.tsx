@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, BookOpen, Search } from 'lucide-react';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface RunnersGuideModalProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ interface RunnersGuideModalProps {
 
 export const RunnersGuideModal: React.FC<RunnersGuideModalProps> = ({ isOpen, onClose }) => {
   const [guideSearch, setGuideSearch] = useState('');
+  useBodyScrollLock(isOpen);
 
   if (!isOpen) return null;
 
@@ -203,7 +205,7 @@ While supercritical PEBA foams truly return more energy than old EVA, independen
       zIndex: 1000,
       padding: '0'
     }}>
-      <div style={{
+      <div role="dialog" aria-modal="true" aria-label="Runner's Tech Guide & Educational Handbook" style={{
         background: '#FFFFFF',
         width: '100%',
         height: '100%',

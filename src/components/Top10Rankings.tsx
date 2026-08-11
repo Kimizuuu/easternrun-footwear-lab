@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Award, Flame, Zap, ShieldCheck, X } from 'lucide-react';
 import type { Shoe } from '../types/shoe';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface Top10RankingsProps {
   shoes: Shoe[];
@@ -9,6 +10,7 @@ interface Top10RankingsProps {
 }
 
 export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, onSelectShoe }) => {
+  useBodyScrollLock();
   const [tab, setTab] = useState<'marathon' | 'speed' | 'walking' | 'trail' | 'durability'>('marathon');
 
   const marathonTop = [...shoes].sort((a, b) => b.useCaseValues.marathonRaceScore - a.useCaseValues.marathonRaceScore);
@@ -40,6 +42,9 @@ export const Top10Rankings: React.FC<Top10RankingsProps> = ({ shoes, onClose, on
     }}>
       <div 
         className="animate-fade-in"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Benchmark Rankings & Leaderboards"
         style={{
           width: '100%',
           maxWidth: '900px',

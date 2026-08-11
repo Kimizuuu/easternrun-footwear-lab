@@ -8,8 +8,15 @@
  */
 export function sanitizeText(input: string): string {
   if (!input) return '';
-  return String(input)
-    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '')
+  // Strip non-printable ASCII control chars (0x00–0x08, 0x0B, 0x0C, 0x0E–0x1F)
+  // without using raw control-char regex ranges (avoids eslint no-control-regex)
+  const cleaned = Array.from(String(input))
+    .filter((ch) => {
+      const cp = ch.codePointAt(0) ?? 0;
+      return !(cp <= 8 || cp === 11 || cp === 12 || (cp >= 14 && cp <= 31));
+    })
+    .join('');
+  return cleaned
     .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
     .replace(/javascript:/gi, '')
     .trim();

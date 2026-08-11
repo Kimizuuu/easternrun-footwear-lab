@@ -3,6 +3,7 @@ import { X, ExternalLink, Plus } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Shoe } from '../types/shoe';
 import { getCompareSlug } from '../utils/slugUtils';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface CompareGSMArenaProps {
   shoes: Shoe[];
@@ -17,6 +18,7 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
   allShoes = [],
   onClose,
 }) => {
+  useBodyScrollLock();
   const navigate = useNavigate();
   const availableList = allShoes.length > 0 ? allShoes : selectedTrayShoes;
 
@@ -30,6 +32,11 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
   const [slot3, setSlot3] = useState<Shoe | null>(initialShoe3 || null);
 
   const activeCompareList = [slot1, slot2, slot3].filter((s): s is Shoe => s !== null);
+
+  // Options available to each slot = all shoes EXCEPT the other two selected slots
+  const optionsFor1 = availableList.filter(s => s.id !== slot2?.id && s.id !== slot3?.id);
+  const optionsFor2 = availableList.filter(s => s.id !== slot1?.id && s.id !== slot3?.id);
+  const optionsFor3 = availableList.filter(s => s.id !== slot1?.id && s.id !== slot2?.id);
 
   const handleOpenFullPageCompare = () => {
     if (activeCompareList.length >= 2) {
@@ -54,8 +61,11 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
       justifyContent: 'center',
       padding: '16px'
     }}>
-      <div 
+      <div
         className="animate-fade-in"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Shoe Spec Comparison"
         style={{
           width: '100%',
           maxWidth: '1100px',
@@ -161,7 +171,7 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
                 minHeight: '44px'
               }}
             >
-              {availableList.map((s) => (
+              {optionsFor1.map((s) => (
                 <option key={s.id} value={s.id}>{s.brand} {s.name} (${s.msrpUsd})</option>
               ))}
             </select>
@@ -187,7 +197,7 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
                 minHeight: '44px'
               }}
             >
-              {availableList.map((s) => (
+              {optionsFor2.map((s) => (
                 <option key={s.id} value={s.id}>{s.brand} {s.name} (${s.msrpUsd})</option>
               ))}
             </select>
@@ -224,7 +234,7 @@ export const CompareGSMArena: React.FC<CompareGSMArenaProps> = ({
                   minHeight: '44px'
                 }}
               >
-                {availableList.map((s) => (
+                {optionsFor3.map((s) => (
                   <option key={s.id} value={s.id}>{s.brand} {s.name} (${s.msrpUsd})</option>
                 ))}
               </select>

@@ -330,6 +330,41 @@ Sitemap: ${baseUrl}/sitemap.xml
         fs.writeFileSync(path.join(catDir, 'index.html'), catHtml, 'utf8');
       }
       console.log(`✅ Pre-rendered ${categories.length} static category hub pages into dist/best/[slug]/index.html`);
+
+      // 4E. PRE-RENDER TOP COMPARISON PAGES
+      for (const cmp of topComparisons) {
+        const cmpDir = path.join(distDir, 'compare', cmp.slug);
+        fs.mkdirSync(cmpDir, { recursive: true });
+
+        const cmpTitle = `${cmp.title}: Spec & Performance Comparison — EasternRun`;
+        const cmpDesc = `Detailed head-to-head spec comparison between ${cmp.title}. Stack height, drop, weight, carbon plate technology, and performance verdict.`;
+        const cmpCanonical = `${baseUrl}/compare/${cmp.slug}`;
+
+        const cmpContentHtml = `
+          <div id="ssr-cmp-fallback" style="font-family: system-ui, -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 24px;">
+            <nav style="margin-bottom: 16px; font-size: 0.9rem; color: #64748B;">
+              <a href="/" style="color: #2563EB;">Home</a> &gt; <span>Comparison</span>
+            </nav>
+            <h1 style="font-size: 2.2rem; font-weight: 900; color: #0F172A; margin-bottom: 8px;">${cmp.title}</h1>
+            <p style="font-size: 1.1rem; color: #475569; margin-bottom: 24px;">${cmpDesc}</p>
+            <a href="/" style="display: inline-block; padding: 10px 20px; background: #0F172A; color: #FFF; text-decoration: none; border-radius: 8px; font-weight: 700;">Explore Interactive Head-to-Head Breakdown →</a>
+          </div>
+        `;
+
+        let cmpHtml = templateHtml
+          .replace(/<title>.*?<\/title>/, `<title>${cmpTitle}</title>`)
+          .replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${cmpDesc.replace(/"/g, '&quot;')}" />`)
+          .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${cmpCanonical}" />`)
+          .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${cmpCanonical}" />`)
+          .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${cmpTitle.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${cmpDesc.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${cmpTitle.replace(/"/g, '&quot;')}" />`)
+          .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${cmpDesc.replace(/"/g, '&quot;')}" />`)
+          .replace('<div id="root"></div>', `<div id="root">${cmpContentHtml}</div>`);
+
+        fs.writeFileSync(path.join(cmpDir, 'index.html'), cmpHtml, 'utf8');
+      }
+      console.log(`✅ Pre-rendered ${topComparisons.length} static comparison pages into dist/compare/[slug]/index.html`);
     }
   }
 

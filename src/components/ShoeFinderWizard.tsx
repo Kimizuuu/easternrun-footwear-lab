@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Compass, X, ArrowRight, Check } from 'lucide-react';
 import type { Shoe } from '../types/shoe';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface ShoeFinderWizardProps {
   shoes: Shoe[];
@@ -9,6 +10,7 @@ interface ShoeFinderWizardProps {
 }
 
 export const ShoeFinderWizard: React.FC<ShoeFinderWizardProps> = ({ shoes, onClose, onSelectShoe }) => {
+  useBodyScrollLock();
   const [useCase, setUseCase] = useState<'race' | 'speed' | 'daily' | 'walking'>('race');
   const [maxBudget, setMaxBudget] = useState<number>(300);
   const [platePreference, setPlatePreference] = useState<'any' | 'carbon' | 'nylon' | 'none'>('any');
@@ -75,6 +77,9 @@ export const ShoeFinderWizard: React.FC<ShoeFinderWizardProps> = ({ shoes, onClo
     }}>
       <div 
         className="animate-fade-in"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Shoe Sector Advisor"
         style={{
           width: '100%',
           maxWidth: '780px',
