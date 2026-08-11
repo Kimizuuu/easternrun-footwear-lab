@@ -14,10 +14,11 @@ interface SearchAutoCompleteProps {
 export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
   shoes,
   onSelectShoe,
-  placeholder = "Search 105 models, foams (ZoomX, BOOM, PEBA), or brands...",
+  placeholder,
   autoFocus = false,
   style,
 }) => {
+  const dynamicPlaceholder = placeholder ?? `Search ${shoes.length} models, foams (ZoomX, BOOM, PEBA), or brands...`;
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -127,7 +128,7 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
             if (query.trim().length > 0) setIsOpen(true);
           }}
           onKeyDown={handleKeyDown}
-          placeholder={placeholder}
+          placeholder={dynamicPlaceholder}
           autoFocus={autoFocus}
           style={{
             width: '100%',
@@ -218,8 +219,10 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
               {suggestions.map((shoe, idx) => {
                 const isSelected = selectedIndex === idx;
                 return (
-                  <div
+                  <button
                     key={shoe.id}
+                    role="option"
+                    aria-selected={isSelected}
                     onClick={() => handleChoose(shoe)}
                     onMouseEnter={() => setSelectedIndex(idx)}
                     style={{
@@ -230,7 +233,10 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
                       background: isSelected ? '#F8FAFC' : '#FFFFFF',
                       borderLeft: isSelected ? '3px solid #0F172A' : '3px solid transparent',
                       cursor: 'pointer',
-                      transition: 'background 0.1s ease'
+                      transition: 'background 0.1s ease',
+                      width: '100%',
+                      border: 'none',
+                      textAlign: 'left',
                     }}
                   >
                     {/* Small Thumbnail */}
@@ -304,7 +310,7 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({
 
                       <ArrowRight size={14} color={isSelected ? '#0F172A' : '#94A3B8'} />
                     </div>
-                  </div>
+                  </button>
                 );
               })}
             </div>

@@ -21,13 +21,46 @@ export const ShoeComparePage: React.FC<ShoeComparePageProps> = ({ shoes }) => {
         <SEOHead
           title="Shoe Comparison Not Found | EasternRun"
           description="The requested shoe comparison could not be found."
-          canonicalUrl="https://easternrun.fit/"
+          canonicalUrl={`https://easternrun.fit/compare/${compareSlug || ''}`}
         />
         <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0F172A', marginBottom: '16px' }}>
           Comparison Not Found
         </h2>
         <p style={{ color: '#64748B', lineHeight: 1.6, marginBottom: '24px' }}>
           We couldn't find the requested shoe comparison. Check out our main shoe database to select any two shoes for a head-to-head breakdown.
+        </p>
+        <button
+          onClick={() => navigate('/')}
+          style={{
+            padding: '12px 24px',
+            background: '#2563EB',
+            color: '#FFF',
+            border: 'none',
+            borderRadius: '8px',
+            fontWeight: 700,
+            cursor: 'pointer',
+            minHeight: '44px'
+          }}
+        >
+          ← Back to Database
+        </button>
+      </div>
+    );
+  }
+
+  if (shoe1.id === shoe2.id) {
+    return (
+      <div style={{ padding: '60px 24px', textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
+        <SEOHead
+          title="Invalid Comparison | EasternRun"
+          description="You cannot compare a shoe with itself."
+          canonicalUrl={`https://easternrun.fit/compare/${compareSlug || ''}`}
+        />
+        <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0F172A', marginBottom: '16px' }}>
+          Invalid Comparison
+        </h2>
+        <p style={{ color: '#64748B', lineHeight: 1.6, marginBottom: '24px' }}>
+          You cannot compare a shoe with itself. Please select two different models.
         </p>
         <button
           onClick={() => navigate('/')}

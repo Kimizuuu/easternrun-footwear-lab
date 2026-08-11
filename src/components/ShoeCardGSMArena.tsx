@@ -9,6 +9,7 @@ interface ShoeCardGSMArenaProps {
   onToggleCompare: (shoe: Shoe) => void;
   displayScore?: number;
   displayScoreLabel?: string;
+  cardIndex?: number;
 }
 
 export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
@@ -18,6 +19,7 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
   onToggleCompare,
   displayScore,
   displayScoreLabel,
+  cardIndex = 99,
 }) => {
   const activeScore = displayScore !== undefined ? displayScore : shoe.overallRating;
   const scoreLabel = displayScoreLabel ? displayScoreLabel : 'Overall';
@@ -58,9 +60,9 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
         <img
           src={shoe.image}
           alt={shoe.name}
-          loading="lazy"
+          loading={cardIndex < 4 ? 'eager' : 'lazy'}
           decoding="async"
-          onError={(e) => { (e.target as HTMLImageElement).src = '/images/fallback-shoe.jpg'; }}
+          onError={(e) => { const img = e.currentTarget; img.onerror = null; img.src = '/images/fallback-shoe.jpg'; }}
           style={{
             maxWidth: '100%',
             maxHeight: '100%',
@@ -191,7 +193,7 @@ export const ShoeCardGSMArena: React.FC<ShoeCardGSMArenaProps> = ({
             <strong style={{ color: '#F8FAFC', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.dropMm}mm</strong>
           </div>
 
-          <div title="Lab-measured Midsole Energy Return (Resilience %)">
+          <div title="EasternRun Energy Return Estimate (Foam Resilience %)">
             <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.62rem', textTransform: 'uppercase', fontWeight: 700 }}>Energy Ret</span>
             <strong style={{ color: '#38BDF8', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>{shoe.specs.foamResiliencePercent}%</strong>
           </div>

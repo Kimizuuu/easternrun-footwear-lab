@@ -629,10 +629,10 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
             gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
             gap: '32px'
           }}>
-            {/* Verified Pros */}
+            {/* EasternRun Pros */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#166534', margin: 0, display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <ThumbsUp size={18} /> Pros
+                <ThumbsUp size={18} /> EasternRun Pros
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {shoe.communityPros?.map((pro, idx) => (
@@ -644,10 +644,10 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
               </ul>
             </div>
 
-            {/* Verified Cons */}
+            {/* EasternRun Cons */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#991B1B', margin: 0, display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <ThumbsDown size={18} /> Cons
+                <ThumbsDown size={18} /> EasternRun Cons
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {shoe.communityCons?.map((con, idx) => (

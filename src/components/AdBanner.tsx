@@ -5,6 +5,7 @@ interface AdBannerProps {
   format?: 'auto' | 'horizontal' | 'vertical' | 'rectangle';
   style?: React.CSSProperties;
   label?: string;
+  totalModels?: number;
 }
 
 export const AdBanner: React.FC<AdBannerProps> = ({
@@ -12,6 +13,7 @@ export const AdBanner: React.FC<AdBannerProps> = ({
   format = 'auto',
   style,
   label = 'Advertisement',
+  totalModels,
 }) => {
   useEffect(() => {
     try {
@@ -67,7 +69,7 @@ export const AdBanner: React.FC<AdBannerProps> = ({
             textDecoration: 'none'
           }}
         >
-          View 105 Tested Models ↓
+          View {totalModels ? `${totalModels} Tested Models` : 'Database'} ↓
         </a>
       </div>
     );

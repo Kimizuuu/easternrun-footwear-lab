@@ -41,13 +41,13 @@ const BRAND_TECH_OVERVIEWS: Record<string, { title: string; foamTech: string; pl
     title: 'Xtep Champion Running Lab',
     foamTech: 'X-TEP ACE Super-Critical PEBA Foam',
     plateTech: 'T700 Carbon Fiber & Nylon Propulsion Plates',
-    description: 'Xtep is China’s marathon championship dominant brand, holding record-breaking podium finishes with high-rebound X-TEP ACE PEBA foam and indestructible military-grade CPU outsole traction.'
+    description: 'Xtep has become a major presence in Chinese marathon racing, fielding athletes with competitive podium results and building around X-TEP ACE PEBA foam and T700 carbon fiber plate technology.'
   },
   'nike': {
-    title: 'Nike Running Benchmark',
+    title: 'Nike Running',
     foamTech: 'ZoomX PEBA & ReactX Foam',
     plateTech: 'Full-Length Flyplate & Air Zoom Pods',
-    description: 'Nike benchmark shoes featuring industry-defining ZoomX PEBA foam and carbon Flyplates, serving as baseline laboratory comparison standards.'
+    description: 'Nike features widely benchmarked ZoomX PEBA foam and carbon Flyplate technology across its Vaporfly and Alphafly racing lineups, serving as a common global reference point for performance shoe comparisons.'
   },
   'adidas': {
     title: 'Adidas Adizero Performance',

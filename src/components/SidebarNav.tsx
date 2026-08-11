@@ -141,7 +141,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
           >
             {['All', 'Li-Ning', 'ANTA', 'Xtep', '361°', 'Qiaodan', 'Nike', 'Adidas', 'Saucony', 'ASICS', 'Mizuno', 'New Balance', 'HOKA', 'Brooks', 'Skechers', 'Salomon', 'On Running', 'Altra', 'La Sportiva'].map((b) => (
               <option key={b} value={b}>
-                {b === 'All' ? 'All Brands (105 Models)' : b}
+                {b === 'All' ? `All Brands (${shoes.length} Models)` : b}
               </option>
             ))}
           </select>

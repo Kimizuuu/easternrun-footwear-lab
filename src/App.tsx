@@ -28,6 +28,10 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
   static getDerivedStateFromError() {
     return { hasError: true };
   }
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    // Log to console so errors are visible in Vercel/browser logs
+    console.error('[EasternRun] Uncaught error in component tree:', error, errorInfo);
+  }
   render() {
     if (this.state.hasError) {
       return (

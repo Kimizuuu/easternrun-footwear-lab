@@ -153,7 +153,7 @@ export const CategoryHubPage: React.FC<CategoryHubPageProps> = ({
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.1)', padding: '4px 12px', borderRadius: '4px', marginBottom: '14px' }}>
           <Trophy size={14} color="#EAB308" />
           <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#EAB308', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-            LAB TESTED RANKINGS & GUIDES
+            EASTERNRUN RANKINGS & GUIDES
           </span>
         </div>
 

@@ -113,7 +113,7 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
       {/* Catalog Filter & Grid Container */}
       <div id="database-catalog-section" style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(14px, 3vw, 28px)', scrollMarginTop: '20px' }}>
         {/* Leaderboard Monetization Banner */}
-        <AdBanner format="horizontal" label="Sponsored" />
+        <AdBanner format="horizontal" label="Sponsored" totalModels={shoes.length} />
 
         {/* Integrated Category Tabs & Reactive Sort Controls Bar */}
         <div 
@@ -223,7 +223,7 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
           gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 360px), 1fr))',
           gap: '36px'
         }}>
-          {sortedShoes.map((shoe) => {
+          {sortedShoes.map((shoe, index) => {
             const { score, label } = getShoeDisplayScore(shoe);
             return (
               <ShoeCardGSMArena
@@ -234,6 +234,7 @@ export const SpecDatabaseView: React.FC<SpecDatabaseViewProps> = ({
                 onToggleCompare={onToggleCompare}
                 displayScore={score}
                 displayScoreLabel={label}
+                cardIndex={index}
               />
             );
           })}

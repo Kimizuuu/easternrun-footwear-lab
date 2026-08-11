@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Star, ShieldAlert } from 'lucide-react';
+import { X, Star, AlertCircle, ThumbsUp, ThumbsDown } from 'lucide-react';
 import type { Shoe, UserReview } from '../types/shoe';
 import { sanitizeText, rateLimiter } from '../utils/security';
 
@@ -21,14 +21,15 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
   const [title, setTitle] = useState('');
   const [comment, setComment] = useState('');
   const [distanceKm, setDistanceKm] = useState(150);
+  const [proText, setProText] = useState('');
+  const [conText, setConText] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const pros = ['Propulsion', 'Traction'];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
-    // 1. Form Submission Throttle (Prevent accidental double clicks)
+    // Form submission throttle (prevent accidental double-clicks)
     if (!rateLimiter.isAllowed('submit_review', 3000)) {
       setErrorMessage('Please wait a moment before submitting another review.');
       return;
@@ -39,26 +40,47 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
       return;
     }
 
-    // 2. Input XSS Sanitization Security Processing
     const cleanUserName = sanitizeText(userName.trim().slice(0, 40));
-    const cleanTitle = sanitizeText(title.trim().slice(0, 100));
-    const cleanComment = sanitizeText(comment.trim().slice(0, 1000));
+    const cleanTitle    = sanitizeText(title.trim().slice(0, 100));
+    const cleanComment  = sanitizeText(comment.trim().slice(0, 1000));
+    const cleanPro      = proText.trim() ? sanitizeText(proText.trim().slice(0, 100)) : null;
+    const cleanCon      = conText.trim() ? sanitizeText(conText.trim().slice(0, 100)) : null;
 
     const newReview: UserReview = {
       id: `user-rev-${Date.now()}`,
       userName: cleanUserName,
-      rating,
+      rating: Math.min(Math.max(Math.round(rating), 1), 5),
       date: new Date().toISOString().split('T')[0],
       title: cleanTitle,
       comment: cleanComment,
-      pros,
-      cons: [],
-      verifiedDistanceKm: Math.min(Math.max(distanceKm, 0), 10000),
-      helpfulCount: 1
+      pros: cleanPro ? [cleanPro] : [],
+      cons: cleanCon ? [cleanCon] : [],
+      verifiedDistanceKm: Math.min(Math.max(parseFloat(String(distanceKm)) || 0, 0), 10000),
+      helpfulCount: 0,
     };
 
     onSubmitReview(shoe.id, newReview);
     onClose();
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '9px',
+    borderRadius: 'var(--radius-sm)',
+    background: '#F8FAFC',
+    border: '1px solid var(--border-subtle)',
+    color: 'var(--text-primary)',
+    outline: 'none',
+    fontSize: '0.85rem',
+    boxSizing: 'border-box',
+  };
+
+  const labelStyle: React.CSSProperties = {
+    fontSize: '0.78rem',
+    color: 'var(--text-muted)',
+    display: 'block',
+    marginBottom: '4px',
+    fontWeight: 600,
   };
 
   return (
@@ -76,26 +98,29 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
       justifyContent: 'center',
       padding: '20px'
     }}>
-      <div 
+      <div
         className="animate-fade-in"
         style={{
           width: '100%',
-          maxWidth: '500px',
+          maxWidth: '520px',
           background: '#FFF',
           borderRadius: 'var(--radius-lg)',
           overflow: 'hidden',
           padding: 'clamp(16px, 4vw, 28px)',
           boxShadow: 'var(--shadow-lg)',
-          border: '1px solid var(--border-subtle)'
+          border: '1px solid var(--border-subtle)',
+          maxHeight: '90vh',
+          overflowY: 'auto',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>
+        {/* Header */}
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '18px' }}>
           <div>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 800, margin: 0, color: 'var(--text-primary)' }}>
-              Write Review for {shoe.name}
+              Write a Review
             </h3>
             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-              Share your training & race experience (Protected Submission)
+              {shoe.name} — share your training &amp; race experience
             </span>
           </div>
 
@@ -113,7 +138,8 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              flexShrink: 0,
             }}
           >
             <X size={18} />
@@ -131,17 +157,17 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
             marginBottom: '12px',
             display: 'flex',
             alignItems: 'center',
-            gap: '8px'
+            gap: '8px',
           }}>
-            <ShieldAlert size={16} /> {errorMessage}
+            <AlertCircle size={16} /> {errorMessage}
           </div>
         )}
 
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+
+          {/* Name */}
           <div>
-            <label style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>
-              Your Name / Handle
-            </label>
+            <label style={labelStyle}>Your Name / Handle *</label>
             <input
               type="text"
               required
@@ -149,23 +175,13 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
               placeholder="e.g. Sub3Marathoner"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '9px',
-                borderRadius: 'var(--radius-sm)',
-                background: '#F8FAFC',
-                border: '1px solid var(--border-subtle)',
-                color: 'var(--text-primary)',
-                outline: 'none',
-                fontSize: '0.85rem'
-              }}
+              style={inputStyle}
             />
           </div>
 
+          {/* Star Rating */}
           <div>
-            <label style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>
-              Rating
-            </label>
+            <label style={labelStyle}>Rating *</label>
             <div style={{ display: 'flex', gap: '4px' }}>
               {[1, 2, 3, 4, 5].map((star) => (
                 <button
@@ -173,7 +189,7 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
                   key={star}
                   onClick={() => setRating(star)}
                   aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}
-                  style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '10px', minHeight: '44px', minWidth: '44px' }}
+                  style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '8px', minHeight: '44px', minWidth: '44px' }}
                 >
                   <Star
                     size={22}
@@ -185,77 +201,76 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
             </div>
           </div>
 
+          {/* Distance */}
           <div>
-            <label style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>
-              Distance Logged in Pair (KM)
-            </label>
+            <label style={labelStyle}>Distance Logged in This Pair (km)</label>
             <input
               type="number"
               min="0"
               max="10000"
+              step="0.1"
               value={distanceKm}
-              onChange={(e) => setDistanceKm(e.target.value === '' ? 0 : parseInt(e.target.value) || 0)}
-              style={{
-                width: '100%',
-                padding: '9px',
-                borderRadius: 'var(--radius-sm)',
-                background: '#F8FAFC',
-                border: '1px solid var(--border-subtle)',
-                color: 'var(--text-primary)',
-                outline: 'none',
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.85rem'
-              }}
+              onChange={(e) => setDistanceKm(e.target.value === '' ? 0 : parseFloat(e.target.value) || 0)}
+              style={{ ...inputStyle, fontFamily: 'var(--font-mono)' }}
             />
           </div>
 
+          {/* Title */}
           <div>
-            <label style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>
-              Review Title
-            </label>
+            <label style={labelStyle}>Review Title *</label>
             <input
               type="text"
               required
               maxLength={100}
-              placeholder="e.g. Incredible wet grip & bouncy energy return"
+              placeholder="e.g. Incredible wet grip &amp; bouncy energy return"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '9px',
-                borderRadius: 'var(--radius-sm)',
-                background: '#F8FAFC',
-                border: '1px solid var(--border-subtle)',
-                color: 'var(--text-primary)',
-                outline: 'none',
-                fontSize: '0.85rem'
-              }}
+              style={inputStyle}
             />
           </div>
 
+          {/* Comment */}
           <div>
-            <label style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>
-              Detailed Review
-            </label>
+            <label style={labelStyle}>Detailed Review *</label>
             <textarea
               required
               rows={3}
               maxLength={1000}
-              placeholder="Comment on foam bounciness, carbon snap, traction, and fit..."
+              placeholder="Describe foam feel, carbon snap, traction, fit width, durability..."
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '9px',
-                borderRadius: 'var(--radius-sm)',
-                background: '#F8FAFC',
-                border: '1px solid var(--border-subtle)',
-                color: 'var(--text-primary)',
-                outline: 'none',
-                resize: 'none',
-                fontSize: '0.85rem'
-              }}
+              style={{ ...inputStyle, resize: 'none' }}
             />
+          </div>
+
+          {/* Pros / Cons row */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div>
+              <label style={{ ...labelStyle, color: '#166534', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                <ThumbsUp size={13} /> What did you like? (optional)
+              </label>
+              <input
+                type="text"
+                maxLength={100}
+                placeholder="e.g. Excellent grip"
+                value={proText}
+                onChange={(e) => setProText(e.target.value)}
+                style={inputStyle}
+              />
+            </div>
+            <div>
+              <label style={{ ...labelStyle, color: '#991B1B', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                <ThumbsDown size={13} /> What could be better? (optional)
+              </label>
+              <input
+                type="text"
+                maxLength={100}
+                placeholder="e.g. Stiff at slow paces"
+                value={conText}
+                onChange={(e) => setConText(e.target.value)}
+                style={inputStyle}
+              />
+            </div>
           </div>
 
           <button
@@ -265,11 +280,12 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
               color: '#FFF',
               border: 'none',
               borderRadius: 'var(--radius-sm)',
-              padding: '10px',
+              padding: '12px',
               fontWeight: 800,
               fontSize: '0.9rem',
               cursor: 'pointer',
-              marginTop: '8px'
+              marginTop: '4px',
+              minHeight: '44px',
             }}
           >
             Submit Review
