@@ -38,7 +38,7 @@ function loadShoesJson() {
 }
 
 function main() {
-  console.log('🚀 Starting EasternRun Single-Source-of-Truth SEO Generator & Pre-renderer...');
+  console.log('🚀 Starting EasternRun Aggressive Single-Source-of-Truth SEO Generator & Pre-renderer...');
   const shoes = loadShoesJson();
   console.log(`✅ Loaded ${shoes.length} footwear models from public/data/shoes.json.`);
 
@@ -76,13 +76,28 @@ function main() {
     { name: 'Mountain & Trail', slug: 'mountain-trail' }
   ];
 
-  // 3. KEY HEAD-TO-HEAD COMPARISON ROUTES
+  // 3. TOP 20 HEAD-TO-HEAD COMPARISON ROUTES
   const topComparisons = [
     { slug: 'lining-feidian-6-ultra-vs-nike-alphafly-3', title: 'Li-Ning Feidian 6.0 Ultra vs Nike Alphafly 3' },
     { slug: 'anta-c202-6-pro-vs-nike-vaporfly-3', title: 'ANTA C202 6 Pro vs Nike Vaporfly 3' },
     { slug: 'xtep-160x-6-pro-vs-adidas-adizero-adios-pro-4', title: 'Xtep 160X 6 Pro vs Adidas Adizero Adios Pro 4' },
     { slug: 'saucony-endorphin-pro-4-vs-nike-vaporfly-3', title: 'Saucony Endorphin Pro 4 vs Nike Vaporfly 3' },
-    { slug: 'asics-metaspeed-sky-paris-vs-nike-alphafly-3', title: 'ASICS Metaspeed Sky Paris vs Nike Alphafly 3' }
+    { slug: 'asics-metaspeed-sky-paris-vs-nike-alphafly-3', title: 'ASICS Metaspeed Sky Paris vs Nike Alphafly 3' },
+    { slug: '361-biospeed-5-pro-vs-saucony-endorphin-pro-4', title: '361° Biospeed 5 Pro vs Saucony Endorphin Pro 4' },
+    { slug: 'qiaodan-feiying-pb-4-0-vs-asics-metaspeed-sky-paris', title: 'Qiaodan Feiying PB 4.0 vs ASICS Metaspeed Sky Paris' },
+    { slug: 'lining-chitu-9-ultra-vs-nike-air-zoom-pegasus-41', title: 'Li-Ning Red Hare 9 Ultra vs Nike Air Zoom Pegasus 41' },
+    { slug: 'anta-mach-4-vs-adidas-adizero-boston-12', title: 'ANTA Mach 4 vs Adidas Adizero Boston 12' },
+    { slug: 'xtep-2000km-3-0-vs-asics-novablast-4', title: 'Xtep 2000km 3.0 vs ASICS Novablast 4' },
+    { slug: '361-flame-5-mix-vs-saucony-endorphin-speed-4', title: '361° Flame 5 MIX vs Saucony Endorphin Speed 4' },
+    { slug: 'hoka-cielo-x1-vs-nike-alphafly-3', title: 'HOKA Cielo X1 vs Nike Alphafly 3' },
+    { slug: 'nike-vaporfly-3-vs-nike-alphafly-3', title: 'Nike Vaporfly 3 vs Nike Alphafly 3' },
+    { slug: 'asics-superblast-2-vs-lining-chitu-9-ultra', title: 'ASICS Superblast 2 vs Li-Ning Red Hare 9 Ultra' },
+    { slug: 'hoka-mach-6-vs-asics-novablast-4', title: 'HOKA Mach 6 vs ASICS Novablast 4' },
+    { slug: 'mizuno-wave-rebellion-pro-2-vs-lining-feidian-6-ultra', title: 'Mizuno Wave Rebellion Pro 2 vs Li-Ning Feidian 6.0 Ultra' },
+    { slug: 'brooks-hyperion-elite-4-vs-saucony-endorphin-pro-4', title: 'Brooks Hyperion Elite 4 vs Saucony Endorphin Pro 4' },
+    { slug: 'new-balance-fuelcell-supercomp-elite-v4-vs-nike-alphafly-3', title: 'New Balance SC Elite v4 vs Nike Alphafly 3' },
+    { slug: 'anta-pg7-classic-vs-hoka-clifton-9', title: 'ANTA PG7 Travel & Classic vs HOKA Clifton 9' },
+    { slug: 'salomon-s-lab-ultra-fdh-vs-hoka-speedgoat-6', title: 'Salomon S/LAB Ultra vs HOKA Speedgoat 6' }
   ];
 
   // 4. BUILD SITEMAP.XML
@@ -106,9 +121,34 @@ ${sitemapUrls.map(u => `  <url>
 
   fs.writeFileSync(path.join(rootDir, 'public', 'sitemap.xml'), sitemapXml, 'utf8');
 
+  // 5. BUILD RSS 2.0 FEED (feed.xml) FOR FAST-TRACK BOT DISCOVERY
+  const rssItemsXml = shoes.map(s => `    <item>
+      <title><![CDATA[${s.brand} ${s.name} Specs & Review]]></title>
+      <link>${baseUrl}/shoe/${s.slug}</link>
+      <guid isPermaLink="true">${baseUrl}/shoe/${s.slug}</guid>
+      <description><![CDATA[${s.description} MSRP $${s.msrpUsd}, ${s.specs?.weightGrams || 220}g weight, ${s.specs?.foamName || 'Superfoam'}.]]></description>
+      <pubDate>${new Date().toUTCString()}</pubDate>
+    </item>`).join('\n');
+
+  const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EasternRun Footwear Lab — Performance Running Shoe Database</title>
+    <link>${baseUrl}</link>
+    <description>Transparent technical specs, lab energy return scores, and wear-tester reviews for 105 global footwear models.</description>
+    <language>en-us</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
+${rssItemsXml}
+  </channel>
+</rss>`;
+
+  fs.writeFileSync(path.join(rootDir, 'public', 'feed.xml'), rssXml, 'utf8');
+
   const distDir = path.join(rootDir, 'dist');
   if (fs.existsSync(distDir)) {
     fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf8');
+    fs.writeFileSync(path.join(distDir, 'feed.xml'), rssXml, 'utf8');
 
     const robotsTxt = `User-agent: *
 Allow: /
@@ -122,7 +162,7 @@ Sitemap: ${baseUrl}/sitemap.xml
     if (fs.existsSync(templatePath)) {
       const templateHtml = fs.readFileSync(templatePath, 'utf8');
 
-      // 4A. HOMEPAGE CONCISE HIGH-PERFORMANCE SSR FALLBACK
+      // 6A. HOMEPAGE SSR FALLBACK
       const homepageFallbackHtml = `
         <div id="ssr-crawler-fallback" style="font-family: system-ui, -apple-system, sans-serif; max-width: 1280px; margin: 0 auto; padding: 24px;">
           <header style="margin-bottom: 32px; border-bottom: 2px solid #E2E8F0; padding-bottom: 20px;">
@@ -174,7 +214,7 @@ Sitemap: ${baseUrl}/sitemap.xml
       );
       fs.writeFileSync(templatePath, homepageHtml, 'utf8');
 
-      // 4B. PRE-RENDER INDIVIDUAL SHOE PAGES
+      // 6B. PRE-RENDER INDIVIDUAL SHOE PAGES
       let shoeCount = 0;
       for (const shoe of shoes) {
         const shoeDir = path.join(distDir, 'shoe', shoe.slug);
@@ -184,25 +224,36 @@ Sitemap: ${baseUrl}/sitemap.xml
         const shoeDesc = `${shoe.description} Features ${shoe.specs?.foamName || 'Superfoam'} (${shoe.specs?.foamResiliencePercent || 80}% energy return), ${shoe.specs?.weightGrams || 220}g weight, ${shoe.specs?.dropMm || 8}mm drop, and $${shoe.msrpUsd} MSRP.`;
         const shoeCanonical = `${baseUrl}/shoe/${shoe.slug}`;
 
-        const shoeProductSchema = {
-          '@context': 'https://schema.org',
-          '@type': 'Product',
-          'name': `${shoe.brand} ${shoe.name}`,
-          'image': `${baseUrl}${shoe.image}`,
-          'description': shoe.description,
-          'brand': { '@type': 'Brand', 'name': shoe.brand },
-          'offers': {
-            '@type': 'Offer',
-            'url': shoeCanonical,
-            'priceCurrency': 'USD',
-            'price': shoe.msrpUsd.toString(),
-            'availability': 'https://schema.org/InStock'
+        const shoeProductSchema = [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            'name': `${shoe.brand} ${shoe.name}`,
+            'image': `${baseUrl}${shoe.image}`,
+            'description': shoe.description,
+            'brand': { '@type': 'Brand', 'name': shoe.brand },
+            'offers': {
+              '@type': 'Offer',
+              'url': shoeCanonical,
+              'priceCurrency': 'USD',
+              'price': shoe.msrpUsd.toString(),
+              'availability': 'https://schema.org/InStock'
+            }
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': baseUrl },
+              { '@type': 'ListItem', 'position': 2, 'name': shoe.brand, 'item': `${baseUrl}/brand/${getBrandSlug(shoe.brand)}` },
+              { '@type': 'ListItem', 'position': 3, 'name': shoe.name, 'item': shoeCanonical }
+            ]
           }
-        };
+        ];
 
         if (shoe.userReviews && shoe.userReviews.length > 0) {
           const totalStars = shoe.userReviews.reduce((acc, r) => acc + r.rating, 0);
-          shoeProductSchema.aggregateRating = {
+          shoeProductSchema[0].aggregateRating = {
             '@type': 'AggregateRating',
             'ratingValue': (totalStars / shoe.userReviews.length).toFixed(1),
             'reviewCount': shoe.userReviews.length
@@ -252,15 +303,24 @@ Sitemap: ${baseUrl}/sitemap.xml
       }
       console.log(`✅ Pre-rendered ${shoeCount} static shoe detail pages into dist/shoe/[slug]/index.html`);
 
-      // 4C. PRE-RENDER BRAND PAGES
+      // 6C. PRE-RENDER BRAND PAGES
       for (const brand of brands) {
         const brandDir = path.join(distDir, 'brand', brand.slug);
         fs.mkdirSync(brandDir, { recursive: true });
 
-        const brandShoes = shoes.filter(s => toCleanSlug(s.brand) === brand.slug || s.brand.toLowerCase() === brand.name.toLowerCase());
+        const brandShoes = shoes.filter(s => getBrandSlug(s.brand) === brand.slug || s.brand.toLowerCase() === brand.name.toLowerCase());
         const brandTitle = `${brand.name} Running Shoes Specs, Ratings & Reviews — EasternRun`;
         const brandDesc = `Explore transparent specs, lab measurements, and reviews for ${brand.name} running shoes including ${brandShoes.slice(0, 3).map(s => s.name).join(', ')}.`;
         const brandCanonical = `${baseUrl}/brand/${brand.slug}`;
+
+        const brandBreadcrumbSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': baseUrl },
+            { '@type': 'ListItem', 'position': 2, 'name': brand.name, 'item': brandCanonical }
+          ]
+        };
 
         const brandContentHtml = `
           <div id="ssr-brand-fallback" style="font-family: system-ui, -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 24px;">
@@ -289,13 +349,14 @@ Sitemap: ${baseUrl}/sitemap.xml
           .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${brandDesc.replace(/"/g, '&quot;')}" />`)
           .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${brandTitle.replace(/"/g, '&quot;')}" />`)
           .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${brandDesc.replace(/"/g, '&quot;')}" />`)
+          .replace('</head>', `<script type="application/ld+json">${JSON.stringify(brandBreadcrumbSchema)}</script></head>`)
           .replace('<div id="root"></div>', `<div id="root">${brandContentHtml}</div>`);
 
         fs.writeFileSync(path.join(brandDir, 'index.html'), brandHtml, 'utf8');
       }
       console.log(`✅ Pre-rendered ${brands.length} static brand hub pages into dist/brand/[slug]/index.html`);
 
-      // 4D. PRE-RENDER CATEGORY PAGES
+      // 6D. PRE-RENDER CATEGORY PAGES
       for (const category of categories) {
         const catDir = path.join(distDir, 'best', category.slug);
         fs.mkdirSync(catDir, { recursive: true });
@@ -304,6 +365,15 @@ Sitemap: ${baseUrl}/sitemap.xml
         const catTitle = `Best ${category.name} Running Shoes (2026) — EasternRun`;
         const catDesc = `Explore curated rankings, lab energy return data, and spec evaluations for top ${category.name} running shoes.`;
         const catCanonical = `${baseUrl}/best/${category.slug}`;
+
+        const catBreadcrumbSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': baseUrl },
+            { '@type': 'ListItem', 'position': 2, 'name': category.name, 'item': catCanonical }
+          ]
+        };
 
         const catContentHtml = `
           <div id="ssr-cat-fallback" style="font-family: system-ui, -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 24px;">
@@ -332,13 +402,14 @@ Sitemap: ${baseUrl}/sitemap.xml
           .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${catDesc.replace(/"/g, '&quot;')}" />`)
           .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${catTitle.replace(/"/g, '&quot;')}" />`)
           .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${catDesc.replace(/"/g, '&quot;')}" />`)
+          .replace('</head>', `<script type="application/ld+json">${JSON.stringify(catBreadcrumbSchema)}</script></head>`)
           .replace('<div id="root"></div>', `<div id="root">${catContentHtml}</div>`);
 
         fs.writeFileSync(path.join(catDir, 'index.html'), catHtml, 'utf8');
       }
       console.log(`✅ Pre-rendered ${categories.length} static category hub pages into dist/best/[slug]/index.html`);
 
-      // 4E. PRE-RENDER TOP COMPARISON PAGES
+      // 6E. PRE-RENDER TOP 20 COMPARISON PAGES
       for (const cmp of topComparisons) {
         const cmpDir = path.join(distDir, 'compare', cmp.slug);
         fs.mkdirSync(cmpDir, { recursive: true });
@@ -346,6 +417,15 @@ Sitemap: ${baseUrl}/sitemap.xml
         const cmpTitle = `${cmp.title}: Spec & Performance Comparison — EasternRun`;
         const cmpDesc = `Detailed head-to-head spec comparison between ${cmp.title}. Stack height, drop, weight, carbon plate technology, and performance verdict.`;
         const cmpCanonical = `${baseUrl}/compare/${cmp.slug}`;
+
+        const cmpBreadcrumbSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': baseUrl },
+            { '@type': 'ListItem', 'position': 2, 'name': 'Comparison', 'item': cmpCanonical }
+          ]
+        };
 
         const cmpContentHtml = `
           <div id="ssr-cmp-fallback" style="font-family: system-ui, -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 24px;">
@@ -367,15 +447,33 @@ Sitemap: ${baseUrl}/sitemap.xml
           .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${cmpDesc.replace(/"/g, '&quot;')}" />`)
           .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${cmpTitle.replace(/"/g, '&quot;')}" />`)
           .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${cmpDesc.replace(/"/g, '&quot;')}" />`)
+          .replace('</head>', `<script type="application/ld+json">${JSON.stringify(cmpBreadcrumbSchema)}</script></head>`)
           .replace('<div id="root"></div>', `<div id="root">${cmpContentHtml}</div>`);
 
         fs.writeFileSync(path.join(cmpDir, 'index.html'), cmpHtml, 'utf8');
       }
       console.log(`✅ Pre-rendered ${topComparisons.length} static comparison pages into dist/compare/[slug]/index.html`);
+
+      // 6F. PRE-RENDER STATIC 404 PAGE (dist/404.html)
+      const page404Html = templateHtml
+        .replace(/<title>.*?<\/title>/, '<title>Page Not Found (404) | EasternRun</title>')
+        .replace(/<meta name="description" content=".*?" \/>/, '<meta name="description" content="The requested page could not be found." />')
+        .replace('</head>', '<meta name="robots" content="noindex, nofollow" /></head>')
+        .replace('<div id="root"></div>', `
+          <div id="root">
+            <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 80px auto; padding: 32px; text-align: center;">
+              <h1 style="font-size: 2rem; font-weight: 800; color: #0F172A;">Page Not Found (404)</h1>
+              <p style="color: #64748B; margin: 16px 0 24px 0;">We couldn't find the requested page. Explore our complete database catalog below.</p>
+              <a href="/" style="display: inline-block; padding: 12px 24px; background: #0F172A; color: #FFF; border-radius: 8px; font-weight: 700; text-decoration: none;">Return to Homepage Catalog →</a>
+            </div>
+          </div>
+        `);
+      fs.writeFileSync(path.join(distDir, '404.html'), page404Html, 'utf8');
+      console.log('✅ Generated pre-rendered static 404 page into dist/404.html');
     }
   }
 
-  console.log('🎉 EasternRun SEO Generation & Pre-rendering Completed Successfully!');
+  console.log('🎉 EasternRun Aggressive SEO Generation & Pre-rendering Completed Successfully!');
 }
 
 main();

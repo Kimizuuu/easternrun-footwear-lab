@@ -38,6 +38,13 @@
         { "key": "Content-Type", "value": "text/plain; charset=UTF-8" },
         { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }
       ]
+    },
+    {
+      "source": "/feed.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/rss+xml; charset=UTF-8" },
+        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }
+      ]
     }
   ],
   "rewrites": [
