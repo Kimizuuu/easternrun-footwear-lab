@@ -4,6 +4,7 @@ import type { Shoe } from '../types/shoe';
 import { ShoeCardGSMArena } from './ShoeCardGSMArena';
 import { SEOHead } from './SEOHead';
 import { Shield, ArrowLeft } from 'lucide-react';
+import { getBrandSlug } from '../utils/slugUtils';
 
 interface BrandHubPageProps {
   shoes: Shoe[];
@@ -130,7 +131,7 @@ export const BrandHubPage: React.FC<BrandHubPageProps> = ({
   onToggleCompare,
 }) => {
   const { brandSlug } = useParams<{ brandSlug: string }>();
-  const normalizedSlug = (brandSlug || '').toLowerCase();
+  const normalizedSlug = getBrandSlug(brandSlug || '');
 
   // Match brand shoes dynamically
   const brandShoes = shoes.filter(s => {

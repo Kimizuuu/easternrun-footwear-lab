@@ -4,7 +4,7 @@ import type { Shoe } from '../types/shoe';
 import { SizeChartModal } from './SizeChartModal';
 import { ImageZoomModal } from './ImageZoomModal';
 import { SEOHead } from './SEOHead';
-import { getShoeSlug, toCleanSlug } from '../utils/slugUtils';
+import { getShoeSlug, getBrandSlug } from '../utils/slugUtils';
 
 interface ShoeDetailPageProps {
   shoe: Shoe;
@@ -45,7 +45,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
   };
 
   const shoeSlug = getShoeSlug(shoe);
-  const brandSlug = toCleanSlug(shoe.brand);
+  const brandSlug = getBrandSlug(shoe.brand);
   const canonicalUrl = `https://easternrun.fit/shoe/${shoeSlug}`;
   const title = `${shoe.brand} ${shoe.name} Spec Review & Performance Database | EasternRun`;
   const description = `Full technical breakdown for ${shoe.brand} ${shoe.name}: $${shoe.msrpUsd} MSRP, ${shoe.specs?.weightGrams ? shoe.specs.weightGrams + 'g' : ''}, ${shoe.specs?.foamName || 'Superfoam'}, overall rating ${shoe.overallRating}/100.`;

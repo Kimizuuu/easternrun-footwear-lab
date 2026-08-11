@@ -17,6 +17,13 @@ function toCleanSlug(text) {
     .replace(/^-+|-+$/g, '');
 }
 
+function getBrandSlug(brand) {
+  if (!brand) return '';
+  const clean = toCleanSlug(brand);
+  if (clean === '361' || clean === '361degrees') return '361-degrees';
+  return clean;
+}
+
 function loadShoesJson() {
   const jsonPath = path.join(rootDir, 'public', 'data', 'shoes.json');
   if (!fs.existsSync(jsonPath)) {
@@ -206,7 +213,7 @@ Sitemap: ${baseUrl}/sitemap.xml
           <div id="ssr-shoe-fallback" style="font-family: system-ui, -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 24px;">
             <nav style="margin-bottom: 16px; font-size: 0.9rem; color: #64748B;">
               <a href="/" style="color: #2563EB;">Home</a> &gt; 
-              <a href="/brand/${toCleanSlug(shoe.brand)}" style="color: #2563EB;">${shoe.brand}</a> &gt; 
+              <a href="/brand/${getBrandSlug(shoe.brand)}" style="color: #2563EB;">${shoe.brand}</a> &gt; 
               <span>${shoe.name}</span>
             </nav>
             <h1 style="font-size: 2.2rem; font-weight: 900; color: #0F172A; margin-bottom: 8px;">${shoe.name}</h1>
@@ -237,8 +244,8 @@ Sitemap: ${baseUrl}/sitemap.xml
           .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${shoeTitle.replace(/"/g, '&quot;')}" />`)
           .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${shoeDesc.slice(0, 200).replace(/"/g, '&quot;')}" />`)
           .replace(/<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="https://easternrun.fit${shoe.image}" />`)
-          .replace('<div id="root"></div>', `<div id="root">${shoeContentHtml}</div>`)
-          + `<script type="application/ld+json">${JSON.stringify(shoeProductSchema)}</script>`;
+          .replace('</head>', `<script type="application/ld+json">${JSON.stringify(shoeProductSchema)}</script></head>`)
+          .replace('<div id="root"></div>', `<div id="root">${shoeContentHtml}</div>`);
 
         fs.writeFileSync(path.join(shoeDir, 'index.html'), shoeHtml, 'utf8');
         shoeCount++;

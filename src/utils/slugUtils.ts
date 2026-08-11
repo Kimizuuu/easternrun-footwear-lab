@@ -15,6 +15,18 @@ export function toCleanSlug(text: string): string {
 }
 
 /**
+ * Returns the standardized canonical SEO brand slug.
+ * e.g., "361°" -> "361-degrees"
+ * e.g., "Li-Ning" -> "li-ning"
+ */
+export function getBrandSlug(brand: string): string {
+  if (!brand) return '';
+  const clean = toCleanSlug(brand);
+  if (clean === '361' || clean === '361degrees') return '361-degrees';
+  return clean;
+}
+
+/**
  * Returns the primary clean SEO slug for a given Shoe object.
  */
 export function getShoeSlug(shoe: Shoe): string {
