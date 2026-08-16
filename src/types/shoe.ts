@@ -89,4 +89,5 @@ export interface Shoe {
   userReviews: UserReview[];
   editorReview?: string;
   faqItems?: { question: string; answer: string }[];
+  dataLastUpdated: string; // ISO date (e.g. '2026-08-15') — per-shoe sitemap lastmod
 }

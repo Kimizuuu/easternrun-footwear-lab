@@ -14,14 +14,14 @@ interface CategoryHubPageProps {
 
 const CATEGORY_HUB_INFO: Record<string, { title: string; subtitle: string; description: string; filterFn: (s: Shoe) => boolean; sortFn: (a: Shoe, b: Shoe) => number }> = {
   'marathon-super-shoe': {
-    title: 'Best Marathon Super-Shoes (2026)',
+    title: `Best Marathon Super-Shoes (${new Date().getFullYear()})`,
     subtitle: 'Elite Race Day Carbon Plated Racers',
     description: 'Top-ranked marathon super-shoes evaluated by race day score, energy return percentage, carbon plate rigidity, and stack height compliance.',
     filterFn: (s) => s.category === 'Marathon Super-Shoe',
     sortFn: (a, b) => b.useCaseValues.marathonRaceScore - a.useCaseValues.marathonRaceScore
   },
   'marathon-super-shoes': {
-    title: 'Best Marathon Super-Shoes (2026)',
+    title: `Best Marathon Super-Shoes (${new Date().getFullYear()})`,
     subtitle: 'Elite Race Day Carbon Plated Racers',
     description: 'Top-ranked marathon super-shoes evaluated by race day score, energy return percentage, carbon plate rigidity, and stack height compliance.',
     filterFn: (s) => s.category === 'Marathon Super-Shoe',
@@ -42,7 +42,7 @@ const CATEGORY_HUB_INFO: Record<string, { title: string; subtitle: string; descr
     sortFn: (a, b) => b.useCaseValues.dailyRunScore - a.useCaseValues.dailyRunScore
   },
   'tempo-race': {
-    title: 'Best Tempo & Speed Workout Shoes (2026)',
+    title: `Best Tempo & Speed Workout Shoes (${new Date().getFullYear()})`,
     subtitle: 'Lightweight Plated & Non-Plated Speed Trainers',
     description: 'Top-ranked speed trainers evaluated by midsole energy return, turnover quickness, and interval pace responsiveness.',
     filterFn: (s) => s.category === 'Tempo & Race',
@@ -56,14 +56,14 @@ const CATEGORY_HUB_INFO: Record<string, { title: string; subtitle: string; descr
     sortFn: (a, b) => b.useCaseValues.walkingScore - a.useCaseValues.walkingScore
   },
   'mountain-trail': {
-    title: 'Best Mountain & Trail Climbing Shoes (2026)',
+    title: `Best Mountain & Trail Climbing Shoes (${new Date().getFullYear()})`,
     subtitle: 'Technical Trail, Skyrunning & Mountain Scrambling',
     description: 'Top-ranked trail running and mountain climbing shoes evaluated by lug depth, traction rubber, rock protection, and trail stability.',
     filterFn: (s) => s.category === 'Mountain & Trail' || (s.useCaseValues.trailScore && s.useCaseValues.trailScore > 85) ? true : false,
     sortFn: (a, b) => (b.useCaseValues.trailScore || 0) - (a.useCaseValues.trailScore || 0)
   },
   'mountain-and-trail': {
-    title: 'Best Mountain & Trail Climbing Shoes (2026)',
+    title: `Best Mountain & Trail Climbing Shoes (${new Date().getFullYear()})`,
     subtitle: 'Technical Trail, Skyrunning & Mountain Scrambling',
     description: 'Top-ranked trail running and mountain climbing shoes evaluated by lug depth, traction rubber, rock protection, and trail stability.',
     filterFn: (s) => s.category === 'Mountain & Trail' || (s.useCaseValues.trailScore && s.useCaseValues.trailScore > 85) ? true : false,
@@ -77,14 +77,14 @@ const CATEGORY_HUB_INFO: Record<string, { title: string; subtitle: string; descr
     sortFn: (a, b) => b.overallRating - a.overallRating
   },
   'walking': {
-    title: 'Best Walking & All-Day Standing Shoes (2026)',
+    title: `Best Walking & All-Day Standing Shoes (${new Date().getFullYear()})`,
     subtitle: 'All-Day Comfort, Travel & Standing Shifts',
     description: 'Top-ranked walking and daily travel shoes evaluated by heel impact absorption, arch support, and all-day standing comfort.',
     filterFn: (s) => s.useCaseValues.walkingScore >= 90 || s.dominantSector.includes('Walking'),
     sortFn: (a, b) => b.useCaseValues.walkingScore - a.useCaseValues.walkingScore
   },
   'running': {
-    title: 'Best Road Running Shoes (2026)',
+    title: `Best Road Running Shoes (${new Date().getFullYear()})`,
     subtitle: 'Marathon Racing, Tempo & Daily Mileage',
     description: 'Top-ranked road running shoes evaluated by energy return percentage, weight, carbon plate snap, and marathon race scores.',
     filterFn: (s) => s.category !== 'Mountain & Trail',

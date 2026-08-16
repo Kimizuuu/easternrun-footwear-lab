@@ -1,6 +1,30 @@
 User-agent: *
 Allow: /
 
-# Host & Sitemap Specification
+# Block non-curated comparison URLs from crawl budget
+Disallow: /compare/
+
+# Explicitly allow curated comparison pages
+Allow: /compare/lining-feidian-6-ultra-vs-nike-alphafly-3
+Allow: /compare/anta-c202-6-pro-vs-nike-vaporfly-3
+Allow: /compare/xtep-160x-6-pro-vs-adidas-adizero-adios-pro-4
+Allow: /compare/saucony-endorphin-pro-4-vs-nike-vaporfly-3
+Allow: /compare/asics-metaspeed-sky-paris-vs-nike-alphafly-3
+Allow: /compare/361-biospeed-5-pro-vs-saucony-endorphin-pro-4
+Allow: /compare/qiaodan-feiying-pb-4-0-vs-asics-metaspeed-sky-paris
+Allow: /compare/lining-chitu-9-ultra-vs-nike-air-zoom-pegasus-41
+Allow: /compare/anta-mach-4-vs-adidas-adizero-boston-12
+Allow: /compare/xtep-2000km-3-0-vs-asics-novablast-4
+Allow: /compare/361-flame-5-mix-vs-saucony-endorphin-speed-4
+Allow: /compare/hoka-cielo-x1-vs-nike-alphafly-3
+Allow: /compare/nike-vaporfly-3-vs-nike-alphafly-3
+Allow: /compare/asics-superblast-2-vs-lining-chitu-9-ultra
+Allow: /compare/hoka-mach-6-vs-asics-novablast-4
+Allow: /compare/mizuno-wave-rebellion-pro-2-vs-lining-feidian-6-ultra
+Allow: /compare/brooks-hyperion-elite-4-vs-saucony-endorphin-pro-4
+Allow: /compare/new-balance-fuelcell-supercomp-elite-v4-vs-nike-alphafly-3
+Allow: /compare/anta-pg7-classic-vs-hoka-clifton-9
+Allow: /compare/salomon-s-lab-ultra-fdh-vs-hoka-speedgoat-6
+
 Host: https://easternrun.fit
 Sitemap: https://easternrun.fit/sitemap.xml

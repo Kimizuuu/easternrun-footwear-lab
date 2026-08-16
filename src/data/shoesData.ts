@@ -58,7 +58,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (89/100): Pure Marathon Race Weapon. Completely dominates 42K Race Day.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'lining-feidian-6-elite',
@@ -117,7 +118,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (86/100): Elite Carbon Marathon Racer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'lining-feidian-5-challenger',
@@ -175,7 +177,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (87/100): Highly Recommended Speed Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'lining-red-hare-9-ultra',
@@ -233,7 +236,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (88/100): Ultimate High-Mileage Workhorse with 1000km+ durability.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'lining-superlight-23',
@@ -291,7 +295,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (85/100): Perfect Lightweight Walking Cruiser.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
 
   // --- ANTA MODELS (10) ---
@@ -351,7 +356,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (88/100): Elite Carbon Marathon Racer under $200.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'anta-c202-5-gt',
@@ -405,7 +411,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (86/100): High-Stability Carbon Super-Shoe.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'anta-c202-6',
@@ -458,7 +465,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (84/100): Fast & Punchy Speed Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'anta-c202-g9-2',
@@ -511,7 +519,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (82/100): Versatile Speed Workhorse.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'anta-pg7-travel-2',
@@ -564,7 +573,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (91/100): #1 Best Budget Walking & Travel Shoe under $90.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'anta-pg7-3',
@@ -616,7 +626,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (85/100): Reliable High-Mileage Workhorse.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'anta-pg7-city',
@@ -668,7 +679,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (81/100): Ideal Urban Walking & Standing Shoe.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'anta-pg7-classic',
@@ -720,7 +732,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (83/100): Best Value All-Day Entry Shoe.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'anta-bellero-4-plus',
@@ -772,7 +785,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (83/100): Maximum Cushion Daily Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'anta-zone-2-90',
@@ -824,7 +838,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (84/100): Lightweight Daily & Gym Cruiser.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
 
   // --- 361° MODELS (18 Models with Complete Multi-Angle Gallery Arrays) ---
@@ -882,7 +897,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (90/100): Flagship Carbon Marathon Weapon.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-biospeed-5-pro',
@@ -938,7 +954,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (89/100): Ultra-Lightweight Carbon Racer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-flame-5-future',
@@ -993,7 +1010,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (88/100): High-Bounce Carbon Marathon Super-Shoe.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-flame-5-mix',
@@ -1048,7 +1066,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (86/100): Hybrid Carbon Speed Workout Specialist.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-flame-5',
@@ -1103,7 +1122,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (85/100): Versatile Speed & Tempo Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-flame-4-5-mix',
@@ -1158,7 +1178,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (84/100): Speed Workout & Interval Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-flame-4-mix',
@@ -1213,7 +1234,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (84/100): Carbon-Assisted Tempo Workhorse.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-flame-4-et',
@@ -1269,7 +1291,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (83/100): Wide-Friendly Speed Workout Specialist.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-flame-4',
@@ -1324,7 +1347,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (83/100): Budget Carbon-Plated Racer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-flame-3-et',
@@ -1379,7 +1403,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (84/100): Wide-Fit Budget Carbon Racer under $120.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-flame-3',
@@ -1434,7 +1459,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (84/100): Best Value Carbon Racer Under $120.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-biospeed-3-5-pro',
@@ -1489,7 +1515,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (86/100): Durable Nylon Glass-Fiber Speed Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-biospeed-future',
@@ -1544,7 +1571,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (87/100): Next-Gen Carbon Marathon Racer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-furious-2-0',
@@ -1599,7 +1627,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (86/100): High-Mileage Workhorse Daily Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-furious-1-5',
@@ -1655,7 +1684,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (84/100): Reliable Budget Daily Workhorse.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-fierce-6',
@@ -1710,7 +1740,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (83/100): Plush Max Cushion Recovery Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-miro-nude-sl',
@@ -1765,7 +1796,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (86/100): Perfect Featherweight Daily & Walking Cruiser.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'three61-miro-nude',
@@ -1820,7 +1852,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (85/100): Plush Soft Step-In Daily & Walking Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
 
   // --- QIAODAN MODELS (10) ---
@@ -1877,7 +1910,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (91/100): Premier Marathon Super-Shoe.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'qiaodan-feiying-pb-5',
@@ -1931,7 +1965,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (89/100): High-Performance Marathon Racer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'qiaodan-feiying-plaid-3',
@@ -1986,7 +2021,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (92/100): Top Tier Max-Bounce Super-Shoe.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'qiaodan-feiying-plaid-2',
@@ -2040,7 +2076,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (90/100): Excellent Marathon Carbon Racer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'qiaodan-leli-2',
@@ -2095,7 +2132,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (86/100): Agile & Responsive Tempo Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'qiaodan-lh600-2',
@@ -2151,7 +2189,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (87/100): Durable High-Mileage Daily Workhorse.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'qiaodan-qinghong-free',
@@ -2206,7 +2245,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (85/100): Plush Soft Walking & Recovery Cruiser.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'qiaodan-rapid-4',
@@ -2262,7 +2302,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (87/100): Fast & Agile Track Interval Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'qiaodan-thunder-1',
@@ -2317,7 +2358,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (86/100): Smooth & Energetic Daily Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'qiaodan-wind-4',
@@ -2372,7 +2414,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       archSupport: 'Neutral'
     },
     finalConsensusVerdict: 'EasternRun Consensus (87/100): Lightweight Breathable Daily Trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   }
 ,
 
@@ -2440,7 +2483,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Difficult to slip on due to integrated Atomknit bootie upper'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'nike_vaporfly3',
@@ -2505,7 +2549,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Outsole rubber wears faster on coarse asphalt'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'nike_zoomfly6',
@@ -2570,7 +2615,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Higher stack height requires attention on sharp turns'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'nike_pegasus41',
@@ -2635,7 +2681,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Weight is average at 283g'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'adidas_adiospro4',
@@ -2696,7 +2743,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Aggressive rocker takes a run or two to get used to'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'adidas_evosl',
@@ -2757,7 +2805,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Soft foam may compress slightly faster for heavy runners (>90kg)'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'adidas_boston13',
@@ -2818,7 +2867,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Slightly heavier than pure race-day super-shoes'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'saucony_endorphinelite2',
@@ -2881,7 +2931,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Firm ride for heel strikers; rewards forefoot runners'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'saucony_endorphinpro4',
@@ -2944,7 +2995,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Outsole pattern holds tiny pebbles on gravel paths'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'saucony_endorphinspeed4',
@@ -3007,7 +3059,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Outsole grip is good, though Continental is grippier on wet tile'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'asics_gelkayano31',
@@ -3070,7 +3123,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Not designed for fast interval workouts'
     ],
     finalConsensusVerdict: 'Top-tier global reference benchmark with extensive race and workout data.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   }
 
 ,
@@ -3130,7 +3184,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'High $300 price tag & 50mm illegal stack for official elite marathons'
     ],
     finalConsensusVerdict: 'Ultimate high-stack energy rebound super-shoe for non-sanctioned marathon efforts.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'adidas_takumisen10',
@@ -3188,7 +3243,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Too low stack for full 42k marathon protection'
     ],
     finalConsensusVerdict: 'Premier 5k/10k race day and interval speed weapon.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'adidas_supernovarise',
@@ -3252,7 +3308,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       'Not designed for high-speed track intervals'
     ],
     finalConsensusVerdict: 'Exceptional PEBA-infused daily workhorse trainer.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   },
   {
     id: 'adidas_adizerosl2',
@@ -3310,7 +3367,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       '10mm drop may feel steep for low-drop fans'
     ],
     finalConsensusVerdict: 'Outstanding value sub-$130 daily speed trainer with super-foam bounce.',
-    userReviews: []
+    userReviews: [],
+    dataLastUpdated: '2026-08-15'
   }
 ,
   {
@@ -3383,7 +3441,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "Flyknit Upper",
       "description": "Zonal breathability and secure midfoot lockdown."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nike_pegasusplus",
@@ -3455,7 +3514,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "Waffle Outsole",
       "description": "Generous rubber coverage for multi-surface grip."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nike_vomero17",
@@ -3521,7 +3581,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "Plush Collar & Tongue",
       "description": "Luxurious heel counter prevents slipping and hotspots."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "saucony_triumph22",
@@ -3587,7 +3648,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "Adaptive Fit System",
       "description": "Soft engineered mesh with midfoot webbing lockdown."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "saucony_ride17",
@@ -3653,7 +3715,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "Increased Outsole Coverage",
       "description": "XT-900 carbon rubber for high-mileage resistance."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "saucony_kinvara15",
@@ -3719,7 +3782,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "Minimalist 4mm Drop",
       "description": "Promotes natural forefoot striking and ankle mobility."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "asics_metaspeedskyparis",
@@ -3789,7 +3853,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "MOTION WRAP 2.0 Upper",
       "description": "Ultra-thin woven mesh with exceptional lockdown."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "asics_superblast2",
@@ -3860,7 +3925,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "ASICSGRIP Outsole",
       "description": "Superior wet & dry traction rubber."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "asics_novablast4",
@@ -3926,7 +3992,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "Woven Upper",
       "description": "Engineered stretch woven fabric replaces mesh for enhanced fit."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "xtep-160x-6-pro",
@@ -3996,7 +4063,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "CPU Outsole Rubber",
       "description": "Military-grade polyurethane grip that outlasts traditional blown rubber by 3x."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "xtep-260-3-0",
@@ -4062,7 +4130,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "X-TEP ACE Foam Core",
       "description": "Lightweight PEBA foam cushion for crisp toe-off."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "mizuno_waverebellionpro2",
@@ -4132,7 +4201,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "G3 Outsole",
       "description": "Resin outsole pods provide aggressive traction."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "mizuno_waverider28",
@@ -4198,7 +4268,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "Pebax Wave Plate",
       "description": "Disperses impact shock evenly across midfoot."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nb_sc_elite_v4",
@@ -4268,7 +4339,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "FantomFit Upper",
       "description": "Ultra-light bonded mesh construction."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nb_rebel_v4",
@@ -4334,7 +4406,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "FantomFit Mesh",
       "description": "Breathable, race-inspired upper."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nb_1080_v13",
@@ -4400,7 +4473,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
       "title": "Engineered Mesh Upper",
       "description": "Second-skin fit with padded collar."
     }
-  ]
+  ],
+  "dataLastUpdated": "2026-08-15"
 }
 ,
   {
@@ -4458,7 +4532,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "The Gold Standard sub-$90 all-day walking shoe. Essential for nurses, commuters, and long-standing shifts.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "hoka_bondi8",
@@ -4515,7 +4590,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Pinnacle Max-Cushion Walking & Recovery Cruiser. Saves feet and joints on hard concrete floors.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "brooks_ghost16",
@@ -4571,7 +4647,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "America’s Best-Selling Daily Workhorse. Flawless crossover between daily running and all-day walking.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nike_motiva",
@@ -4628,7 +4705,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Nike’s Purpose-Built Walking Innovation. Extremely smooth rocker for daily 10,000-step goals.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "hoka_clifton9",
@@ -4684,7 +4762,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Global Best-Seller Daily Cushion Trainer. The gold standard for soft, lightweight daily miles.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "hoka_mach6",
@@ -4740,7 +4819,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Top-Tier Non-Plated Speed Trainer. Extremely agile, snappy, and lightweight.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "brooks_glycerin21",
@@ -4796,7 +4876,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Brooks’ Ultimate Max-Cushion Flagship. Unbeatable plush comfort for long runs and walking.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "asics_gt2000_12",
@@ -4852,7 +4933,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Stability / Medium"
   },
   "finalConsensusVerdict": "Lightweight Modern Stability Benchamrk. Ideal support for runners and walkers needing guidance.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 }
 ,
   {
@@ -4910,7 +4992,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Proven World Championship marathon super-shoe with industry-leading wet road traction.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "lining-feidian-3-ultra",
@@ -4966,7 +5049,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Iconic 3rd generation marathon racer that established Li-Ning’s super-shoe legacy.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nike_vaporfly2",
@@ -5023,7 +5107,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Legendary Marathon Benchmark. Set the world standard for carbon super-shoes.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nike_alphafly2",
@@ -5080,7 +5165,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Pure Marathon Propulsion Tank. Explosive energy return for heavy forefoot strikers.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "adidas_adiospro3",
@@ -5136,7 +5222,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Workhorse Marathon Super-Shoe. Exceptional Continental wet grip and foam durability.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "adidas_boston12",
@@ -5192,7 +5279,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Pinnacle Marathon Training Companion. Exceptional durability and snappy rod propulsion.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "asics_superblast1",
@@ -5248,7 +5336,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Groundbreaking Super-Trainer. Created the high-stack non-plated long-run category.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "asics_novablast3",
@@ -5304,7 +5393,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Fan Favorite Bouncy Daily Trainer. Outstanding bounce-to-weight ratio.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "saucony_endorphinspeed3",
@@ -5360,7 +5450,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Hall of Fame Speed Trainer. Perfect balance of nylon plate flex and PEBA foam bounce.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "hoka_mach5",
@@ -5416,7 +5507,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Lightweight Non-Plated Speed Classic. Agile, comfortable, and responsive.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 }
 ,
   {
@@ -5473,7 +5565,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Pinnacle Technical Trail Weapon. Unbeatable grip for mud, mountain descents, and rough singletrack.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "hoka_speedgoat6",
@@ -5529,7 +5622,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "America’s #1 Mountain Trail & Ultra-Marathon Shoe. Incredible Vibram grip meets max trail cushion.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nike_pegasustrail5",
@@ -5585,7 +5679,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Best Road-to-Trail Hybrid. Silky ReactX foam transitions effortlessly from street to trail.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "altra_lonepeak8",
@@ -5641,7 +5736,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Thru-Hiker & Trail Runner Legend. Unrivaled natural toe splay and Zero Drop balance.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "on_cloud5",
@@ -5697,7 +5793,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Global Lifestyle & Walking Icon. Premium Swiss engineering for all-day standing and travel.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "on_cloudmonster2",
@@ -5753,7 +5850,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Monster Bounce & Max Cushion. Outstanding energy return for long miles and recovery.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "asics_gelnimbus26",
@@ -5809,7 +5907,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "Pinnacle Cloud-Cushion Luxury. Supreme shock dampening for recovery runs, long distance, and walking.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 }
 ,
   {
@@ -5867,7 +5966,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "EasternRun Consensus (94/100): HOKA’s most explosive carbon marathon super-shoe. Pure high-rebound PEBA speed.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "asics_metaspeededgeparis",
@@ -5923,7 +6023,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "EasternRun Consensus (94/100): The ultimate carbon marathon super-shoe for high-cadence runners.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "asics_magicspeed4",
@@ -5979,7 +6080,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "EasternRun Consensus (90/100): Premier carbon workout trainer. Metaspeed DNA at an accessible price point.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "adidas_terrex_agravic_speed_ultra",
@@ -6035,7 +6137,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "r/trailrunning Consensus (93/100): The fastest ultra-trail super-shoe on non-technical singletrack.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "brooks_adrenaline_gts23",
@@ -6091,7 +6194,8 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Stability / Medium"
   },
   "finalConsensusVerdict": "r/running Consensus (90/100): Unmatched stability workhorse. Trusted by overpronators and high-mileage runners for decades.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 },
   {
   "id": "nike_ultrafly",
@@ -6147,6 +6251,7 @@ export const INITIAL_SHOES_DATA: Shoe[] = [
     "archSupport": "Neutral"
   },
   "finalConsensusVerdict": "r/trailrunning Consensus (92/100): High-speed trail racer combining ZoomX bounce with Vibram Megagrip security.",
-  "userReviews": []
+  "userReviews": [],
+  "dataLastUpdated": "2026-08-15"
 }
 ];

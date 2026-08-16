@@ -5,6 +5,30 @@ import { parseCompareSlug, getShoeSlug } from '../utils/slugUtils';
 import { SEOHead } from './SEOHead';
 import { ArrowLeft, CheckCircle, AlertTriangle, Scale, Zap, Award } from 'lucide-react';
 
+// Curated comparison pages that are fully indexed and have pre-rendered static HTML
+const CURATED_COMPARE_SLUGS = new Set([
+  'lining-feidian-6-ultra-vs-nike-alphafly-3',
+  'anta-c202-6-pro-vs-nike-vaporfly-3',
+  'xtep-160x-6-pro-vs-adidas-adizero-adios-pro-4',
+  'saucony-endorphin-pro-4-vs-nike-vaporfly-3',
+  'asics-metaspeed-sky-paris-vs-nike-alphafly-3',
+  '361-biospeed-5-pro-vs-saucony-endorphin-pro-4',
+  'qiaodan-feiying-pb-4-0-vs-asics-metaspeed-sky-paris',
+  'lining-chitu-9-ultra-vs-nike-air-zoom-pegasus-41',
+  'anta-mach-4-vs-adidas-adizero-boston-12',
+  'xtep-2000km-3-0-vs-asics-novablast-4',
+  '361-flame-5-mix-vs-saucony-endorphin-speed-4',
+  'hoka-cielo-x1-vs-nike-alphafly-3',
+  'nike-vaporfly-3-vs-nike-alphafly-3',
+  'asics-superblast-2-vs-lining-chitu-9-ultra',
+  'hoka-mach-6-vs-asics-novablast-4',
+  'mizuno-wave-rebellion-pro-2-vs-lining-feidian-6-ultra',
+  'brooks-hyperion-elite-4-vs-saucony-endorphin-pro-4',
+  'new-balance-fuelcell-supercomp-elite-v4-vs-nike-alphafly-3',
+  'anta-pg7-classic-vs-hoka-clifton-9',
+  'salomon-s-lab-ultra-fdh-vs-hoka-speedgoat-6'
+]);
+
 interface ShoeComparePageProps {
   shoes: Shoe[];
 }
@@ -14,6 +38,25 @@ export const ShoeComparePage: React.FC<ShoeComparePageProps> = ({ shoes }) => {
   const navigate = useNavigate();
 
   const { shoe1, shoe2 } = parseCompareSlug(compareSlug || '', shoes);
+
+  // Add noindex for non-curated comparison pages to prevent thin content indexing
+  React.useEffect(() => {
+    if (compareSlug && !CURATED_COMPARE_SLUGS.has(compareSlug)) {
+      let robotsMeta = document.querySelector('meta[name="robots"]');
+      if (!robotsMeta) {
+        robotsMeta = document.createElement('meta');
+        robotsMeta.setAttribute('name', 'robots');
+        document.head.appendChild(robotsMeta);
+      }
+      robotsMeta.setAttribute('content', 'noindex, follow');
+      return () => {
+        // Restore default robots meta on unmount
+        if (robotsMeta) {
+          robotsMeta.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+        }
+      };
+    }
+  }, [compareSlug]);
 
   if (!shoe1 || !shoe2) {
     return (

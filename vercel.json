@@ -49,8 +49,8 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!.*\\.).*)",
-      "destination": "/index.html"
+      "source": "/compare/:path*",
+      "destination": "/compare.html"
     }
   ]
 }

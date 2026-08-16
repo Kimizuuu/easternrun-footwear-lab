@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, useParams, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { INITIAL_SHOES_DATA } from './data/shoesData';
 import type { Shoe, UserReview } from './types/shoe';
 import { getShoeBySlug, getShoeSlug } from './utils/slugUtils';
@@ -17,6 +17,7 @@ import { SiteFooter } from './components/SiteFooter';
 import { SEOHead } from './components/SEOHead';
 import { BrandHubPage } from './components/BrandHubPage';
 import { CategoryHubPage } from './components/CategoryHubPage';
+import { NotFoundPage } from './components/NotFoundPage';
 import { FloatingCompareTray } from './components/FloatingCompareTray';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -320,7 +321,7 @@ export function MainApp() {
           />
 
           {/* CATCH-ALL ROUTE */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
         {/* Site Footer */}

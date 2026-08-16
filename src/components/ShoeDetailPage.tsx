@@ -69,15 +69,8 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
     }
   };
 
-  // Only emit aggregateRating when real user reviews exist
-  if (shoe.userReviews && shoe.userReviews.length > 0) {
-    const totalStars = shoe.userReviews.reduce((acc, r) => acc + r.rating, 0);
-    productSchema.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: (totalStars / shoe.userReviews.length).toFixed(1),
-      reviewCount: shoe.userReviews.length
-    };
-  }
+  // AggregateRating intentionally omitted — user reviews are localStorage-only
+  // and cannot be verified by crawlers. Will be re-enabled with a reviews backend.
 
   const jsonLdBase: object[] = [
     productSchema,
