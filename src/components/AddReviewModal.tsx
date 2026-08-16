@@ -7,7 +7,7 @@ import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 interface AddReviewModalProps {
   shoe: Shoe | null;
   onClose: () => void;
-  onSubmitReview: (shoeId: string, review: UserReview) => void;
+  onSubmitReview: (shoeId: string, review: UserReview) => Promise<void> | void;
 }
 
 export const AddReviewModal: React.FC<AddReviewModalProps> = ({
@@ -24,12 +24,13 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
   const [proText, setProText] = useState('');
   const [conText, setConText] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Early return AFTER all hooks
   useBodyScrollLock(!!shoe);
   if (!shoe) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
@@ -63,8 +64,15 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
       helpfulCount: 0,
     };
 
-    onSubmitReview(shoe.id, newReview);
-    onClose();
+    try {
+      setIsSubmitting(true);
+      await onSubmitReview(shoe.id, newReview);
+      setIsSubmitting(false);
+      onClose();
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setErrorMessage(err?.message || 'Failed to submit review. Please try again.');
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -282,20 +290,25 @@ export const AddReviewModal: React.FC<AddReviewModalProps> = ({
 
           <button
             type="submit"
+            disabled={isSubmitting}
             style={{
-              background: '#0F172A',
+              background: isSubmitting ? '#475569' : '#0F172A',
               color: '#FFF',
               border: 'none',
               borderRadius: 'var(--radius-sm)',
               padding: '12px',
               fontWeight: 800,
               fontSize: '0.9rem',
-              cursor: 'pointer',
+              cursor: isSubmitting ? 'not-allowed' : 'pointer',
               marginTop: '4px',
               minHeight: '44px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px'
             }}
           >
-            Submit Review
+            {isSubmitting ? 'Submitting Review...' : 'Submit Review'}
           </button>
         </form>
       </div>

@@ -20,6 +20,7 @@ import { CategoryHubPage } from './components/CategoryHubPage';
 import { NotFoundPage } from './components/NotFoundPage';
 import { FloatingCompareTray } from './components/FloatingCompareTray';
 import { Analytics } from '@vercel/analytics/react';
+import { fetchAllReviews, submitReviewToSupabase } from './services/reviewService';
 
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
   constructor(props: {children: React.ReactNode}) {
@@ -96,7 +97,7 @@ export function MainApp() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // 1. Initial State with localStorage Persistence
+  // 1. Initial State with localStorage Persistence + Supabase Sync
   const [shoes, setShoes] = useState<Shoe[]>(() => {
     try {
       const savedReviewsRaw = localStorage.getItem('easternrun_user_reviews');
@@ -111,6 +112,33 @@ export function MainApp() {
       return INITIAL_SHOES_DATA;
     }
   });
+
+  // Fetch live reviews from Supabase on mount
+  useEffect(() => {
+    let isMounted = true;
+    fetchAllReviews().then((liveReviews) => {
+      if (!isMounted || !liveReviews || Object.keys(liveReviews).length === 0) return;
+      setShoes((prevShoes) =>
+        prevShoes.map((s) => {
+          const shoeLiveReviews = liveReviews[s.id];
+          if (!shoeLiveReviews || shoeLiveReviews.length === 0) return s;
+          
+          // Deduplicate reviews by ID
+          const existingIds = new Set(s.userReviews.map((r) => r.id));
+          const newToAdd = shoeLiveReviews.filter((r) => !existingIds.has(r.id));
+          
+          return {
+            ...s,
+            userReviews: [...newToAdd, ...s.userReviews]
+          };
+        })
+      );
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const [comparedShoes, setComparedShoes] = useState<Shoe[]>(() => {
     try {
@@ -185,9 +213,10 @@ export function MainApp() {
     setComparedShoes(comparedShoes.filter((s) => s.id !== shoeId));
   };
 
-  const handleAddUserReview = (shoeId: string, newReview: UserReview) => {
-    setShoes((prevShoes) => {
-      const updated = prevShoes.map((s) => {
+  const handleAddUserReview = async (shoeId: string, newReview: UserReview) => {
+    // 1. Optimistic update in state
+    setShoes((prevShoes) =>
+      prevShoes.map((s) => {
         if (s.id === shoeId) {
           return {
             ...s,
@@ -195,19 +224,14 @@ export function MainApp() {
           };
         }
         return s;
-      });
+      })
+    );
 
-      try {
-        const savedReviewsRaw = localStorage.getItem('easternrun_user_reviews');
-        const savedReviews: Record<string, UserReview[]> = savedReviewsRaw ? JSON.parse(savedReviewsRaw) : {};
-        savedReviews[shoeId] = [newReview, ...(savedReviews[shoeId] || [])];
-        localStorage.setItem('easternrun_user_reviews', JSON.stringify(savedReviews));
-      } catch {
-        // Ignore quota errors
-      }
-
-      return updated;
-    });
+    // 2. Persist to Supabase (and localStorage fallback)
+    const result = await submitReviewToSupabase(shoeId, newReview);
+    if (!result.success && result.error) {
+      console.warn('[EasternRun] Supabase sync warning:', result.error);
+    }
   };
 
   const handleSelectShoe = (shoe: Shoe | null) => {
