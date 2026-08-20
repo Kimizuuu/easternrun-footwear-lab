@@ -53,7 +53,8 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
   const productSchema: any = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: `${shoe.brand} ${shoe.name}`,
+    '@id': canonicalUrl + '#product',
+    name: shoe.name,
     image: `https://easternrun.fit${shoe.image}`,
     description: shoe.description,
     brand: { '@type': 'Brand', name: shoe.brand },
@@ -65,22 +66,11 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
       '@type': 'Offer',
       priceCurrency: 'USD',
       price: shoe.msrpUsd,
-      availability: 'https://schema.org/InStock'
-    }
-  };
-
-  // AggregateRating intentionally omitted — user reviews are localStorage-only
-  // and cannot be verified by crawlers. Will be re-enabled with a reviews backend.
-
-  const jsonLdBase: object[] = [
-    productSchema,
-    {
-      '@context': 'https://schema.org',
+      availability: 'https://schema.org/InStock',
+      url: canonicalUrl
+    },
+    review: {
       '@type': 'Review',
-      itemReviewed: {
-        '@type': 'Product',
-        name: `${shoe.brand} ${shoe.name}`
-      },
       author: {
         '@type': 'Organization',
         name: 'EasternRun Footwear Lab'
@@ -91,7 +81,14 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
         bestRating: '5'
       },
       reviewBody: shoe.finalConsensusVerdict
-    },
+    }
+  };
+
+  // AggregateRating intentionally omitted — user reviews are localStorage-only
+  // and cannot be verified by crawlers. Will be re-enabled with a reviews backend.
+
+  const jsonLdBase: object[] = [
+    productSchema,
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',

@@ -425,12 +425,14 @@ Sitemap: ${baseUrl}/sitemap.xml
     const shoeDesc = `${shoe.description} Features ${shoe.specs?.foamName || 'Superfoam'} (${shoe.specs?.foamResiliencePercent || 80}% energy return), ${shoe.specs?.weightGrams || 220}g weight, ${shoe.specs?.dropMm || 8}mm drop, and $${shoe.msrpUsd} MSRP.`;
     const shoeCanonical = `${baseUrl}/shoe/${shoe.slug}`;
 
-    // Product schema — NO AggregateRating (reviews are localStorage-only, can't be verified by crawlers)
+    // Product schema — review nested inside Product to avoid duplicate Product items
+    // Uses @id so client-side hydration can reference the same entity without duplication
     const shoeProductSchema = [
       {
         '@context': 'https://schema.org',
         '@type': 'Product',
-        'name': `${shoe.brand} ${shoe.name}`,
+        '@id': shoeCanonical + '#product',
+        'name': shoe.name,
         'image': `${baseUrl}${shoe.image}`,
         'description': shoe.description,
         'brand': { '@type': 'Brand', 'name': shoe.brand },
@@ -440,6 +442,16 @@ Sitemap: ${baseUrl}/sitemap.xml
           'priceCurrency': 'USD',
           'price': shoe.msrpUsd.toString(),
           'availability': 'https://schema.org/InStock'
+        },
+        'review': {
+          '@type': 'Review',
+          'author': { '@type': 'Organization', 'name': 'EasternRun Footwear Lab' },
+          'reviewRating': {
+            '@type': 'Rating',
+            'ratingValue': (shoe.overallRating / 20).toFixed(1),
+            'bestRating': '5'
+          },
+          'reviewBody': shoe.finalConsensusVerdict || shoe.description
         }
       },
       {
