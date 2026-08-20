@@ -37,8 +37,27 @@ function getBrandSlug(brand) {
   return clean;
 }
 
+function escapeXml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 function escapeAttr(str) {
-  return String(str).replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return escapeXml(str);
+}
+
+function encodeUrl(urlStr) {
+  if (!urlStr) return '';
+  try {
+    return encodeURI(urlStr);
+  } catch {
+    return urlStr;
+  }
 }
 
 function loadShoesJson() {
@@ -208,13 +227,14 @@ function main() {
 
   function getShoeImages(shoe) {
     const images = [];
+    const fullName = getFullShoeName(shoe);
     if (shoe.image) {
-      images.push({ loc: `${baseUrl}${shoe.image}`, title: `${shoe.brand} ${shoe.name}` });
+      images.push({ loc: `${baseUrl}${encodeURI(shoe.image)}`, title: fullName });
     }
     if (shoe.galleryImages && shoe.galleryImages.length > 0) {
       for (const img of shoe.galleryImages) {
         if (img !== shoe.image) {
-          images.push({ loc: `${baseUrl}${img}`, title: `${shoe.brand} ${shoe.name}` });
+          images.push({ loc: `${baseUrl}${encodeURI(img)}`, title: fullName });
         }
       }
     }
