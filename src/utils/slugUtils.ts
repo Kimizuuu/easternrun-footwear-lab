@@ -27,11 +27,25 @@ export function getBrandSlug(brand: string): string {
 }
 
 /**
+ * Returns clean full display name without doubling brand if already prefixed.
+ * e.g., brand: 'Nike', name: 'Nike Alphafly 3' -> 'Nike Alphafly 3'
+ * e.g., brand: 'Nike', name: 'Alphafly 3' -> 'Nike Alphafly 3'
+ */
+export function getFullShoeName(brand: string, name: string): string {
+  if (!name) return '';
+  if (!brand) return name;
+  if (name.toLowerCase().startsWith(brand.toLowerCase())) {
+    return name;
+  }
+  return `${brand} ${name}`;
+}
+
+/**
  * Returns the primary clean SEO slug for a given Shoe object.
  */
 export function getShoeSlug(shoe: Shoe): string {
   if (!shoe) return '';
-  return toCleanSlug(`${shoe.brand} ${shoe.name}`);
+  return toCleanSlug(getFullShoeName(shoe.brand, shoe.name));
 }
 
 /**

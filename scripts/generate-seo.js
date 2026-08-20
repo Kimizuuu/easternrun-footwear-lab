@@ -21,6 +21,15 @@ function toCleanSlug(text) {
     .replace(/^-+|-+$/g, '');
 }
 
+function getFullShoeName(shoe) {
+  if (!shoe || !shoe.name) return '';
+  const brand = shoe.brand || '';
+  if (shoe.name.toLowerCase().startsWith(brand.toLowerCase())) {
+    return shoe.name;
+  }
+  return `${brand} ${shoe.name}`;
+}
+
 function getBrandSlug(brand) {
   if (!brand) return '';
   const clean = toCleanSlug(brand);
@@ -41,7 +50,7 @@ function loadShoesJson() {
   const shoes = JSON.parse(raw);
   return shoes.map(s => ({
     ...s,
-    slug: toCleanSlug(`${s.brand} ${s.name}`)
+    slug: toCleanSlug(getFullShoeName(s))
   }));
 }
 
@@ -87,9 +96,10 @@ function buildPage(templateHtml, {
   if (description) $('meta[name="twitter:description"]').attr('content', description.slice(0, 200));
   if (twitterImage) $('meta[name="twitter:image"]').attr('content', twitterImage);
 
-  // 6. JSON-LD structured data
+  // 6. JSON-LD structured data (assign id="schema-jsonld" so client hydration updates in-place)
   if (jsonLd) {
-    $('head').append(`<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`);
+    $('head script#schema-jsonld').remove();
+    $('head').append(`<script id="schema-jsonld" type="application/ld+json">${JSON.stringify(jsonLd)}</script>`);
   }
 
   // 7. Extra head HTML (e.g., robots noindex)
@@ -421,7 +431,8 @@ Sitemap: ${baseUrl}/sitemap.xml
     const shoeDir = path.join(distDir, 'shoe', shoe.slug);
     fs.mkdirSync(shoeDir, { recursive: true });
 
-    const shoeTitle = `${shoe.brand} ${shoe.name} Specs & Performance Breakdown — EasternRun`;
+    const fullShoeName = getFullShoeName(shoe);
+    const shoeTitle = `${fullShoeName} Specs & Performance Breakdown — EasternRun`;
     const shoeDesc = `${shoe.description} Features ${shoe.specs?.foamName || 'Superfoam'} (${shoe.specs?.foamResiliencePercent || 80}% energy return), ${shoe.specs?.weightGrams || 220}g weight, ${shoe.specs?.dropMm || 8}mm drop, and $${shoe.msrpUsd} MSRP.`;
     const shoeCanonical = `${baseUrl}/shoe/${shoe.slug}`;
 
@@ -432,7 +443,7 @@ Sitemap: ${baseUrl}/sitemap.xml
         '@context': 'https://schema.org',
         '@type': 'Product',
         '@id': shoeCanonical + '#product',
-        'name': shoe.name,
+        'name': fullShoeName,
         'image': `${baseUrl}${shoe.image}`,
         'description': shoe.description,
         'brand': { '@type': 'Brand', 'name': shoe.brand },
@@ -460,7 +471,7 @@ Sitemap: ${baseUrl}/sitemap.xml
         'itemListElement': [
           { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': baseUrl },
           { '@type': 'ListItem', 'position': 2, 'name': shoe.brand, 'item': `${baseUrl}/brand/${getBrandSlug(shoe.brand)}` },
-          { '@type': 'ListItem', 'position': 3, 'name': shoe.name, 'item': shoeCanonical }
+          { '@type': 'ListItem', 'position': 3, 'name': fullShoeName, 'item': shoeCanonical }
         ]
       }
     ];
@@ -470,9 +481,9 @@ Sitemap: ${baseUrl}/sitemap.xml
         <nav style="margin-bottom: 16px; font-size: 0.9rem; color: #64748B;">
           <a href="/" style="color: #2563EB;">Home</a> &gt;
           <a href="/brand/${getBrandSlug(shoe.brand)}" style="color: #2563EB;">${shoe.brand}</a> &gt;
-          <span>${shoe.name}</span>
+          <span>${fullShoeName}</span>
         </nav>
-        <h1 style="font-size: 2.2rem; font-weight: 900; color: #0F172A; margin-bottom: 8px;">${shoe.name}</h1>
+        <h1 style="font-size: 2.2rem; font-weight: 900; color: #0F172A; margin-bottom: 8px;">${fullShoeName}</h1>
         <p style="font-size: 1.1rem; color: #2563EB; font-weight: 700; margin-bottom: 16px;">${shoe.brand} • ${shoe.category} • MSRP $${shoe.msrpUsd}</p>
         <p style="font-size: 1rem; color: #334155; line-height: 1.7; margin-bottom: 24px;">${shoe.description}</p>
         <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; margin-bottom: 24px;">

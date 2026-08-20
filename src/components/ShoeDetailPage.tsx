@@ -4,7 +4,7 @@ import type { Shoe } from '../types/shoe';
 import { SizeChartModal } from './SizeChartModal';
 import { ImageZoomModal } from './ImageZoomModal';
 import { SEOHead } from './SEOHead';
-import { getShoeSlug, getBrandSlug } from '../utils/slugUtils';
+import { getShoeSlug, getBrandSlug, getFullShoeName } from '../utils/slugUtils';
 
 interface ShoeDetailPageProps {
   shoe: Shoe;
@@ -44,17 +44,18 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
     setSelectedPhotoIndex((prev) => (prev - 1 + photos.length) % photos.length);
   };
 
+  const fullShoeName = getFullShoeName(shoe.brand, shoe.name);
   const shoeSlug = getShoeSlug(shoe);
   const brandSlug = getBrandSlug(shoe.brand);
   const canonicalUrl = `https://easternrun.fit/shoe/${shoeSlug}`;
-  const title = `${shoe.brand} ${shoe.name} Spec Review & Performance Database | EasternRun`;
-  const description = `Full technical breakdown for ${shoe.brand} ${shoe.name}: $${shoe.msrpUsd} MSRP, ${shoe.specs?.weightGrams ? shoe.specs.weightGrams + 'g' : ''}, ${shoe.specs?.foamName || 'Superfoam'}, overall rating ${shoe.overallRating}/100.`;
+  const title = `${fullShoeName} Spec Review & Performance Database | EasternRun`;
+  const description = `Full technical breakdown for ${fullShoeName}: $${shoe.msrpUsd} MSRP, ${shoe.specs?.weightGrams ? shoe.specs.weightGrams + 'g' : ''}, ${shoe.specs?.foamName || 'Superfoam'}, overall rating ${shoe.overallRating}/100.`;
 
   const productSchema: any = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     '@id': canonicalUrl + '#product',
-    name: shoe.name,
+    name: fullShoeName,
     image: `https://easternrun.fit${shoe.image}`,
     description: shoe.description,
     brand: { '@type': 'Brand', name: shoe.brand },
@@ -95,7 +96,7 @@ export const ShoeDetailPage: React.FC<ShoeDetailPageProps> = ({
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://easternrun.fit/' },
         { '@type': 'ListItem', position: 2, name: shoe.brand, item: `https://easternrun.fit/brand/${brandSlug}` },
-        { '@type': 'ListItem', position: 3, name: shoe.name, item: canonicalUrl }
+        { '@type': 'ListItem', position: 3, name: fullShoeName, item: canonicalUrl }
       ]
     }
   ];
